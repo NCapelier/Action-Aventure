@@ -267,7 +267,6 @@ GameObject:
   - component: {fileID: 499661121}
   - component: {fileID: 499661120}
   - component: {fileID: 499661119}
-  - component: {fileID: 499661118}
   m_Layer: 0
   m_Name: ph_Torch (3)
   m_TagString: Untagged
@@ -275,22 +274,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &499661118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499661117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d14d5cf302288c4191cf3ae34cb13c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLit: 0
-  prev: {fileID: 0}
-  killsPrev: 0
-  timeToKill: 0
 --- !u!114 &499661119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,7 +697,7 @@ GameObject:
   - component: {fileID: 1847319416}
   m_Layer: 0
   m_Name: fakeplayer
-  m_TagString: Player
+  m_TagString: Hinky
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
