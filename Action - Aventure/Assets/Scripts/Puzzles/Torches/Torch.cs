@@ -23,7 +23,9 @@ public class Torch : MonoBehaviour
             Light();
         }
     }
-
+    /// <summary>
+    /// Lights flame. To be called when the right object collides.
+    /// </summary>
     protected virtual void Light()
     {
         if (!isLit)

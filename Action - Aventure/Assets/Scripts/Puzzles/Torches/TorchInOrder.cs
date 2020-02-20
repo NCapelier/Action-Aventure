@@ -16,12 +16,24 @@ public class TorchInOrder : Torch
     {
         base.Start();
         prevTorch = prev.GetComponent<Torch>();
+        /*
+        if (killsPrev)
+        {
+            StartCoroutine(KillPrevious());
+        }
+        */
+    }
+
+    private void Update()
+    {
         if (killsPrev)
         {
             StartCoroutine(KillPrevious());
         }
     }
-
+    /// <summary>
+    /// Light flame if a specific one is already lit
+    /// </summary>
     protected override void Light()
     {
         if (prevTorch.isLit)
@@ -34,10 +46,15 @@ public class TorchInOrder : Torch
     {
         if (prevTorch.isLit)
         {
+            killsPrev = false;
             yield return new WaitForSeconds(timeToKill);
-            prevTorch.PutOut();
+            if (!isLit)
+            {
+                prevTorch.PutOut();
+            }
+            killsPrev = true;
         }
 
-        StartCoroutine(KillPrevious());
+        //StartCoroutine(KillPrevious());
     }
 }
