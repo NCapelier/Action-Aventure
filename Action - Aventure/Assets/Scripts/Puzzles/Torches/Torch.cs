@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class Torch : MonoBehaviour
 {
-    private bool isLit;
+    [HideInInspector]
+    public bool isLit;
     private SpriteRenderer flame;
+    
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        flame = gameObject.GetComponent<SpriteRenderer>();
+        flame = GetComponent<SpriteRenderer>();
         flame.enabled = false;
         isLit = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            Light();
+        }
     }
 
     protected virtual void Light()
