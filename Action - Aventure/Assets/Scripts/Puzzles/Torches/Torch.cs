@@ -18,7 +18,7 @@ public class Torch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Hinky")
         {
             Light();
         }
