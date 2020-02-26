@@ -4,6 +4,53 @@ using System.Collections;
 public static class FloatExtensions
 {
     /// <summary>
+    /// Returns true if the value is between the two boundaries
+    /// </summary>
+    /// <param name="value"></param>
+    /// <param name="lower"></param>
+    /// <param name="greater"></param>
+    /// <returns></returns>
+    public static bool isBetween(this float value, float lower, bool equal1, float greater, bool equal2)
+    {
+        bool result = false;
+
+        if(!equal1 && !equal2)
+        {
+            if(value > lower && value < greater)
+            {
+                result = true;
+            }
+        }
+        else if(equal1 && equal2)
+        {
+            if(value >= lower && value <= greater)
+            {
+                result = true;
+            }
+        }
+        else if(!equal1 && equal2)
+        {
+            if(value > lower && value <= greater)
+            {
+                result = true;
+            }
+        }
+        else if(equal1 && !equal2)
+        {
+            if(value >= lower && value < greater)
+            {
+                result = true;
+            }
+        }
+        else
+        {
+            Debug.Log("Error, equal value not assigned");
+        }
+
+        return result;
+    }
+
+    /// <summary>
     /// Remap la valeur actuelle dans un nouvel intervalle
     /// </summary>
     /// <param name="value"></param>

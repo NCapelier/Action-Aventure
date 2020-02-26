@@ -2,6 +2,10 @@
 
 namespace Management
 {
+    /// <summary>
+    /// NCO - Used to create singleton objects
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class Singleton<T> : MonoBehaviour where T : Component
     {
 

@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GlobalLight
+  - PointLight
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -40,4 +43,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PointLightsOnly
+    uniqueID: 3138283183
+    locked: 0
+  - name: GlobalLightOnly
+    uniqueID: 1169416727
+    locked: 0
+  - name: AllLights
+    uniqueID: 1677392709
+    locked: 0
+  - name: NoLight
+    uniqueID: 3320719109
     locked: 0

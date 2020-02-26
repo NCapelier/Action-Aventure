@@ -1,32 +1,33 @@
-﻿using UnityEngine;
-using Management;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-namespace Player
+namespace Enemy
 {
     /// <summary>
-    /// NCO - General management of the Player object.
+    /// NCO - Parent class of every enemy object
     /// </summary>
-    public class PlayerManager : Singleton<PlayerManager>
+    public abstract class EnemyParent : MonoBehaviour
     {
-
-        public PlayerController controller = null;
-        public PlayerContactAttack contactAttack = null;
-
         [HideInInspector] public int hp;
-
-        [Range(1,50)]
+        [Range(1, 50)]
         [SerializeField] int maxHp = 10;
 
-        void Awake()
+        public int TakeDamages
         {
-            MakeSingleton(false);
+            set
+            {
+                hp -= value;
+            }
         }
 
-        void Start()
+        public int Heal
         {
-
+            set
+            {
+                hp += value;
+            }
         }
-
 
         void Update()
         {
@@ -51,5 +52,4 @@ namespace Player
         }
 
     }
-
 }
