@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Player
 {
@@ -9,13 +7,16 @@ namespace Player
     /// </summary>
     public class PlayerContactAttack : MonoBehaviour
     {
-        //attack params scripts
-        [SerializeField] PlayerController controller = null;
+
+        #region Variables
 
         //attack conditions
         [HideInInspector] public bool isAttacking = false;
 
+        //direction of the attack (Top, Down, Left or Right)
         Quaternion attackDirection;
+
+        #endregion
 
         void Awake()
         {
@@ -36,13 +37,13 @@ namespace Player
         }
 
         /// <summary>
-        /// Creates the Attack object
+        /// Summons the Attack object
         /// </summary>
         GameObject Attack()
         {
             isAttacking = true;
 
-            switch(controller.lastDirection)
+            switch(PlayerManager.Instance.controller.lastDirection)
             {
                 case moveDirection.Top:
                     attackDirection = Quaternion.Euler(0, 0, 90);

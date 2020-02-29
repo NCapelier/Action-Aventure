@@ -7,6 +7,7 @@ TagManager:
   - GlobalLight
   - PointLight
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -41,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 1263524683
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

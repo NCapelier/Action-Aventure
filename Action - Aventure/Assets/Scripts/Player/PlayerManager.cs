@@ -9,13 +9,44 @@ namespace Player
     public class PlayerManager : Singleton<PlayerManager>
     {
 
+        #region Variables
+
         public PlayerController controller = null;
         public PlayerContactAttack contactAttack = null;
+        public PlayerAimBehaviour aimBehaviour = null;
 
         [HideInInspector] public int hp;
 
         [Range(1,50)]
         [SerializeField] int maxHp = 10;
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// used to deal damages to the entity
+        /// </summary>
+        public int TakeDamages
+        {
+            set
+            {
+                hp -= value;
+            }
+        }
+
+        /// <summary>
+        /// used to give health points to the entity
+        /// </summary>
+        public int Heal
+        {
+            set
+            {
+                hp += value;
+            }
+        }
+
+        #endregion
 
         void Awake()
         {
@@ -27,12 +58,14 @@ namespace Player
 
         }
 
-
         void Update()
         {
 
         }
 
+        /// <summary>
+        /// Avoids the hp to exceed the hp cap and lauched the Death() method if hp < 0
+        /// </summary>
         void UpdateHp()
         {
             if (hp > maxHp)
@@ -45,6 +78,9 @@ namespace Player
             }
         }
 
+        /// <summary>
+        /// override this method to kill the entity
+        /// </summary>
         void Death()
         {
             //death

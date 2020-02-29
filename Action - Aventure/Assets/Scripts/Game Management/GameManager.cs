@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Management;
 
 namespace GameManagement
@@ -11,7 +9,10 @@ namespace GameManagement
     public class GameManager : Singleton<GameManager>
     {
 
+        #region Variables
 
+
+        #endregion
 
         void Awake()
         {
@@ -22,7 +23,6 @@ namespace GameManagement
         {
 
         }
-
 
         void Update()
         {

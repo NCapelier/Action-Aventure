@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemy
 {
@@ -9,10 +7,19 @@ namespace Enemy
     /// </summary>
     public abstract class EnemyParent : MonoBehaviour
     {
+        #region Variables
+
         [HideInInspector] public int hp;
         [Range(1, 50)]
         [SerializeField] int maxHp = 10;
 
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// used to deal damages to the entity
+        /// </summary>
         public int TakeDamages
         {
             set
@@ -21,6 +28,9 @@ namespace Enemy
             }
         }
 
+        /// <summary>
+        /// used to give health points to the entity
+        /// </summary>
         public int Heal
         {
             set
@@ -29,12 +39,17 @@ namespace Enemy
             }
         }
 
+        #endregion
+
         void Update()
         {
 
         }
 
-        void UpdateHp()
+        /// <summary>
+        /// Avoids the hp to exceed the hp cap and lauched the Death() method if hp < 0
+        /// </summary>
+        public virtual void UpdateHp()
         {
             if (hp > maxHp)
             {
@@ -46,7 +61,10 @@ namespace Enemy
             }
         }
 
-        void Death()
+        /// <summary>
+        /// override this method to kill the entity
+        /// </summary>
+        public virtual void Death()
         {
             //death
         }

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Enemy;
 
@@ -10,12 +9,17 @@ namespace Player
     /// </summary>
     public class PlayerAttackBehaviour : MonoBehaviour
     {
+
+        #region Variables
+
         [Range(0f, 5f)]
         [SerializeField] float lifeTime = 1;
 
         [Range(0, 50)]
         [SerializeField] int damages = 1;
-        
+
+        #endregion
+
         void Awake()
         {
             
@@ -40,6 +44,10 @@ namespace Player
             }
         }
 
+        /// <summary>
+        /// Applies the lifetime on the object
+        /// </summary>
+        /// <returns></returns>
         IEnumerator LifeCycle()
         {
             yield return new WaitForSeconds(lifeTime);

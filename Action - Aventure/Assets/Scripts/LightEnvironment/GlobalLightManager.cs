@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using Management;
+using Lantern;
 
 namespace LightEnvironment
 {
@@ -11,6 +11,9 @@ namespace LightEnvironment
     /// </summary>
     public class GlobalLightManager : Singleton<GlobalLightManager>
     {
+        #region Variables
+
+
         //Light 2D component of the object
         Light2D mainLight;
         
@@ -21,6 +24,8 @@ namespace LightEnvironment
         //mainLight's increasing and decreasing speed
         [Range(0f, 10f)]
         [SerializeField] float increaseSpeed = 1, decreaseSpeed = 1;
+
+        #endregion
 
         void Awake()
         {
@@ -35,7 +40,18 @@ namespace LightEnvironment
 
         void Update()
         {
-            
+            switch(LanternManager.Instance.hideLight.currentLightState)
+            {
+                case lightState.Displayed:
+                    IncreaseGlobalLighting();
+                    break;
+                case lightState.Hidden:
+                    DecreaseGlobalLighting();
+                    break;
+                default:
+                    Debug.Log("Error, value not assigned !");
+                    break;
+            }
         }
         
         /// <summary>

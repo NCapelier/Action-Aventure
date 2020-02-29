@@ -9,10 +9,16 @@ namespace Management
     public abstract class Singleton<T> : MonoBehaviour where T : Component
     {
 
+        #region Variables
+
         /// <summary>
         /// The instance.
         /// </summary>
         private static T instance;
+
+        #endregion
+
+        #region Properties
 
         /// <summary>
         /// Gets the instance of the Singleton.
@@ -36,6 +42,10 @@ namespace Management
             }
         }
 
+        #endregion
+
+        #region Methods
+
         /// <summary>
         /// Use to make the object a Singleton.
         /// </summary>
@@ -54,5 +64,7 @@ namespace Management
                 Destroy(gameObject);
             }
         }
+
+        #endregion
     }
 }

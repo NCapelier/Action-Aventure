@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
-  m_ApplyToSortingLayers: 45fbfa6317e2b345
+  m_ApplyToSortingLayers: 45fbfa6317e2b3454bdb4f4b
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
@@ -87,5 +87,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimumLighting: 0
   maximumLightning: 0.5
-  increaseSpeed: 1
-  decreaseSpeed: 1
+  increaseSpeed: 0.75
+  decreaseSpeed: 0.5
