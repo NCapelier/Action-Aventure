@@ -12,6 +12,7 @@ namespace Lantern
 
         #region Variables
 
+        // current light display state
         [HideInInspector] public lightState currentLightState = lightState.Displayed;
 
         #endregion
@@ -32,7 +33,7 @@ namespace Lantern
             {
                 StartHide();
             }
-            if(currentLightState == lightState.Hidden)
+            else if(currentLightState == lightState.Hidden)
             {
                 OnHiddenUpdate();
             }

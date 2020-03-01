@@ -14,12 +14,15 @@ namespace Enemy
 
         #region Variables
 
+        //rigidbody2D of this enemy
         Rigidbody2D EnemyRb = null;
 
+        // editor variables : enemy movement variables
         [Range(0f, 500f)]
         [SerializeField] float moveSpeed = 1;
 
-        float contactDistance = 1f;
+        [Range(0.5f, 25f)]
+        [SerializeField] float contactDistance = 1f;
 
         #endregion
 
@@ -38,6 +41,9 @@ namespace Enemy
             MoveToPlayer();
         }
         
+        /// <summary>
+        /// Moves this enemy towards the player until it's close enouth depending on contactDistance
+        /// </summary>
         void MoveToPlayer()
         {
             if((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position) > contactDistance) && (LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))

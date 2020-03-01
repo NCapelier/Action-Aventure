@@ -4,12 +4,18 @@ using Management;
 namespace Lantern
 {
     /// <summary>
-    /// boomerang all possible states
+    /// boomerang all states
     /// </summary>
     public enum boomerangState { Tidy, Cast, Static, FallBack };
 
+    /// <summary>
+    /// light display states
+    /// </summary>
     public enum lightState { Displayed, Hidden};
 
+    /// <summary>
+    /// light flash states
+    /// </summary>
     public enum flashState { Idle, FlashingUp, FlashingDown};
 
     /// <summary>
@@ -19,6 +25,7 @@ namespace Lantern
     {
         #region Variables
 
+        // all scripts of the prefab
         public LanternLightBehaviour behaviour = null;
         public LanternInteractions interaction = null;
         public LanternBoomerang boomerang = null;

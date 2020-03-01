@@ -11,9 +11,10 @@ namespace Player
 
         #region Variables
 
-        //joystick input
+        //right joystick input
         float horizontal = 0, vertical = 0;
 
+        // current orientation of the right vector in V3 and Q
         [HideInInspector] public Vector3 orientationVector = Vector3.zero;
         [HideInInspector] public Quaternion orientationQuaternion;
 

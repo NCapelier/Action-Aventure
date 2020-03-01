@@ -1,20 +1,27 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 namespace Lantern
 {
+    /// <summary>
+    /// NCO - Flash attack of the will of the wisp
+    /// </summary>
     public class LanternFlashLight : MonoBehaviour
     {
 
         #region Variables
 
+        //used for flash cooldown
         bool canFlash = true;
 
+        //current state of the flash
         [HideInInspector] public flashState currentFlashState = flashState.Idle;
 
+        // light2D component of the lantern
         Light2D lightComponent;
+
+        // editor variables
 
         [Range(0f, 5f)]
         [SerializeField] float flashOuterRadius = 1f;
@@ -71,7 +78,7 @@ namespace Lantern
         }
 
         /// <summary>
-        /// Called every frame when the light is flashing
+        /// Called every frame when the flash is starting
         /// </summary>
         void OnFlashUpUpdate()
         {
@@ -86,7 +93,7 @@ namespace Lantern
         }
 
         /// <summary>
-        /// Called every frame when the light is stopping
+        /// Called every frame when the flash is stopping
         /// </summary>
         void OnFlashDownUpdate()
         {

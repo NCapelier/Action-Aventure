@@ -9,7 +9,10 @@ namespace Enemy
     {
         #region Variables
 
+        // health points
         [HideInInspector] public int hp;
+
+        // editor variables : health points and armor variables
         [Range(1, 50)]
         [SerializeField] int maxHp = 10;
 

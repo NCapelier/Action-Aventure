@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Lantern
 {
+    /// <summary>
+    /// NCO - Manages the lantern's collider
+    /// </summary>
     public class LanternInteractions : MonoBehaviour
     {
         

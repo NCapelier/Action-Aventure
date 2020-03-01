@@ -11,11 +11,15 @@ namespace Player
 
         #region Variables
 
+        // all scripts of this prefab
         public PlayerController controller = null;
         public PlayerContactAttack contactAttack = null;
         public PlayerAimBehaviour aimBehaviour = null;
 
+        // curent health points of the player
         [HideInInspector] public int hp;
+
+        // editor variables
 
         [Range(1,50)]
         [SerializeField] int maxHp = 10;

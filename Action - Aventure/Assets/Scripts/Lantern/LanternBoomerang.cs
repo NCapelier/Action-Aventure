@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Player;
 
@@ -13,11 +12,16 @@ namespace Lantern
 
         #region Variables
 
+        // boomerang cast direction
         Vector2 aimDirection = Vector2.zero;
 
+        // current states of the boomerang
         [HideInInspector] public boomerangState currentBoomerangState = boomerangState.Tidy;
 
+        //rigidbody2D of the lantern
         Rigidbody2D lanternRb = null;
+
+        // editor variables
 
         [Range(0f, 5f)]
         [SerializeField] float castCooldown = 1;
@@ -34,10 +38,13 @@ namespace Lantern
         [Range(0f, 10f)]
         [SerializeField] float catchRange = 1;
 
+        // right joystick inputs
         float horizontal = 0, vertical = 0;
 
+        // used to stop the movement of the lantern and swith to the next boomerang state
         [HideInInspector] public bool mustStop = false;
 
+        // used for cast cooldown
         bool canCast = true;
 
         #endregion

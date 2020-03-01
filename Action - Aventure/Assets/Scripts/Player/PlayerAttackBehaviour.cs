@@ -12,6 +12,8 @@ namespace Player
 
         #region Variables
 
+        // editor variables
+
         [Range(0f, 5f)]
         [SerializeField] float lifeTime = 1;
 
