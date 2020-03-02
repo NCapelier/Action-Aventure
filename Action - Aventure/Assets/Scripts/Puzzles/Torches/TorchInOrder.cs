@@ -10,11 +10,13 @@ namespace Puzzle
     /// </summary>
     public class TorchInOrder : Torch
     {
+        #region Variables
         [SerializeField] private GameObject prev;
         private Torch prevTorch;
 
         [SerializeField] private bool killsPrev;
         [SerializeField] private float timeToKill;
+        #endregion
 
         protected override void Start()
         {
