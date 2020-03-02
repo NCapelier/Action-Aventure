@@ -9,8 +9,10 @@ namespace Puzzle
     /// </summary>
     public class Torch : MonoBehaviour
     {
+        #region Variables
         [HideInInspector] public bool isLit;
         private SpriteRenderer flame;
+        #endregion
 
         // Start is called before the first frame update
         protected virtual void Start()
