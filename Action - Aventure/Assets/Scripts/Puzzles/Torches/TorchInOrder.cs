@@ -2,59 +2,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TorchInOrder : Torch
+
+namespace Puzzle
 {
-    [SerializeField]
-    private GameObject prev;
-    private Torch prevTorch;
-    [SerializeField]
-    private bool killsPrev;
-    [SerializeField]
-    private float timeToKill;
-
-    protected override void Start()
-    {
-        base.Start();
-        prevTorch = prev.GetComponent<Torch>();
-        /*
-        if (killsPrev)
-        {
-            StartCoroutine(KillPrevious());
-        }
-        */
-    }
-
-    private void Update()
-    {
-        if (killsPrev)
-        {
-            StartCoroutine(KillPrevious());
-        }
-    }
     /// <summary>
-    /// Light flame if a specific one is already lit
+    /// CHB -- Torch to be lit if a specific one is already lit. Possibilty for limited time before the previous is put out
     /// </summary>
-    protected override void Light()
+    public class TorchInOrder : Torch
     {
-        if (prevTorch.isLit)
-        {
-            base.Light();
-        }
-    }
+        [SerializeField] private GameObject prev;
+        private Torch prevTorch;
 
-    IEnumerator KillPrevious()
-    {
-        if (prevTorch.isLit)
+        [SerializeField] private bool killsPrev;
+        [SerializeField] private float timeToKill;
+
+        protected override void Start()
         {
-            killsPrev = false;
-            yield return new WaitForSeconds(timeToKill);
-            if (!isLit)
+            base.Start();
+            prevTorch = prev.GetComponent<Torch>();
+            /*
+            if (killsPrev)
             {
-                prevTorch.PutOut();
+                StartCoroutine(KillPrevious());
             }
-            killsPrev = true;
+            */
         }
 
-        //StartCoroutine(KillPrevious());
+        private void Update()
+        {
+            if (killsPrev)
+            {
+                StartCoroutine(KillPrevious());
+            }
+        }
+        /// <summary>
+        /// Light flame if a specific one is already lit
+        /// </summary>
+        protected override void Light()
+        {
+            if (prevTorch.isLit)
+            {
+                base.Light();
+            }
+        }
+
+        IEnumerator KillPrevious()
+        {
+            if (prevTorch.isLit)
+            {
+                killsPrev = false;
+                yield return new WaitForSeconds(timeToKill);
+                if (!isLit)
+                {
+                    prevTorch.PutOut();
+                }
+                killsPrev = true;
+            }
+
+            //StartCoroutine(KillPrevious());
+        }
     }
+
 }
