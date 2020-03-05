@@ -26,7 +26,7 @@ namespace Lantern
         [Range(0f, 5f)]
         [SerializeField] float flashOuterRadius = 1f;
 
-        [Range(0f, 20f)]
+        [Range(0f, 50f)]
         [SerializeField] float flashSpeed = 1f;
 
 

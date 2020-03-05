@@ -115,7 +115,7 @@ namespace Lantern
         {
             if (Input.GetButtonDown("Left_Bumper"))
             {
-                FallBack();
+                currentBoomerangState = boomerangState.FallBack;
             }
         }
 
@@ -164,14 +164,6 @@ namespace Lantern
                 lanternRb.velocity = Vector2.zero;
                 currentBoomerangState = boomerangState.Static;
             }
-        }
-
-        /// <summary>
-        /// Falls back the lantern
-        /// </summary>
-        void FallBack()
-        {
-            currentBoomerangState = boomerangState.FallBack;
         }
 
         /// <summary>

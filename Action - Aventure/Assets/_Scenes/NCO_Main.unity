@@ -133,26 +133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Will Of The Wisp
       objectReference: {fileID: 0}
-    - target: {fileID: 7295117049113893282, guid: 3354f6bcc06c46849841d55fb6ecd29f,
-        type: 3}
-      propertyPath: flashSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7657367841472236558, guid: 3354f6bcc06c46849841d55fb6ecd29f,
-        type: 3}
-      propertyPath: castSpeed
-      value: 450
-      objectReference: {fileID: 0}
-    - target: {fileID: 7657367841472236558, guid: 3354f6bcc06c46849841d55fb6ecd29f,
-        type: 3}
-      propertyPath: fallBackSpeed
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 7657367841472236558, guid: 3354f6bcc06c46849841d55fb6ecd29f,
-        type: 3}
-      propertyPath: castTime
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 8219121598575569880, guid: 3354f6bcc06c46849841d55fb6ecd29f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -364,16 +344,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7950608678516083517, guid: 2330304d2c746ce429ed6f7b997204a2,
-        type: 3}
-      propertyPath: dashSpeed
-      value: 1100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7950608678516083517, guid: 2330304d2c746ce429ed6f7b997204a2,
-        type: 3}
-      propertyPath: dashDuration
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2330304d2c746ce429ed6f7b997204a2, type: 3}
 --- !u!1001 &1483211802
@@ -465,7 +435,7 @@ PrefabInstance:
     - target: {fileID: 3747087323808170499, guid: 450b351e59052474fab2a71f2d90924f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7172665426486583846, guid: 450b351e59052474fab2a71f2d90924f,
         type: 3}
