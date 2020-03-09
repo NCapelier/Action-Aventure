@@ -16,13 +16,19 @@ namespace Player
         public PlayerContactAttack contactAttack = null;
         public PlayerAimBehaviour aimBehaviour = null;
 
-        // curent health points of the player
-        [HideInInspector] public int hp;
+        // (array) curent health points of the player
+        [HideInInspector] public int[] hp;
+
+        // (int) curent health points of the player
+        [HideInInspector] public int currentHp;
 
         // editor variables
 
-        [Range(1,50)]
-        [SerializeField] int maxHp = 10;
+        [Range(1,200)]
+        [SerializeField] int maxHp = 100;
+
+        [Range(1, 10)]
+        [SerializeField] int hpEchelonNumber = 4;
 
         #endregion
 
@@ -35,7 +41,7 @@ namespace Player
         {
             set
             {
-                hp -= value;
+
             }
         }
 
@@ -46,7 +52,7 @@ namespace Player
         {
             set
             {
-                hp += value;
+
             }
         }
 
@@ -59,7 +65,7 @@ namespace Player
 
         void Start()
         {
-
+            //StartHp();
         }
 
         void Update()
@@ -68,18 +74,23 @@ namespace Player
         }
 
         /// <summary>
+        /// Initializes the hp array and spreads all the hp in the different echelons
+        /// </summary>
+        void StartHp()
+        {
+            hp = new int[hpEchelonNumber];
+            for (int i = 0; i < hp.Length; i++)
+            {
+                hp[i] = maxHp / hpEchelonNumber;
+            }
+        }
+
+        /// <summary>
         /// Avoids the hp to exceed the hp cap and lauched the Death() method if hp < 0
         /// </summary>
         void UpdateHp()
         {
-            if (hp > maxHp)
-            {
-                hp = maxHp;
-            }
-            if (hp <= 0)
-            {
-                Death();
-            }
+
         }
 
         /// <summary>
