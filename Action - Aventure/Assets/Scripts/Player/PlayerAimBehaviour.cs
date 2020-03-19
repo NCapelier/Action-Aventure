@@ -8,8 +8,11 @@ namespace Player
     /// </summary>
     public class PlayerAimBehaviour : MonoBehaviour
     {
-
+        public enum aimDeadZone { True, False};
         #region Variables
+
+        //temp current aim display pattern used
+        aimDeadZone aimState = aimDeadZone.True;
 
         //right joystick input
         float horizontal = 0, vertical = 0;
@@ -17,6 +20,9 @@ namespace Player
         // current orientation of the right vector in V3 and Q
         [HideInInspector] public Vector3 orientationVector = Vector3.zero;
         [HideInInspector] public Quaternion orientationQuaternion;
+
+        //aim sprite
+        [SerializeField] SpriteRenderer aimSprite = null;
 
         #endregion
 
@@ -45,9 +51,14 @@ namespace Player
 
             if (horizontal < -0.15 || horizontal > 0.15 || vertical < -0.15 || vertical > 0.15)
             {
+                aimSprite.enabled = true;
                 orientationVector = new Vector3(0, 0, Mathf.Atan2(vertical, horizontal) * 180 / Mathf.PI);
                 orientationQuaternion = Quaternion.Euler(orientationVector);
                 gameObject.transform.rotation = orientationQuaternion;
+            }
+            else
+            {
+                aimSprite.enabled = false;
             }
         }
 

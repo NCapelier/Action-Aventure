@@ -6,7 +6,7 @@ namespace Lantern
     /// <summary>
     /// boomerang all states
     /// </summary>
-    public enum boomerangState { Tidy, Cast, Static, FallBack };
+    public enum boomerangState { Tidy, PreCast, Cast, Static, FallBack };
 
     /// <summary>
     /// light display states
@@ -17,6 +17,11 @@ namespace Lantern
     /// light flash states
     /// </summary>
     public enum flashState { Idle, FlashingUp, FlashingDown};
+
+    /// <summary>
+    /// light's power after flash
+    /// </summary>
+    public enum lightStrength { Strengthful, Weakening, Weak, Recovering};
 
     /// <summary>
     /// NCO - General management of the will o' the wisp object

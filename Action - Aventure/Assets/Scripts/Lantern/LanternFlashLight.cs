@@ -13,10 +13,13 @@ namespace Lantern
         #region Variables
 
         //used for flash cooldown
-        bool canFlash = true;
+        [HideInInspector] public bool canFlash = true;
 
         //current state of the flash
         [HideInInspector] public flashState currentFlashState = flashState.Idle;
+
+        //current strength of the light
+        [HideInInspector] public lightStrength currentLightStrength = lightStrength.Strengthful;
 
         // light2D component of the lantern
         Light2D lightComponent;
@@ -28,7 +31,6 @@ namespace Lantern
 
         [Range(0f, 50f)]
         [SerializeField] float flashSpeed = 1f;
-
 
         #endregion
 
@@ -59,21 +61,38 @@ namespace Lantern
                     Debug.Log("Error, value is not assigned !");
                     break;
             }
+
+            switch(currentLightStrength)
+            {
+                case lightStrength.Strengthful:
+                    break;
+                case lightStrength.Weakening:
+                    OnWeakeningUpdate();
+                    break;
+                case lightStrength.Weak:
+                    OnWeakUpdate();
+                    break;
+                case lightStrength.Recovering:
+                    OnRecoveringUpdate();
+                    break;
+                default:
+                    Debug.Log("Error, value is not assigned !");
+                    break;
+            }
         }
+
+        #region Flash State Methods
 
         /// <summary>
         /// Called every frame when the light is not flashing
         /// </summary>
         void OnIdleUpdate()
         {
-            if(LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy)
-            {
-                canFlash = true;
-            }
-            if (Input.GetAxis("Left_Trigger") >= 0.8f && LanternManager.Instance.boomerang.currentBoomerangState != boomerangState.Tidy && canFlash)
+            if (Input.GetAxis("Left_Trigger") >= 0.8f && canFlash)
             {
                 canFlash = false;
                 currentFlashState = flashState.FlashingUp;
+                currentLightStrength = lightStrength.Weakening;
             }
         }
 
@@ -106,6 +125,28 @@ namespace Lantern
                 currentFlashState = flashState.Idle;
             }
         }
+
+        #endregion
+
+        #region Light Strength State Methods
+
+        void OnWeakeningUpdate()
+        {
+
+        }
+
+        void OnWeakUpdate()
+        {
+
+        }
+
+        void OnRecoveringUpdate()
+        {
+
+        }
+
+
+        #endregion
 
     }
 }

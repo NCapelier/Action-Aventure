@@ -41,8 +41,9 @@ namespace Player
         {
             if(collision.CompareTag("Enemy"))
             {
-                collision.GetComponent<EnemyManager>().TakeDamages = damages;
-
+                // damages --> ref enemy parent
+                Debug.Log("Damages");
+                collision.GetComponent<EnemyParent>().TakeDamages = damages * (int)PlayerManager.Instance.contactAttack.loading;
             }
         }
 
@@ -53,6 +54,7 @@ namespace Player
         IEnumerator LifeCycle()
         {
             yield return new WaitForSeconds(lifeTime);
+            PlayerManager.Instance.contactAttack.loading = 0;
             PlayerManager.Instance.contactAttack.isAttacking = false;
             Destroy(gameObject);
         }
