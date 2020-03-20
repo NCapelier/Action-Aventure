@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7172665426486583846}
-  - component: {fileID: 1222746625083019780}
   - component: {fileID: 6556664481339118244}
   m_Layer: 0
   m_Name: Enemy 01
@@ -35,20 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1222746625083019780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3747087323808170499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b009ab9b926d9214fa4c7a2ac9230359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  maxHp: 10
 --- !u!50 &6556664481339118244
 Rigidbody2D:
   serializedVersion: 4
@@ -141,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 250
+  contactDistance: 1
 --- !u!1 &5181177070781261810
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,11 +16,11 @@ namespace Player
         public PlayerContactAttack contactAttack = null;
         public PlayerAimBehaviour aimBehaviour = null;
 
-        // (array) curent health points of the player
-        [HideInInspector] public int[] hp;
+        // curent health points of the player
+        [HideInInspector] public int currentHp = 1;
 
-        // (int) curent health points of the player
-        [HideInInspector] public int currentHp;
+        // current max hp depending on current echelon
+        [HideInInspector] public int currentMaxHp = 1;
 
         // editor variables
 
@@ -78,11 +78,7 @@ namespace Player
         /// </summary>
         void StartHp()
         {
-            hp = new int[hpEchelonNumber];
-            for (int i = 0; i < hp.Length; i++)
-            {
-                hp[i] = maxHp / hpEchelonNumber;
-            }
+
         }
 
         /// <summary>

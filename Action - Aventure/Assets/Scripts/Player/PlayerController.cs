@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Lantern;
 
 namespace Player
 {
@@ -34,7 +35,6 @@ namespace Player
 
         // all booleans about the player's movement states
         bool isMoving = false, isAttacking = false, isDashing = false;
-        bool canDash = true;
 
         /// <summary>
         /// --> GA - Stores the last movement direction depending on the moveDirection enum
@@ -72,7 +72,7 @@ namespace Player
             horizontal = Input.GetAxis("Left_Joystick_X");
             vertical = -Input.GetAxis("Left_Joystick_Y");
 
-            if ((horizontal < -0.15 || horizontal > 0.15 || vertical < -0.15 || vertical > 0.15) && !isAttacking && !isDashing)
+            if ((horizontal < -0.15 || horizontal > 0.15 || vertical < -0.15 || vertical > 0.15) && !isAttacking /*&& !isDashing*/ )
             {
                 isMoving = true;
                 movementVector = new Vector2(horizontal, vertical);
@@ -89,11 +89,9 @@ namespace Player
         /// </summary>
         void DashInput()
         {
-            if(Input.GetAxis("Right_Trigger") >= 0.8f && !isDashing && !isAttacking && canDash)
+            if (Input.GetAxis("Left_Trigger") >= 0.8f && !isDashing && !isAttacking && LanternManager.Instance.flashLight.canFlash)
             {
                 isDashing = true;
-                canDash = false;
-                StartCoroutine(DashCooldown());
                 dashVector = movementVector;
                 StartCoroutine(DashDuration());
             }
@@ -113,16 +111,6 @@ namespace Player
             yield return new WaitForSeconds(dashDuration);
             isDashing = false;
             dashVector = Vector2.zero;
-        }
-
-        /// <summary>
-        /// Cooldown of the player's dash
-        /// </summary>
-        /// <returns></returns>
-        IEnumerator DashCooldown()
-        {
-            yield return new WaitForSeconds(dashCooldown);
-            canDash = true;
         }
 
         /// <summary>

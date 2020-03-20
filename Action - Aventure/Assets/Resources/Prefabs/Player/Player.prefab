@@ -214,8 +214,10 @@ MonoBehaviour:
   controller: {fileID: 7950608678516083517}
   contactAttack: {fileID: 3863193759342182276}
   aimBehaviour: {fileID: 2241752791613376761}
-  hp: 0
+  currentHp: 1
+  currentMaxHp: 1
   maxHp: 10
+  hpEchelonNumber: 4
 --- !u!50 &4999328793701592573
 Rigidbody2D:
   serializedVersion: 4
@@ -283,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientationVector: {x: 0, y: 0, z: 0}
   orientationQuaternion: {x: 0, y: 0, z: 0, w: 0}
+  aimSprite: {fileID: 5496908543163347720}
 --- !u!1 &6227981400469560038
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,8 +357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 350
-  dashSpeed: 1250
-  dashDuration: 0.25
+  dashSpeed: 150
+  dashDuration: 2.5
   dashCooldown: 2
   lastDirection: 0
   computedVelocity: {x: 0, y: 0}
@@ -404,6 +407,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
+  loading: 0
+  maxLoad: 10
+  loadingSpeed: 1
 --- !u!1 &9051317833602605331
 GameObject:
   m_ObjectHideFlags: 0
