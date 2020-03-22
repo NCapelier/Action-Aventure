@@ -1,43 +1,16 @@
 fileFormatVersion: 2
-guid: 7d521c24dd70b974b9a75b83ef4cba42
+guid: 8f2c8e310fe5f994698f6b3fe2673762
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6671030345212952615
-    second: SpriteSheet_Blob_Idle_0
+      213: -5378548904384063043
+    second: SpriteSheet_Blob_Aggro_0
   - first:
-      213: -8602357597329720169
-    second: SpriteSheet_Blob_Idle_1
+      213: -2043000133850960862
+    second: SpriteSheet_Blob_Aggro_1
   - first:
-      213: 9023187375626560896
-    second: SpriteSheet_Blob_Idle_2
-  - first:
-      213: 7181309186208349692
-    second: SpriteSheet_Blob_Idle_3
-  - first:
-      213: 6898966543667752091
-    second: SpriteSheet_Blob_Idle_4
-  - first:
-      213: -2579333185028662851
-    second: SpriteSheet_Blob_Idle_5
-  - first:
-      213: 186342278608658829
-    second: SpriteSheet_Blob_Idle_0
-  - first:
-      213: 1642757473833553136
-    second: SpriteSheet_Blob_Idle_1
-  - first:
-      213: -2418355928195550710
-    second: SpriteSheet_Blob_Idle_2
-  - first:
-      213: -1357515028104621868
-    second: SpriteSheet_Blob_Idle_3
-  - first:
-      213: 5305742152216409914
-    second: SpriteSheet_Blob_Idle_4
-  - first:
-      213: -6542318369900305996
-    second: SpriteSheet_Blob_Idle_5
+      213: -3280731402332797608
+    second: SpriteSheet_Blob_Aggro_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -122,70 +95,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_Blob_Idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d812b1ba055069200800000000000000
-      internalID: 186342278608658829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_Blob_Idle_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 32
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fc87fff73f3cc610800000000000000
-      internalID: 1642757473833553136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_Blob_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 32
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a02b177a816407ed0800000000000000
-      internalID: -2418355928195550710
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_Blob_Idle_3
+      name: SpriteSheet_Blob_Aggro_0
       rect:
         serializedVersion: 2
         x: 0
@@ -199,17 +109,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d0d19c3643292de0800000000000000
-      internalID: -1357515028104621868
+      spriteID: db91f1ba44e8b55b0800000000000000
+      internalID: -5378548904384063043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Blob_Idle_4
+      name: SpriteSheet_Blob_Aggro_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 0
         width: 32
         height: 32
@@ -220,17 +130,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a37fcac5068c1a940800000000000000
-      internalID: 5305742152216409914
+      spriteID: 22cecb9d33ec5a3e0800000000000000
+      internalID: -2043000133850960862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_Blob_Idle_5
+      name: SpriteSheet_Blob_Aggro_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 64
         y: 0
         width: 32
         height: 32
@@ -241,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b16492fa140535a0800000000000000
-      internalID: -6542318369900305996
+      spriteID: 8550c70fb208872d0800000000000000
+      internalID: -3280731402332797608
       vertices: []
       indices: 
       edges: []
