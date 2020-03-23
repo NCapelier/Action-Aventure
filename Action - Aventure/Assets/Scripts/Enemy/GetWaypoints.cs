@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GetWaypoints : MonoBehaviour
 {
-    //XP Input Positions we wants (path).
-    public static Transform[] points;
+    //Able to stock the target
+    public Transform[] points;
 
     void Awake()
     {

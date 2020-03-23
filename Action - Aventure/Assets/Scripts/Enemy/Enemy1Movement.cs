@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy1Movement : MonoBehaviour
 {
+    /*
     //XP The enemy moves according positions selected by Us.
 
     //Start Statement
@@ -87,4 +88,5 @@ public class Enemy1Movement : MonoBehaviour
             lightFound = false;
         }
     }
+    */
 }
