@@ -24,11 +24,11 @@ namespace Enemy
         [Range(0.5f, 25f)]
         [SerializeField] float contactDistance = 1f;
 
-        [Range(15f, 30f)]
-        [SerializeField] float playerDetectRange = 20f;
+        [Range(3f, 20f)]
+        [SerializeField] float playerDetectRange = 4f;
 
-        [Range(8f, 15f)]
-        [SerializeField] float lightDetectExtra = 10f;
+        [Range(4f, 8f)]
+        [SerializeField] float lightDetectExtra = 4f;
 
         #endregion
 
