@@ -11,13 +11,15 @@ namespace Puzzle
     {
         #region Variables
         [HideInInspector] public bool isLit;
+        private GameObject flameObject;
         private SpriteRenderer flame;
         #endregion
 
         // Start is called before the first frame update
         protected virtual void Start()
         {
-            flame = GetComponent<SpriteRenderer>();
+            flameObject = gameObject.GetChildNamed("Flame");
+            flame = flameObject.GetComponent<SpriteRenderer>();
             flame.enabled = false;
             isLit = false;
         }
