@@ -15,7 +15,8 @@ namespace Puzzle
         private Torch prevTorch;
 
         [SerializeField] private bool killsPrev;
-        [SerializeField] private float timeToKill;
+        [Range(0.1f, 10f)]
+        [SerializeField] private float timeToKill = 1.5f;
         #endregion
 
         protected override void Start()
