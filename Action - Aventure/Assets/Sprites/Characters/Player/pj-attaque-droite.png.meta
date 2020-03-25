@@ -1,64 +1,31 @@
 fileFormatVersion: 2
-guid: 32448ae0ab018bc4682e48e0893ea6e6
+guid: d785ad231181b284588c65798a2648ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7713170869463258728
-    second: Player_walk_sideR_0
+      213: 6747901588738128784
+    second: pj-attaque-droite_0
   - first:
-      213: 4452546648477774309
-    second: Player_walk_sideR_1
+      213: -2521671684541112588
+    second: pj-attaque-droite_1
   - first:
-      213: -1209247459736581881
-    second: Player_walk_sideR_2
+      213: -4006078497555251704
+    second: pj-attaque-droite_2
   - first:
-      213: -1194519996997139833
-    second: Player_walk_sideR_3
+      213: 195421076110777442
+    second: pj-attaque-droite_3
   - first:
-      213: -2818928600473238960
-    second: Player_walk_sideR_4
+      213: -808992092617955938
+    second: pj-attaque-droite_4
   - first:
-      213: 2626096334379515027
-    second: Player_walk_sideR_5
+      213: -5359182719945539547
+    second: pj-attaque-droite_5
   - first:
-      213: -4176223029235906565
-    second: Player_walk_sideR_6
+      213: -3253291011567284266
+    second: pj-attaque-droite_6
   - first:
-      213: -5479410686409893527
-    second: Player_walk_sideR_7
-  - first:
-      213: 1055215846712571916
-    second: Player_walk_sideR_8
-  - first:
-      213: 6760660267311190802
-    second: Player_walk_sideR_9
-  - first:
-      213: 5375778945976782641
-    second: Player_walk_sideR_10
-  - first:
-      213: -1774316253685187885
-    second: Player_walk_sideR_11
-  - first:
-      213: 7710699079023801173
-    second: Player_walk_sideR_12
-  - first:
-      213: 6939789874686115563
-    second: Player_walk_sideR_13
-  - first:
-      213: 5101082650432710670
-    second: Player_walk_sideR_14
-  - first:
-      213: -8998575182058419746
-    second: Player_walk_sideR_15
-  - first:
-      213: 802259900549257387
-    second: Player_walk_sideR_16
-  - first:
-      213: 7342549867043237038
-    second: Player_walk_sideR_17
-  - first:
-      213: -7556259820260267876
-    second: Player_walk_sideR_18
+      213: 2928564043993156352
+    second: pj-attaque-droite_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -143,112 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_walk_sideR_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8669f362a00ba0b60800000000000000
-      internalID: 7713170869463258728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_walk_sideR_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 48
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e1bf50169f9acd30800000000000000
-      internalID: 4452546648477774309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_walk_sideR_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7098bdc97d3e73fe0800000000000000
-      internalID: -1209247459736581881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_walk_sideR_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 48
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78282ed34663c6fe0800000000000000
-      internalID: -1194519996997139833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_walk_sideR_4
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 48
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0528a998f5721e8d0800000000000000
-      internalID: -2818928600473238960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_walk_sideR_5
+      name: pj-attaque-droite_0
       rect:
         serializedVersion: 2
         x: 0
@@ -262,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39c75a4d3b4c17420800000000000000
-      internalID: 2626096334379515027
+      spriteID: 09bb7083ebc55ad50800000000000000
+      internalID: 6747901588738128784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_walk_sideR_6
+      name: pj-attaque-droite_1
       rect:
         serializedVersion: 2
         x: 24
@@ -283,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf7869f08431b06c0800000000000000
-      internalID: -4176223029235906565
+      spriteID: 4fe14ca96f8310dd0800000000000000
+      internalID: -2521671684541112588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_walk_sideR_7
+      name: pj-attaque-droite_2
       rect:
         serializedVersion: 2
         x: 48
@@ -304,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9691f0a030935f3b0800000000000000
-      internalID: -5479410686409893527
+      spriteID: 80e73e2e4dc8768c0800000000000000
+      internalID: -4006078497555251704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_walk_sideR_8
+      name: pj-attaque-droite_3
       rect:
         serializedVersion: 2
         x: 72
@@ -325,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c087aa8c831e4ae00800000000000000
-      internalID: 1055215846712571916
+      spriteID: 26c153fee6646b200800000000000000
+      internalID: 195421076110777442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_walk_sideR_9
+      name: pj-attaque-droite_4
       rect:
         serializedVersion: 2
         x: 96
@@ -346,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2135e2091b0b2dd50800000000000000
-      internalID: 6760660267311190802
+      spriteID: e95286d5af1e5c4f0800000000000000
+      internalID: -808992092617955938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_walk_sideR_10
+      name: pj-attaque-droite_5
       rect:
         serializedVersion: 2
         x: 0
@@ -367,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13f48f1287a9a9a40800000000000000
-      internalID: 5375778945976782641
+      spriteID: 5200c3bd5bb50a5b0800000000000000
+      internalID: -5359182719945539547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_walk_sideR_11
+      name: pj-attaque-droite_6
       rect:
         serializedVersion: 2
         x: 24
@@ -388,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3da74eb94cc5067e0800000000000000
-      internalID: -1774316253685187885
+      spriteID: 6df8f88cf0df9d2d0800000000000000
+      internalID: -3253291011567284266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_walk_sideR_12
+      name: pj-attaque-droite_7
       rect:
         serializedVersion: 2
         x: 48
@@ -409,29 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 553352795f7e10b60800000000000000
-      internalID: 7710699079023801173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_walk_sideR_13
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: beeb4885f161f4060800000000000000
-      internalID: 6939789874686115563
+      spriteID: 00b81385b7954a820800000000000000
+      internalID: 2928564043993156352
       vertices: []
       indices: 
       edges: []
