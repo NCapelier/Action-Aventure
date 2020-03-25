@@ -67,6 +67,9 @@ namespace Enemy
             }
         }
 
+        /// <summary>
+        /// CHB -- Moves enemy towards Will o' the wisp until it can detect the player
+        /// </summary>
         void MoveToLight()
         {
             if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
