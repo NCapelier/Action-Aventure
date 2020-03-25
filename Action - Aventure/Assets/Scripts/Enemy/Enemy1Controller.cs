@@ -30,6 +30,8 @@ namespace Enemy
         [Range(4f, 8f)]
         [SerializeField] float lightDetectExtra = 4f;
 
+        bool focusingPlayer = false;
+
         #endregion
 
         void Awake()
@@ -44,8 +46,8 @@ namespace Enemy
         
         void Update()
         {
-            MoveToLight();
             MoveToPlayer();
+            MoveToLight();
         }
         
         /// <summary>
@@ -56,22 +58,24 @@ namespace Enemy
             if((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange, true)) && (LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
             {
                 EnemyRb.velocity = (PlayerManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
+                focusingPlayer = true;
             }
             else
             {
                 EnemyRb.velocity = Vector2.zero;
+                focusingPlayer = false;
             }
         }
 
         void MoveToLight()
         {
-            if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
+            if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
             {
-                if (!((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange, true)) && (LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)))
+                if (!focusingPlayer)
                 {
                     EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
                 }
-                
+
             }
             else
             {
