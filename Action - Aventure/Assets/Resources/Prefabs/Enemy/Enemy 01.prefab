@@ -158,9 +158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee9ceabf47a61545a68a30adad0ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 250
-  contactDistance: 9.1
-  lightDetectExtra: 5.3
+  moveSpeed: 57
+  contactDistance: 1.5
+  playerDetectRange: 4
+  lightDetectExtra: 5.36
 --- !u!1 &4758897186493677917
 GameObject:
   m_ObjectHideFlags: 0

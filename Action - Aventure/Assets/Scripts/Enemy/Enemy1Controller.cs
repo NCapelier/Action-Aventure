@@ -65,9 +65,13 @@ namespace Enemy
 
         void MoveToLight()
         {
-            if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(playerDetectRange, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
+            if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
             {
-                EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
+                if (!((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange, true)) && (LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)))
+                {
+                    EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
+                }
+                
             }
             else
             {
