@@ -82,7 +82,10 @@ namespace Enemy
             }
             else
             {
-                EnemyRb.velocity = Vector2.zero;
+                if (!focusingPlayer)
+                {
+                    EnemyRb.velocity = Vector2.zero;
+                }
             }
         }
     }
