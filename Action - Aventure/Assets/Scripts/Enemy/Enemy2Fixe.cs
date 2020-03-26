@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy2Fixe : MonoBehaviour
 {
-    //Target
+    //Target - All this stuff is use to set the target
     public GameObject waypointFixe;
     private Transform target;
     public GameObject player;
@@ -19,7 +19,7 @@ public class Enemy2Fixe : MonoBehaviour
     public Vector3 move;
 
 
-    //Distance
+    //distance - Set the distance of Swaping Target
     public float enterPlayerArea;
 
     //Attaque
@@ -35,11 +35,11 @@ public class Enemy2Fixe : MonoBehaviour
     public GameObject UpAttack;
     public GameObject DownAttack;
 
-    //Camera
+    //Camera - Use for Camera shake
     public CameraShake cameraShake;
 
-  
-    //Clock
+
+    //Clock - Use to make the enemy walk clock
     public bool clockOneEnded;
     public bool clockTwoEnded;
 
@@ -66,36 +66,43 @@ public class Enemy2Fixe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Permet de créer le vecteur pour la target
         Vector2 dir = target.position - transform.position;
 
+        //Permet de check la position du player tout le temps.
         Direction();
 
+        //Dans le cas ou le player est dans la zone d'aggro
         if (Vector2.Distance(transform.position, player.transform.position) <= enterPlayerArea)
         {
             playerFound = true;
-            Debug.Log("playerFound");
+            //Debug.Log("playerFound");
+
+            //Switch de target de waypoints à player.
             target = player.transform;
+            //je change la velocité pour déplacer l'ennemi
             rb.velocity = dir.normalized * speed * Time.deltaTime;
             if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
             {
                 StartCoroutine(cameraShake.Shake(.05f, .05f));
             }
 
-        } else  
+        } else  if (Vector2.Distance(transform.position, player.transform.position) >= enterPlayerArea)
 
-        if (Vector2.Distance(transform.position, player.transform.position) >= enterPlayerArea)
         {
             playerFound = false;
-            Debug.Log("Player Outside");
+            //Debug.Log("Player Outside");
+
+            //Alors mon ennemi se déplace vers le waypoint
             target = waypointFixe.transform;
 
             if (clockTwoEnded == true)
             {
                 rb.velocity = dir.normalized * speed * Time.deltaTime;
                 clockOne();
-
-
             }
+
             //Start clocktwo
             else if (clockOneEnded == true && playerFound == false)
             {
@@ -108,13 +115,9 @@ public class Enemy2Fixe : MonoBehaviour
                     StartCoroutine(cameraShake.Shake(.05f, .05f));
                 }
                 clockTwo();
-
-
             }
 
         }
-
-        
 
         if (Vector2.Distance(transform.position, player.transform.position) <= ennemiRangeAttack)
         {
@@ -132,9 +135,7 @@ public class Enemy2Fixe : MonoBehaviour
             rb.velocity = new Vector3(0, 0, 0);
         }
 
-            Debug.Log(direction);
-
-       
+            //Debug.Log(direction);
     }
    
 
@@ -155,7 +156,7 @@ public class Enemy2Fixe : MonoBehaviour
         clockTwoEnded = false;
         yield return new WaitForSecondsRealtime(0.5f);
         clockOneEnded = true;
-        Debug.Log("clockOne Move");
+        //Debug.Log("clockOne Move");
     }
     //Stop Mouvement
     IEnumerator Clock2()
@@ -163,7 +164,7 @@ public class Enemy2Fixe : MonoBehaviour
         clockOneEnded = false;
         yield return new WaitForSecondsRealtime(0.5f);
         clockTwoEnded = true;
-        Debug.Log("clockTwo Move");
+        //Debug.Log("clockTwo Move");
     }
     void Direction()
     {
@@ -204,19 +205,19 @@ public class Enemy2Fixe : MonoBehaviour
             switch (direction)
             {
                 case 0:
-                    Debug.Log("Attaque Haute");
+                    //Debug.Log("Attaque Haute");
                     UpAttack.SetActive(true);
                     break;
                 case 1:
-                    Debug.Log("Attaque Droite");
+                    //Debug.Log("Attaque Droite");
                     RightAttack.SetActive(true);
                     break;
                 case 2:
-                    Debug.Log("Attaque En bas");
+                    //Debug.Log("Attaque En bas");
                     DownAttack.SetActive(true);
                     break;
                 case 3:
-                    Debug.Log("Attaque Gauche");
+                    //Debug.Log("Attaque Gauche");
                     LeftAttack.SetActive(true);
                     break;
                 default:
