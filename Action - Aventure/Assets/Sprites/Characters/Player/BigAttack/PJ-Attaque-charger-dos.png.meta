@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: d785ad231181b284588c65798a2648ab
+guid: df462389b8e4969409d0595cc44b9d15
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6747901588738128784
-    second: pj-attaque-droite_0
+      213: 2949413544021395030
+    second: PJ-Attaque-charger-dos_0
   - first:
-      213: -2521671684541112588
-    second: pj-attaque-droite_1
+      213: -1294324296063407216
+    second: PJ-Attaque-charger-dos_1
   - first:
-      213: -4006078497555251704
-    second: pj-attaque-droite_2
+      213: 7543773280463309863
+    second: PJ-Attaque-charger-dos_2
   - first:
-      213: 195421076110777442
-    second: pj-attaque-droite_3
-  - first:
-      213: -808992092617955938
-    second: pj-attaque-droite_4
-  - first:
-      213: -5359182719945539547
-    second: pj-attaque-droite_5
-  - first:
-      213: -3253291011567284266
-    second: pj-attaque-droite_6
-  - first:
-      213: 2928564043993156352
-    second: pj-attaque-droite_7
+      213: 7410181723085850435
+    second: PJ-Attaque-charger-dos_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,11 +98,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pj-attaque-droite_0
+      name: PJ-Attaque-charger-dos_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 24
+        y: 0
         width: 24
         height: 24
       alignment: 7
@@ -124,18 +112,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09bb7083ebc55ad50800000000000000
-      internalID: 6747901588738128784
+      spriteID: 6560f1bddfb6ee820800000000000000
+      internalID: 2949413544021395030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pj-attaque-droite_1
+      name: PJ-Attaque-charger-dos_1
       rect:
         serializedVersion: 2
         x: 24
-        y: 24
+        y: 0
         width: 24
         height: 24
       alignment: 7
@@ -145,18 +133,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fe14ca96f8310dd0800000000000000
-      internalID: -2521671684541112588
+      spriteID: 09babfc09e2a90ee0800000000000000
+      internalID: -1294324296063407216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pj-attaque-droite_2
+      name: PJ-Attaque-charger-dos_2
       rect:
         serializedVersion: 2
         x: 48
-        y: 24
+        y: 0
         width: 24
         height: 24
       alignment: 7
@@ -166,59 +154,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e73e2e4dc8768c0800000000000000
-      internalID: -4006078497555251704
+      spriteID: 72c491874ddd0b860800000000000000
+      internalID: 7543773280463309863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pj-attaque-droite_3
+      name: PJ-Attaque-charger-dos_3
       rect:
         serializedVersion: 2
         x: 72
-        y: 24
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26c153fee6646b200800000000000000
-      internalID: 195421076110777442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pj-attaque-droite_4
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 24
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e95286d5af1e5c4f0800000000000000
-      internalID: -808992092617955938
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pj-attaque-droite_5
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 0
         width: 24
         height: 24
@@ -229,50 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5200c3bd5bb50a5b0800000000000000
-      internalID: -5359182719945539547
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pj-attaque-droite_6
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6df8f88cf0df9d2d0800000000000000
-      internalID: -3253291011567284266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pj-attaque-droite_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00b81385b7954a820800000000000000
-      internalID: 2928564043993156352
+      spriteID: 347cf9d240146d660800000000000000
+      internalID: 7410181723085850435
       vertices: []
       indices: 
       edges: []
