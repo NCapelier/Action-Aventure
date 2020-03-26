@@ -12,6 +12,7 @@ public class Enemy2Movement : MonoBehaviour
     public GameObject player;
     public int attackDirection;
     public int direction;
+    public bool playerFound;
 
     //Velocity
     public Rigidbody2D rb;
@@ -51,7 +52,7 @@ public class Enemy2Movement : MonoBehaviour
     {
         target = waypoints.GetComponent<GetWaypoints>().points[0];
 
-        clockOneEnded = true;
+        clockTwoEnded = true;
       
         playerNotFound = true;
 
@@ -59,11 +60,14 @@ public class Enemy2Movement : MonoBehaviour
 
         canAttack = true;
 
+        rb.velocity = new Vector3(0, 0, 0);
 
         LeftAttack.SetActive(false);
         RightAttack.SetActive(false);
         UpAttack.SetActive(false);
         DownAttack.SetActive(false);
+
+        playerFound = false;
 
     }
 
@@ -75,24 +79,44 @@ public class Enemy2Movement : MonoBehaviour
        
         if (Vector2.Distance(transform.position, player.transform.position) <= enterPlayerArea)
         {
-            rb.velocity = dir.normalized * speed * Time.deltaTime;
-            playerNotFound = false;
+            playerFound = true;
             Debug.Log("playerFound");
             target = player.transform;
+            rb.velocity = dir.normalized * speed * Time.deltaTime;
             if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
             {
                 StartCoroutine(cameraShake.Shake(.05f, .05f));
             }
-            
 
         }
-        if (Vector2.Distance(transform.position, player.transform.position) >= enterPlayerArea)
+        else if (Vector2.Distance(transform.position, player.transform.position) >= enterPlayerArea)
         {
             playerNotFound = true;
             Debug.Log("Player Outside");
             target = waypoints.GetComponent<GetWaypoints>().points[waypointIndex];
-            
-            
+
+            if (clockTwoEnded == true)
+            {
+                rb.velocity = dir.normalized * speed * Time.deltaTime;
+                clockOne();
+
+
+            }
+            //Start clocktwo
+            else if (clockOneEnded == true && playerFound == false)
+            {
+
+                rb.velocity = new Vector3(0, 0, 0);
+
+
+                if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
+                {
+                    StartCoroutine(cameraShake.Shake(.05f, .05f));
+                }
+                clockTwo();
+
+
+            }
 
             if (Vector2.Distance(transform.position, target.position) <= distanceToSwitchTargetWaypoints)
             {
@@ -103,27 +127,7 @@ public class Enemy2Movement : MonoBehaviour
         
 
         
-        if (clockTwoEnded == true)
-        {
-            rb.velocity = dir.normalized * speed * Time.deltaTime;
-            clockOne();
-
-
-        }
-        //Start clocktwo
-        if (clockOneEnded == true)
-        {
-           
-            rb.velocity = new Vector3(0, 0, 0);
-            if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
-            {
-                StartCoroutine(cameraShake.Shake(.05f, .05f));
-            }
-            clockTwo();
        
-
-        }
-
         if (Vector2.Distance(transform.position, player.transform.position) <= ennemiRangeAttack)
         {
             rb.velocity = new Vector3(0, 0, 0);

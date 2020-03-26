@@ -11,6 +11,7 @@ public class Enemy2Fixe : MonoBehaviour
     public int direction;
     public float ennemiRangeAttack;
     public int attackDirection;
+    public bool playerFound;
 
     //Velocity
     public Rigidbody2D rb;
@@ -37,6 +38,11 @@ public class Enemy2Fixe : MonoBehaviour
     //Camera
     public CameraShake cameraShake;
 
+  
+    //Clock
+    public bool clockOneEnded;
+    public bool clockTwoEnded;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +57,11 @@ public class Enemy2Fixe : MonoBehaviour
         RightAttack.SetActive(false);
         UpAttack.SetActive(false);
         DownAttack.SetActive(false);
-}
+
+        playerFound = false;
+
+        clockTwoEnded = true;
+    }
 
     // Update is called once per frame
     void Update()
@@ -62,9 +72,10 @@ public class Enemy2Fixe : MonoBehaviour
 
         if (Vector2.Distance(transform.position, player.transform.position) <= enterPlayerArea)
         {
-           
+            playerFound = true;
             Debug.Log("playerFound");
             target = player.transform;
+            rb.velocity = dir.normalized * speed * Time.deltaTime;
             if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
             {
                 StartCoroutine(cameraShake.Shake(.05f, .05f));
@@ -74,15 +85,36 @@ public class Enemy2Fixe : MonoBehaviour
 
         if (Vector2.Distance(transform.position, player.transform.position) >= enterPlayerArea)
         {
-            
+            playerFound = false;
             Debug.Log("Player Outside");
             target = waypointFixe.transform;
-           
+
+            if (clockTwoEnded == true)
+            {
+                rb.velocity = dir.normalized * speed * Time.deltaTime;
+                clockOne();
+
+
+            }
+            //Start clocktwo
+            else if (clockOneEnded == true && playerFound == false)
+            {
+
+                rb.velocity = new Vector3(0, 0, 0);
+
+
+                if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
+                {
+                    StartCoroutine(cameraShake.Shake(.05f, .05f));
+                }
+                clockTwo();
+
+
+            }
+
         }
 
         
-
-        rb.velocity = dir.normalized * speed * Time.deltaTime;
 
         if (Vector2.Distance(transform.position, player.transform.position) <= ennemiRangeAttack)
         {
@@ -95,8 +127,43 @@ public class Enemy2Fixe : MonoBehaviour
             }
         }
 
-        
-        Debug.Log(direction);
+        if (Vector2.Distance(transform.position, waypointFixe.transform.position) <= 0.1 && playerFound == false)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+        }
+
+            Debug.Log(direction);
+
+       
+    }
+   
+
+
+
+    private void clockOne()
+    {
+        StartCoroutine("Clock1");
+    }
+
+    private void clockTwo()
+    {
+        StartCoroutine("Clock2");
+    }
+
+    IEnumerator Clock1()
+    {
+        clockTwoEnded = false;
+        yield return new WaitForSecondsRealtime(0.5f);
+        clockOneEnded = true;
+        Debug.Log("clockOne Move");
+    }
+    //Stop Mouvement
+    IEnumerator Clock2()
+    {
+        clockOneEnded = false;
+        yield return new WaitForSecondsRealtime(0.5f);
+        clockTwoEnded = true;
+        Debug.Log("clockTwo Move");
     }
     void Direction()
     {
@@ -122,7 +189,6 @@ public class Enemy2Fixe : MonoBehaviour
             }
         }
     }
-
 
     IEnumerator Attack()
     {
