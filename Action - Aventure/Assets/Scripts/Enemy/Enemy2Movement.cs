@@ -121,13 +121,18 @@ public class Enemy2Movement : MonoBehaviour
             else if (clockOneEnded == true && playerFound == false)
             {
                 ///j'arrete l'ennemi pour simuler que son pied tombe sur le sol comme un sumo
-                rb.velocity = new Vector3(0, 0, 0);
+                
 
 
                 if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
                 {
-                    StartCoroutine(cameraShake.Shake(.05f, .05f));
+                    if (playerFound == true)
+                    {
+                        StartCoroutine(cameraShake.Shake(.05f, .05f));
+                    }
                 }
+
+                rb.velocity = new Vector3(0, 0, 0);
                 clockTwo();
 
 
@@ -143,7 +148,7 @@ public class Enemy2Movement : MonoBehaviour
 
         
        //Check la distance d'aggro.
-        else if (Vector2.Distance(transform.position, player.transform.position) <= ennemiRangeAttack)
+        if (Vector2.Distance(transform.position, player.transform.position) <= ennemiRangeAttack)
         {
             rb.velocity = new Vector3(0, 0, 0);
 
@@ -174,12 +179,12 @@ public class Enemy2Movement : MonoBehaviour
 
     private void clockOne()
     {
-        StartCoroutine("Clock1");
+        StartCoroutine(Clock1());
     }
 
     private void clockTwo()
     {
-        StartCoroutine("Clock2");
+        StartCoroutine(Clock2());
     }
 
 
