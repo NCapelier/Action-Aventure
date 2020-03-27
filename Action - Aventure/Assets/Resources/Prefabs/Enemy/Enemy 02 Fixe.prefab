@@ -17,6 +17,7 @@ MonoBehaviour:
   direction: 0
   ennemiRangeAttack: 1.5
   attackDirection: 0
+  playerFound: 0
   rb: {fileID: 8513856014402121244}
   speed: 200
   move: {x: 0, y: 0, z: 0}
@@ -31,6 +32,8 @@ MonoBehaviour:
   UpAttack: {fileID: 7204474886825739820}
   DownAttack: {fileID: 8730223306599640815}
   cameraShake: {fileID: 0}
+  clockOneEnded: 0
+  clockTwoEnded: 0
 --- !u!1001 &7642711984809549186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46,7 +49,7 @@ PrefabInstance:
     - target: {fileID: 2033116714999444369, guid: 88315a67eb7d9604894e5c0c76cc69e8,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_02 (Fixe) 1
+      value: Enemy 02 Fixe
       objectReference: {fileID: 0}
     - target: {fileID: 2033116714999444381, guid: 88315a67eb7d9604894e5c0c76cc69e8,
         type: 3}
@@ -66,12 +69,12 @@ PrefabInstance:
     - target: {fileID: 2033116714999444383, guid: 88315a67eb7d9604894e5c0c76cc69e8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033116714999444383, guid: 88315a67eb7d9604894e5c0c76cc69e8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033116714999444383, guid: 88315a67eb7d9604894e5c0c76cc69e8,
         type: 3}

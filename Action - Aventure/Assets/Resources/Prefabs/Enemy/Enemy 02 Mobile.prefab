@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 2033116714999444382}
   - component: {fileID: 2033116714999444381}
   m_Layer: 0
-  m_Name: Enemy_02_Mobile
+  m_Name: Enemy 02 Mobile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,6 +286,7 @@ MonoBehaviour:
   player: {fileID: 0}
   attackDirection: 0
   direction: 0
+  playerFound: 0
   rb: {fileID: 2033116714999444382}
   speed: 250
   enterPlayerArea: 3
