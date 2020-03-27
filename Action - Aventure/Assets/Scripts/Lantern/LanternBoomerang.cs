@@ -104,8 +104,6 @@ namespace Lantern
                     Debug.Log("Error, value is not assigned !");
                     break;
             }
-
-            Debug.Log(loadingBar.fillAmount);
         }
 
         /// <summary>

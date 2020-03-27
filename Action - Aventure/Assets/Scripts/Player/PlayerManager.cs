@@ -41,7 +41,14 @@ namespace Player
         {
             set
             {
+                currentHp -= value;
 
+                if (currentHp <= 0)
+                {
+                    Death();
+                }
+
+                UpdateMaxHp();
             }
         }
 
@@ -52,11 +59,18 @@ namespace Player
         {
             set
             {
+                currentHp += value;
 
+                if (currentHp > currentMaxHp)
+                {
+                    currentHp = currentMaxHp;
+                }
             }
         }
 
         #endregion
+
+        #region Unity Methods
 
         void Awake()
         {
@@ -65,7 +79,7 @@ namespace Player
 
         void Start()
         {
-            //StartHp();
+            InitializeHp();
         }
 
         void Update()
@@ -73,20 +87,29 @@ namespace Player
 
         }
 
-        /// <summary>
-        /// Initializes the hp array and spreads all the hp in the different echelons
-        /// </summary>
-        void StartHp()
-        {
+        #endregion
 
+        /// <summary>
+        /// initialize HPs variables on start
+        /// </summary>
+        void InitializeHp()
+        {
+            currentMaxHp = maxHp;
+            currentHp = maxHp;
         }
 
         /// <summary>
-        /// Avoids the hp to exceed the hp cap and lauched the Death() method if hp < 0
+        /// Updates the maximum hp of the player depending on its current hp
         /// </summary>
-        void UpdateHp()
+        void UpdateMaxHp()
         {
-
+            for(int i = 0; i < hpEchelonNumber; i++)
+            {
+                if (currentHp <= currentMaxHp - maxHp / hpEchelonNumber)
+                {
+                    currentMaxHp -= maxHp / hpEchelonNumber;
+                }
+            }
         }
 
         /// <summary>
@@ -94,7 +117,7 @@ namespace Player
         /// </summary>
         void Death()
         {
-            //death
+            //code here
         }
 
     }
