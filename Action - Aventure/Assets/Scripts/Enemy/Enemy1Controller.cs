@@ -24,6 +24,14 @@ namespace Enemy
         [Range(0.5f, 25f)]
         [SerializeField] float contactDistance = 1f;
 
+        [Range(3f, 20f)]
+        [SerializeField] float playerDetectRange = 4f;
+
+        [Range(4f, 8f)]
+        [SerializeField] float lightDetectExtra = 4f;
+
+        bool focusingPlayer = false;
+
         #endregion
 
         void Awake()
@@ -39,6 +47,7 @@ namespace Enemy
         void Update()
         {
             MoveToPlayer();
+            MoveToLight();
         }
         
         /// <summary>
@@ -46,14 +55,35 @@ namespace Enemy
         /// </summary>
         void MoveToPlayer()
         {
-            if((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position) > contactDistance) && (LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
+            if((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange, true)) && (LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
             {
                 EnemyRb.velocity = (PlayerManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
+                focusingPlayer = true;
             }
             else
             {
                 EnemyRb.velocity = Vector2.zero;
+                focusingPlayer = false;
             }
+        }
+
+        /// <summary>
+        /// CHB -- Moves enemy towards Will o' the wisp until it can detect the player
+        /// </summary>
+        void MoveToLight()
+        {
+            if (!focusingPlayer)
+            {
+                if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
+                {
+                    EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
+                }
+                else
+                {
+                    EnemyRb.velocity = Vector2.zero;
+                }
+            }
+            
         }
     }
 }
