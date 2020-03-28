@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6647312553311143030}
   - component: {fileID: 111269581504147918}
-  - component: {fileID: 7258717546281940339}
+  - component: {fileID: 8912866003105978225}
   m_Layer: 0
   m_Name: FireLight
   m_TagString: Untagged
@@ -73,22 +73,25 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!111 &7258717546281940339
-Animation:
+--- !u!95 &8912866003105978225
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3413361861514457032}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: eb51a1da6e2124144bcee9a228d078f5, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 152901965d881854ca61e231f0b11c25, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3896694006834024168
 GameObject:
   m_ObjectHideFlags: 0
