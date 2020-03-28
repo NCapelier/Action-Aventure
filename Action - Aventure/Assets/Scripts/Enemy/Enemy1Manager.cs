@@ -16,15 +16,15 @@ namespace Enemy
         
         void Start()
         {
-            
+            hp = maxHp;
         }
         
         void Update()
         {
-            
+            Debug.Log(hp);
         }
-        
-        
-        
+
+
+
     }
 }

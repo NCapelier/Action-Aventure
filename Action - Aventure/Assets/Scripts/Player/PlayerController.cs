@@ -89,7 +89,7 @@ namespace Player
         /// </summary>
         void DashInput()
         {
-            if (Input.GetAxis("Left_Trigger") >= 0.8f && !isDashing && !isAttacking && LanternManager.Instance.flashLight.canFlash)
+            if (Input.GetAxis("Left_Trigger") >= 0.8f && !isDashing && !isAttacking && LanternManager.Instance.flashLight.canFlash && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy)
             {
                 isDashing = true;
                 dashVector = movementVector;
@@ -99,6 +99,11 @@ namespace Player
             {
                 isDashing = false;
                 dashVector = Vector2.zero;
+            }
+
+            if(isDashing)
+            {
+                dashVector = movementVector;
             }
         }
 

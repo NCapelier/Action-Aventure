@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Management;
 using Player;
+using Lantern;
 
 namespace GameManagement
 {
@@ -39,9 +40,8 @@ namespace GameManagement
         {
             SceneManager.LoadScene(scene);
             PlayerManager.Instance.transform.position = entryPoint;
+            LanternManager.Instance.transform.position = entryPoint;
             return SceneManager.GetActiveScene();
         }
-
-
     }
 }

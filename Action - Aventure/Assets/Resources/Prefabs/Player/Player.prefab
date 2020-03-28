@@ -377,8 +377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 225
-  dashSpeed: 180
-  dashDuration: 2.4
+  dashSpeed: 270
+  dashDuration: 1.9
   dashCooldown: 2
   lastDirection: 0
   computedVelocity: {x: 0, y: 0}
@@ -428,8 +428,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttacking: 0
   loading: 0
-  maxLoad: 10
-  loadingSpeed: 1
+  maxLoad: 5
+  loadingSpeed: 0.05
 --- !u!1 &9051317833602605331
 GameObject:
   m_ObjectHideFlags: 0

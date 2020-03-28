@@ -14,7 +14,7 @@ namespace Enemy
 
         // editor variables : health points and armor variables
         [Range(1, 50)]
-        [SerializeField] int maxHp = 10;
+        public int maxHp = 10;
 
         #endregion
 
@@ -28,6 +28,7 @@ namespace Enemy
             set
             {
                 hp -= value;
+                UpdateHp();
             }
         }
 
@@ -43,11 +44,6 @@ namespace Enemy
         }
 
         #endregion
-
-        void Update()
-        {
-
-        }
 
         /// <summary>
         /// Avoids the hp to exceed the hp cap and lauched the Death() method if hp < 0
@@ -69,7 +65,7 @@ namespace Enemy
         /// </summary>
         public virtual void Death()
         {
-            //death
+            Destroy(gameObject);
         }
 
     }

@@ -47,8 +47,10 @@ namespace Player
                 {
                     Death();
                 }
-
-                UpdateMaxHp();
+                else
+                {
+                    UpdateMaxHp();
+                }
             }
         }
 

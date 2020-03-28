@@ -123,7 +123,15 @@ namespace Lantern
             else
             {
                 currentFlashState = flashState.Idle;
+                StartCoroutine(FlashCD()); //temporary --> will be remover with light weakening
             }
+        }
+
+        //temp
+        IEnumerator FlashCD()
+        {
+            yield return new WaitForSeconds(2);
+            canFlash = true;
         }
 
         #endregion
