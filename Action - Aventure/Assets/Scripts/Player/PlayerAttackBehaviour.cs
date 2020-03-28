@@ -42,7 +42,6 @@ namespace Player
             if(collision.CompareTag("Enemy"))
             {
                 // damages --> ref enemy parent
-                Debug.Log("Damages");
                 collision.GetComponent<EnemyParent>().TakeDamages = damages * (int)PlayerManager.Instance.contactAttack.loading;
             }
         }

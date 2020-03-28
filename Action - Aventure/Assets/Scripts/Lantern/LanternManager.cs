@@ -42,7 +42,7 @@ namespace Lantern
 
         void Awake()
         {
-            MakeSingleton(false);
+            MakeSingleton(true);
         }
     }
 }

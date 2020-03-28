@@ -100,7 +100,7 @@ namespace Enemy
                 if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
                 {
                     //scren Shake
-                    StartCoroutine(cameraShake.Shake(.01f, .05f));
+                    //StartCoroutine(cameraShake.Shake(.01f, .05f));
                 }
 
             }
@@ -169,7 +169,7 @@ namespace Enemy
         {
             waypointIndex++;
 
-            //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et sa casse tout
+            //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et ça casse tout
             if (waypointIndex == 5)
             {
                 waypointIndex = 0;

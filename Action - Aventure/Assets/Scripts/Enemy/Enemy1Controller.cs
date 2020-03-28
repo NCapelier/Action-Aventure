@@ -24,10 +24,10 @@ namespace Enemy
         [Range(0.5f, 25f)]
         [SerializeField] float contactDistance = 1f;
 
-        [Range(3f, 20f)]
+        [Range(0f, 20f)]
         [SerializeField] float playerDetectRange = 4f;
 
-        [Range(4f, 8f)]
+        [Range(0f, 8f)]
         [SerializeField] float lightDetectExtra = 4f;
 
         bool focusingPlayer = false;

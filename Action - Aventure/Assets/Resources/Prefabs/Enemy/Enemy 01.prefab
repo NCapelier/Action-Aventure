@@ -143,8 +143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   contactDistance: 1
-  playerDetectRange: 4
-  lightDetectExtra: 4
+  playerDetectRange: 2
+  lightDetectExtra: 2
 --- !u!1 &5181177070781261810
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,9 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a495794cd9eb1c47b7f3e91e6227b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 5
   attackRange: 10
-  cooldown: 0
+  cooldown: 3
 --- !u!1 &7803587941020222482
 GameObject:
   m_ObjectHideFlags: 0

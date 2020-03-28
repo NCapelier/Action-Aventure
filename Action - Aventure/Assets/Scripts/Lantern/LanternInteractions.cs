@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Enemy;
 
 namespace Lantern
 {
@@ -36,7 +37,7 @@ namespace Lantern
             if(collision.CompareTag("Enemy"))
             {
                 //deal damages to the enemy
-                //
+                collision.GetComponent<EnemyParent>().TakeDamages = 1;
 
                 if(LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
                 {
