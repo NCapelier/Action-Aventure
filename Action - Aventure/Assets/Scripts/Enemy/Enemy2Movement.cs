@@ -48,11 +48,12 @@ namespace Enemy
         public GameObject UpAttack;
         public GameObject DownAttack;
 
+    public int numberofWaypointsMax;
 
 
-        private void Start()
-        {
-            //At the beggining of the script Je set la target sur le waypoint à l'index 0 de mon tableau.
+    private void Start()
+    {
+        //At the beggining of the script Je set la target sur le waypoint à l'index 0 de mon tableau.
 
             target = waypoints.GetComponent<GetWaypoints>().points[0];
 
@@ -179,7 +180,8 @@ namespace Enemy
 
         }
 
-        private void clockOne()
+        //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et sa casse tout
+        if (waypointIndex == 5)
         {
             StartCoroutine(Clock1());
         }
