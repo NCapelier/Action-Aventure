@@ -46,6 +46,8 @@ public class Enemy2Movement : MonoBehaviour
     public GameObject UpAttack;
     public GameObject DownAttack;
 
+    public int numberofWaypointsMax;
+
 
 
     private void Start()
@@ -168,7 +170,7 @@ public class Enemy2Movement : MonoBehaviour
         waypointIndex++;
 
         //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et sa casse tout
-        if (waypointIndex == 5)
+        if (waypointIndex == numberofWaypointsMax -1)
         {
             waypointIndex = 0;
         }
