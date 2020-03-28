@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7172665426486583846}
   - component: {fileID: 6556664481339118244}
+  - component: {fileID: 6729325421609132960}
   m_Layer: 0
   m_Name: Enemy 01
   m_TagString: Enemy
@@ -56,6 +57,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &6729325421609132960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747087323808170499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95087a451f234a045aa3646bed2569aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  maxHp: 10
 --- !u!1 &4472341218124181647
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,8 +212,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1677392709
-  m_SortingLayer: 3
+  m_SortingLayerID: -1156684113
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7028818104ebab94a8bcf867b04263f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

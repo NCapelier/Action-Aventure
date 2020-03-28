@@ -74,7 +74,7 @@ namespace Player
 
         void Awake()
         {
-            MakeSingleton(false);
+            MakeSingleton(true);
         }
 
         void Start()

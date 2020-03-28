@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetWaypoints : MonoBehaviour
+namespace Enemy
 {
-    //Able to stock the target
-    public Transform[] points;
-
-    void Awake()
+    public class GetWaypoints : MonoBehaviour
     {
-        points = new Transform[transform.childCount];
-        for (int i = 0; i < points.Length; i++)
+        //Able to stock the target
+        public Transform[] points;
+
+        void Awake()
         {
-            points[i] = transform.GetChild(i);
+            points = new Transform[transform.childCount];
+            for (int i = 0; i < points.Length; i++)
+            {
+                points[i] = transform.GetChild(i);
+            }
         }
     }
 }
