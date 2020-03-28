@@ -217,7 +217,7 @@ MonoBehaviour:
   aimBehaviour: {fileID: 2241752791613376761}
   currentHp: 1
   currentMaxHp: 1
-  maxHp: 10
+  maxHp: 16
   hpEchelonNumber: 4
 --- !u!50 &4999328793701592573
 Rigidbody2D:
@@ -376,9 +376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8fe9696c527674fa5be559ea0bb2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 350
-  dashSpeed: 150
-  dashDuration: 2.5
+  movementSpeed: 225
+  dashSpeed: 180
+  dashDuration: 2.4
   dashCooldown: 2
   lastDirection: 0
   computedVelocity: {x: 0, y: 0}

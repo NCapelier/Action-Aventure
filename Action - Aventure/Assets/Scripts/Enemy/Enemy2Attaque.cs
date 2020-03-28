@@ -25,14 +25,12 @@ public class Enemy2Attaque : MonoBehaviour
     public bool isAttacking;
     public float immobilizationTime;
 
-    // Start is called before the first frame update
     void Start()
     {
         
         rbEnemy = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
