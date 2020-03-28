@@ -20,7 +20,7 @@ namespace Puzzle
 		void Start()
 		{
             torches = torchMaster.GetComponentsInChildren<Torch>();
-            Debug.Log(torches.Length + " à allumer");
+            //Debug.Log(torches.Length + " à allumer");
 		}
 
 		// Update is called once per frame
