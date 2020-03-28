@@ -13,7 +13,7 @@ namespace Enemy
 
         //editor variables
 
-        [Range(0,200)]
+        [Range(0, 200)]
         [SerializeField] int damage = 0;
 
         [Range(0, 20)]
@@ -46,16 +46,13 @@ namespace Enemy
         void AttackPlayer()
         {
             distance = Vector2.Distance(PlayerManager.Instance.transform.position, gameObject.transform.position);
-            //Attack if the player is in range
-            if (distance < attackRange)
-            {   //check when the last attack was perform
-                if (Time.time > lastAttackTime + cooldown)
-                {   //Attack
-                    PlayerManager.Instance.TakeDamages = damage;
+            //Attack if the player is in range and cf == 0
+            if (distance < attackRange && Time.time > lastAttackTime + cooldown)
+            {
+                PlayerManager.Instance.TakeDamages = damage;
 
-                    //Record the time of the last attack
-                    lastAttackTime = Time.time;
-                }
+                //Record the time of the last attack
+                lastAttackTime = Time.time;
             }
         }
     }
