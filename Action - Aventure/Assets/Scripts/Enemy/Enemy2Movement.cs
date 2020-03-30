@@ -180,12 +180,10 @@ namespace Enemy
 
         }
 
-        //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et sa casse tout
-        if (waypointIndex == 5)
+        private void clockOne()
         {
             StartCoroutine(Clock1());
         }
-
         private void clockTwo()
         {
             StartCoroutine(Clock2());
@@ -284,6 +282,15 @@ namespace Enemy
 
             }
         }
+        //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et sa casse tout
+        /*if (waypointIndex == 5)
+        {
+            StartCoroutine(Clock1());
+            */
     }
+
+
+        
 }
+
 
