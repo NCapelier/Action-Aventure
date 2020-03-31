@@ -562,6 +562,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch
       objectReference: {fileID: 0}
+    - target: {fileID: 4013862087411762797, guid: fb968e0c018cf614d8237e05d62a45bb,
+        type: 3}
+      propertyPath: isLit
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb968e0c018cf614d8237e05d62a45bb, type: 3}
 --- !u!1 &1709033587
@@ -747,7 +752,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.83
 --- !u!1 &4234146569017479020
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  contactDistance: 1
+  contactDistance: 0.7
   playerDetectRange: 2
   lightDetectExtra: 2
   torchDetectRange: 5

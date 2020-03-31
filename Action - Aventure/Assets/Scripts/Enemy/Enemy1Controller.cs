@@ -31,7 +31,7 @@ namespace Enemy
         [Range(0f, 8f)]
         [SerializeField] float lightDetectExtra = 4f;
 
-        [Range(0f, 15f)]
+        [Range(0.001f, 15f)]
         [SerializeField] float torchDetectRange = 5f;
 
         CircleCollider2D eyeForTorches;
@@ -58,7 +58,7 @@ namespace Enemy
         void Update()
         {
             MoveToPlayer();
-            //MoveToTorch();
+            MoveToTorch();
             MoveToLight();
         }
 
@@ -66,16 +66,19 @@ namespace Enemy
         {
             if(collision.gameObject.tag == "Torch")
             {
-                Debug.Log("Torch Detected");
-                torchLight = collision.gameObject.GetComponentInParent<Torch>();
-
-                if (torchLight.isLit)
-                {
-                    targetTorch = collision.gameObject;
-                    eyeForTorches.enabled = false;
-                }
+                GetTorch(collision.gameObject);
             }
         }
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Torch")
+            {
+                GetTorch(collision.gameObject);
+            }
+        }
+
+        #region Movement methods
         /// <summary>
         /// Moves this enemy towards the player until it's close enouth depending on contactDistance
         /// </summary>
@@ -98,7 +101,7 @@ namespace Enemy
         /// </summary>
         void MoveToLight()
         {
-            if (!focusingPlayer)
+            if (!focusingPlayer || targetTorch != null)
             {
                 if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
                 {
@@ -130,6 +133,21 @@ namespace Enemy
                 }
             }
         }
+        #endregion
+
+        #region Torch detection methods
+        void GetTorch(GameObject caughtTorch)
+        {
+            Debug.Log("Torch Detected !");
+            torchLight = caughtTorch.GetComponentInParent<Torch>();
+
+            if (torchLight.isLit)
+            {
+                Debug.Log("Lit Torch. To chase.");
+                targetTorch = caughtTorch;
+                eyeForTorches.enabled = false;
+            }
+        }
 
         IEnumerator RedetectTorch()
         {
@@ -138,10 +156,11 @@ namespace Enemy
 
             while (eyeForTorches.radius < torchDetectRange && targetTorch == null)
             {
-                yield return new WaitForSeconds(0.0005f);
+                yield return new WaitForSeconds(0.0001f);
                 eyeForTorches.radius += torchDetectRange * 0.01f;
             }
             
         }
+        #endregion
     }
 }
