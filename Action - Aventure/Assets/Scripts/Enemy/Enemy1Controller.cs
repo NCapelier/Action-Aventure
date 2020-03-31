@@ -38,6 +38,7 @@ namespace Enemy
         GameObject targetTorch = null;
         Torch torchLight = null;
 
+        bool torchCaught = false;
         bool focusingPlayer = false;
 
         #endregion
@@ -64,7 +65,7 @@ namespace Enemy
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.gameObject.tag == "Torch")
+            if(collision.gameObject.tag == "Torch" && torchCaught == false)
             {
                 GetTorch(collision.gameObject);
             }
@@ -72,7 +73,7 @@ namespace Enemy
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "Torch")
+            if (collision.gameObject.tag == "Torch" && torchCaught == false)
             {
                 GetTorch(collision.gameObject);
             }
@@ -123,6 +124,7 @@ namespace Enemy
                 {
                     targetTorch = null;
                     torchLight = null;
+                    torchCaught = false;
                     StartCoroutine(RedetectTorch());
                     EnemyRb.velocity = Vector2.zero;
                 }
@@ -143,6 +145,7 @@ namespace Enemy
 
             if (torchLight.isLit)
             {
+                torchCaught = true;
                 Debug.Log("Lit Torch. To chase.");
                 targetTorch = caughtTorch;
                 eyeForTorches.enabled = false;
