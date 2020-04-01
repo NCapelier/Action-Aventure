@@ -10,7 +10,7 @@ namespace Puzzle
     public class Torch : MonoBehaviour
     {
         #region Variables
-        [HideInInspector] public bool isLit;
+        /*[HideInInspector]*/ public bool isLit = false;
         private GameObject flameObject;
         private SpriteRenderer flame;
         #endregion
@@ -21,7 +21,7 @@ namespace Puzzle
             flameObject = gameObject.GetChildNamed("Flame");
             flame = flameObject.GetComponent<SpriteRenderer>();
             flame.enabled = false;
-            isLit = false;
+            //isLit = false;
         }
 
         private void OnTriggerEnter2D(Collider2D col)
