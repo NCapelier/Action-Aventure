@@ -48,12 +48,12 @@ namespace Enemy
         public GameObject UpAttack;
         public GameObject DownAttack;
 
-    public int numberofWaypointsMax;
+        public int numberofWaypointsMax;
 
 
-    private void Start()
-    {
-        //At the beggining of the script Je set la target sur le waypoint à l'index 0 de mon tableau.
+        private void Start()
+        {
+            //At the beggining of the script Je set la target sur le waypoint à l'index 0 de mon tableau.
 
             target = waypoints.GetComponent<GetWaypoints>().points[0];
 
@@ -164,29 +164,20 @@ namespace Enemy
                 }
             }
 
-        }
-
-        private void GetNextWaypoints()
-        {
-            waypointIndex++;
-
-            //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et ça casse tout
+            //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et sa casse tout
             if (waypointIndex == 5)
             {
-                waypointIndex = 0;
+                StartCoroutine(Clock1());
             }
-
-            target = waypoints.GetComponent<GetWaypoints>().points[waypointIndex];
 
         }
 
-        //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et sa casse tout
-        if (waypointIndex == 5)
+        void clockOne()
         {
             StartCoroutine(Clock1());
         }
 
-        private void clockTwo()
+        void clockTwo()
         {
             StartCoroutine(Clock2());
         }
@@ -283,6 +274,24 @@ namespace Enemy
                 canAttack = true;
 
             }
+
+
+
+
+        }
+
+        void GetNextWaypoints()
+        {
+            waypointIndex++;
+
+            //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et ça casse tout
+            if (waypointIndex == 5)
+            {
+                waypointIndex = 0;
+            }
+
+            target = waypoints.GetComponent<GetWaypoints>().points[waypointIndex];
+
         }
     }
 }
