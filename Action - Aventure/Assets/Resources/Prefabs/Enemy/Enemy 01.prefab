@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 4627724005942270142}
   - component: {fileID: 4675433237601033373}
   - component: {fileID: 6876600449877419922}
+  - component: {fileID: 6874351452184384528}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -145,6 +146,23 @@ MonoBehaviour:
   contactDistance: 1
   playerDetectRange: 2
   lightDetectExtra: 2
+  torchDetectRange: 5
+--- !u!58 &6874351452184384528
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472341218124181647}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &5181177070781261810
 GameObject:
   m_ObjectHideFlags: 0

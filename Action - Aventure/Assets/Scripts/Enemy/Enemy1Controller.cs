@@ -58,6 +58,7 @@ namespace Enemy
         
         void Update()
         {
+            //Debug.Log(focusingPlayer + " and " + targetTorch.name);
             MoveToPlayer();
             MoveToTorch();
             MoveToLight();
@@ -98,11 +99,11 @@ namespace Enemy
         }
 
         /// <summary>
-        /// CHB -- Moves enemy towards Will o' the wisp until it can detect the player
+        /// CHB -- Moves enemy towards Will o' the wisp until it can detect the player or it has a lit torch in focus
         /// </summary>
         void MoveToLight()
         {
-            if (!focusingPlayer || targetTorch != null)
+            if (!focusingPlayer && targetTorch == null)
             {
                 if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
                 {
@@ -116,6 +117,9 @@ namespace Enemy
             
         }
 
+        /// <summary>
+        /// CHB -- Moves enemy towards a torch if player not in range
+        /// </summary>
         void MoveToTorch()
         {
             if(targetTorch != null)
@@ -138,6 +142,10 @@ namespace Enemy
         #endregion
 
         #region Torch detection methods
+        /// <summary>
+        /// CHB -- Get a lit torch in focus
+        /// </summary>
+        /// <param name="caughtTorch">Collided torch</param>
         void GetTorch(GameObject caughtTorch)
         {
             Debug.Log("Torch Detected !");
@@ -152,15 +160,19 @@ namespace Enemy
             }
         }
 
+        /// <summary>
+        /// Regrow CircleCollider after torch has gone out of range. Can provide delay
+        /// </summary>
+        /// <returns></returns>
         IEnumerator RedetectTorch()
         {
-            eyeForTorches.radius = torchDetectRange * 0.01f;
+            eyeForTorches.radius = torchDetectRange * 0.0133f;
             eyeForTorches.enabled = true;
 
             while (eyeForTorches.radius < torchDetectRange && targetTorch == null)
             {
-                yield return new WaitForSeconds(0.0001f);
-                eyeForTorches.radius += torchDetectRange * 0.01f;
+                yield return new WaitForSeconds(0.01f); /*null*/
+                eyeForTorches.radius += torchDetectRange * 0.0133f;
             }
             
         }
