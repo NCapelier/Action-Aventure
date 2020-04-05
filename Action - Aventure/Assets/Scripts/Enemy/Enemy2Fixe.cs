@@ -10,15 +10,15 @@ namespace Enemy
         public GameObject waypointFixe;
         private Transform target;
         public GameObject player;
-        public int direction;
+        private int direction;
         public float ennemiRangeAttack;
-        public int attackDirection;
-        public bool playerFound;
+        private int attackDirection;
+        private bool playerFound;
 
         //Velocity
-        public Rigidbody2D rb;
+        private Rigidbody2D rb;
         public float speed = 10f;
-        public Vector3 move;
+        private Vector3 move;
 
 
         //distance - Set the distance of Swaping Target
@@ -26,9 +26,9 @@ namespace Enemy
 
         //Attaque
         public float attackSpeed;
-        public bool canAttack;
+        private bool canAttack;
         public float warningTime;
-        public bool isAttacking;
+        private bool isAttacking;
         public float immobilizationTime;
 
         //Zone de dégats
@@ -42,8 +42,8 @@ namespace Enemy
 
 
         //Clock - Use to make the enemy walk clock
-        public bool clockOneEnded;
-        public bool clockTwoEnded;
+        private bool clockOneEnded;
+        private bool clockTwoEnded;
 
         // Start is called before the first frame update
         void Start()
