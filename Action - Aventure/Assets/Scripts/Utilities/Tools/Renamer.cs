@@ -1,4 +1,5 @@
-﻿#region System & Unity
+﻿#if UNITY_EDITOR
+#region System & Unity
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -173,3 +174,4 @@ public class Renamer : EditorWindow
 
 	#endregion
 }
+#endif
