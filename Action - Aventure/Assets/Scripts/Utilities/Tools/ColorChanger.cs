@@ -1,4 +1,5 @@
-﻿#region System & Unity
+﻿#if UNITY_EDITOR
+#region System & Unity
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
@@ -144,3 +145,4 @@ public class ColorChanger : EditorWindow
 
 	#endregion
 }
+#endif
