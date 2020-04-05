@@ -1,35 +1,31 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: a418a383bf065fe44af3a452d5f13311
-=======
-guid: fd627838cb9a5614eaef88538514feff
->>>>>>> Enemy_02
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5224281580209839039
-    second: SpriteSheetGrassV2_0
+      213: 6339382748891725319
+    second: SpriteSheetGrass_0
   - first:
-      213: 6383946724747456726
-    second: SpriteSheetGrassV2_1
+      213: -8710884488626460734
+    second: SpriteSheetGrass_1
   - first:
-      213: -7096302038063849810
-    second: SpriteSheetGrassV2_2
+      213: -4566128500226553476
+    second: SpriteSheetGrass_2
   - first:
-      213: 1522934750648428311
-    second: SpriteSheetGrassV2_3
+      213: -5769122057356176038
+    second: SpriteSheetGrass_3
   - first:
-      213: 717934512121710709
-    second: SpriteSheetGrassV2_4
+      213: 7614698942700407726
+    second: SpriteSheetGrass_4
   - first:
-      213: -6432766641561372566
-    second: SpriteSheetGrassV2_5
+      213: -3619409224027733892
+    second: SpriteSheetGrass_5
   - first:
-      213: -2163553230538704809
-    second: SpriteSheetGrassV2_6
+      213: 4697756808823497742
+    second: SpriteSheetGrass_6
   - first:
-      213: 1947197085599841579
-    second: SpriteSheetGrassV2_7
+      213: -3469768742339901209
+    second: SpriteSheetGrass_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -114,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheetGrassV2_0
+      name: SpriteSheetGrass_0
       rect:
         serializedVersion: 2
         x: 0
@@ -122,20 +118,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbb1603fa60608840800000000000000
-      internalID: 5224281580209839039
+      spriteID: 70e3eeac5030af750800000000000000
+      internalID: 6339382748891725319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetGrassV2_1
+      name: SpriteSheetGrass_1
       rect:
         serializedVersion: 2
         x: 51
@@ -143,20 +139,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d03799f8b5589850800000000000000
-      internalID: 6383946724747456726
+      spriteID: 2c7a5f7b5b8bc1780800000000000000
+      internalID: -8710884488626460734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetGrassV2_2
+      name: SpriteSheetGrass_2
       rect:
         serializedVersion: 2
         x: 102
@@ -164,20 +160,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaed25ae4eed48d90800000000000000
-      internalID: -7096302038063849810
+      spriteID: c798539425ad1a0c0800000000000000
+      internalID: -4566128500226553476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetGrassV2_3
+      name: SpriteSheetGrass_3
       rect:
         serializedVersion: 2
         x: 153
@@ -185,20 +181,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7176f7c361d822510800000000000000
-      internalID: 1522934750648428311
+      spriteID: a551a611e06ffefa0800000000000000
+      internalID: -5769122057356176038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetGrassV2_4
+      name: SpriteSheetGrass_4
       rect:
         serializedVersion: 2
         x: 0
@@ -206,20 +202,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 578020f82ad96f900800000000000000
-      internalID: 717934512121710709
+      spriteID: eab433f0858dca960800000000000000
+      internalID: 7614698942700407726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetGrassV2_5
+      name: SpriteSheetGrass_5
       rect:
         serializedVersion: 2
         x: 51
@@ -227,20 +223,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6870ce52d83ab6a0800000000000000
-      internalID: -6432766641561372566
+      spriteID: c700e09bc7645cdc0800000000000000
+      internalID: -3619409224027733892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetGrassV2_6
+      name: SpriteSheetGrass_6
       rect:
         serializedVersion: 2
         x: 102
@@ -248,20 +244,20 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7587711ccc389f1e0800000000000000
-      internalID: -2163553230538704809
+      spriteID: e04e8178de8c13140800000000000000
+      internalID: 4697756808823497742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetGrassV2_7
+      name: SpriteSheetGrass_7
       rect:
         serializedVersion: 2
         x: 153
@@ -269,14 +265,14 @@ TextureImporter:
         width: 50
         height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2dbad2ce65d50b10800000000000000
-      internalID: 1947197085599841579
+      spriteID: 7e8831466b7e8dfc0800000000000000
+      internalID: -3469768742339901209
       vertices: []
       indices: 
       edges: []
