@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GlobalLight
+  - PointLight
+  - Enemy
+  - Wall
+  - Ground
+  - Light
+  - Hinky
+  - Torch
+  - PlayerController
   layers:
   - Default
   - TransparentFX
@@ -38,6 +47,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 1263524683
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PointLightsOnly
+    uniqueID: 3138283183
+    locked: 0
+  - name: GlobalLightOnly
+    uniqueID: 1169416727
+    locked: 0
+  - name: AllLights
+    uniqueID: 1677392709
+    locked: 0
+  - name: NoLight
+    uniqueID: 3320719109
     locked: 0
