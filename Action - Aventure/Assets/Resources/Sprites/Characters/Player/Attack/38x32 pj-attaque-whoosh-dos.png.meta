@@ -1,31 +1,28 @@
 fileFormatVersion: 2
-guid: 3f8b7104998ad7f40a5c3b92374a2bd8
+guid: 17186fc03a5006343bc6a5ac52d8ddcd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4126975019872151797
-    second: Player_hidelantern_0
+      213: -4816869407770331328
+    second: 38x32 pj-attaque-whoosh-dos_0
   - first:
-      213: -4419035576590848667
-    second: Player_hidelantern_1
+      213: -3987825710187492197
+    second: 38x32 pj-attaque-whoosh-dos_1
   - first:
-      213: -3528772718383042750
-    second: Player_hidelantern_2
+      213: 8454815229216285855
+    second: 38x32 pj-attaque-whoosh-dos_2
   - first:
-      213: 7016000379076630630
-    second: Player_hidelantern_3
+      213: 6370173174914519758
+    second: 38x32 pj-attaque-whoosh-dos_3
   - first:
-      213: -538680624908764825
-    second: Player_hidelantern_4
+      213: 1732631357941705639
+    second: 38x32 pj-attaque-whoosh-dos_4
   - first:
-      213: -1161576558495406180
-    second: Player_hidelantern_5
+      213: 5495441118411881183
+    second: 38x32 pj-attaque-whoosh-dos_5
   - first:
-      213: 5316627290401405002
-    second: Player_hidelantern_6
-  - first:
-      213: -1423706876784994173
-    second: Player_hidelantern_7
+      213: -7228469553692008767
+    second: 38x32 pj-attaque-whoosh-dos_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -89,7 +86,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -101,7 +98,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -110,169 +107,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_hidelantern_0
+      name: 38x32 pj-attaque-whoosh-dos_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 24
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 156
+        y: 36
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f8e3683ae5f54930800000000000000
-      internalID: 4126975019872151797
+      spriteID: 04737646bca072db0800000000000000
+      internalID: -4816869407770331328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_hidelantern_1
+      name: 38x32 pj-attaque-whoosh-dos_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 24
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 208
+        y: 36
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56d2d7f5e8e6ca2c0800000000000000
-      internalID: -4419035576590848667
+      spriteID: b9cca1e15a568a8c0800000000000000
+      internalID: -3987825710187492197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_hidelantern_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 24
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24f60bba8e7470fc0800000000000000
-      internalID: -3528772718383042750
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_hidelantern_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 24
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6685ed22c27dd5160800000000000000
-      internalID: 7016000379076630630
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_hidelantern_4
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 24
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7697de063d83688f0800000000000000
-      internalID: -538680624908764825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_hidelantern_5
+      name: 38x32 pj-attaque-whoosh-dos_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c97e57b364041efe0800000000000000
-      internalID: -1161576558495406180
+      spriteID: f94effac7a9855570800000000000000
+      internalID: 8454815229216285855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_hidelantern_6
+      name: 38x32 pj-attaque-whoosh-dos_3
       rect:
         serializedVersion: 2
-        x: 24
+        x: 52
         y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a48f5871a5478c940800000000000000
-      internalID: 5316627290401405002
+      spriteID: ec2908080c6676850800000000000000
+      internalID: 6370173174914519758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_hidelantern_7
+      name: 38x32 pj-attaque-whoosh-dos_4
       rect:
         serializedVersion: 2
-        x: 48
+        x: 104
         y: 0
-        width: 24
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38813f0832afd3ce0800000000000000
-      internalID: -1423706876784994173
+      spriteID: 7ab61d84a0b8b0810800000000000000
+      internalID: 1732631357941705639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 38x32 pj-attaque-whoosh-dos_5
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 36
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdaf303c49ab34c40800000000000000
+      internalID: 5495441118411881183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 38x32 pj-attaque-whoosh-dos_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 36
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce167e2d315fab90800000000000000
+      internalID: -7228469553692008767
       vertices: []
       indices: 
       edges: []
