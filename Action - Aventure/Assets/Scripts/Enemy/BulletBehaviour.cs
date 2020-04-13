@@ -6,23 +6,26 @@ using Player;
 public class BulletBehaviour : MonoBehaviour
 {
     /// <summary>
-    /// XP_Makes the behaviour of the ennemy3 Bullet
+    /// XP_Makes the behaviour of the ennemy3's Bullet
     /// </summary>
 
     [Header("Stats")]
+    [Range(0.1f, 3f)]
     public float bulletSpeed;
+    [Range(1f, 10f)]
+    public float freezingTime;
+    private float distanceToSwitchStatement = 0.1f;
 
+    [Header("References")]
     private Rigidbody2D bulletRb;
+    
+    public GameObject enemyParent;
+    private Vector3 locationInfo;
 
-    private Transform player;
-
-
+    [Header ("Etats")]
     private bool arrived;
     private bool goEnemy;
     private bool timeToGo;
-    public GameObject enemyParent;
-    private float distanceToSwitchStatement = 0.1f;
-    private Vector3 locationInfo;
 
 
     void Start()
@@ -31,7 +34,7 @@ public class BulletBehaviour : MonoBehaviour
         arrived = false;
         goEnemy = false;
         timeToGo = false;
-        player = PlayerManager.Instance.transform;
+       
 
         locationInfo = PlayerManager.Instance.transform.position;
     }
@@ -80,7 +83,7 @@ public class BulletBehaviour : MonoBehaviour
         goEnemy = true;
         arrived = true;
         Debug.Log("startEnum");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(freezingTime);
         timeToGo = true;
     }
 
