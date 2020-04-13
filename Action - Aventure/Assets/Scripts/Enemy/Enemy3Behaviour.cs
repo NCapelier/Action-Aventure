@@ -20,7 +20,7 @@ public class Enemy3Behaviour : MonoBehaviour
 
     //CooldownShot
     private float timeBtwShots;
-    public float startTimeBtwShots;
+    public float Cooldown;
 
     [Header("References")]
     public GameObject shot;
@@ -33,7 +33,7 @@ public class Enemy3Behaviour : MonoBehaviour
     {
         rbEnemy3 = GetComponent<Rigidbody2D>();
 
-        timeBtwShots = startTimeBtwShots;
+        timeBtwShots = Cooldown;
     }
 
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class Enemy3Behaviour : MonoBehaviour
             {
                 if (timeBtwShots <=0)
                 {
-                    timeBtwShots = startTimeBtwShots;
+                    timeBtwShots = Cooldown;
                     attackAvailable = true;
                 }
                 else
