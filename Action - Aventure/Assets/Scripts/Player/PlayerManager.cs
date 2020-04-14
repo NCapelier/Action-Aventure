@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Management;
 
+
 namespace Player
 {
     /// <summary>
@@ -120,6 +121,9 @@ namespace Player
         void Death()
         {
             //code here
+
+            //Cue the death animation with this function
+            controller.DeathAnimation();
         }
 
     }

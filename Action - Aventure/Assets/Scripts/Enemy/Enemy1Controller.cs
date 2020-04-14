@@ -32,6 +32,10 @@ namespace Enemy
 
         bool focusingPlayer = false;
 
+        // Animator
+        private Animator anim;
+
+
         #endregion
 
         void Awake()
@@ -42,6 +46,7 @@ namespace Enemy
         void Start()
         {
             EnemyRb = GetComponentInParent<Rigidbody2D>();
+            anim = gameObject.GetComponent<Animator>();
         }
         
         void Update()
@@ -59,11 +64,17 @@ namespace Enemy
             {
                 EnemyRb.velocity = (PlayerManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
                 focusingPlayer = true;
+
+                //Animation
+                anim.SetBool("Aggro", true);
             }
             else
             {
                 EnemyRb.velocity = Vector2.zero;
                 focusingPlayer = false;
+
+                //Animation
+                anim.SetBool("Aggro", false);
             }
         }
 
@@ -77,13 +88,60 @@ namespace Enemy
                 if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
                 {
                     EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
+
+                    //Animation
+                    anim.SetBool("Aggro", true);
                 }
                 else
                 {
                     EnemyRb.velocity = Vector2.zero;
+
+                    //Animation
+                    anim.SetBool("Aggro", false);
                 }
             }
             
         }
+
+        /// <summary>
+        /// Animation Fonction For Attack, Death and animator Eyes
+        /// </summary>
+        
+        public void BlobDeathAnimation()
+        {
+            anim.SetBool("isDead", true);
+        }
+        public void BlobAttackAnim()
+        {
+            anim.SetBool("isAttacking", true);
+
+        }
+
+        public void BlobDamageAnim()
+        {
+            anim.SetBool("isHit", true);
+        }
+
+        //Get Animation Event from AttackAnimation 
+        public void GetAnimationEvent(string eventMessage)
+        {
+            if (eventMessage.Equals("AttackEnded"))
+            {
+                anim.SetBool("isAttacking", false);
+            }
+
+            if (eventMessage.Equals("EyeAggro"))
+            {
+                //Set le bool de l'animator des yeux en true, je ne sais pas comment aller chercher cet animator 
+                //anim.SetBool("Aggro", true);
+            }
+
+            if (eventMessage.Equals("Hit"))
+            {
+                anim.SetBool("isHit", false);
+            }
+
+        }
+
     }
 }
