@@ -48,7 +48,7 @@ namespace Player
         [HideInInspector] public Vector2 computedMovementVector = Vector2.zero;
 
         // Animator
-        private Animator anim; 
+        [HideInInspector] public Animator anim; 
 
         #endregion
 

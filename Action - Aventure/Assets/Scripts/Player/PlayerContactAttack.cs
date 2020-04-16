@@ -30,6 +30,9 @@ namespace Player
         [Range(0f, 10f)]
         [SerializeField] float loadingSpeed = 1f;
 
+        
+
+
         #endregion
 
         void Awake()
@@ -70,6 +73,8 @@ namespace Player
         {
             isAttacking = true;
 
+            PlayerManager.Instance.controller.AttackAnimation();
+            
             /*switch(PlayerManager.Instance.controller.lastDirection)
             {
                 case moveDirection.Top:

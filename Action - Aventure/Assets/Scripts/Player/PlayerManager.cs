@@ -123,7 +123,7 @@ namespace Player
             //code here
 
             //Cue the death animation with this function
-            controller.DeathAnimation();
+           // controller.DeathAnimation();
         }
 
     }
