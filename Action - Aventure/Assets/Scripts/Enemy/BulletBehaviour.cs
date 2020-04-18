@@ -34,7 +34,6 @@ public class BulletBehaviour : MonoBehaviour
         arrived = false;
         goEnemy = false;
         timeToGo = false;
-       
 
         locationInfo = PlayerManager.Instance.transform.position;
     }
@@ -46,11 +45,8 @@ public class BulletBehaviour : MonoBehaviour
         {
             StartCoroutine("Activation");
 
-
         }
        
-        
-
             if (arrived == false && goEnemy == false)
             {
             transform.position = Vector2.MoveTowards(transform.position, locationInfo, bulletSpeed * Time.deltaTime);
