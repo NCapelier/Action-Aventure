@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee9ceabf47a61545a68a30adad0ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 246
+  moveSpeed: 1
   contactDistance: 1
   playerDetectRange: 2
   lightDetectExtra: 2
@@ -346,8 +346,9 @@ MonoBehaviour:
   damage: 5
   attackRange: 10
   cooldown: 3
-  anim: {fileID: 0}
-  controller: {fileID: 0}
+  anim: {fileID: 578945827724050341}
+  controller: {fileID: 4472341218124181647}
+  eyesAnim: {fileID: 6128873368138563842}
 --- !u!1 &7803587941020222482
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,6 +44,9 @@ namespace Player
             {
                 currentHp -= value;
 
+                //Animation
+                controller.HitAnimation();
+
                 if (currentHp <= 0)
                 {
                     Death();

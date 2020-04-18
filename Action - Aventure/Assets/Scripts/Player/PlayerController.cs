@@ -48,7 +48,9 @@ namespace Player
         [HideInInspector] public Vector2 computedMovementVector = Vector2.zero;
 
         // Animator
-        [HideInInspector] public Animator anim; 
+        [HideInInspector] public Animator anim;
+        public GameObject fxSprite;
+        private Animator fxAnim;
 
         #endregion
 
@@ -56,6 +58,7 @@ namespace Player
         {
             playerRb = PlayerManager.Instance.GetComponent<Rigidbody2D>();
             anim = gameObject.GetComponent<Animator>();
+            fxAnim = fxSprite.GetComponent<Animator>();
         }
 
 
@@ -107,6 +110,9 @@ namespace Player
                 isDashing = true;
                 dashVector = movementVector;
                 StartCoroutine(DashDuration());
+
+                //Animation
+                anim.SetBool("isRunning", true);
             }
             else if(isAttacking)
             {
@@ -129,6 +135,9 @@ namespace Player
             yield return new WaitForSeconds(dashDuration);
             isDashing = false;
             dashVector = Vector2.zero;
+
+            //Animation
+            anim.SetBool("isRunning", false);
         }
 
         /// <summary>
@@ -208,7 +217,7 @@ namespace Player
         }
 
         /// <summary>
-        /// Play the animation of death (called from player manager )
+        /// Play animations for the player
         /// </summary>
         public void DeathAnimation()
         {
@@ -238,13 +247,14 @@ namespace Player
         {
             if (EventMessage.Equals("AttackEnded"))
             {
-                //met les trucs ici
                 anim.SetBool("isAttacking", false);
+                fxAnim.SetBool("isAttacking", false);
             }
            
             if (EventMessage.Equals("BigAttackEnded"))
             {
                 anim.SetBool("isBigAttack", false);
+                fxAnim.SetBool("isBigAttack", false);
             }
 
             if (EventMessage.Equals("Hit"))

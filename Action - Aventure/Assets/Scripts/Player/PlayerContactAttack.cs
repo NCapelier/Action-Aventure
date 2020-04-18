@@ -30,8 +30,9 @@ namespace Player
         [Range(0f, 10f)]
         [SerializeField] float loadingSpeed = 1f;
 
-        
-
+        //Animator 
+        public GameObject fxSprite;
+        public Animator fxAnim;
 
         #endregion
 
@@ -72,10 +73,12 @@ namespace Player
         GameObject Attack()
         {
             isAttacking = true;
-
+            
+            //Animation
             PlayerManager.Instance.controller.anim.SetFloat("AttackX", PlayerManager.Instance.aimBehaviour.horizontal);
             PlayerManager.Instance.controller.anim.SetFloat("AttackY", PlayerManager.Instance.aimBehaviour.vertical);
             PlayerManager.Instance.controller.AttackAnimation();
+            //fxAnim.SetBool("isAttacking", true);
             
             /*switch(PlayerManager.Instance.controller.lastDirection)
             {

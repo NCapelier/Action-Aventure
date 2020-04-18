@@ -24,8 +24,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: XMovement
     m_Mirror: 0
-  m_BlendParameter: XMovement
-  m_BlendParameterY: YMovement
+  m_BlendParameter: Xmovement
+  m_BlendParameterY: Ymovement
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -287,8 +287,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: XMovement
     m_Mirror: 0
-  m_BlendParameter: XMovement
-  m_BlendParameterY: YMovement
+  m_BlendParameter: Xmovement
+  m_BlendParameterY: Ymovement
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -318,8 +318,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: XMovement
     m_Mirror: 0
-  m_BlendParameter: XMovement
-  m_BlendParameterY: YMovement
+  m_BlendParameter: Xmovement
+  m_BlendParameterY: Ymovement
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -345,10 +345,10 @@ AnimatorStateMachine:
     m_Position: {x: 320, y: -120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5064272082707934127}
-    m_Position: {x: 40, y: -110, z: 0}
+    m_Position: {x: 10, y: -10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2967128048221005610}
-    m_Position: {x: -220, y: 20, z: 0}
+    m_Position: {x: -220, y: 60, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 6252631231083988880}
@@ -374,37 +374,37 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Aggro
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isDead
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: isHit
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: XMovement
+    m_Controller: {fileID: 0}
+  - m_Name: Xmovement
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: YMovement
+    m_Controller: {fileID: 0}
+  - m_Name: Ymovement
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
