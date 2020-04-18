@@ -73,6 +73,8 @@ namespace Player
         {
             isAttacking = true;
 
+            PlayerManager.Instance.controller.anim.SetFloat("AttackX", PlayerManager.Instance.aimBehaviour.horizontal);
+            PlayerManager.Instance.controller.anim.SetFloat("AttackY", PlayerManager.Instance.aimBehaviour.vertical);
             PlayerManager.Instance.controller.AttackAnimation();
             
             /*switch(PlayerManager.Instance.controller.lastDirection)
