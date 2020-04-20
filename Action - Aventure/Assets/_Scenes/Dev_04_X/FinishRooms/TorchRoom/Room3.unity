@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLit: 0
-  Duration: 12
+  Duration: 16
 --- !u!1 &755937204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLit: 0
-  Duration: 10
+  Duration: 16
 --- !u!1 &815868931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLit: 0
-  Duration: 6
+  Duration: 16
 --- !u!1 &921601205
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,6 +5274,11 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 947
       objectReference: {fileID: 0}
+    - target: {fileID: 7950608678516083517, guid: 2330304d2c746ce429ed6f7b997204a2,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2330304d2c746ce429ed6f7b997204a2, type: 3}
 --- !u!1 &1444059331 stripped
@@ -5301,7 +5306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLit: 0
-  Duration: 8
+  Duration: 16
 --- !u!4 &1470668215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4048743575033921996, guid: 2330304d2c746ce429ed6f7b997204a2,
@@ -5361,10 +5366,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1470668215}
     m_Modifications:
+    - target: {fileID: 2499528391195294625, guid: 3354f6bcc06c46849841d55fb6ecd29f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3688519652480419236, guid: 3354f6bcc06c46849841d55fb6ecd29f,
         type: 3}
       propertyPath: m_Name
       value: Will Of The Wisp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657367841472236558, guid: 3354f6bcc06c46849841d55fb6ecd29f,
+        type: 3}
+      propertyPath: castSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657367841472236558, guid: 3354f6bcc06c46849841d55fb6ecd29f,
+        type: 3}
+      propertyPath: fallBackSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657367841472236558, guid: 3354f6bcc06c46849841d55fb6ecd29f,
+        type: 3}
+      propertyPath: maxLoad
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657367841472236558, guid: 3354f6bcc06c46849841d55fb6ecd29f,
+        type: 3}
+      propertyPath: catchRange
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657367841472236558, guid: 3354f6bcc06c46849841d55fb6ecd29f,
+        type: 3}
+      propertyPath: loadingSpeed
+      value: 4.96
       objectReference: {fileID: 0}
     - target: {fileID: 8219121598575569880, guid: 3354f6bcc06c46849841d55fb6ecd29f,
         type: 3}
