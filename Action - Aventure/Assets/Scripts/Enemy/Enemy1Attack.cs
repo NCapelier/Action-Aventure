@@ -28,11 +28,14 @@ namespace Enemy
         //distance between player and this enemy
         float distance = 0;
 
+        public Animator anim;
+        public GameObject controller;
+        public Animator eyesAnim;
         #endregion
 
         void Start()
         {
-
+            anim = controller.GetComponent<Animator>(); 
         }
 
         void Update()
@@ -49,8 +52,11 @@ namespace Enemy
             //Attack if the player is in range and cf == 0
             if (distance < attackRange && Time.time > lastAttackTime + cooldown)
             {
-                PlayerManager.Instance.TakeDamages = damage;
+                anim.SetBool("isAttacking", true);
+                eyesAnim.SetBool("isAttacking", true);
 
+                PlayerManager.Instance.TakeDamages = damage;
+                Debug.Log("Damage");
                 //Record the time of the last attack
                 lastAttackTime = Time.time;
             }

@@ -50,6 +50,9 @@ namespace Enemy
 
         public int numberofWaypointsMax;
 
+        //Animation
+        private Animator anim;
+        public GameObject Animator;
 
 
         private void Start()
@@ -65,6 +68,10 @@ namespace Enemy
             canAttack = true;
 
             rb.velocity = new Vector3(0, 0, 0);
+
+            //Animation
+            anim.SetFloat("Xmovement", rb.velocity.x);
+            anim.SetFloat("Ymovement", rb.velocity.y);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);

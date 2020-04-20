@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Management;
 
+
 namespace Player
 {
     /// <summary>
@@ -42,6 +43,9 @@ namespace Player
             set
             {
                 currentHp -= value;
+
+                //Animation
+                controller.HitAnimation();
 
                 if (currentHp <= 0)
                 {
@@ -120,6 +124,9 @@ namespace Player
         void Death()
         {
             //code here
+
+            //Cue the death animation with this function
+           // controller.DeathAnimation();
         }
 
     }
