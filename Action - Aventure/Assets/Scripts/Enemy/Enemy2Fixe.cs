@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Player;
 
 namespace Enemy
 {
@@ -48,6 +49,8 @@ namespace Enemy
         // Start is called before the first frame update
         void Start()
         {
+            player = PlayerManager.Instance.gameObject;
+
             target = waypointFixe.transform;
 
             rb = GetComponent<Rigidbody2D>();
@@ -113,11 +116,11 @@ namespace Enemy
                     rb.velocity = new Vector3(0, 0, 0);
 
 
-                    if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
+                    /*if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
                     {
                         StartCoroutine(cameraShake.Shake(.05f, .05f));
                     }
-                    clockTwo();
+                    clockTwo();*/
                 }
 
             }
