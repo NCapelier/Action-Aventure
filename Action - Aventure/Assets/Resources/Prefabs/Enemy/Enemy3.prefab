@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7191366254823572708}
   m_Layer: 0
   m_Name: Enemy3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   speed: 130
   detectionRange: 5
   nearRange: 2.5
-  startTimeBtwShots: 5
+  Cooldown: 0
   shot: {fileID: 5206767191751785487, guid: fca2b006d0b47e741ac8a80c99ac9fc5, type: 3}
 --- !u!50 &7191366254823572708
 Rigidbody2D:
