@@ -52,7 +52,9 @@ namespace Enemy
 
         //Animation
         private Animator anim;
+        private Animator eyeAnim;
         public GameObject Animator;
+        public GameObject EyesAnimator;
 
 
         private void Start()
@@ -73,6 +75,10 @@ namespace Enemy
             anim.SetFloat("Xmovement", rb.velocity.x);
             anim.SetFloat("Ymovement", rb.velocity.y);
             anim.SetBool("isMoving", true);
+            //Animation Eyes
+            eyeAnim.SetFloat("Xmovement", rb.velocity.x);
+            eyeAnim.SetFloat("Ymovement", rb.velocity.y);
+            eyeAnim.SetBool("isMoving", true);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
@@ -248,6 +254,7 @@ namespace Enemy
                 canAttack = false;
                 isAttacking = true;
                 anim.SetBool("isAttacking", true);
+                eyeAnim.SetBool("isAttacking", true);
 
                 rb.velocity = new Vector3(0, 0, 0);
                 yield return new WaitForSeconds(warningTime);
@@ -285,6 +292,7 @@ namespace Enemy
                 DownAttack.SetActive(false);
                 isAttacking = false;
                 anim.SetBool("isAttacking", false);
+                eyeAnim.SetBool("isAttacking", false);
                 yield return new WaitForSeconds(attackSpeed);
 
                 canAttack = true;

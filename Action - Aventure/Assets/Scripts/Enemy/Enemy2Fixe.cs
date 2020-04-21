@@ -46,6 +46,12 @@ namespace Enemy
         private bool clockOneEnded;
         private bool clockTwoEnded;
 
+        //Animation
+        private Animator anim;
+        private Animator eyeAnim;
+        public GameObject Animator;
+        public GameObject EyesAnimator;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -57,6 +63,14 @@ namespace Enemy
 
             canAttack = true;
 
+            //Animation
+            anim.SetFloat("Xmovement", rb.velocity.x);
+            anim.SetFloat("Ymovement", rb.velocity.y);
+            anim.SetBool("isMoving", true);
+            //Animation Eyes
+            eyeAnim.SetFloat("Xmovement", rb.velocity.x);
+            eyeAnim.SetFloat("Ymovement", rb.velocity.y);
+            eyeAnim.SetBool("isMoving", true);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
@@ -205,6 +219,10 @@ namespace Enemy
                 canAttack = false;
                 isAttacking = true;
 
+                //Animation
+                anim.SetBool("isAttacking", true);
+                eyeAnim.SetBool("isAttacking", true);
+
                 rb.velocity = new Vector3(0, 0, 0);
                 yield return new WaitForSeconds(warningTime);
 
@@ -240,6 +258,10 @@ namespace Enemy
                 UpAttack.SetActive(false);
                 DownAttack.SetActive(false);
                 isAttacking = false;
+                
+                //Animation
+                anim.SetBool("isAttacking", false);
+                eyeAnim.SetBool("isAttacking", false);
 
                 yield return new WaitForSeconds(attackSpeed);
 
