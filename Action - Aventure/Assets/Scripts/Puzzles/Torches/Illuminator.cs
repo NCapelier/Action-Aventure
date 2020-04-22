@@ -9,44 +9,67 @@ public class Illuminator : MonoBehaviour
     /// This script makes the behaviour of illuminator (la machine a incandescence)
     /// </summary>
     public bool isLit;
-   
+    public float duration;
+    public float StartDuration;
+    public bool restart;
 
     // Start is called before the first frame update
     void Start()
     {
         isLit = false;
+        duration = StartDuration;
+        restart = false;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-            if (!isLit)
-            {
-                //Jouer animation déclenchement
-                //activation light
+        if (restart == true)
+        {
+            duration = StartDuration;
+        }
+
+        if (isLit){
+            //Jouer animation déclenchement
+            //activation light
+                if (duration <= 0)
+                {
+                isLit = false;
+                duration = StartDuration;
+                }
+                else {
+                isLit = true;
+                duration -= Time.deltaTime;
+                }
             }
-            else if (isLit)
-            {
+            
 
-                //jouer animation en sens inverse
-            }
-
-
+           
         
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
+        
         if (col.gameObject.tag == "Hinky" && LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
         {
-            isLit = true;
+
             Debug.Log("called");
+            isLit = true;
+            StartCoroutine("Restart");
+            
+            
 
         }
         
-
-
     }
+
+    IEnumerator Restart()
+    {
+        restart = true;
+        yield return new WaitForSeconds(0.1f);
+        restart = false;
+    }
+    
 }
