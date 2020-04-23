@@ -11,7 +11,7 @@ public class GetEnnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        door.SetActive(true);
+        door.SetActive(false);
         ennemyhere = false;
     }
 
@@ -22,7 +22,7 @@ public class GetEnnemies : MonoBehaviour
         {
             if (enemyInThisRoom.Count == 0)
             {
-                door.SetActive(false);
+                door.SetActive(true);
             }
         }
     }
