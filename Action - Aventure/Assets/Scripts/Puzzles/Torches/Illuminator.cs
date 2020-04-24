@@ -9,9 +9,9 @@ public class Illuminator : MonoBehaviour
     /// This script makes the behaviour of illuminator (la machine a incandescence)
     /// </summary>
     public bool isLit;
-    public float duration;
+    private float duration;
     public float StartDuration;
-    public bool restart;
+    private bool restart;
 
     // Start is called before the first frame update
     void Start()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GetEnnemies : MonoBehaviour
 {
-    public List<GameObject> enemyInThisRoom;
+    private List<GameObject> enemyInThisRoom;
     public GameObject door;
     public bool ennemyhere;
 

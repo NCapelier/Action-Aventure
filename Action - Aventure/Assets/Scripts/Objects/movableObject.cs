@@ -5,9 +5,6 @@ using UnityEngine;
 public class movableObject : MonoBehaviour
 {
 
-   
-   
-
     //If false = MoveHorizontale able
     public bool moveVertical;
     public bool moveHorizontal;
