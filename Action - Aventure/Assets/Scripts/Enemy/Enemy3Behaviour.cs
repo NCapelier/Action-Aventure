@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using Lantern;
 
 public class Enemy3Behaviour : MonoBehaviour
 {
@@ -28,9 +29,13 @@ public class Enemy3Behaviour : MonoBehaviour
 
     [Header("Etat")]
     private bool attackAvailable;
+    
+
+
 
     void Start()
     {
+       
         rbEnemy3 = GetComponent<Rigidbody2D>();
 
         timeBtwShots = Cooldown;
@@ -41,12 +46,18 @@ public class Enemy3Behaviour : MonoBehaviour
     {
         Vector2 dir = PlayerManager.Instance.transform.position - transform.position;
 
+        if(LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)
+        {
+            timeBtwShots = Cooldown;
+        }
+
+
         if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= detectionRange && Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) >= nearRange)
         {
             rbEnemy3.velocity = new Vector3(0f, 0f, 0f);
             Debug.Log("Found");
 
-            if(attackAvailable == true) {
+            if(attackAvailable == true && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed) {
                 Enemy3Attack();
             }
             else
