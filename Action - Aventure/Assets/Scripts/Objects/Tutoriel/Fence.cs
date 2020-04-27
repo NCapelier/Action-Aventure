@@ -13,7 +13,7 @@ public class Fence : MonoBehaviour
     private GameObject pressBouton;
     private BoxCollider2D buttonCollider;
     private SpriteRenderer buttonRenderer;
-    private bool open;
+    public bool open;
 
     // Start is called before the first frame update
     void Start()
@@ -59,10 +59,9 @@ public class Fence : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerController")
+        if (collision.gameObject.tag == "PlayerController" )
         {
-            buttonAnimator.enabled = false;
-            
+            pressBouton.SetActive(false);
         }
     }
 

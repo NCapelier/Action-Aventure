@@ -103,7 +103,7 @@ namespace Enemy
                 if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (currentBoomerangState == boomerangState.Static))
                 {
                     EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
-                    Debug.Log("Target lampe");
+                   
                     //Animation
                     anim.SetBool("Aggro", true);
                     //Animation eyes

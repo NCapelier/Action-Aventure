@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Player;
+using Lantern;
 
 namespace Enemy
 {
@@ -50,7 +51,7 @@ namespace Enemy
         {
             distance = Vector2.Distance(PlayerManager.Instance.transform.position, gameObject.transform.position);
             //Attack if the player is in range and cf == 0
-            if (distance < attackRange && Time.time > lastAttackTime + cooldown)
+            if (distance < attackRange && Time.time > lastAttackTime + cooldown && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
             {
                 anim.SetBool("isAttacking", true);
                 eyesAnim.SetBool("isAttacking", true);

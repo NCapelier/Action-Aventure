@@ -7,12 +7,26 @@ public class apperingEnnemy : MonoBehaviour
     private Animator animator;
     private BoxCollider2D bxC;
     public GameObject ennemy1;
+    private SpriteRenderer buttonRenderer;
+    public Light pointLight;
+    private SpriteRenderer humanRenderer;
+
+    private GameObject pressButton;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         bxC = GetComponent<BoxCollider2D>();
+        humanRenderer = GetComponent<SpriteRenderer>();
+
+        buttonRenderer = GetComponent<SpriteRenderer>();
+
+        pressButton = gameObject.GetChildNamed("360_RB");
+        pressButton.SetActive(false);
+
+        
     }
 
     // Update is called once per frame
@@ -21,7 +35,7 @@ public class apperingEnnemy : MonoBehaviour
         if (collision.gameObject.tag == "PlayerController")
         {
             StartCoroutine("Animation");
-           
+            pressButton.SetActive(true);
         }
     }
 
@@ -30,7 +44,11 @@ public class apperingEnnemy : MonoBehaviour
         bxC.enabled = false;
         animator.enabled = true;
         yield return new WaitForSeconds(2f);
+        humanRenderer.enabled = false;
         Instantiate(ennemy1, transform.position, Quaternion.identity);
-        gameObject.SetActive(false);
+        pointLight.GetComponent<Light>().enabled = false;
+        animator.enabled = false;
+        
+        
     }
 }
