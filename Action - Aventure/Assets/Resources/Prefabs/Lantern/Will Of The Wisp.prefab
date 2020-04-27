@@ -63,7 +63,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1.5
+  m_PointLightOuterRadius: 5
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -465,8 +465,8 @@ MonoBehaviour:
   castSpeed: 650
   fallBackSpeed: 800
   catchRange: 0.05
-  maxLoad: 6
-  loadingSpeed: 0.08
+  maxLoad: 8
+  loadingSpeed: 0.2
   mustStop: 0
 --- !u!1 &8239387844973827951
 GameObject:

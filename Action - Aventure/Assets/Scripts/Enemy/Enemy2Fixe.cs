@@ -39,7 +39,7 @@ namespace Enemy
         public GameObject DownAttack;
 
         //Camera - Use for Camera shake
-        public CameraShake cameraShake;
+        //public CameraShake cameraShake;
 
 
         //Clock - Use to make the enemy walk clock
@@ -104,7 +104,7 @@ namespace Enemy
                 rb.velocity = dir.normalized * speed * Time.deltaTime;
                 if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
                 {
-                    StartCoroutine(cameraShake.Shake(.05f, .05f));
+                    //StartCoroutine(cameraShake.Shake(.05f, .05f));
                 }
 
             }
