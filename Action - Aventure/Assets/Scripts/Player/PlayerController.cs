@@ -47,11 +47,18 @@ namespace Player
         [HideInInspector] public Vector2 computedVelocity = Vector2.zero;
         [HideInInspector] public Vector2 computedMovementVector = Vector2.zero;
 
+        // Animator
+        [HideInInspector] public Animator anim;
+        public GameObject fxSprite;
+        private Animator fxAnim;
+
         #endregion
 
         void Start()
         {
             playerRb = PlayerManager.Instance.GetComponent<Rigidbody2D>();
+            anim = gameObject.GetComponent<Animator>();
+            fxAnim = fxSprite.GetComponent<Animator>();
         }
 
 
@@ -76,11 +83,20 @@ namespace Player
             {
                 isMoving = true;
                 movementVector = new Vector2(horizontal, vertical);
+                
+                //Animation
+                anim.SetBool("isMoving", true);
+                anim.SetFloat("MovementX", horizontal);
+                anim.SetFloat("MovementY", vertical);
             }
             else
             {
                 isMoving = false;
                 movementVector = Vector2.zero;
+
+                //Animation
+                anim.SetBool("isMoving", false);
+
             }
         }
 
@@ -94,6 +110,9 @@ namespace Player
                 isDashing = true;
                 dashVector = movementVector;
                 StartCoroutine(DashDuration());
+
+                //Animation
+                anim.SetBool("isRunning", true);
             }
             else if(isAttacking)
             {
@@ -116,6 +135,9 @@ namespace Player
             yield return new WaitForSeconds(dashDuration);
             isDashing = false;
             dashVector = Vector2.zero;
+
+            //Animation
+            anim.SetBool("isRunning", false);
         }
 
         /// <summary>
@@ -191,6 +213,53 @@ namespace Player
                 {
                     Debug.Log("Error, value is is out of boundaries !");
                 }
+            }
+        }
+
+        /// <summary>
+        /// Play animations for the player
+        /// </summary>
+        public void DeathAnimation()
+        {
+            anim.SetBool("isDead", true);
+        }
+       
+        public void FallAnimation()
+        {
+            anim.SetBool("isFall", true);
+        }
+        /// <summary>
+        /// Play the animation of Attack 
+        /// </summary>
+        public void AttackAnimation()
+        {
+            anim.SetBool("isAttacking", true);
+        }
+
+        //Hit Animation
+        public void HitAnimation()
+        {
+            anim.SetBool("isHit", true);
+        }
+
+        // Get Animation Event
+        public void GetAnimationEvent(string EventMessage)
+        {
+            if (EventMessage.Equals("AttackEnded"))
+            {
+                anim.SetBool("isAttacking", false);
+                fxAnim.SetBool("isAttacking", false);
+            }
+           
+            if (EventMessage.Equals("BigAttackEnded"))
+            {
+                anim.SetBool("isBigAttack", false);
+                fxAnim.SetBool("isBigAttack", false);
+            }
+
+            if (EventMessage.Equals("Hit"))
+            {
+                anim.SetBool("isHit", false);
             }
         }
     }

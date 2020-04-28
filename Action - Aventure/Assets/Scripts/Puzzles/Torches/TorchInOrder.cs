@@ -19,7 +19,7 @@ namespace Puzzle
         [SerializeField] private float timeToKill = 1.5f;
         #endregion
 
-        protected override void Start()
+        /*protected override void Start()
         {
             base.Start();
             prevTorch = prev.GetComponent<Torch>();
@@ -28,10 +28,10 @@ namespace Puzzle
             {
                 StartCoroutine(KillPrevious());
             }
-            */
-        }
+            
+        }*/
 
-        private void Update()
+        /* private void Update()
         {
             if (killsPrev)
             {
@@ -63,7 +63,7 @@ namespace Puzzle
             }
 
             //StartCoroutine(KillPrevious());
-        }
+        }*/
     }
 
 }

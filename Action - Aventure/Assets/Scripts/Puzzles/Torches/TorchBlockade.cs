@@ -11,7 +11,7 @@ namespace Puzzle
 	{
         #region Variables
         [SerializeField] private GameObject torchMaster;
-        private Torch[] torches;
+        private TorchTTK[] torches;
 
         [SerializeField] private GameObject door;
 		#endregion
@@ -19,7 +19,8 @@ namespace Puzzle
 		// Start is called before the first frame update
 		void Start()
 		{
-            torches = torchMaster.GetComponentsInChildren<Torch>();
+            door.SetActive(false);
+            torches = torchMaster.GetComponentsInChildren<TorchTTK>();
             //Debug.Log(torches.Length + " à allumer");
 		}
 
@@ -54,7 +55,7 @@ namespace Puzzle
         /// </summary>
         void OpenDoor()
         {
-            door.SetActive(false);
+            door.SetActive(true);
         }
 	}
 }

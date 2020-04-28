@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Player;
 
 namespace Enemy
 {
@@ -38,22 +39,38 @@ namespace Enemy
         public GameObject DownAttack;
 
         //Camera - Use for Camera shake
-        public CameraShake cameraShake;
+        //public CameraShake cameraShake;
 
 
         //Clock - Use to make the enemy walk clock
         private bool clockOneEnded;
         private bool clockTwoEnded;
 
+        //Animation
+        private Animator anim;
+        private Animator eyeAnim;
+        public GameObject Animator;
+        public GameObject EyesAnimator;
+
         // Start is called before the first frame update
         void Start()
         {
+            player = PlayerManager.Instance.gameObject;
+
             target = waypointFixe.transform;
 
             rb = GetComponent<Rigidbody2D>();
 
             canAttack = true;
 
+            //Animation
+            anim.SetFloat("Xmovement", rb.velocity.x);
+            anim.SetFloat("Ymovement", rb.velocity.y);
+            anim.SetBool("isMoving", true);
+            //Animation Eyes
+            eyeAnim.SetFloat("Xmovement", rb.velocity.x);
+            eyeAnim.SetFloat("Ymovement", rb.velocity.y);
+            eyeAnim.SetBool("isMoving", true);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
@@ -87,7 +104,7 @@ namespace Enemy
                 rb.velocity = dir.normalized * speed * Time.deltaTime;
                 if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
                 {
-                    StartCoroutine(cameraShake.Shake(.05f, .05f));
+                    //StartCoroutine(cameraShake.Shake(.05f, .05f));
                 }
 
             }
@@ -113,11 +130,11 @@ namespace Enemy
                     rb.velocity = new Vector3(0, 0, 0);
 
 
-                    if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
+                    /*if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
                     {
                         StartCoroutine(cameraShake.Shake(.05f, .05f));
                     }
-                    clockTwo();
+                    clockTwo();*/
                 }
 
             }
@@ -202,6 +219,10 @@ namespace Enemy
                 canAttack = false;
                 isAttacking = true;
 
+                //Animation
+                anim.SetBool("isAttacking", true);
+                eyeAnim.SetBool("isAttacking", true);
+
                 rb.velocity = new Vector3(0, 0, 0);
                 yield return new WaitForSeconds(warningTime);
 
@@ -237,6 +258,10 @@ namespace Enemy
                 UpAttack.SetActive(false);
                 DownAttack.SetActive(false);
                 isAttacking = false;
+                
+                //Animation
+                anim.SetBool("isAttacking", false);
+                eyeAnim.SetBool("isAttacking", false);
 
                 yield return new WaitForSeconds(attackSpeed);
 

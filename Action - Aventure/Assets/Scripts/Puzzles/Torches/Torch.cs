@@ -10,47 +10,68 @@ namespace Puzzle
     public class Torch : MonoBehaviour
     {
         #region Variables
-        [HideInInspector] public bool isLit;
+        public bool isLit;
         private GameObject flameObject;
-        private SpriteRenderer flame;
+        private ParticleSystem flame;
         #endregion
 
+        public float Duration;
+    
+
         // Start is called before the first frame update
-        protected virtual void Start()
+        void Start()
         {
             flameObject = gameObject.GetChildNamed("Flame");
-            flame = flameObject.GetComponent<SpriteRenderer>();
-            flame.enabled = false;
+            flame = flameObject.GetComponent<ParticleSystem>();
+            flame.gameObject.SetActive(false); 
             isLit = false;
+   
         }
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.gameObject.tag == "Hinky")
+            if (col.gameObject.tag == "Hinky" )
             {
-                Light();
+                isLit = true;
+
+
             }
+            else { isLit = false; }
+
+          
         }
         /// <summary>
         /// Lights flame. To be called when the right object collides.
         /// </summary>
-        protected virtual void Light()
+        private void Light()
         {
-            if (!isLit)
+            
+            flame.gameObject.SetActive(true);
+            isLit = true;
+            Debug.Log("allo");
+
+        }
+        private void Update()
+        {
+            if(isLit == true)
             {
-                flame.enabled = true;
-                isLit = true;
+                Light();
+            }
+            TTK();
+            
+        }
+       
+         IEnumerator TTK()
+        {
+            if (isLit == true)
+            {
+                Debug.Log("called");
+                yield return new WaitForSeconds(Duration);
+                isLit = false;
+                flame.gameObject.SetActive(false);
             }
         }
 
-        public void PutOut()
-        {
-            if (isLit)
-            {
-                flame.enabled = false;
-                isLit = false;
-            }
-        }
     }
 
 }
