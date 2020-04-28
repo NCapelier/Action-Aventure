@@ -24,7 +24,7 @@ namespace Player
 
         //editor variables :
 
-        [Range(0f,50f)]
+        [Range(0f, 50f)]
         [SerializeField] float maxLoad = 10f;
 
         [Range(0f, 10f)]
@@ -53,7 +53,7 @@ namespace Player
 
         void AttackInput()
         {
-            if(!isAttacking)
+            if (!isAttacking)
             {
                 if (Input.GetButton("Right_Bumper") && loading < maxLoad)
                 {
@@ -73,13 +73,13 @@ namespace Player
         GameObject Attack()
         {
             isAttacking = true;
-            
+
             //Animation
             PlayerManager.Instance.controller.anim.SetFloat("AttackX", PlayerManager.Instance.aimBehaviour.horizontal);
             PlayerManager.Instance.controller.anim.SetFloat("AttackY", PlayerManager.Instance.aimBehaviour.vertical);
             PlayerManager.Instance.controller.AttackAnimation();
             //fxAnim.SetBool("isAttacking", true);
-            
+
             /*switch(PlayerManager.Instance.controller.lastDirection)
             {
                 case moveDirection.Top:
