@@ -14,7 +14,7 @@ public class RoomEnigme4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        door.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class RoomEnigme4 : MonoBehaviour
     {
         if (torch1.GetComponent<TorchTTK>().isLit == true && illuminator1.GetComponent<Illuminator>().isLit == true && illuminator1.GetComponent<Illuminator>().isLit == true)
         {
-            door.SetActive(false);
+            door.SetActive(true);
         }
     }
 }
