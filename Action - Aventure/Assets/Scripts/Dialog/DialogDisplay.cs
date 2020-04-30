@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 namespace Dialog
 {
+    /// <summary>
+    /// NCO - Dialog management
+    /// </summary>
     public class DialogDisplay : MonoBehaviour
     {
 
@@ -21,6 +24,9 @@ namespace Dialog
         #endregion
 
         #region properties
+        /// <summary>
+        /// Used to start a new conversation
+        /// </summary>
         public Conversation StartDialog
         {
             get
@@ -36,6 +42,9 @@ namespace Dialog
 
         #endregion
 
+        /// <summary>
+        /// called when a new conversation is started
+        /// </summary>
         void StartConversation()
         {
             overlay.gameObject.SetActive(true);
@@ -54,6 +63,9 @@ namespace Dialog
             
         }
 
+        /// <summary>
+        /// Updates a running conversation when pressing A_Button
+        /// </summary>
         void UpdateConversation()
         {
             if(lineIndex < conversation.lines.Length - 1)

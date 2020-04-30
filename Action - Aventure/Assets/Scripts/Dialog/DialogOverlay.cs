@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 namespace Dialog
 {
+    /// <summary>
+    /// NCO - references to dialogs' overlay images
+    /// </summary>
     public class DialogOverlay : MonoBehaviour
     {
 
