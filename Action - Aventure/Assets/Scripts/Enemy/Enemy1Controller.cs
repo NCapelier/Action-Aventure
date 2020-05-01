@@ -31,21 +31,31 @@ namespace Enemy
         [SerializeField] float lightDetectExtra = 4f;
 
         bool focusingPlayer = false;
+        private boomerangState currentBoomerangState;
+
+        // Animator
+        private Animator anim = null;
+        public Enemy1Attack enemy1attack;
+        public GameObject eyes;
+        private Animator eyesAnim = null;
 
         #endregion
 
         void Awake()
         {
-            
+            currentBoomerangState = LanternManager.Instance.boomerang.currentBoomerangState;
         }
         
         void Start()
         {
             EnemyRb = GetComponentInParent<Rigidbody2D>();
+            anim = gameObject.GetComponent<Animator>();
+            eyesAnim = eyes.GetComponent<Animator>();
         }
         
         void Update()
         {
+
             MoveToPlayer();
             MoveToLight();
         }
@@ -55,15 +65,31 @@ namespace Enemy
         /// </summary>
         void MoveToPlayer()
         {
-            if((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange, true)) && (LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
+            if((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange, true) && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
             {
                 EnemyRb.velocity = (PlayerManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
                 focusingPlayer = true;
+                Debug.Log("target player");
+               
+                //Animation
+                anim.SetFloat("Xmovement", EnemyRb.velocity.x);
+                anim.SetFloat("Ymovement", EnemyRb.velocity.y);
+                anim.SetBool("Aggro", true);
+                //Animation eyes
+                eyesAnim.SetFloat("Xmovement", EnemyRb.velocity.x);
+                eyesAnim.SetFloat("Ymovement", EnemyRb.velocity.y);
+                eyesAnim.SetBool("Aggro", true);
             }
-            else
+            else if((LanternManager.Instance.hideLight.currentLightState == lightState.Hidden))
             {
+                Debug.Log("called eteint");                
                 EnemyRb.velocity = Vector2.zero;
                 focusingPlayer = false;
+
+                //Animation
+                anim.SetBool("Aggro", false);
+                //Animation eyes
+                eyesAnim.SetBool("Aggro", false);
             }
         }
 
@@ -74,16 +100,62 @@ namespace Enemy
         {
             if (!focusingPlayer)
             {
-                if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful))
+                if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (currentBoomerangState == boomerangState.Static))
                 {
                     EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
+                   
+                    //Animation
+                    anim.SetBool("Aggro", true);
+                    //Animation eyes
+                    eyesAnim.SetBool("Aggro", true);
                 }
-                else
+                else if(LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)
                 {
+                    Debug.Log("stopAggro");
                     EnemyRb.velocity = Vector2.zero;
+
+                    //Animation
+                    anim.SetBool("Aggro", false);
+
+                    //Animation eyes
+                    eyesAnim.SetBool("Aggro", false);
                 }
             }
             
         }
+
+        /// <summary>
+        /// Animation Fonction For Attack, Death and animator Eyes
+        /// </summary>
+        
+        public void BlobDeathAnimation()
+        {
+            anim.SetBool("isDead", true);
+        }
+       
+        
+
+        public void BlobDamageAnim()
+        {
+            anim.SetBool("isHit", true);
+        }
+
+        //Get Animation Event from AttackAnimation 
+        public void GetAnimationEvent(string eventMessage)
+        {
+            if (eventMessage.Equals("AttackEnded"))
+            {
+                anim.SetBool("isAttacking", false);
+                eyesAnim.SetBool("isAttacking", false);
+            }
+
+         
+            if (eventMessage.Equals("Hit"))
+            {
+                anim.SetBool("isHit", false);
+            }
+
+        }
+
     }
 }

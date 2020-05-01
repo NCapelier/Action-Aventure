@@ -13,12 +13,12 @@ namespace Enemy
         private Transform target;
         private int waypointIndex = 0;
         public GameObject player;
-        public int attackDirection;
-        public int direction;
-        public bool playerFound;
+        private int attackDirection;
+        private int direction;
+        private bool playerFound;
 
         //Velocity
-        public Rigidbody2D rb;
+        private Rigidbody2D rb;
         public float speed = 10f;
 
         //distance - Set the distance of Swaping Target
@@ -27,20 +27,20 @@ namespace Enemy
         public float ennemiRangeAttack;
 
         //Clock - Use to make the enemy walk clock
-        public bool clockOneEnded;
-        public bool clockTwoEnded;
-        public bool playerNotFound;
+        private bool clockOneEnded;
+        private bool clockTwoEnded;
+        
 
         //Camera - Use for Camera shake
         public CameraShake cameraShake;
 
         //Attaque - All Variables use for attack
         public float attackSpeed;
-        public bool canAttack;
+        private bool canAttack;
         public float warningTime;
         public bool isAttacking;
         public float immobilizationTime;
-        public Vector3 move;
+        private Vector3 move;
 
         //Zone de dégats  - Zone de Dégats
         public GameObject LeftAttack;
@@ -49,6 +49,12 @@ namespace Enemy
         public GameObject DownAttack;
 
         public int numberofWaypointsMax;
+
+        //Animation
+        private Animator anim = null;
+        private Animator eyeAnim = null;
+        public GameObject Animator;
+        public GameObject EyesAnimator;
 
 
         private void Start()
@@ -59,13 +65,20 @@ namespace Enemy
 
             clockTwoEnded = true;
 
-            playerNotFound = true;
-
             rb = GetComponent<Rigidbody2D>();
 
             canAttack = true;
 
             rb.velocity = new Vector3(0, 0, 0);
+
+            //Animation
+            anim.SetFloat("Xmovement", rb.velocity.x);
+            anim.SetFloat("Ymovement", rb.velocity.y);
+            anim.SetBool("isMoving", true);
+            //Animation Eyes
+            eyeAnim.SetFloat("Xmovement", rb.velocity.x);
+            eyeAnim.SetFloat("Ymovement", rb.velocity.y);
+            eyeAnim.SetBool("isMoving", true);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
@@ -101,7 +114,7 @@ namespace Enemy
                 if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
                 {
                     //scren Shake
-                    //StartCoroutine(cameraShake.Shake(.01f, .05f));
+                    StartCoroutine(cameraShake.Shake(.01f, .05f));
                 }
 
             }
@@ -164,20 +177,28 @@ namespace Enemy
                 }
             }
 
+        }
+
+        private void GetNextWaypoints()
+        {
+            waypointIndex++;
+
             //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et sa casse tout
-            if (waypointIndex == 5)
+            if (waypointIndex == numberofWaypointsMax - 1)
             {
-                StartCoroutine(Clock1());
+                waypointIndex = 0;
             }
+
+            target = waypoints.GetComponent<GetWaypoints>().points[waypointIndex];
 
         }
 
-        void clockOne()
+        private void clockOne()
         {
             StartCoroutine(Clock1());
         }
 
-        void clockTwo()
+        private void clockTwo()
         {
             StartCoroutine(Clock2());
         }
@@ -232,6 +253,8 @@ namespace Enemy
 
                 canAttack = false;
                 isAttacking = true;
+                anim.SetBool("isAttacking", true);
+                eyeAnim.SetBool("isAttacking", true);
 
                 rb.velocity = new Vector3(0, 0, 0);
                 yield return new WaitForSeconds(warningTime);
@@ -268,31 +291,16 @@ namespace Enemy
                 UpAttack.SetActive(false);
                 DownAttack.SetActive(false);
                 isAttacking = false;
-
+                anim.SetBool("isAttacking", false);
+                eyeAnim.SetBool("isAttacking", false);
                 yield return new WaitForSeconds(attackSpeed);
 
                 canAttack = true;
 
             }
-
-
-
-
-        }
-
-        void GetNextWaypoints()
-        {
-            waypointIndex++;
-
-            //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et ça casse tout
-            if (waypointIndex == 5)
-            {
-                waypointIndex = 0;
-            }
-
-            target = waypoints.GetComponent<GetWaypoints>().points[waypointIndex];
-
         }
     }
+
+
 }
 

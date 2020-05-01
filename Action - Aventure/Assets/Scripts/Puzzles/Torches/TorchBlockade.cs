@@ -10,16 +10,17 @@ namespace Puzzle
 	public class TorchBlockade : MonoBehaviour
 	{
         #region Variables
-        [SerializeField] private GameObject torchMaster;
-        private Torch[] torches;
+        [SerializeField] private GameObject torchMaster = null;
+        private TorchTTK[] torches;
 
-        [SerializeField] private GameObject door;
+        [SerializeField] private GameObject door = null;
 		#endregion
 
 		// Start is called before the first frame update
 		void Start()
 		{
-            torches = torchMaster.GetComponentsInChildren<Torch>();
+            door.SetActive(false);
+            torches = torchMaster.GetComponentsInChildren<TorchTTK>();
             //Debug.Log(torches.Length + " à allumer");
 		}
 
@@ -54,7 +55,7 @@ namespace Puzzle
         /// </summary>
         void OpenDoor()
         {
-            door.SetActive(false);
+            door.SetActive(true);
         }
 	}
 }

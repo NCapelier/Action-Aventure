@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.82
+  m_FalloffIntensity: 0.96
   m_Color: {r: 0.4009434, g: 1, b: 0.9939476, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.3
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 4bdb4f4b00000000af660ebb17e2b34545fbfa630527eec5
   m_LightCookieSprite: {fileID: 0}
@@ -59,8 +59,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.3
-  m_PointLightOuterRadius: 1
+  m_PointLightInnerRadius: 2
+  m_PointLightOuterRadius: 3
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 2571505206881489871}
   - component: {fileID: 9206446498223399854}
   m_Layer: 0
-  m_Name: Fire
+  m_Name: Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3896694006834024168}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.022, y: 0.194, z: 0}
+  m_LocalPosition: {x: -0.02199936, y: 0.541667, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6647312553311143030}
@@ -4832,7 +4832,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -4867,6 +4867,7 @@ GameObject:
   - component: {fileID: 3051177853862437915}
   - component: {fileID: 2618712208890231720}
   - component: {fileID: 5474252607768614040}
+  - component: {fileID: 9179298890443764318}
   m_Layer: 0
   m_Name: Flambeau
   m_TagString: Untagged
@@ -4933,7 +4934,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.08, y: 0.16}
+  m_Size: {x: 0.33333334, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4949,19 +4950,33 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020632066, y: -0.12621945}
+  m_Offset: {x: -0.016437404, y: 0.53861105}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.0625}
     oldSize: {x: 0.33333334, y: 0.6666667}
-    newSize: {x: 0.08, y: 0.16}
+    newSize: {x: 0.33333334, y: 0.6666667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.21439566, y: 0.41422778}
+  m_Size: {x: 0.10952631, y: 0.14305854}
   m_EdgeRadius: 0
+--- !u!114 &9179298890443764318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7812268342366010901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 019338fe74561ff41bad4cc69864a863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLit: 0
+  Duration: 10
