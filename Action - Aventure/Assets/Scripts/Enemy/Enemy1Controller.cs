@@ -34,10 +34,10 @@ namespace Enemy
         private boomerangState currentBoomerangState;
 
         // Animator
-        private Animator anim;
+        private Animator anim = null;
         public Enemy1Attack enemy1attack;
         public GameObject eyes;
-        private Animator eyesAnim;
+        private Animator eyesAnim = null;
 
         #endregion
 

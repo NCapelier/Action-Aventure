@@ -12,7 +12,7 @@ namespace Player
         #region Variables
 
         //temp current aim display pattern used
-        aimDeadZone aimState = aimDeadZone.True;
+        //aimDeadZone aimState = aimDeadZone.True;
 
         //right joystick input
         [HideInInspector] public float horizontal = 0, vertical = 0;

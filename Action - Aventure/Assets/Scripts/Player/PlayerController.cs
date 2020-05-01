@@ -27,8 +27,8 @@ namespace Player
         [Range(0f, 5f)]
         [SerializeField] float dashDuration = 0.1f;
 
-        [Range(0f, 10f)]
-        [SerializeField] float dashCooldown = 2f;
+        //[Range(0f, 10f)]
+        //[SerializeField] float dashCooldown = 2f;
 
         // Player rigidbody2D
         Rigidbody2D playerRb;
@@ -49,8 +49,8 @@ namespace Player
 
         // Animator
         [HideInInspector] public Animator anim;
-        public GameObject fxSprite;
-        private Animator fxAnim;
+        //[HideInInspector] public GameObject fxSprite;
+        [HideInInspector] public Animator fxAnim = null;
 
         #endregion
 
@@ -58,7 +58,7 @@ namespace Player
         {
             playerRb = PlayerManager.Instance.GetComponent<Rigidbody2D>();
             anim = gameObject.GetComponent<Animator>();
-            fxAnim = fxSprite.GetComponent<Animator>();
+            //fxAnim = fxSprite.GetComponent<Animator>();
         }
 
 
@@ -68,7 +68,7 @@ namespace Player
             MoveInput();
             DashInput();
             Move();
-            UpdateMoveState();
+            //UpdateMoveState();
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Player
         /// <summary>
         /// Updates the current direction of the Player (in 4 directions) in the lastDirection value
         /// </summary>
-        void UpdateMoveState()
+        /*void UpdateMoveState()
         {
             if (isMoving)
             {
@@ -214,7 +214,7 @@ namespace Player
                     Debug.Log("Error, value is is out of boundaries !");
                 }
             }
-        }
+        }*/
 
         /// <summary>
         /// Play animations for the player
@@ -248,13 +248,11 @@ namespace Player
             if (EventMessage.Equals("AttackEnded"))
             {
                 anim.SetBool("isAttacking", false);
-                fxAnim.SetBool("isAttacking", false);
             }
            
             if (EventMessage.Equals("BigAttackEnded"))
             {
                 anim.SetBool("isBigAttack", false);
-                fxAnim.SetBool("isBigAttack", false);
             }
 
             if (EventMessage.Equals("Hit"))

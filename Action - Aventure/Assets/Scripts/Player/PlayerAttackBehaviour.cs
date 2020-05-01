@@ -20,6 +20,10 @@ namespace Player
         [Range(0, 50)]
         [SerializeField] int damages = 1;
 
+        public GameObject spriteObject = null;
+        Animator fxAnim = null;
+
+
         #endregion
 
         void Awake()
@@ -30,11 +34,14 @@ namespace Player
         void Start()
         {
             StartCoroutine(LifeCycle());
+            fxAnim = spriteObject.GetComponent<Animator>();
+            fxAnim.SetBool("isAttacking", true);
         }
         
         void Update()
         {
-            
+            fxAnim.SetFloat("XDirection", PlayerManager.Instance.aimBehaviour.horizontal);
+            fxAnim.SetFloat("YDirection", PlayerManager.Instance.aimBehaviour.vertical);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -57,6 +64,19 @@ namespace Player
             PlayerManager.Instance.contactAttack.isAttacking = false;
             Destroy(gameObject);
         }
+
+        public void GetAnimationEvent(string EventMessage)
+        {
+            if (EventMessage.Equals("AttackEnded"))
+            {
+                fxAnim.SetBool("isAttacking", false);
+            }
+            if (EventMessage.Equals("BigAttackEnded"))
+            {
+                fxAnim.SetBool("isBigAttack", false);
+            }
+        }
+
 
     }
 }

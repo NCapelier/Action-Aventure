@@ -47,8 +47,8 @@ namespace Enemy
         private bool clockTwoEnded;
 
         //Animation
-        private Animator anim;
-        private Animator eyeAnim;
+        private Animator anim = null;
+        private Animator eyeAnim = null;
         public GameObject Animator;
         public GameObject EyesAnimator;
 

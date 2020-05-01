@@ -10,10 +10,10 @@ namespace Puzzle
 	public class TorchBlockade : MonoBehaviour
 	{
         #region Variables
-        [SerializeField] private GameObject torchMaster;
+        [SerializeField] private GameObject torchMaster = null;
         private TorchTTK[] torches;
 
-        [SerializeField] private GameObject door;
+        [SerializeField] private GameObject door = null;
 		#endregion
 
 		// Start is called before the first frame update

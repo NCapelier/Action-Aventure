@@ -102,6 +102,7 @@ namespace Player
             attackDirection = aimBehaviour.orientationQuaternion;
 
             GameObject attack = (GameObject)Instantiate(Resources.Load("Prefabs/Player/Attack"), PlayerManager.Instance.transform.position, attackDirection);
+            //PlayerManager.Instance.controller.fxAnim = attack.GetComponent<PlayerAttackBehaviour>().spriteObject.GetComponent<Animator>();
             return attack;
         }
 
