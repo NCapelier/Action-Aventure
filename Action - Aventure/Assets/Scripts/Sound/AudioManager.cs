@@ -13,17 +13,14 @@ namespace GameSound
     public class AudioManager : Singleton<AudioManager>
 	{
         #region Variables
-        //Optimization possible by segmenting possible if getting a sound by string scanning is too slow with 40+ songs
-        //Array[] soundFamilies;
+        public Dictionary<string, AudioSource> d_sounds = new Dictionary<string, AudioSource>();
         public Sound[] sounds;
         #endregion
         private void Awake()
         {
-            //soundFamilies[0] = sounds;
             MakeSingleton(true);
-
-            //foreach(Sound[] sFam in soundFamilies)
-            foreach(Sound s in sounds) /*in sFam*/
+            
+            foreach(Sound s in sounds)
             {
                 GetSound(s);
             }
@@ -41,15 +38,18 @@ namespace GameSound
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            //s.source.playOnAwake = s.playAwake;
+
+            d_sounds.Add(s.clip.name, s.source);
         }
 
         /// <summary>
         /// CHB -- Start playing a sound, called by name
         /// </summary>
         /// <param name="name"></param>
-        public void Play(string name) /*Sound[] soundFamily*/
+        public void Play(string name)
         {
-            Sound s2p = Array.Find(sounds, sound => sound.name == name);
+            AudioSource s2p = d_sounds[name];
 
             if(s2p == null)
             {
@@ -57,7 +57,7 @@ namespace GameSound
                 return;
             }
 
-            s2p.source.Play();
+            s2p.Play();
         }
     }
 }

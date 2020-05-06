@@ -10,7 +10,6 @@ namespace GameSound
     public class Sound
 	{
         #region Variables
-        public string name;
         public AudioClip clip;
 
         [Range(0f, 1f)]
@@ -19,6 +18,7 @@ namespace GameSound
         public float pitch = 1f;
 
         public bool loop;
+        //public bool playAwake;
 
         [HideInInspector]
         public AudioSource source;
