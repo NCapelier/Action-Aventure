@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Enemy;
+using GameSound;
 
 namespace Player
 {
@@ -34,6 +35,9 @@ namespace Player
         void Start()
         {
             StartCoroutine(LifeCycle());
+
+            AudioManager.Instance.Play("Lantern_light_strike");
+
             fxAnim = spriteObject.GetComponent<Animator>();
             fxAnim.SetBool("isAttacking", true);
         }

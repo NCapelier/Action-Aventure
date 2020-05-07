@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Management;
+using GameSound;
 
 
 namespace Player
@@ -126,7 +127,10 @@ namespace Player
             //code here
 
             //Cue the death animation with this function
-           // controller.DeathAnimation();
+            // controller.DeathAnimation();
+
+            //Sound
+            AudioManager.Instance.Play("Player_death");
         }
 
     }

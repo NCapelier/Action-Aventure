@@ -22,7 +22,7 @@ namespace GameSound
             
             foreach(Sound s in sounds)
             {
-                GetSound(s);
+                MakeAudioSource(s);
             }
         }
 
@@ -30,7 +30,7 @@ namespace GameSound
         /// Set sounds in ready-to-play Audio Sources
         /// </summary>
         /// <param name="s"></param>
-        void GetSound(Sound s)
+        void MakeAudioSource(Sound s)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -49,15 +49,22 @@ namespace GameSound
         /// <param name="name"></param>
         public void Play(string name)
         {
-            AudioSource s2p = d_sounds[name];
-
-            if(s2p == null)
-            {
-                Debug.LogWarning("Sound: " + name + " not found!");
-                return;
-            }
+            AudioSource s2p = GetSound(name);
 
             s2p.Play();
+        }
+
+        public AudioSource GetSound(string name)
+        {
+            AudioSource s2g = d_sounds[name];
+
+            if (s2g == null)
+            {
+                Debug.LogWarning("Sound: " + name + " not found!");
+                return null;
+            }
+
+            return s2g;
         }
     }
 }
