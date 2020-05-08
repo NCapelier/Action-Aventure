@@ -33,11 +33,6 @@ namespace Lantern
         [SerializeField] float flashSpeed = 1f;
 
         #endregion
-
-        void Awake()
-        {
-            
-        }
         
         void Start()
         {

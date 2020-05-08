@@ -57,7 +57,6 @@ namespace Enemy
                 eyesAnim.SetBool("isAttacking", true);
 
                 PlayerManager.Instance.TakeDamages = damage;
-                Debug.Log("Damage");
                 //Record the time of the last attack
                 lastAttackTime = Time.time;
             }

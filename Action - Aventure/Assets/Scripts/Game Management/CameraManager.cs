@@ -1,30 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Management;
 
-namespace Enemy
+namespace GameManagement
 {
-    public class Enemy1Manager : EnemyParent
+    public class CameraManager : Singleton<CameraManager>
     {
         
         
         
         void Awake()
         {
-            
+            MakeSingleton(true);
         }
         
         void Start()
         {
-            hp = maxHp;
+            
         }
         
         void Update()
         {
-
+            
         }
-
-
-
+        
+        
+        
     }
 }

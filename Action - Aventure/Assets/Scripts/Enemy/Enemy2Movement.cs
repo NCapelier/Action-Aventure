@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Player;
 
 namespace Enemy
 {
@@ -12,13 +13,14 @@ namespace Enemy
         public GameObject waypoints;
         private Transform target;
         private int waypointIndex = 0;
-        public GameObject player;
+        GameObject player;
         private int attackDirection;
         private int direction;
         private bool playerFound;
 
         //Velocity
         private Rigidbody2D rb;
+        [Range(0.1f,500f)]
         public float speed = 10f;
 
         //distance - Set the distance of Swaping Target
@@ -38,7 +40,7 @@ namespace Enemy
         public float attackSpeed;
         private bool canAttack;
         public float warningTime;
-        public bool isAttacking;
+        [HideInInspector] public bool isAttacking;
         public float immobilizationTime;
         private Vector3 move;
 
@@ -47,8 +49,6 @@ namespace Enemy
         public GameObject RightAttack;
         public GameObject UpAttack;
         public GameObject DownAttack;
-
-        public int numberofWaypointsMax;
 
         //Animation
         private Animator anim = null;
@@ -99,26 +99,27 @@ namespace Enemy
             Direction();
 
             //Dans le cas ou le player est dans la zone d'aggro
-            if (Vector2.Distance(transform.position, player.transform.position) <= enterPlayerArea)
+            if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) <= enterPlayerArea)
             {
                 playerFound = true;
                 //Debug.Log("playerFound");
 
                 //Switch de target de waypoints à player.
-                target = player.transform;
+                target = PlayerManager.Instance.gameObject.transform;
 
                 //je change la velocité
                 rb.velocity = dir.normalized * speed * Time.deltaTime;
 
                 //Quand le player est en zone d'attaque
-                if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
+                if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) >= ennemiRangeAttack)
                 {
                     //scren Shake
-                    StartCoroutine(cameraShake.Shake(.01f, .05f));
+                    ////////////////////////////////////////////////////////////PLACE CAMERA SHAKE HERE
+                    //StartCoroutine(cameraShake.Shake(.01f, .05f));
                 }
 
             }
-            else if (Vector2.Distance(transform.position, player.transform.position) >= enterPlayerArea)    //Dans le cas ou le player pas dans la zone d'aggro.
+            else if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) >= enterPlayerArea)    //Dans le cas ou le player pas dans la zone d'aggro.
             {
                 playerFound = false;
                 //Debug.Log("Player Outside");
@@ -140,7 +141,7 @@ namespace Enemy
 
 
 
-                    if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
+                    if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) >= ennemiRangeAttack)
                     {
                         if (playerFound == true)
                         {
@@ -164,7 +165,7 @@ namespace Enemy
 
 
             //Check la distance d'aggro.
-            if (Vector2.Distance(transform.position, player.transform.position) <= ennemiRangeAttack)
+            if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) <= ennemiRangeAttack)
             {
                 rb.velocity = new Vector3(0, 0, 0);
 
@@ -184,7 +185,7 @@ namespace Enemy
             waypointIndex++;
 
             //Si on a fini la boucle, on recommence à 0 (je suis obligé de mettre n+1 waypoints car sinon je sors du tableau et sa casse tout
-            if (waypointIndex == numberofWaypointsMax - 1)
+            if (waypointIndex == waypoints.GetComponent<GetWaypoints>().points.Length - 1)
             {
                 waypointIndex = 0;
             }
@@ -222,7 +223,7 @@ namespace Enemy
 
         void Direction()
         {
-            move = (player.transform.position - transform.position).normalized;
+            move = (PlayerManager.Instance.gameObject.transform.position - transform.position).normalized;
 
             //LA C'EST JUSTE DES MATHS
             if (move != Vector3.zero)
@@ -300,7 +301,4 @@ namespace Enemy
             }
         }
     }
-
-
 }
-

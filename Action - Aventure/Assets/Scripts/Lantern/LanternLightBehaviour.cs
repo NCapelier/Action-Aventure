@@ -86,7 +86,7 @@ namespace Lantern
         /// </summary>
         void UpdateLightRadius()
         {
-            mainLight.pointLightInnerRadius = mainLight.pointLightOuterRadius / 2;
+            mainLight.pointLightInnerRadius = mainLight.pointLightOuterRadius * 0.5f;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

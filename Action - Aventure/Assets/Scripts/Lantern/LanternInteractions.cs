@@ -34,7 +34,7 @@ namespace Lantern
             {
                 LanternManager.Instance.boomerang.mustStop = true;
             }
-            if(collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Enemy") && LanternManager.Instance.boomerang.currentBoomerangState != boomerangState.Tidy)
             {
                 //deal damages to the enemy
                 collision.GetComponent<EnemyParent>().TakeDamages = 1;

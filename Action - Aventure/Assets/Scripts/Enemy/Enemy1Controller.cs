@@ -31,7 +31,6 @@ namespace Enemy
         [SerializeField] float lightDetectExtra = 4f;
 
         bool focusingPlayer = false;
-        private boomerangState currentBoomerangState;
 
         // Animator
         private Animator anim = null;
@@ -40,11 +39,6 @@ namespace Enemy
         private Animator eyesAnim = null;
 
         #endregion
-
-        void Awake()
-        {
-            currentBoomerangState = LanternManager.Instance.boomerang.currentBoomerangState;
-        }
         
         void Start()
         {
@@ -55,7 +49,6 @@ namespace Enemy
         
         void Update()
         {
-
             MoveToPlayer();
             MoveToLight();
         }
@@ -69,7 +62,6 @@ namespace Enemy
             {
                 EnemyRb.velocity = (PlayerManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
                 focusingPlayer = true;
-                Debug.Log("target player");
                
                 //Animation
                 anim.SetFloat("Xmovement", EnemyRb.velocity.x);
@@ -82,7 +74,6 @@ namespace Enemy
             }
             else if((LanternManager.Instance.hideLight.currentLightState == lightState.Hidden))
             {
-                Debug.Log("called eteint");                
                 EnemyRb.velocity = Vector2.zero;
                 focusingPlayer = false;
 
@@ -100,7 +91,7 @@ namespace Enemy
         {
             if (!focusingPlayer)
             {
-                if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (currentBoomerangState == boomerangState.Static))
+                if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Static))
                 {
                     EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
                    

@@ -10,7 +10,6 @@ namespace Enemy
         //Target - All this stuff is use to set the target
         public GameObject waypointFixe;
         private Transform target;
-        public GameObject player;
         private int direction;
         public float ennemiRangeAttack;
         private int attackDirection;
@@ -55,8 +54,6 @@ namespace Enemy
         // Start is called before the first frame update
         void Start()
         {
-            player = PlayerManager.Instance.gameObject;
-
             target = waypointFixe.transform;
 
             rb = GetComponent<Rigidbody2D>();
@@ -93,22 +90,22 @@ namespace Enemy
             Direction();
 
             //Dans le cas ou le player est dans la zone d'aggro
-            if (Vector2.Distance(transform.position, player.transform.position) <= enterPlayerArea)
+            if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) <= enterPlayerArea)
             {
                 playerFound = true;
                 //Debug.Log("playerFound");
 
                 //Switch de target de waypoints à player.
-                target = player.transform;
+                target = PlayerManager.Instance.gameObject.transform;
                 //je change la velocité pour déplacer l'ennemi
                 rb.velocity = dir.normalized * speed * Time.deltaTime;
-                if (Vector2.Distance(transform.position, player.transform.position) >= ennemiRangeAttack)
+                if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) >= ennemiRangeAttack)
                 {
                     //StartCoroutine(cameraShake.Shake(.05f, .05f));
                 }
 
             }
-            else if (Vector2.Distance(transform.position, player.transform.position) >= enterPlayerArea)
+            else if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) >= enterPlayerArea)
 
             {
                 playerFound = false;
@@ -139,7 +136,7 @@ namespace Enemy
 
             }
 
-            if (Vector2.Distance(transform.position, player.transform.position) <= ennemiRangeAttack)
+            if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) <= ennemiRangeAttack)
             {
                 rb.velocity = new Vector3(0, 0, 0);
                 StartCoroutine(Attack());
@@ -188,7 +185,7 @@ namespace Enemy
         }
         void Direction()
         {
-            move = (player.transform.position - transform.position).normalized;
+            move = (PlayerManager.Instance.gameObject.transform.position - transform.position).normalized;
 
             if (move != Vector3.zero)
             {

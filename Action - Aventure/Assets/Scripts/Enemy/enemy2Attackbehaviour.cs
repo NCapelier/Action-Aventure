@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Player;
 
-namespace Game
+namespace Enemy
 {
     public class enemy2Attackbehaviour : MonoBehaviour
     {
