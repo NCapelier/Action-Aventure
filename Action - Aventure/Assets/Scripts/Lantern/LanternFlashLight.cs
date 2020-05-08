@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using GameSound;
 
 namespace Lantern
 {
@@ -88,6 +89,9 @@ namespace Lantern
                 canFlash = false;
                 currentFlashState = flashState.FlashingUp;
                 currentLightStrength = lightStrength.Weakening;
+
+                //Sound
+                AudioManager.Instance.Play("Flash");
             }
         }
 
@@ -103,6 +107,9 @@ namespace Lantern
             else
             {
                 currentFlashState = flashState.FlashingDown;
+
+                //Sound
+                AudioManager.Instance.Play("Will_o_exting");
             }
         }
 

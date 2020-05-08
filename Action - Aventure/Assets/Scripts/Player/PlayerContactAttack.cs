@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using GameSound;
 
 namespace Player
 {
@@ -101,10 +102,23 @@ namespace Player
 
             attackDirection = aimBehaviour.orientationQuaternion;
 
+            PlayAttackSound();
+
             GameObject attack = (GameObject)Instantiate(Resources.Load("Prefabs/Player/Attack"), PlayerManager.Instance.transform.position, attackDirection);
             //PlayerManager.Instance.controller.fxAnim = attack.GetComponent<PlayerAttackBehaviour>().spriteObject.GetComponent<Animator>();
             return attack;
         }
 
+        void PlayAttackSound()
+        {
+            if(loading < maxLoad * 0.15f)
+            {
+                AudioManager.Instance.Play("Lantern_light_strike");
+            }
+            else
+            {
+                AudioManager.Instance.Play("Lantern_charged_strike");
+            }
+        }
     }
 }

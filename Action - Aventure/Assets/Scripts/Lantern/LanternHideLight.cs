@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameSound;
 
 namespace Lantern
 {
@@ -46,6 +47,9 @@ namespace Lantern
         {
             LanternManager.Instance.interaction.gameObject.SetActive(false);
             currentLightState = lightState.Hidden;
+
+            //Sound
+            AudioManager.Instance.Play("Coat_close");
         }
 
         /// <summary>
@@ -67,6 +71,9 @@ namespace Lantern
         {
             LanternManager.Instance.interaction.gameObject.SetActive(true);
             currentLightState = lightState.Displayed;
+
+            //Sound
+            AudioManager.Instance.Play("Coat_open");
         }
 
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Player;
 using Lantern;
+using GameSound;
 
 namespace Enemy
 {
@@ -38,6 +39,9 @@ namespace Enemy
         public GameObject eyes;
         private Animator eyesAnim = null;
 
+        //Sound
+        AudioSource detectionSound;
+
         #endregion
         
         void Start()
@@ -45,6 +49,7 @@ namespace Enemy
             EnemyRb = GetComponentInParent<Rigidbody2D>();
             anim = gameObject.GetComponent<Animator>();
             eyesAnim = eyes.GetComponent<Animator>();
+            detectionSound = AudioManager.Instance.GetSound("Detect_player");
         }
         
         void Update()
@@ -61,7 +66,7 @@ namespace Enemy
             if((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange, true) && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
             {
                 EnemyRb.velocity = (PlayerManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
-                focusingPlayer = true;
+                Debug.Log("target player");
                
                 //Animation
                 anim.SetFloat("Xmovement", EnemyRb.velocity.x);
@@ -71,6 +76,14 @@ namespace Enemy
                 eyesAnim.SetFloat("Xmovement", EnemyRb.velocity.x);
                 eyesAnim.SetFloat("Ymovement", EnemyRb.velocity.y);
                 eyesAnim.SetBool("Aggro", true);
+
+                //Sound
+                if (!focusingPlayer)
+                {
+                    detectionSound.Play();
+                }
+
+                focusingPlayer = true;
             }
             else if((LanternManager.Instance.hideLight.currentLightState == lightState.Hidden))
             {
@@ -81,6 +94,9 @@ namespace Enemy
                 anim.SetBool("Aggro", false);
                 //Animation eyes
                 eyesAnim.SetBool("Aggro", false);
+
+                //Sound
+                detectionSound.Stop();
             }
         }
 
