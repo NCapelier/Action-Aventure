@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Lantern;
+using GameSound;
 
 namespace Player
 {
@@ -52,6 +53,11 @@ namespace Player
         //[HideInInspector] public GameObject fxSprite;
         [HideInInspector] public Animator fxAnim = null;
 
+        //Sound
+        private AudioSource WalkSound;
+        bool walkPlaying = false;
+        private AudioSource DashSound;
+        bool runPlaying = false;
         #endregion
 
         void Start()
@@ -59,6 +65,8 @@ namespace Player
             playerRb = PlayerManager.Instance.GetComponent<Rigidbody2D>();
             anim = gameObject.GetComponent<Animator>();
             //fxAnim = fxSprite.GetComponent<Animator>();
+            WalkSound = AudioManager.Instance.GetSound("Walking");
+            DashSound = AudioManager.Instance.GetSound("Running");
         }
 
 
@@ -88,6 +96,13 @@ namespace Player
                 anim.SetBool("isMoving", true);
                 anim.SetFloat("MovementX", horizontal);
                 anim.SetFloat("MovementY", vertical);
+
+                //Sound
+                if (!walkPlaying)
+                {
+                    WalkSound.Play();
+                    walkPlaying = true;
+                }
             }
             else
             {
@@ -96,6 +111,10 @@ namespace Player
 
                 //Animation
                 anim.SetBool("isMoving", false);
+
+                //Sound
+                WalkSound.Stop();
+                walkPlaying = false;
 
             }
         }
@@ -113,14 +132,27 @@ namespace Player
 
                 //Animation
                 anim.SetBool("isRunning", true);
+
+                //Sound
+                WalkSound.Stop();
+
+                if (!runPlaying)
+                {
+                    DashSound.Play();
+                    runPlaying = true;
+                }
             }
             else if(isAttacking)
             {
                 isDashing = false;
                 dashVector = Vector2.zero;
+
+                //Sound
+                DashSound.Stop();
+                runPlaying = false;
             }
 
-            if(isDashing)
+            if (isDashing)
             {
                 dashVector = movementVector;
             }
@@ -138,6 +170,10 @@ namespace Player
 
             //Animation
             anim.SetBool("isRunning", false);
+
+            //Sound
+            DashSound.Stop();
+            runPlaying = false;
         }
 
         /// <summary>

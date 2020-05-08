@@ -34,6 +34,9 @@ namespace Player
         void Start()
         {
             StartCoroutine(LifeCycle());
+
+            //PlayerManager.Instance.contactAttack.PlayAttackSound();
+
             fxAnim = spriteObject.GetComponent<Animator>();
             fxAnim.SetBool("isAttacking", true);
         }
