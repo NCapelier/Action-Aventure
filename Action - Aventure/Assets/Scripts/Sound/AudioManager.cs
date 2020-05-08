@@ -13,8 +13,8 @@ namespace GameSound
     public class AudioManager : Singleton<AudioManager>
 	{
         #region Variables
-        public Dictionary<string, AudioSource> d_sounds = new Dictionary<string, AudioSource>();
-        public Sound[] sounds;
+        private Dictionary<string, AudioSource> d_sounds = new Dictionary<string, AudioSource>();
+        [SerializeField] private Sound[] sounds;
         #endregion
         private void Awake()
         {

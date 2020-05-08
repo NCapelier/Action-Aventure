@@ -55,7 +55,9 @@ namespace Player
 
         //Sound
         private AudioSource WalkSound;
+        bool walkPlaying = false;
         private AudioSource DashSound;
+        bool runPlaying = false;
         #endregion
 
         void Start()
@@ -96,7 +98,11 @@ namespace Player
                 anim.SetFloat("MovementY", vertical);
 
                 //Sound
-                WalkSound.Play();
+                if (!walkPlaying)
+                {
+                    WalkSound.Play();
+                    walkPlaying = true;
+                }
             }
             else
             {
@@ -108,6 +114,7 @@ namespace Player
 
                 //Sound
                 WalkSound.Stop();
+                walkPlaying = false;
 
             }
         }
@@ -127,7 +134,13 @@ namespace Player
                 anim.SetBool("isRunning", true);
 
                 //Sound
-                DashSound.Play();
+                WalkSound.Stop();
+
+                if (!runPlaying)
+                {
+                    DashSound.Play();
+                    runPlaying = true;
+                }
             }
             else if(isAttacking)
             {
@@ -136,6 +149,7 @@ namespace Player
 
                 //Sound
                 DashSound.Stop();
+                runPlaying = false;
             }
 
             if (isDashing)
@@ -159,6 +173,7 @@ namespace Player
 
             //Sound
             DashSound.Stop();
+            runPlaying = false;
         }
 
         /// <summary>

@@ -2,6 +2,7 @@
 using UnityEngine;
 using Player;
 using UnityEngine.UI;
+using GameSound;
 
 namespace Lantern
 {
@@ -63,6 +64,8 @@ namespace Lantern
         //position of the boomerang before being casted
         Vector2 castOrigin = Vector2.zero;
 
+        //Sound
+        AudioSource flightSound;
         #endregion
 
         void Awake()
@@ -79,6 +82,8 @@ namespace Lantern
             LanternManager.Instance.gameObject.transform.SetParent(PlayerManager.Instance.gameObject.transform);
 
             uiCanvas.worldCamera = Camera.main;
+
+            flightSound = AudioManager.Instance.GetSound("Will_o_flight");
         }
 
         void Update()
@@ -167,6 +172,9 @@ namespace Lantern
             lanternRb.velocity = aimDirection.normalized * castSpeed * Time.deltaTime;
             mustStop = false;
             currentBoomerangState = boomerangState.Cast;
+
+            //Sound
+            flightSound.Play();
         }
 
         /// <summary>
@@ -179,6 +187,9 @@ namespace Lantern
                 mustStop = false;
                 lanternRb.velocity = Vector2.zero;
                 currentBoomerangState = boomerangState.Static;
+
+                //Sound
+                flightSound.Stop();
             }
             if(Vector2.Distance(castOrigin, LanternManager.Instance.gameObject.transform.position) >= loading)
             {
@@ -194,6 +205,9 @@ namespace Lantern
             if (Input.GetButtonDown("Left_Bumper"))
             {
                 currentBoomerangState = boomerangState.FallBack;
+
+                //Sound
+                flightSound.Play();
             }
         }
 
@@ -209,6 +223,9 @@ namespace Lantern
                 StartCoroutine(CastCooldown());
                 loading = 0f;
                 currentBoomerangState = boomerangState.Tidy;
+
+                //Sound
+                flightSound.Stop();
             }
         }
 

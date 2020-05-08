@@ -8,16 +8,28 @@ namespace GameSound
 	{
         #region Variables
         bool isPlaying = false;
-		#endregion
 
+        AudioSource music;
+        bool musicOn = false;
+        #endregion
 
-		// Update is called once per frame
-		void Update()
+        private void Start()
+        {
+            music = AudioManager.Instance.GetSound("[Village-House] Nostalgia- Sungha Jung_g");
+        }
+
+        // Update is called once per frame
+        void Update()
 		{
             if (Input.GetKeyDown(KeyCode.P) && !isPlaying)
             {
                 isPlaying = true;
                 StartCoroutine(SoundTest());
+            }
+
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                ToggleMusic();
             }
 		}
 
@@ -31,6 +43,22 @@ namespace GameSound
             yield return new WaitForSeconds(3f);
 
             isPlaying = false;
+        }
+
+        void ToggleMusic()
+        {
+            switch (musicOn)
+            {
+                case false:
+                    music.Play();
+                    musicOn = true;
+                    break;
+
+                case true:
+                    music.Stop();
+                    musicOn = false;
+                    break;
+            }
         }
 	}
 }
