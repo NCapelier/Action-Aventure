@@ -66,7 +66,6 @@ namespace Enemy
             if((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange, true) && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
             {
                 EnemyRb.velocity = (PlayerManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
-                Debug.Log("target player");
                
                 //Animation
                 anim.SetFloat("Xmovement", EnemyRb.velocity.x);
@@ -118,7 +117,6 @@ namespace Enemy
                 }
                 else if(LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)
                 {
-                    Debug.Log("stopAggro");
                     EnemyRb.velocity = Vector2.zero;
 
                     //Animation

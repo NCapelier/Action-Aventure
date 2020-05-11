@@ -51,24 +51,27 @@ namespace Lantern
         /// </summary>
         void LightWiggle(float division, float step)
         {
-            int upDown = Random.Range(0, 2);
-            switch (upDown)
+            if(LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful)
             {
-                case 0:
-                    if (mainLight.pointLightOuterRadius > lightStartRadius - lightStartRadius / division)
-                    {
-                        mainLight.pointLightOuterRadius -= step * Time.deltaTime;
-                    }
-                    break;
-                case 1:
-                    if (mainLight.pointLightOuterRadius < lightStartRadius + lightStartRadius / division)
-                    {
-                        mainLight.pointLightOuterRadius += step * Time.deltaTime;
-                    }
-                    break;
-                default:
-                    Debug.Log("Error, value is is out of boundaries !");
-                    break;
+                int upDown = Random.Range(0, 2);
+                switch (upDown)
+                {
+                    case 0:
+                        if (mainLight.pointLightOuterRadius > lightStartRadius - lightStartRadius / division)
+                        {
+                            mainLight.pointLightOuterRadius -= step * Time.deltaTime;
+                        }
+                        break;
+                    case 1:
+                        if (mainLight.pointLightOuterRadius < lightStartRadius + lightStartRadius / division)
+                        {
+                            mainLight.pointLightOuterRadius += step * Time.deltaTime;
+                        }
+                        break;
+                    default:
+                        Debug.Log("Error, value is is out of boundaries !");
+                        break;
+                }
             }
         }
 
@@ -77,7 +80,7 @@ namespace Lantern
         /// </summary>
         void UpdateComponentsRadius()
         {
-            cc.radius = mainLight.pointLightOuterRadius;
+            //cc.radius = mainLight.pointLightOuterRadius;
             sm.gameObject.transform.localScale = new Vector3(mainLight.pointLightOuterRadius * 0.05f, mainLight.pointLightOuterRadius * 0.05f, sm.gameObject.transform.localScale.z);
         }
 

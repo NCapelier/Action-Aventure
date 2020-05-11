@@ -84,7 +84,7 @@ namespace Lantern
         /// </summary>
         void OnIdleUpdate()
         {
-            if (Input.GetAxis("Left_Trigger") >= 0.8f && canFlash)
+            if (Input.GetAxis("Left_Trigger") >= 0.8f && canFlash && currentLightStrength == lightStrength.Strengthful)
             {
                 canFlash = false;
                 currentFlashState = flashState.FlashingUp;
@@ -124,35 +124,53 @@ namespace Lantern
             }
             else
             {
+                currentLightStrength = lightStrength.Weakening;
                 currentFlashState = flashState.Idle;
-                StartCoroutine(FlashCD()); //temporary --> will be remover with light weakening
             }
         }
 
-        //temp
-        IEnumerator FlashCD()
-        {
-            yield return new WaitForSeconds(2);
-            canFlash = true;
-        }
-
         #endregion
+
+        [Range(0f,10f)]
+        [SerializeField] float weakOuterRadius = 1.0f;
+
+        [Range(0f, 50f)]
+        [SerializeField] float weakeningSpeed = 1.0f;
+
+        [Range(0f, 50f)]
+        [SerializeField] float recoveringSpeed = 1.0f;
+
 
         #region Light Strength State Methods
 
         void OnWeakeningUpdate()
         {
-
+            if(lightComponent.pointLightOuterRadius > weakOuterRadius)
+            {
+                lightComponent.pointLightOuterRadius -= weakeningSpeed * Time.deltaTime;
+            }
+            else
+            {
+                currentLightStrength = lightStrength.Weak;
+            }
         }
 
         void OnWeakUpdate()
         {
-
+            currentLightStrength = lightStrength.Recovering;
         }
 
         void OnRecoveringUpdate()
         {
-
+            if (lightComponent.pointLightOuterRadius < LanternManager.Instance.behaviour.lightStartRadius)
+            {
+                lightComponent.pointLightOuterRadius += recoveringSpeed * Time.deltaTime;
+            }
+            else
+            {
+                canFlash = true;
+                currentLightStrength = lightStrength.Strengthful;
+            }
         }
 
 
