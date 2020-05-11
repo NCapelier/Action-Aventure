@@ -34,7 +34,6 @@ public class TorchTTK : MonoBehaviour
         if (col.gameObject.tag == "Hinky")
         {
             playerHere = false;
-            Debug.Log("Called");
             StartCoroutine("TTK");
 
         }
@@ -65,7 +64,6 @@ public class TorchTTK : MonoBehaviour
     {
         if (playerHere == false)
         {
-            Debug.Log("called");
             yield return new WaitForSeconds(Duration);
             isLit = false;
 

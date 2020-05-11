@@ -329,14 +329,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8fe9696c527674fa5be559ea0bb2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 280
-  dashSpeed: 270
-  dashDuration: 1.9
+  movementSpeed: 370
+  dashSpeed: 280
+  dashDuration: 2
   lastDirection: 0
   computedVelocity: {x: 0, y: 0}
   computedMovementVector: {x: 0, y: 0}
   anim: {fileID: 0}
-  fxSprite: {fileID: 0}
+  fxAnim: {fileID: 0}
 --- !u!95 &953316247134957471
 Animator:
   serializedVersion: 3

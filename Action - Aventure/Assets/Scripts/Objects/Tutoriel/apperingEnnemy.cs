@@ -46,7 +46,7 @@ public class apperingEnnemy : MonoBehaviour
         yield return new WaitForSeconds(2f);
         humanRenderer.enabled = false;
         Instantiate(ennemy1, transform.position, Quaternion.identity);
-        pointLight.GetComponent<Light>().enabled = false;
+        //pointLight.GetComponent<Light>().enabled = false;
         animator.enabled = false;
         
         

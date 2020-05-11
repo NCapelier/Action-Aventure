@@ -118,7 +118,7 @@ namespace Lantern
         {
             LanternManager.Instance.gameObject.transform.position = PlayerManager.Instance.gameObject.transform.position;
 
-            if (Input.GetButton("Left_Bumper") && canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
+            if (Input.GetButton("Left_Bumper") && canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful)
             {
                 currentBoomerangState = boomerangState.PreCast;
             }
@@ -134,7 +134,7 @@ namespace Lantern
             }
             if (canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && loading < maxLoad)
             {
-                loading += loadingSpeed;
+                loading += loadingSpeed * Time.deltaTime;
             }
             else if(loading >= maxLoad)
             {
@@ -159,11 +159,11 @@ namespace Lantern
             vertical = -Input.GetAxis("Right_Joystick_Y");
             if (horizontal < -0.15 || horizontal > 0.15 || vertical < -0.15 || vertical > 0.15)
             {
-                aimDirection = new Vector2(horizontal, vertical);
+                aimDirection = new Vector2(horizontal, vertical).normalized;
             }
             else
             {
-                aimDirection = PlayerManager.Instance.controller.computedMovementVector;
+                return;
             }
             LanternManager.Instance.gameObject.transform.SetParent(null);
             // todo : new movement depending on loading

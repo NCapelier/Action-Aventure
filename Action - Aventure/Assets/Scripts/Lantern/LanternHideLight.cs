@@ -17,16 +17,6 @@ namespace Lantern
         [HideInInspector] public lightState currentLightState = lightState.Displayed;
 
         #endregion
-
-        void Awake()
-        {
-            
-        }
-        
-        void Start()
-        {
-            
-        }
         
         void Update()
         {

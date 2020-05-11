@@ -46,7 +46,6 @@ public class Fence : MonoBehaviour
         if (collision.gameObject.tag == "PlayerController" && Input.GetButtonDown("A_Button"))
         {
            
-                Debug.Log("Called");
                 
                 Animator.enabled = true;
                 bxC.enabled = false;

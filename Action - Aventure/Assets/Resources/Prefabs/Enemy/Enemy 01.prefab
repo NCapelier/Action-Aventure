@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  maxHp: 10
+  maxHp: 6
 --- !u!61 &6621782852117528513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,9 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee9ceabf47a61545a68a30adad0ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 100
-  contactDistance: 1
-  playerDetectRange: 2
+  moveSpeed: 120
+  contactDistance: 0.5
+  playerDetectRange: 6
   lightDetectExtra: 2
   enemy1attack: {fileID: 7658047884507406550}
   eyes: {fileID: 7803587941020222482}

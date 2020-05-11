@@ -92,9 +92,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.18}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.7
 --- !u!114 &4316826918711746621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -535,11 +535,11 @@ MonoBehaviour:
   currentBoomerangState: 0
   loading: 0
   castCooldown: 1
-  castSpeed: 650
-  fallBackSpeed: 800
+  castSpeed: 700
+  fallBackSpeed: 850
   catchRange: 0.05
-  maxLoad: 8
-  loadingSpeed: 0.2
+  maxLoad: 6
+  loadingSpeed: 6.5
   mustStop: 0
 --- !u!1 &8239387844973827951
 GameObject:
@@ -5423,5 +5423,8 @@ MonoBehaviour:
   canFlash: 1
   currentFlashState: 0
   currentLightStrength: 0
-  flashOuterRadius: 2
+  flashOuterRadius: 3.65
   flashSpeed: 25
+  weakOuterRadius: 1
+  weakeningSpeed: 8
+  recoveringSpeed: 0.45
