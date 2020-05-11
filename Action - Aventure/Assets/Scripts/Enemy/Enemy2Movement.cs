@@ -62,6 +62,7 @@ namespace Enemy
         AudioSource detectionSound;
         Sound attackClip;
         AudioSource attackSound;
+        AudioSource[] sounds;
 
         private void Start()
         {
@@ -89,11 +90,12 @@ namespace Enemy
             //Sound
             detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
             AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
-            detectionSound = gameObject.GetComponent<AudioSource>();
-            Debug.Log("detection sound = " + detectionSound.clip.name);
             attackClip = AudioManager.Instance.sounds_notUniqueObject["Enemy2_attack"];
-            AudioManager.Instance.MakeAudioSource(attackClip, gameObject); //change target GameObject to EyesAnimator if not caught
-            attackSound = gameObject.GetComponent<AudioSource>(); //change target GameObject to EyesAnimator if not caught
+            AudioManager.Instance.MakeAudioSource(attackClip, gameObject);
+            sounds = gameObject.GetComponents<AudioSource>();
+            detectionSound = sounds[0];
+            attackSound = sounds[1];
+            Debug.Log("detection sound = " + detectionSound.clip.name);
             Debug.Log("attack sound = " + attackSound.clip.name);
 
             LeftAttack.SetActive(false);
