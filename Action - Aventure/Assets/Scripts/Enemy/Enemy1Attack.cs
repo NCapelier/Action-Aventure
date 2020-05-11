@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Player;
 using Lantern;
+using GameSound;
 
 namespace Enemy
 {
@@ -32,11 +33,18 @@ namespace Enemy
         public Animator anim;
         public GameObject controller;
         public Animator eyesAnim;
+
+        Sound attackClip;
+        AudioSource attackSound;
         #endregion
 
         void Start()
         {
-            anim = controller.GetComponent<Animator>(); 
+            anim = controller.GetComponent<Animator>();
+
+            attackClip = AudioManager.Instance.sounds_notUniqueObject["Enemy1_attack"];
+            AudioManager.Instance.MakeAudioSource(attackClip, gameObject);
+            attackSound = gameObject.GetComponent<AudioSource>();
         }
 
         void Update()
@@ -55,6 +63,9 @@ namespace Enemy
             {
                 anim.SetBool("isAttacking", true);
                 eyesAnim.SetBool("isAttacking", true);
+
+                //Sound
+                attackSound.Play();
 
                 PlayerManager.Instance.TakeDamages = damage;
                 //Record the time of the last attack

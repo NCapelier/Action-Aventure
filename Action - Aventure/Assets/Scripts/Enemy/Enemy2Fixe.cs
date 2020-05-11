@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using GameSound;
 
 namespace Enemy
 {
@@ -51,6 +52,12 @@ namespace Enemy
         public GameObject Animator;
         public GameObject EyesAnimator;
 
+        //Sound
+        Sound detectionClip;
+        AudioSource detectionSound;
+        Sound attackClip;
+        AudioSource attackSound;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -68,6 +75,16 @@ namespace Enemy
             eyeAnim.SetFloat("Xmovement", rb.velocity.x);
             eyeAnim.SetFloat("Ymovement", rb.velocity.y);
             eyeAnim.SetBool("isMoving", true);
+
+            //Sound
+            detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
+            AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
+            detectionSound = gameObject.GetComponent<AudioSource>();
+            Debug.Log("detection sound = " + detectionSound.clip.name);
+            attackClip = AudioManager.Instance.sounds_notUniqueObject["Enemy2_attack"];
+            AudioManager.Instance.MakeAudioSource(attackClip, gameObject); //change target GameObject to EyesAnimator if not caught
+            attackSound = gameObject.GetComponent<AudioSource>(); //change target GameObject to EyesAnimator if not caught
+            Debug.Log("attack sound = " + attackSound.clip.name);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
@@ -92,6 +109,11 @@ namespace Enemy
             //Dans le cas ou le player est dans la zone d'aggro
             if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) <= enterPlayerArea)
             {
+                if (!playerFound)
+                {
+                    detectionSound.Play();
+                }
+
                 playerFound = true;
                 //Debug.Log("playerFound");
 
@@ -221,6 +243,7 @@ namespace Enemy
                 eyeAnim.SetBool("isAttacking", true);
 
                 rb.velocity = new Vector3(0, 0, 0);
+                attackSound.Play();
                 yield return new WaitForSeconds(warningTime);
 
                 switch (direction)
