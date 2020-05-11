@@ -19,6 +19,7 @@ namespace GameSound
 
         public bool loop;
         //public bool playAwake;
+        public bool notUniqueObject;
 
         [HideInInspector]
         public AudioSource source;

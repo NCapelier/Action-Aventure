@@ -40,6 +40,7 @@ namespace Enemy
         private Animator eyesAnim = null;
 
         //Sound
+        Sound detectionClip;
         AudioSource detectionSound;
 
         #endregion
@@ -49,7 +50,9 @@ namespace Enemy
             EnemyRb = GetComponentInParent<Rigidbody2D>();
             anim = gameObject.GetComponent<Animator>();
             eyesAnim = eyes.GetComponent<Animator>();
-            detectionSound = AudioManager.Instance.GetSound("Detect_player");
+            detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
+            AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
+            detectionSound = gameObject.GetComponent<AudioSource>();
         }
         
         void Update()
