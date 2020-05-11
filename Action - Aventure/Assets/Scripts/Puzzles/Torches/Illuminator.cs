@@ -6,12 +6,18 @@ using Lantern;
 public class Illuminator : MonoBehaviour
 {
     /// <summary>
-    /// This script makes the behaviour of illuminator (la machine a incandescence)
+    ///  XP - This script makes the behaviour of illuminator (la machine a incandescence)
     /// </summary>
     public bool isLit;
     private float duration;
     public float StartDuration;
     private bool restart;
+
+   //Light
+    private GameObject pointLight;
+
+    //animator
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +25,17 @@ public class Illuminator : MonoBehaviour
         isLit = false;
         duration = StartDuration;
         restart = false;
-        
-    }
 
+        
+
+        pointLight = gameObject.GetChildWithTag("Light");
+
+        //animator stuff
+        anim = GetComponent<Animator>();
+        pointLight.SetActive(false);
+
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -31,39 +45,49 @@ public class Illuminator : MonoBehaviour
         }
 
         if (isLit){
-            //Jouer animation déclenchement
-            //activation light
+
+            anim.SetBool("isLit", true);
+
                 if (duration <= 0)
                 {
                 isLit = false;
                 duration = StartDuration;
-                }
+                anim.SetBool("isLit", false);
+                pointLight.SetActive(false);
+            }
                 else {
                 isLit = true;
                 duration -= Time.deltaTime;
                 }
-            }
+        }
             
 
            
         
     }
-
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        
-        if (col.gameObject.tag == "Hinky" && LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
+        public void GetAnimationEvent(string EventMessage)
         {
-
-            Debug.Log("called");
-            isLit = true;
-            StartCoroutine("Restart");
-            
-            
+             if (EventMessage.Equals("isLit"))
+             {
+            pointLight.SetActive(true);
+             }
 
         }
+            private void OnTriggerStay2D(Collider2D col)
+            {
         
-    }
+                if (col.gameObject.tag == "Hinky" && LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
+                {
+
+                Debug.Log("called");
+                isLit = true;
+                StartCoroutine("Restart");
+            
+            
+
+                }
+        
+            }
 
     IEnumerator Restart()
     {
