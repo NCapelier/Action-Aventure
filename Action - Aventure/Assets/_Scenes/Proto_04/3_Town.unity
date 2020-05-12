@@ -2336,6 +2336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 320423293}
   - component: {fileID: 320423294}
+  - component: {fileID: 320423295}
   m_Layer: 0
   m_Name: petite lampe (3)
   m_TagString: Untagged
@@ -3652,6 +3653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 467633247}
   - component: {fileID: 467633248}
+  - component: {fileID: 467633249}
   m_Layer: 0
   m_Name: petite lampe (1)
   m_TagString: Untagged
@@ -4132,6 +4134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522940984}
   - component: {fileID: 522940983}
+  - component: {fileID: 522940985}
   m_Layer: 0
   m_Name: buisson
   m_TagString: Untagged
@@ -4203,6 +4206,41 @@ Transform:
   m_Father: {fileID: 767125479}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &522940985
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522940982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4}
+    oldSize: {x: 3.75, y: 3.75}
+    newSize: {x: 3.75, y: 3.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.3149767, y: 0.71328616}
+      - {x: -0.008782387, y: 0.77139497}
+      - {x: -0.38681984, y: 0.62995267}
+      - {x: -0.7587824, y: 0.5271394}
+      - {x: -0.70067406, y: 0.18885303}
+      - {x: -0.38378334, y: 0.034799337}
+      - {x: 0.17927837, y: 0.034799337}
+      - {x: 0.43806076, y: 0.14527202}
+      - {x: 0.7171154, y: 0.27027202}
+      - {x: 0.54278946, y: 0.6211703}
 --- !u!1 &535510020
 GameObject:
   m_ObjectHideFlags: 0
@@ -11214,6 +11252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1118985054}
   - component: {fileID: 1118985055}
+  - component: {fileID: 1118985056}
   m_Layer: 0
   m_Name: petite lampe (6)
   m_TagString: Untagged
@@ -13394,6 +13433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1363259740}
   - component: {fileID: 1363259741}
+  - component: {fileID: 1363259742}
   m_Layer: 0
   m_Name: petite lampe (7)
   m_TagString: Untagged
@@ -14776,6 +14816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1519858439}
   - component: {fileID: 1519858440}
+  - component: {fileID: 1519858441}
   m_Layer: 0
   m_Name: petite lampe
   m_TagString: Untagged
@@ -17759,6 +17800,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1768884143}
   - component: {fileID: 1768884144}
+  - component: {fileID: 1768884145}
   m_Layer: 0
   m_Name: petite lampe (4)
   m_TagString: Untagged
@@ -21704,6 +21746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2002214564}
   - component: {fileID: 2002214565}
+  - component: {fileID: 2002214566}
   m_Layer: 0
   m_Name: petite lampe
   m_TagString: Untagged
@@ -22137,6 +22180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2049346322}
   - component: {fileID: 2049346323}
+  - component: {fileID: 2049346324}
   m_Layer: 0
   m_Name: petite lampe (5)
   m_TagString: Untagged
@@ -22776,6 +22820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134140729}
   - component: {fileID: 2134140730}
+  - component: {fileID: 2134140731}
   m_Layer: 0
   m_Name: petite lampe (2)
   m_TagString: Untagged
