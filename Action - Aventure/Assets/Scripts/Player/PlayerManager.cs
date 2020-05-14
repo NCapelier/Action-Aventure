@@ -27,7 +27,7 @@ namespace Player
         // editor variables
 
         [Range(1,200)]
-        [SerializeField] int maxHp = 100;
+        public int maxHp = 100;
 
         [Range(1, 10)]
         [SerializeField] int hpEchelonNumber = 4;

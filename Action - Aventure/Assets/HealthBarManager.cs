@@ -21,6 +21,6 @@ public class HealthBarManager : MonoBehaviour
     void Update()
     {
         //passer current HP en Float car fill amout [0;1]
-        healthBar.fillAmount = (float)PlayerManager.Instance.currentHp / (float)PlayerManager.Instance.currentMaxHp;
+        healthBar.fillAmount = (float)PlayerManager.Instance.currentHp / (float)PlayerManager.Instance.maxHp;
     }
 }
