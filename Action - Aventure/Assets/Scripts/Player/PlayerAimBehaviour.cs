@@ -22,7 +22,8 @@ namespace Player
         [HideInInspector] public Quaternion orientationQuaternion;
 
         //aim sprite
-        [SerializeField] SpriteRenderer aimSprite = null;
+        public GameObject aimObject = null;
+        SpriteRenderer aimSprite = null;
 
         #endregion
 
@@ -33,7 +34,7 @@ namespace Player
 
         void Start()
         {
-
+            aimSprite = aimObject.GetComponent<SpriteRenderer>();
         }
 
         void Update()

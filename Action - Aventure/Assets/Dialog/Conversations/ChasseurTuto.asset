@@ -10,26 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1f3ae8e497a59541a2c836045c630af, type: 3}
-  m_Name: Boss n1
+  m_Name: ChasseurTuto
   m_EditorClassIdentifier: 
   leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
-  rightSpeaker: {fileID: 11400000, guid: a51bab7b098ade145804f1a8637acc61, type: 2}
+  rightSpeaker: {fileID: 11400000, guid: f117daf46c427c34482e52ab9a4c5849, type: 2}
   lines:
   - leftPortraitIndex: 0
     rightPortraitIndex: 0
-    text: 
+    text: "Qu\u2019est-ce que tu fais l\xE0 gamin ? De dr\xF4les de cr\xE9atures
+      r\xF4dent dans les environs."
   - leftPortraitIndex: 0
     rightPortraitIndex: 0
-    text: 
-  - leftPortraitIndex: 0
-    rightPortraitIndex: 0
-    text: 
-  - leftPortraitIndex: 0
-    rightPortraitIndex: 0
-    text: 
-  - leftPortraitIndex: 0
-    rightPortraitIndex: 0
-    text: 
-  - leftPortraitIndex: 0
-    rightPortraitIndex: 0
-    text: 
+    text: "Rejoins-moi, je vais t\u2019amener au village."
+  - leftPortraitIndex: 1
+    rightPortraitIndex: 1
+    text: Pas un bruit !
+  - leftPortraitIndex: 1
+    rightPortraitIndex: 1
+    text: AAAArg !

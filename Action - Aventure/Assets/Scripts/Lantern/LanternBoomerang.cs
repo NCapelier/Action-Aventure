@@ -109,6 +109,12 @@ namespace Lantern
                     Debug.Log("Error, value is not assigned !");
                     break;
             }
+            UpdateAimDistance();
+        }
+
+        void UpdateAimDistance()
+        {
+            PlayerManager.Instance.aimBehaviour.aimObject.transform.localPosition = new Vector3(loading.Remap(0f, maxLoad, 0.5f, 1f), 0, 0);
         }
 
         /// <summary>
@@ -147,7 +153,7 @@ namespace Lantern
                 return;
             }
 
-            loadingBar.fillAmount = loading.Remap(0f, maxLoad, 0f, 1f);
+            //loadingBar.fillAmount = loading.Remap(0f, maxLoad, 0f, 1f);
 ;
         }
 
@@ -187,6 +193,7 @@ namespace Lantern
                 mustStop = false;
                 lanternRb.velocity = Vector2.zero;
                 currentBoomerangState = boomerangState.Static;
+                loading = 0f;
 
                 //Sound
                 flightSound.Stop();
@@ -194,6 +201,7 @@ namespace Lantern
             if(Vector2.Distance(castOrigin, LanternManager.Instance.gameObject.transform.position) >= loading)
             {
                 mustStop = true;
+                loading = 0f;
             }
         }
 
@@ -221,7 +229,6 @@ namespace Lantern
             {
                 LanternManager.Instance.gameObject.transform.SetParent(PlayerManager.Instance.gameObject.transform);
                 StartCoroutine(CastCooldown());
-                loading = 0f;
                 currentBoomerangState = boomerangState.Tidy;
 
                 //Sound

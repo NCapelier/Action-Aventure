@@ -124,7 +124,7 @@ namespace Player
         /// </summary>
         void DashInput()
         {
-            if (Input.GetAxis("Left_Trigger") >= 0.8f && !isDashing && !isAttacking && LanternManager.Instance.flashLight.canFlash && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy)
+            if (Input.GetAxis("Left_Trigger") >= 0.79f && !isDashing && !isAttacking && LanternManager.Instance.flashLight.canFlash && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy)
             {
                 isDashing = true;
                 dashVector = movementVector;
