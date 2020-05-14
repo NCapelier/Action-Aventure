@@ -21,6 +21,5 @@ public class GoldTextScript : MonoBehaviour
     void Update()
     {
         coinText.text = coinAmount.ToString();
-        
     }
 }
