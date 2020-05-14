@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameSound;
+using Player;
+using LightEnvironment;
 
 namespace Lantern
 {
@@ -16,11 +18,15 @@ namespace Lantern
         // current light display state
         [HideInInspector] public lightState currentLightState = lightState.Displayed;
 
+        bool playerCrazy = false;
+        bool runningCrazyness = false;
+
         #endregion
         
         void Update()
         {
-            if (Input.GetButtonDown("X_Button") && currentLightState == lightState.Displayed && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy)
+            if (Input.GetButtonDown("X_Button") && currentLightState == lightState.Displayed && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy
+                && GlobalLightManager.Instance.mainLight.intensity >= GlobalLightManager.Instance.maximumLightning)
             {
                 StartHide();
             }
@@ -38,6 +44,7 @@ namespace Lantern
             LanternManager.Instance.interaction.gameObject.SetActive(false);
             currentLightState = lightState.Hidden;
 
+
             //Sound
             AudioManager.Instance.Play("Coat_close");
         }
@@ -47,11 +54,33 @@ namespace Lantern
         /// </summary>
         void OnHiddenUpdate()
         {
-            if(Input.GetButtonUp("X_Button") && currentLightState == lightState.Hidden)
+            if(!playerCrazy && !runningCrazyness)
             {
+                playerCrazy = true;
+                runningCrazyness = true;
+                StartCoroutine(PlayerCrazyness());
+            }
+
+            if (Input.GetButtonUp("X_Button") && currentLightState == lightState.Hidden)
+            {
+                playerCrazy = false;
                 EndHide();
             }
 
+        }
+
+        IEnumerator PlayerCrazyness()
+        {
+            yield return new WaitForSeconds(3f);
+            if(playerCrazy == true)
+            {
+                PlayerManager.Instance.TakeDamages = 1;
+                StartCoroutine(PlayerCrazyness());
+            }
+            else
+            {
+                runningCrazyness = false;
+            }
         }
 
         /// <summary>

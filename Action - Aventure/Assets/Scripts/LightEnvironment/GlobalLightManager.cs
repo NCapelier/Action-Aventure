@@ -15,11 +15,11 @@ namespace LightEnvironment
 
 
         //Light 2D component of the object
-        Light2D mainLight;
+        [HideInInspector] public Light2D mainLight;
         
         //mainLight's min and max lighting
         [Range(0f, 1f)]
-        [SerializeField] float minimumLighting = 0, maximumLightning = 1;
+        public float minimumLighting = 0, maximumLightning = 1;
 
         //mainLight's increasing and decreasing speed
         [Range(0f, 10f)]

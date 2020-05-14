@@ -10,6 +10,7 @@ namespace GameManagement
 
         [SerializeField] string nextScene = "";
         [SerializeField] Vector2 nextSceneEntryPoint = Vector2.zero;
+
         void Awake()
         {
             
@@ -22,7 +23,7 @@ namespace GameManagement
         
         void Update()
         {
-            
+
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

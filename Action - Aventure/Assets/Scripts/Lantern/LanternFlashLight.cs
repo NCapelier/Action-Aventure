@@ -90,6 +90,7 @@ namespace Lantern
                 currentFlashState = flashState.FlashingUp;
                 currentLightStrength = lightStrength.Weakening;
 
+
                 //Sound
                 AudioManager.Instance.Play("Flash");
             }
