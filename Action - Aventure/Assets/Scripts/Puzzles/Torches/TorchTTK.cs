@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Lantern;
 
 public class TorchTTK : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class TorchTTK : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Hinky" /*+la lanterne est sorti et allumé*/)
+        if (col.gameObject.tag == "Hinky" || (col.gameObject.CompareTag("Player") && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
         {
             Light();
             playerHere = true;

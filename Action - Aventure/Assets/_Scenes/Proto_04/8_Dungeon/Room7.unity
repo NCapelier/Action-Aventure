@@ -6048,12 +6048,12 @@ PrefabInstance:
     - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
@@ -7196,6 +7196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flambeau (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: Duration
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f043a02e2c59f49aa5e06677073c83, type: 3}
@@ -31701,12 +31706,12 @@ PrefabInstance:
     - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
@@ -31722,6 +31727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flambeau (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: Duration
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f043a02e2c59f49aa5e06677073c83, type: 3}
