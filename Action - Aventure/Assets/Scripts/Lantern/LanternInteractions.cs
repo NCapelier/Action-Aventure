@@ -36,8 +36,12 @@ namespace Lantern
             }
             if (collision.CompareTag("Enemy") && LanternManager.Instance.boomerang.currentBoomerangState != boomerangState.Tidy)
             {
-                //deal damages to the enemy
-                collision.GetComponent<EnemyParent>().TakeDamages = 1;
+
+                if(collision.gameObject.GetComponent<EnemyParent>())
+                {
+                    //deal damages to the enemy
+                    collision.GetComponent<EnemyParent>().TakeDamages = 1;
+                }
 
                 if(LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
                 {
@@ -45,6 +49,5 @@ namespace Lantern
                 }
             }
         }
-
     }
 }
