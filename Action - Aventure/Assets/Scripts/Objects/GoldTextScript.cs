@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GoldTextScript : MonoBehaviour
 {
@@ -9,12 +10,12 @@ public class GoldTextScript : MonoBehaviour
     /// XP-Script to update amount of gold pickup by the player.
     /// </summary>
 
-    private Text coinText;
+    private TextMeshProUGUI coinText;
     public static int coinAmount;
   
     void Start()
     {
-        coinText = GetComponent<Text>();
+        coinText = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
