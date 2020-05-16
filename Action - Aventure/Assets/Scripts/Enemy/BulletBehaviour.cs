@@ -27,6 +27,8 @@ public class BulletBehaviour : MonoBehaviour
     private bool goEnemy;
     private bool timeToGo;
 
+    bool asDeltDamages = false;
+
 
 
     void Start()
@@ -44,6 +46,7 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (arrived == true && goEnemy == false)
         {
+            goEnemy = true;
             StartCoroutine("Activation");
 
         }
@@ -77,9 +80,15 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.CompareTag("PlayerController"))
         {
             //Lancer coroutine de dégats - Draine votre barre de lumière.
+            if(asDeltDamages == false)
+            {
+                PlayerManager.Instance.TakeDamages = 5;
+                Debug.Log("DMG");
+            }
+            asDeltDamages = true;
         }
 
     }
@@ -87,7 +96,6 @@ public class BulletBehaviour : MonoBehaviour
     IEnumerator Activation()
     {
        
-        goEnemy = true;
         arrived = true;
         Debug.Log("startEnum");
         yield return new WaitForSeconds(freezingTime);
