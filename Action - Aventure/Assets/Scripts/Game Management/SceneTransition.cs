@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using GameManagement;
 
 namespace GameManagement
 {
@@ -31,6 +32,7 @@ namespace GameManagement
             if(collision.tag == "PlayerController")
             {
                 SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
+                ZoneScripter.isTrigger = true;
             }
         }
 
