@@ -29,5 +29,14 @@ public class PlaquePression : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Wall")
+        {
+            tileB.enabled = true;
+            tileR.enabled = false;
+        }
+    }
+
 
 }

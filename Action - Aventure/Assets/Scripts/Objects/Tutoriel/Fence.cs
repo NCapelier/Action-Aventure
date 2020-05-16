@@ -37,6 +37,8 @@ public class Fence : MonoBehaviour
         if(collision.gameObject.tag == "PlayerController" && open == false)
         {
             pressBouton.SetActive(true);
+            buttonAnimator.enabled = true;
+            buttonRenderer.enabled = true;
 
         }
     }
@@ -60,7 +62,8 @@ public class Fence : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerController" )
         {
-            pressBouton.SetActive(false);
+            buttonAnimator.enabled = false;
+            buttonRenderer.enabled = false;
         }
     }
 

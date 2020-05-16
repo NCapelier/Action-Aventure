@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using Management;
+using UnityEngine.UI;
+using TMPro;
 
 namespace GameManagement
 {
