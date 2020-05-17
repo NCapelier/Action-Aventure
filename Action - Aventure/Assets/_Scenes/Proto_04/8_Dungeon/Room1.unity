@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5824,10 +5824,35 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.06849909
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.1193552
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.024338428
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474252607768614040, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.09372426
+      objectReference: {fileID: 0}
     - target: {fileID: 7812268342366010901, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
       propertyPath: m_Name
       value: Flambeau (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: Duration
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f043a02e2c59f49aa5e06677073c83, type: 3}

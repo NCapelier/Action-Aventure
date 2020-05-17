@@ -10,10 +10,14 @@ public class RoomEnigme9 : MonoBehaviour
     public GameObject flambeau;
     private GameObject door;
 
+    private bool enigmeCleared;
+
     // Start is called before the first frame update
     void Start()
     {
+        enigmeCleared = false;
         door = gameObject.GetChildNamed("Exit");
+        door.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,6 +25,12 @@ public class RoomEnigme9 : MonoBehaviour
     {
         if(illuminator0.GetComponent<Illuminator>().isLit == true && illuminator1.GetComponent<Illuminator>().isLit == true && illuminator2.GetComponent<Illuminator>().isLit == true && flambeau.GetComponent<TorchTTK>().isLit == true){
             door.SetActive(true);
+            enigmeCleared = true;
+        }
+
+        if (enigmeCleared == true)
+        {
+            illuminator2.GetComponent<Illuminator>().isLit = true;
         }
     }
 }
