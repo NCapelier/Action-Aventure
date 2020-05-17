@@ -9,23 +9,10 @@ namespace Dialog
     {
 
         public Conversation dialog = null;
-        
-        void Awake()
-        {
-            
-        }
-        
+
         void Start()
         {
             GameCanvasManager.Instance.dialog.StartDialog = dialog;
         }
-        
-        void Update()
-        {
-            
-        }
-        
-        
-        
     }
 }

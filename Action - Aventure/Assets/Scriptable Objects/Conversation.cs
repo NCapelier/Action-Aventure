@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 namespace Dialog
 {
+
+    public enum Speaker {Left, Right};
+
     [System.Serializable] public struct Line
     {
+        public Speaker speaker;
         public int leftPortraitIndex, rightPortraitIndex;
 
         [TextArea(2, 5)] public string text;

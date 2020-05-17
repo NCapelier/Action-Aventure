@@ -58,6 +58,8 @@ namespace Player
         bool walkPlaying = false;
         private AudioSource DashSound;
         bool runPlaying = false;
+
+        [HideInInspector] public bool isDialoging = false;
         #endregion
 
         void Start()
@@ -191,7 +193,15 @@ namespace Player
             }
 
             computedVelocity = ((computedMovementVector * movementSpeed) + (dashVector.normalized * dashSpeed)) * Time.deltaTime;
-            playerRb.velocity = computedVelocity;
+            if(!isDialoging)
+            {
+                playerRb.velocity = computedVelocity;
+
+            }
+            else
+            {
+                playerRb.velocity = Vector2.zero;
+            }
         }
 
         /// <summary>

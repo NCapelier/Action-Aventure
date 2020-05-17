@@ -33,6 +33,8 @@ namespace Lantern
         [Range(0f, 50f)]
         [SerializeField] float flashSpeed = 1f;
 
+        [HideInInspector] public bool mustRegerenate = false;
+
         #endregion
         
         void Start()
@@ -169,6 +171,14 @@ namespace Lantern
             }
             else
             {
+                canFlash = true;
+                currentLightStrength = lightStrength.Strengthful;
+                return;
+            }
+            if (mustRegerenate)
+            {
+                mustRegerenate = false;
+                lightComponent.pointLightOuterRadius = LanternManager.Instance.behaviour.lightStartRadius;
                 canFlash = true;
                 currentLightStrength = lightStrength.Strengthful;
             }

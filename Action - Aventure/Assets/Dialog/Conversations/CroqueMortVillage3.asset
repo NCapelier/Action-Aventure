@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f3ae8e497a59541a2c836045c630af, type: 3}
+  m_Name: CroqueMortVillage3
+  m_EditorClassIdentifier: 
+  leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
+  rightSpeaker: {fileID: 11400000, guid: dd0c63c261f0a004b93cbb74fb47d616, type: 2}
+  lines:
+  - leftPortraitIndex: 0
+    rightPortraitIndex: 1
+    text: "H\xE9 bien ! Je vois que tu as d\xE9sormais un alli\xE9 de taille."
+  - leftPortraitIndex: 0
+    rightPortraitIndex: 1
+    text: "En voil\xE0 une \xE2me splendide."
+  - leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: Je ne sais pas ce que tu as fait mais la plupart des zones obscures semblent
+      avoir disparu.
+  - leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: Cependant les monstres semblent se rassembler au nord du village.
+  - leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: "Un des n\xF4tres est d\xE9j\xE0 parti l\xE0 bas, il semblait assez remont\xE9
+      h\xE9h\xE9."
+  - leftPortraitIndex: 0
+    rightPortraitIndex: 2
+    text: "Toi et ta petite lumi\xE8re devraient peut-\xEAtre aller \xE9clairer sa
+      lanterne h\xE9h\xE9."

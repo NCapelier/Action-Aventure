@@ -49,5 +49,15 @@ namespace Lantern
                 }
             }
         }
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("TorchTag") && LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Recovering
+                && LanternManager.Instance.flashLight.mustRegerenate == false)
+            {
+                LanternManager.Instance.flashLight.mustRegerenate = true;
+            }
+        }
+
     }
 }

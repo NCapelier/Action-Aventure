@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Player;
 
 namespace Dialog
 {
@@ -20,6 +21,9 @@ namespace Dialog
         Conversation conversation = null;
         int lineIndex = 0;
         [HideInInspector] public bool runningConversation = false;
+
+        Color speakerColor = new Color(1f, 1f, 1f, 1f);
+        Color listenerColor = new Color(0.5f, 0.5f, 0.5f, 1f);
 
         #endregion
 
@@ -47,6 +51,8 @@ namespace Dialog
         /// </summary>
         void StartConversation()
         {
+            PlayerManager.Instance.controller.isDialoging = true;
+
             overlay.gameObject.SetActive(true);
             textDisplay.gameObject.SetActive(true);
             portrait.gameObject.SetActive(true);
@@ -58,6 +64,17 @@ namespace Dialog
 
             portrait.leftPortrait.sprite = conversation.leftSpeaker.portrait[conversation.lines[lineIndex].leftPortraitIndex];
             portrait.rightPortrait.sprite = conversation.rightSpeaker.portrait[conversation.lines[lineIndex].rightPortraitIndex];
+
+            if(conversation.lines[lineIndex].speaker == Speaker.Left)
+            {
+                portrait.rightPortrait.color = listenerColor;
+                portrait.leftPortrait.color = speakerColor;
+            }
+            else
+            {
+                portrait.leftPortrait.color = listenerColor;
+                portrait.rightPortrait.color = speakerColor;
+            }
 
             runningConversation = true;
             
@@ -74,6 +91,17 @@ namespace Dialog
 
                 textDisplay.textLine.text = conversation.lines[lineIndex].text;
 
+                if (conversation.lines[lineIndex].speaker == Speaker.Left)
+                {
+                    portrait.rightPortrait.color = listenerColor;
+                    portrait.leftPortrait.color = speakerColor;
+                }
+                else
+                {
+                    portrait.leftPortrait.color = listenerColor;
+                    portrait.rightPortrait.color = speakerColor;
+                }
+
                 portrait.leftPortrait.sprite = conversation.leftSpeaker.portrait[conversation.lines[lineIndex].leftPortraitIndex];
                 portrait.rightPortrait.sprite = conversation.rightSpeaker.portrait[conversation.lines[lineIndex].rightPortraitIndex];
             }
@@ -87,6 +115,7 @@ namespace Dialog
                 runningConversation = false;
                 lineIndex = 0;
                 conversation = null;
+                PlayerManager.Instance.controller.isDialoging = false;
             }
         }
         
