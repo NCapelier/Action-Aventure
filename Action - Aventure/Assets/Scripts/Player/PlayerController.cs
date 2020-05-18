@@ -60,6 +60,8 @@ namespace Player
         bool runPlaying = false;
 
         [HideInInspector] public bool isDialoging = false;
+
+        [HideInInspector] public bool isFalling = false;
         #endregion
 
         void Start()
@@ -193,7 +195,7 @@ namespace Player
             }
 
             computedVelocity = ((computedMovementVector * movementSpeed) + (dashVector.normalized * dashSpeed)) * Time.deltaTime;
-            if(!isDialoging)
+            if(!isDialoging || !isFalling)
             {
                 playerRb.velocity = computedVelocity;
 
