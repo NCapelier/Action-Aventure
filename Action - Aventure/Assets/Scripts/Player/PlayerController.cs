@@ -195,7 +195,7 @@ namespace Player
             }
 
             computedVelocity = ((computedMovementVector * movementSpeed) + (dashVector.normalized * dashSpeed)) * Time.deltaTime;
-            if(!isDialoging || !isFalling)
+            if(!isDialoging && !isFalling)
             {
                 playerRb.velocity = computedVelocity;
 

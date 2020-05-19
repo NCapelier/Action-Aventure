@@ -7,6 +7,7 @@ namespace Dialog
 {
     public class DialogTrigger : MonoBehaviour
     {
+       
 
         public Conversation dialog = null;
 
