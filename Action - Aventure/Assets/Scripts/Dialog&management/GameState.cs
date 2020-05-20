@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    [HideInInspector] public bool lanternGet = false;
+     public bool lanternGet = false;
     //When this is True : Give the possibility to attack and use the light.
 
     
-    [HideInInspector] public bool potionGet = false;
+     public bool potionGet = false;
     //When this is True : Give the possibility to regain life.
+
+    //Check First Visit to Village
+     public bool firstDialogCM = false;
+     public bool firstDialogFC = false;
+
+    public bool versatileGet = false;
 
 
     // Start is called before the first frame update

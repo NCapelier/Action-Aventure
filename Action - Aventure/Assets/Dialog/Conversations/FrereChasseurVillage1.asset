@@ -15,46 +15,64 @@ MonoBehaviour:
   leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
   rightSpeaker: {fileID: 11400000, guid: a1fa199b82e54a1438005e23b3dc4d24, type: 2}
   lines:
-  - leftPortraitIndex: 0
+  - speaker: 0
+    leftPortraitIndex: 0
     rightPortraitIndex: 0
     text: "Vous avez l\u2019intention de sortir du village ?"
-  - leftPortraitIndex: 0
+  - speaker: 0
+    leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: "Vous avez l\u2019intention de sortir du village ?"
+  - speaker: 1
+    leftPortraitIndex: 0
     rightPortraitIndex: 0
     text: ...
-  - leftPortraitIndex: 0
+  - speaker: 1
+    leftPortraitIndex: 0
     rightPortraitIndex: 0
     text: Oui.
-  - leftPortraitIndex: 0
+  - speaker: 1
+    leftPortraitIndex: 0
     rightPortraitIndex: 0
     text: "Mon fr\xE8re est parti du village en \xE9claireur."
-  - leftPortraitIndex: 0
+  - speaker: 1
+    leftPortraitIndex: 0
     rightPortraitIndex: 0
     text: "C\u2019est le seul chasseur du village."
-  - leftPortraitIndex: 0
+  - speaker: 1
+    leftPortraitIndex: 0
     rightPortraitIndex: 0
     text: "Il aurait d\xFB revenir depuis longtemps."
-  - leftPortraitIndex: 0
+  - speaker: 1
+    leftPortraitIndex: 0
     rightPortraitIndex: 0
     text: "J\u2019ai entendu des coups de feu et des cris il y a quelques minutes
       \xE0 peine."
-  - leftPortraitIndex: 0
+  - speaker: 1
+    leftPortraitIndex: 0
     rightPortraitIndex: 0
     text: "Il faut que j\u2019aille le sauver."
-  - leftPortraitIndex: 0
+  - speaker: 0
+    leftPortraitIndex: 2
     rightPortraitIndex: 0
     text: ...
-  - leftPortraitIndex: 2
+  - speaker: 0
+    leftPortraitIndex: 2
     rightPortraitIndex: 0
     text: "Votre fr\xE8re s\u2019est fait attaquer\u2026"
-  - leftPortraitIndex: 2
-    rightPortraitIndex: 0
+  - speaker: 0
+    leftPortraitIndex: 2
+    rightPortraitIndex: 1
     text: "Il.. Il est mort, je suis d\xE9sol\xE9."
-  - leftPortraitIndex: 2
+  - speaker: 1
+    leftPortraitIndex: 2
     rightPortraitIndex: 1
     text: Ah..
-  - leftPortraitIndex: 2
+  - speaker: 1
+    leftPortraitIndex: 2
     rightPortraitIndex: 1
     text: "Salet\xE9s de monstres..."
-  - leftPortraitIndex: 2
+  - speaker: 1
+    leftPortraitIndex: 2
     rightPortraitIndex: 1
     text: Vous allez le payer.

@@ -3,29 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using Player;
 using GameManagement;
-public class TriggerDialogPNJCroque : MonoBehaviour
+
+public class TriggerDialogFrere : MonoBehaviour
 {
+    public bool playerH;
 
-    /// <summary>
-    /// XP -  Dialogue Manager du Croque mort.
-    /// </summary>
-     private bool playerH;
+    private TriggerDialogFrere script;
 
-    //Button reference
     public GameObject AButton;
     private SpriteRenderer boutonRenderer;
 
-    
 
-    public Dialog.Conversation dial1;
-    public Dialog.Conversation dial2;
-    public Dialog.Conversation dial3;
+    [SerializeField] private Dialog.Conversation dial1;
+    [SerializeField] private Dialog.Conversation dial2;
 
-    //Dialog Reference
 
     // Start is called before the first frame update
     void Start()
     {
+        script = GetComponent<TriggerDialogFrere>();
+
         playerH = false;
         boutonRenderer = AButton.GetComponent<SpriteRenderer>();
 
@@ -53,30 +50,38 @@ public class TriggerDialogPNJCroque : MonoBehaviour
         }
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if (Input.GetButtonDown("A_Button") && playerH == true)
-        {
-            PlayerManager.Instance.controller.isDialoging = true;
+       
+
+       if (Input.GetButtonDown("A_Button") && playerH == true)
+       {
+
+            if (PlayerManager.Instance.controller.isDialoging == false && GameManager.Instance.GetComponent<GameState>().firstDialogFC == true )
+            {
+                dial1 = dial2;
+            }
 
             GameCanvasManager.Instance.dialog.StartDialog = dial1;
 
-            //sinon celui ci
+            GameManager.Instance.GetComponent<GameState>().firstDialogFC = true;
 
-            //TriggerDialog
-
-            PlayerManager.Instance.controller.isDialoging = true;
+           
         }
+
+        
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "PlayerController")
         {
+            if (collision.gameObject.tag == "PlayerController")
+            {
             startFadingOUT();
             playerH = false;
+            }
         }
-    }
 
 
     IEnumerator FadeIn()

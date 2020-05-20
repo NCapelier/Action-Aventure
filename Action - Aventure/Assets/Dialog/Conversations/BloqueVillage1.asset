@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1f3ae8e497a59541a2c836045c630af, type: 3}
-  m_Name: FrereChasseurVillage2
+  m_Name: BloqueVillage1
   m_EditorClassIdentifier: 
   leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
-  rightSpeaker: {fileID: 11400000, guid: a1fa199b82e54a1438005e23b3dc4d24, type: 2}
+  rightSpeaker: {fileID: 11400000, guid: 0c994ad1af2c8864eb8eb936e6ca07b4, type: 2}
   lines:
   - speaker: 0
-    leftPortraitIndex: 0
-    rightPortraitIndex: 1
-    text: ...
-  - speaker: 0
-    leftPortraitIndex: 0
-    rightPortraitIndex: 1
-    text: ...
+    leftPortraitIndex: 1
+    rightPortraitIndex: 0
+    text: "Je devrais aller voir si certains habitants ont surv\xE9cu dans les alentours."
