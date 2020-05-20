@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Lantern;
+using GameManagement;
 
 public class LightCanvasManager : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class LightCanvasManager : MonoBehaviour
             lanternIsLit.enabled = true;
             lanternNotlit.enabled = false;
         }
-        else if (LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)
+        else if (LanternManager.Instance.hideLight.currentLightState == lightState.Hidden || GameManager.Instance.GetComponent<GameState>().lanternGet == false)
         {
             lanternIsLit.enabled = false;
             lanternNotlit.enabled = true;

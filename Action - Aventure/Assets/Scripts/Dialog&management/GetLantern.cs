@@ -52,17 +52,15 @@ public class GetLantern : MonoBehaviour
     {
         if (Input.GetButtonDown("A_Button") && playerHere == true)
         {
-            PlayerManager.Instance.controller.isDialoging = true;
+            
+
 
             GameCanvasManager.Instance.dialog.StartDialog = lantern;
 
-            PlayerManager.Instance.controller.isDialoging = true;
-
-            startFadingOUT();
-
             GameManager.Instance.GetComponent<GameState>().lanternGet = true;
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            
         }
     }
   
