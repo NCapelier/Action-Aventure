@@ -20,11 +20,10 @@ public class BlockerCaravane : MonoBehaviour
     {
         if(GameManager.Instance.GetComponent<GameState>().lanternGet == false)
         {
-            PlayerManager.Instance.controller.isDialoging = true;
+          
 
             GameCanvasManager.Instance.dialog.StartDialog = canPassThrought;
 
-            PlayerManager.Instance.controller.isDialoging = true;
         }
         else
         {
