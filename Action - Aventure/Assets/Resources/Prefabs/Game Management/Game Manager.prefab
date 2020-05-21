@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4686697161276044652}
   - component: {fileID: -2166417210116586935}
   - component: {fileID: 275538342857743955}
+  - component: {fileID: 2246279518234898716}
   m_Layer: 5
   m_Name: Game Manager
   m_TagString: GameController
@@ -59,6 +60,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ApperingText: {fileID: 7190919810254657743}
   timebeforVanishing: 4
+--- !u!114 &2246279518234898716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077402419351812654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9fa05c8eea79a748ad70b04bee32dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanternGet: 0
+  potionGet: 0
+  firstDialogCM: 0
+  firstDialogFC: 0
+  versatileGet: 0
 --- !u!1001 &7190919808855509468
 PrefabInstance:
   m_ObjectHideFlags: 0

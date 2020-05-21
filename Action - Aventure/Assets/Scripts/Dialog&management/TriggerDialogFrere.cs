@@ -67,6 +67,8 @@ public class TriggerDialogFrere : MonoBehaviour
 
             GameManager.Instance.GetComponent<GameState>().firstDialogFC = true;
 
+            playerH = false; 
+
            
         }
 
