@@ -164,6 +164,9 @@ namespace Player
         /// <returns></returns>
         IEnumerator DashDuration()
         {
+            //Sound
+            AudioManager.Instance.Play("Breath_anx");
+
             yield return new WaitForSeconds(dashDuration);
             isDashing = false;
             dashVector = Vector2.zero;
@@ -173,6 +176,8 @@ namespace Player
 
             //Sound
             DashSound.Stop();
+            AudioManager.Instance.Play("Breath_relief");
+
             runPlaying = false;
         }
 
