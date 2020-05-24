@@ -16,7 +16,7 @@ namespace Enemy
         
         void Start()
         {
-            hp = maxHp;
+            EnemyStart();
         }
 
         void Update()

@@ -45,6 +45,11 @@ namespace Enemy
 
         #endregion
 
+        protected virtual void EnemyStart()
+        {
+            hp = maxHp;
+        }
+
         /// <summary>
         /// Avoids the hp to exceed the hp cap and lauched the Death() method if hp < 0
         /// </summary>

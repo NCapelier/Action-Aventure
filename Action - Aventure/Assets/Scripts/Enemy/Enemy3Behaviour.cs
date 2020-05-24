@@ -4,88 +4,93 @@ using UnityEngine;
 using Player;
 using Lantern;
 
-public class Enemy3Behaviour : MonoBehaviour
+namespace Enemy
 {
-    /// <summary>
-    /// XP_Ce script permet de faire fonctionner l'enemy 3 avec les features suivantes :
-    /// Tir; Replis; 
-    /// </summary>
-
-    [Header("Stats")]
-    [Range(0.1f, 300f)]
-    public float speed;
-    [Range(0.1f, 10f)]
-    public float detectionRange;
-    [Range(0.1f, 10f)]
-    public float nearRange;
-
-    //CooldownShot
-    private float timeBtwShots;
-    public float Cooldown;
-
-    [Header("References")]
-    public GameObject shot;
-    private Rigidbody2D rbEnemy3;
-
-    [Header("Etat")]
-    private bool attackAvailable;
-    
-
-
-
-    void Start()
+    public class Enemy3Behaviour : EnemyParent
     {
-       
-        rbEnemy3 = GetComponent<Rigidbody2D>();
+        /// <summary>
+        /// XP_Ce script permet de faire fonctionner l'enemy 3 avec les features suivantes :
+        /// Tir; Replis; 
+        /// </summary>
 
-        timeBtwShots = Cooldown;
-    }
+        [Header("Stats")]
+        [Range(0.1f, 300f)]
+        public float speed;
+        [Range(0.1f, 10f)]
+        public float detectionRange;
+        [Range(0.1f, 10f)]
+        public float nearRange;
 
-    // Update is called once per frame
-    void Update()
-    {
-        Vector2 dir = PlayerManager.Instance.transform.position - transform.position;
+        //CooldownShot
+        private float timeBtwShots;
+        public float Cooldown;
 
-        if(LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)
+        [Header("References")]
+        public GameObject shot;
+        private Rigidbody2D rbEnemy3;
+
+        [Header("Etat")]
+        private bool attackAvailable;
+
+
+
+
+        void Start()
         {
+            EnemyStart();
+            rbEnemy3 = GetComponent<Rigidbody2D>();
+
             timeBtwShots = Cooldown;
         }
 
-
-        if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= detectionRange && Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) >= nearRange)
+        // Update is called once per frame
+        void Update()
         {
-            rbEnemy3.velocity = new Vector3(0f, 0f, 0f);
-            Debug.Log("Found");
+            Vector2 dir = PlayerManager.Instance.transform.position - transform.position;
 
-            if(attackAvailable == true && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed) {
-                Enemy3Attack();
-            }
-            else
+            if (LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)
             {
-                if (timeBtwShots <=0)
+                timeBtwShots = Cooldown;
+            }
+
+
+            if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= detectionRange && Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) >= nearRange)
+            {
+                rbEnemy3.velocity = new Vector3(0f, 0f, 0f);
+                Debug.Log("Found");
+
+                if (attackAvailable == true && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
                 {
-                    timeBtwShots = Cooldown;
-                    attackAvailable = true;
+                    Enemy3Attack();
                 }
                 else
                 {
-                    timeBtwShots -= Time.deltaTime;
+                    if (timeBtwShots <= 0)
+                    {
+                        timeBtwShots = Cooldown;
+                        attackAvailable = true;
+                    }
+                    else
+                    {
+                        timeBtwShots -= Time.deltaTime;
+                    }
                 }
+            }
+
+            if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= nearRange)
+            {
+                Debug.Log("Recall");
+                attackAvailable = false;
+                rbEnemy3.velocity = dir.normalized * -speed * Time.deltaTime;
             }
         }
 
-        if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= nearRange)
+        private void Enemy3Attack()
         {
-            Debug.Log("Recall");
+            GameObject bullet = Instantiate(shot, transform.position, Quaternion.identity);
+            bullet.GetComponent<BulletBehaviour>().enemyParent = this.gameObject;
             attackAvailable = false;
-            rbEnemy3.velocity = dir.normalized * -speed * Time.deltaTime;
         }
     }
 
-    private void Enemy3Attack()
-    {
-      GameObject bullet =  Instantiate(shot, transform.position, Quaternion.identity);
-        bullet.GetComponent<BulletBehaviour>().enemyParent = this.gameObject;
-        attackAvailable = false;
-    }
 }

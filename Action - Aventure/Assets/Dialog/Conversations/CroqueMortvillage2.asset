@@ -15,7 +15,8 @@ MonoBehaviour:
   leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
   rightSpeaker: {fileID: 11400000, guid: dd0c63c261f0a004b93cbb74fb47d616, type: 2}
   lines:
-  - leftPortraitIndex: 0
+  - speaker: 1
+    leftPortraitIndex: 0
     rightPortraitIndex: 1
     text: "Quelles belles \xE2mes m\u2019am\xE8nes-tu aujourd\u2019hui mon petit
       ?"
