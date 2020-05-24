@@ -10,20 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1f3ae8e497a59541a2c836045c630af, type: 3}
-  m_Name: "Entr\xE9eCave"
+  m_Name: ApparitionFeuFollet
   m_EditorClassIdentifier: 
   leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
-  rightSpeaker: {fileID: 11400000, guid: 0c994ad1af2c8864eb8eb936e6ca07b4, type: 2}
+  rightSpeaker: {fileID: 11400000, guid: b47c7df72415c7846984f70d1fe4061b, type: 2}
   lines:
   - speaker: 0
     leftPortraitIndex: 0
     rightPortraitIndex: 0
-    text: Maman ...
-  - speaker: 0
-    leftPortraitIndex: 0
-    rightPortraitIndex: 0
     text: Maman ?
-  - speaker: 0
+  - speaker: 1
     leftPortraitIndex: 0
     rightPortraitIndex: 0
-    text: Est-ce-toi ?
+    text: Je suis la maintenant.

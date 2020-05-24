@@ -48,6 +48,7 @@ public class apperingEnnemy : MonoBehaviour
         Instantiate(ennemy1, transform.position, Quaternion.identity);
         //pointLight.GetComponent<Light>().enabled = false;
         animator.enabled = false;
+        gameObject.SetActive(false);
         
         
     }
