@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &47012297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &95138023
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -617,6 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &454105782
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -722,6 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &689526206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -793,6 +797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &718610305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -899,6 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &797769754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1039,6 +1045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &1049558725
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1110,6 +1117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &1136561896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1241,6 +1249,15 @@ Tilemap:
   m_GameObject: {fileID: 1147547088}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -14, y: -14, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 11
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 2
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -13, y: -14, z: 0}
     second:
       serializedVersion: 2
@@ -1481,6 +1498,15 @@ Tilemap:
       m_TileIndex: 7
       m_TileSpriteIndex: 11
       m_TileMatrixIndex: 2
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 14, y: -14, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 11
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
@@ -2444,8 +2470,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: a04e6d593e9d78149bc4557e044566ad, type: 2}
   - m_RefCount: 27
     m_Data: {fileID: 11400000, guid: cbec4e87f0974ce44bc351ac4552576b, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 32f08164b49ec2b4cb83b93592053f79, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -2465,8 +2491,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 21300000, guid: 0c89fe88e5156694988004a563e0ade0, type: 3}
   - m_RefCount: 27
     m_Data: {fileID: 21300000, guid: 7d550343d7d9936408c078bd5ef9507c, type: 3}
   - m_RefCount: 52
@@ -2508,14 +2534,14 @@ Tilemap:
       e31: NaN
       e32: 4.5905e-41
       e33: 2.1e-43
-  - m_RefCount: 27
+  - m_RefCount: 28
     m_Data:
-      e00: 0.000000059604645
-      e01: 0.99999994
+      e00: 0
+      e01: 1
       e02: 0
       e03: 0
-      e10: -0.99999994
-      e11: 0.000000059604645
+      e10: -1
+      e11: 0
       e12: 0
       e13: 0
       e20: 0
@@ -2526,7 +2552,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 104
+  - m_RefCount: 105
     m_Data:
       e00: 1
       e01: 0
@@ -2545,7 +2571,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 131
+  - m_RefCount: 133
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -2843,6 +2869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &1294352807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5694,6 +5721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &1609049318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5765,6 +5793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &1683199372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5836,6 +5865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &1783164801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6060,6 +6090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 291776842}
+  blackScreen: {fileID: 0}
 --- !u!61 &2033356747
 BoxCollider2D:
   m_ObjectHideFlags: 0

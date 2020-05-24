@@ -1,0 +1,26 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameState : MonoBehaviour
+{
+     public bool lanternGet = false;
+    //When this is True : Give the possibility to attack and use the light.
+
+    
+     public bool potionGet = false;
+    //When this is True : Give the possibility to regain life.
+
+    //Check First Visit to Village
+    //First dialog Croque Mort done.
+     public bool firstDialogCM = false;
+    //First dialog Frère Chasseur done.
+    public bool firstDialogFC = false;
+
+
+    //When this is True : The player can use the apptitude Versatile.
+    public bool versatileGet = false;
+
+
+    
+}

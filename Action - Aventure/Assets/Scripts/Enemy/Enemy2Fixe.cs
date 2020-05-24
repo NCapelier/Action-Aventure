@@ -98,6 +98,14 @@ namespace Enemy
             clockTwoEnded = true;
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if(collision.gameObject.tag == "Finish")
+            {
+                rb.velocity = new Vector3(0f, 0f, 0f);
+            }
+        }
+
         // Update is called once per frame
         void Update()
         {
@@ -179,7 +187,7 @@ namespace Enemy
             //Debug.Log(direction);
         }
 
-
+        
 
 
         private void clockOne()

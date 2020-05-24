@@ -25,6 +25,10 @@ namespace Dialog
         Color speakerColor = new Color(1f, 1f, 1f, 1f);
         Color listenerColor = new Color(0.5f, 0.5f, 0.5f, 1f);
 
+        //cut scene dialogs
+        [HideInInspector] public bool isCutScene = false;
+        [HideInInspector] public bool forceUpdate = false;
+
         #endregion
 
         #region properties
@@ -65,7 +69,7 @@ namespace Dialog
             portrait.leftPortrait.sprite = conversation.leftSpeaker.portrait[conversation.lines[lineIndex].leftPortraitIndex];
             portrait.rightPortrait.sprite = conversation.rightSpeaker.portrait[conversation.lines[lineIndex].rightPortraitIndex];
 
-            if(conversation.lines[lineIndex].speaker == Speaker.Left)
+            if (conversation.lines[lineIndex].speaker == Speaker.Left)
             {
                 portrait.rightPortrait.color = listenerColor;
                 portrait.leftPortrait.color = speakerColor;
@@ -77,7 +81,7 @@ namespace Dialog
             }
 
             runningConversation = true;
-            
+
         }
 
         /// <summary>
@@ -85,7 +89,7 @@ namespace Dialog
         /// </summary>
         void UpdateConversation()
         {
-            if(lineIndex < conversation.lines.Length - 1)
+            if (lineIndex < conversation.lines.Length - 1)
             {
                 lineIndex++;
 
@@ -115,19 +119,22 @@ namespace Dialog
                 runningConversation = false;
                 lineIndex = 0;
                 conversation = null;
+                isCutScene = false;
                 PlayerManager.Instance.controller.isDialoging = false;
             }
         }
-        
+
         void Update()
         {
-            if(Input.GetButtonDown("A_Button") && runningConversation)
+            if ((Input.GetButtonDown("A_Button") && runningConversation && !isCutScene)
+                || (isCutScene && forceUpdate))
             {
+                forceUpdate = false;
                 UpdateConversation();
             }
         }
-        
-        
-        
+
+
+
     }
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f3ae8e497a59541a2c836045c630af, type: 3}
+  m_Name: GetLantern
+  m_EditorClassIdentifier: 
+  leftSpeaker: {fileID: 11400000, guid: 0c994ad1af2c8864eb8eb936e6ca07b4, type: 2}
+  rightSpeaker: {fileID: 11400000, guid: 0c994ad1af2c8864eb8eb936e6ca07b4, type: 2}
+  lines:
+  - speaker: 0
+    leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: "Vous avez r\xE9cup\xE9r\xE9 \"Lanterne\"."
+  - speaker: 0
+    leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: "Vous avez r\xE9cup\xE9r\xE9 \"Lanterne\"."

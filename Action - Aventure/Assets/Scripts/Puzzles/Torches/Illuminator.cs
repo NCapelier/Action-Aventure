@@ -13,6 +13,7 @@ public class Illuminator : MonoBehaviour
     public float StartDuration;
     private bool restart;
 
+    public bool playerHere;
    //Light
     private GameObject pointLight;
 
@@ -22,6 +23,7 @@ public class Illuminator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHere = false;
         isLit = false;
         duration = StartDuration;
         restart = false;
@@ -61,7 +63,11 @@ public class Illuminator : MonoBehaviour
                 }
         }
             
-
+        if(playerHere == true && LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
+        {
+            isLit = true;
+            StartCoroutine("Restart");
+        }
            
         
     }
@@ -73,21 +79,24 @@ public class Illuminator : MonoBehaviour
              }
 
         }
-            private void OnTriggerStay2D(Collider2D col)
-            {
-        
-                if (col.gameObject.tag == "Hinky" && LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
-                {
 
-                Debug.Log("called");
-                isLit = true;
-                StartCoroutine("Restart");
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "PlayerController" || collision.gameObject.tag == "Hinky")
+        {
+            playerHere = true;
             
-            
+        }
+    }
+   
 
-                }
-        
-            }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerController" || collision.gameObject.tag == "Hinky")
+        {
+            playerHere = false;
+        }
+    }
 
     IEnumerator Restart()
     {

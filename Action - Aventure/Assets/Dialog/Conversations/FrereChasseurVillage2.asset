@@ -15,7 +15,11 @@ MonoBehaviour:
   leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
   rightSpeaker: {fileID: 11400000, guid: a1fa199b82e54a1438005e23b3dc4d24, type: 2}
   lines:
-  - speaker: 1
+  - speaker: 0
+    leftPortraitIndex: 0
+    rightPortraitIndex: 1
+    text: ...
+  - speaker: 0
     leftPortraitIndex: 0
     rightPortraitIndex: 1
     text: ...
