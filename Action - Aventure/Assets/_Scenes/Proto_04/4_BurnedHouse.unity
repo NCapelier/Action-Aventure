@@ -907,7 +907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &532636033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,10 +917,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 532636032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18d73c6d1fe16945a85baf8aca78a37, type: 3}
+  m_Script: {fileID: 11500000, guid: ac19c6eb23ec74a499e6c7a624578799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "entr\xE9eMaison": {fileID: 11400000, guid: d6bc938db2a9b194fa19c1d4e195a20f, type: 2}
+  dialHelp1: {fileID: 11400000, guid: d6bc938db2a9b194fa19c1d4e195a20f, type: 2}
 --- !u!61 &532636034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3757,6 +3757,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "entr\xE9eMaison": {fileID: 0}
+  "arriv\xE9eMaman": {fileID: 0}
+  enemyEyes: {fileID: 0}
+  enemySkin: {fileID: 0}
+  boxCol: {fileID: 0}
 --- !u!1 &2009261639
 GameObject:
   m_ObjectHideFlags: 0
