@@ -6,7 +6,12 @@ using Lantern;
 
 public class FallingScript : MonoBehaviour
 {
-    public GameObject respawnPoint;
+
+    /// <summary>
+    /// Xp - Make the player falling
+    /// </summary>
+
+   public GameObject respawnPoint;
     public GameObject blackScreen;
     private SpriteRenderer screenRenderer;
 
@@ -72,6 +77,7 @@ public class FallingScript : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         PlayerManager.Instance.TakeDamages = 4;
+        //Jouer le son de la chute
         PlayerManager.Instance.gameObject.transform.position = respawnPoint.transform.position;
         
         //Tp le feu follet et mettre dans le bon état.

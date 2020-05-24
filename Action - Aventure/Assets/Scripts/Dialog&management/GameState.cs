@@ -12,21 +12,15 @@ public class GameState : MonoBehaviour
     //When this is True : Give the possibility to regain life.
 
     //Check First Visit to Village
+    //First dialog Croque Mort done.
      public bool firstDialogCM = false;
-     public bool firstDialogFC = false;
+    //First dialog Frère Chasseur done.
+    public bool firstDialogFC = false;
 
+
+    //When this is True : The player can use the apptitude Versatile.
     public bool versatileGet = false;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

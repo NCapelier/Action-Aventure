@@ -9,36 +9,38 @@ using UnityEngine.Playables;
 
 public class TriggerDialogBucheron : MonoBehaviour
 {
-    public GameObject enemy;
 
-    public GameObject waypoints;
+    /// <summary>
+    /// XP - Ce script gère la cut scène du bucheron.
+    /// </summary>
+    //references Ennemi
+    public GameObject enemy;
+    public GameObject enemyToKill;
+   
+
+    public GameObject pnjTokill;
 
 
     private BoxCollider2D bxCollider;
+    private bool playerHere;
 
-    public Dialog.Conversation dialHelp1;
-    public Dialog.Conversation dialHelp2;
-    public Dialog.Conversation dialHelp3;
+    //Cutscene Ref
+    [SerializeField] private Dialog.Conversation dialHelp1;
+ 
+    [SerializeField] private Dialog.Conversation dialHelp3;
     private bool dialog1Finished;
+    private PlayableDirector timeline;
+    private float timerClip = 0f;
+    private bool starTimer = false;
+
 
     public GameObject flambeau;
 
-    private bool playerHere;
-
-    private PlayableDirector timeline;
-
-    public float timerClip = 0f;
-
-    private bool starTimer = false;
-
-    private bool dialog2fin = false;
-
-
+ 
     // Start is called before the first frame update
     void Start()
     {
-
-
+        
         bxCollider = GetComponent<BoxCollider2D>();
         flambeau.GetComponent<TorchTTK>().isLit = true;
 
@@ -48,6 +50,7 @@ public class TriggerDialogBucheron : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Quand le player rentre dans la zone de collision, la cut scene se lance. Le joueur doit passer le dialogue pour continuer.
         if (collision.gameObject.tag == "PlayerController")
         {
             playerHere = true;
@@ -58,15 +61,14 @@ public class TriggerDialogBucheron : MonoBehaviour
 
             GameCanvasManager.Instance.dialog.StartDialog = dialHelp1;
 
-
         }
-
 
 
     }
 
     private void Update()
     {
+        //A la fin de la conversation, l'anim de la timeline se lance pour ensuite lancer le deuxième dialogue.
         if (GameCanvasManager.Instance.dialog.runningConversation == false && playerHere == true)
         {
             PlayerManager.Instance.controller.isDialoging = true;
@@ -74,17 +76,15 @@ public class TriggerDialogBucheron : MonoBehaviour
             timeline.Play();
 
             starTimer = true;
-            
-
-            
+  
         }
 
 
-        if (timerClip >= 1150 && starTimer == true)
+        if (timerClip >= 1300 && starTimer == true)
         {
             starTimer = false;
 
-            GameCanvasManager.Instance.dialog.StartDialog = dialHelp2;
+            GameCanvasManager.Instance.dialog.StartDialog = dialHelp3;
 
             //jouer coup de feu;
 
@@ -92,24 +92,17 @@ public class TriggerDialogBucheron : MonoBehaviour
 
             flambeau.GetComponent<TorchTTK>().isLit = false;
 
-            dialog2fin = true;
-
-            if (GameCanvasManager.Instance.dialog.runningConversation == false && dialog2fin == true)
-            {
-                Debug.Log("called");
-                PlayerManager.Instance.controller.isDialoging = true;
+            pnjTokill.SetActive(false);
 
 
-                GameCanvasManager.Instance.dialog.StartDialog = dialHelp3;
-            }
+            Instantiate(enemy, enemyToKill.transform.position, Quaternion.identity);
+
+            Destroy(enemyToKill);
+
+            Destroy(gameObject);
         }
 
-        
-
-       
-
-
-
+        //au début de l'animation, lancer un chrono pour l'arreter au bon moment.
         if (starTimer == true)
         {
             timerClip += 1;

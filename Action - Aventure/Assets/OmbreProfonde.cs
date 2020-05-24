@@ -5,13 +5,9 @@ using GameManagement;
 
 public class OmbreProfonde : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+  /// <summary>
+  /// XP - This script makes the "ombre Profonde" disabled when the player get the Will'o
+  /// </summary>
     void Update()
     {
         if (GameManager.Instance.GetComponent<GameState>().versatileGet  == true)

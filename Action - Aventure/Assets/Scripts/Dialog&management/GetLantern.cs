@@ -15,6 +15,8 @@ public class GetLantern : MonoBehaviour
     private SpriteRenderer boutonRenderer;
 
     private bool playerHere;
+
+    //dialog Lines
     public Dialog.Conversation lantern;
 
     private void Start()
@@ -23,7 +25,7 @@ public class GetLantern : MonoBehaviour
         playerHere = false;
 
 
-       //Set opacity to 0
+       //Set opacity to 0 of the A Button
         Color c = boutonRenderer.material.color;
         c.a = 0f;
         boutonRenderer.material.color = c;
@@ -52,9 +54,7 @@ public class GetLantern : MonoBehaviour
     {
         if (Input.GetButtonDown("A_Button") && playerHere == true)
         {
-            
-
-
+  
             GameCanvasManager.Instance.dialog.StartDialog = lantern;
 
             GameManager.Instance.GetComponent<GameState>().lanternGet = true;

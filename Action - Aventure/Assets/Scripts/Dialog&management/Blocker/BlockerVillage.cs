@@ -5,6 +5,11 @@ using GameManagement;
 
 public class BlockerVillage : MonoBehaviour
 {
+    /// <summary>
+    /// Block the player in the progression if he don't talk to the good person
+    /// </summary>
+
+    //Dialog reference
     public Dialog.Conversation dial1;
     public Dialog.Conversation dial2;
     public Dialog.Conversation dial3;

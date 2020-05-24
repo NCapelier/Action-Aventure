@@ -6,7 +6,7 @@ using GameManagement;
 
 public class BlockerTuto : MonoBehaviour
 {
-
+    //Dialog Lines
     [SerializeField] private Dialog.Conversation needPotion;
 
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class BlockerTuto : MonoBehaviour
         }
         else
         {
+            // Dans le cas ou le jouer à les potions, il peut passer à la suite.
             GetComponent<SceneTransition>().enabled = true;
         }
     }
