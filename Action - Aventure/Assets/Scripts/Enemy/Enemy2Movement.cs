@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using GameSound;
 
 namespace Enemy
 {
@@ -56,6 +57,12 @@ namespace Enemy
         public GameObject Animator;
         public GameObject EyesAnimator;
 
+        //Sound
+        Sound detectionClip;
+        AudioSource detectionSound;
+        Sound attackClip;
+        AudioSource attackSound;
+        AudioSource[] sounds;
 
         private void Start()
         {
@@ -80,6 +87,17 @@ namespace Enemy
             eyeAnim.SetFloat("Ymovement", rb.velocity.y);
             eyeAnim.SetBool("isMoving", true);
 
+            //Sound
+            detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
+            AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
+            attackClip = AudioManager.Instance.sounds_notUniqueObject["Enemy2_attack"];
+            AudioManager.Instance.MakeAudioSource(attackClip, gameObject);
+            sounds = gameObject.GetComponents<AudioSource>();
+            detectionSound = sounds[0];
+            attackSound = sounds[1];
+            Debug.Log("detection sound = " + detectionSound.clip.name);
+            Debug.Log("attack sound = " + attackSound.clip.name);
+
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
             UpAttack.SetActive(false);
@@ -101,6 +119,11 @@ namespace Enemy
             //Dans le cas ou le player est dans la zone d'aggro
             if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) <= enterPlayerArea)
             {
+                if (!playerFound)
+                {
+                    detectionSound.Play();
+                }
+
                 playerFound = true;
                 //Debug.Log("playerFound");
 
@@ -258,6 +281,7 @@ namespace Enemy
                 eyeAnim.SetBool("isAttacking", true);
 
                 rb.velocity = new Vector3(0, 0, 0);
+                attackSound.Play();
                 yield return new WaitForSeconds(warningTime);
 
                 switch (direction)

@@ -21,8 +21,14 @@ namespace Lantern
         bool playerCrazy = false;
         bool runningCrazyness = false;
 
+        AudioSource chatteringTeeth;
         #endregion
-        
+
+        private void Start()
+        {
+            chatteringTeeth = AudioManager.Instance.GetSound("Chattering_teeth");
+        }
+
         void Update()
         {
             if (Input.GetButtonDown("X_Button") && currentLightState == lightState.Displayed && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy
@@ -47,6 +53,7 @@ namespace Lantern
 
             //Sound
             AudioManager.Instance.Play("Coat_close");
+            chatteringTeeth.Play();
         }
 
         /// <summary>
@@ -93,6 +100,7 @@ namespace Lantern
 
             //Sound
             AudioManager.Instance.Play("Coat_open");
+            chatteringTeeth.Stop();
         }
 
     }

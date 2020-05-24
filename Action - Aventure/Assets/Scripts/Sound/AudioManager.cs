@@ -15,6 +15,8 @@ namespace GameSound
         #region Variables
         private Dictionary<string, AudioSource> d_sounds = new Dictionary<string, AudioSource>();
         [SerializeField] private Sound[] sounds;
+
+        public Dictionary<string, Sound> sounds_notUniqueObject = new Dictionary<string, Sound>();
         #endregion
         private void Awake()
         {
@@ -22,7 +24,16 @@ namespace GameSound
             
             foreach(Sound s in sounds)
             {
-                MakeAudioSource(s);
+                if (!s.notUniqueObject)
+                {
+                    MakeAudioSource(s, gameObject);
+
+                    d_sounds.Add(s.clip.name, s.source);
+                }
+                else
+                {
+                    sounds_notUniqueObject.Add(s.clip.name, s);
+                }
             }
         }
 
@@ -30,17 +41,15 @@ namespace GameSound
         /// Set sounds in ready-to-play Audio Sources
         /// </summary>
         /// <param name="s"></param>
-        void MakeAudioSource(Sound s)
+        public void MakeAudioSource(Sound s, GameObject go)
         {
-            s.source = gameObject.AddComponent<AudioSource>();
+            s.source = go.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             //s.source.playOnAwake = s.playAwake;
-
-            d_sounds.Add(s.clip.name, s.source);
         }
 
         /// <summary>

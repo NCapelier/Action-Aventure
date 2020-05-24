@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using GameSound;
 
 namespace Enemy
 {
@@ -16,6 +17,9 @@ namespace Enemy
         [Range(1, 50)]
         public int maxHp = 10;
 
+        //Sound
+        Sound deathClip;
+        AudioSource deathSound;
         #endregion
 
         #region Properties
@@ -48,8 +52,13 @@ namespace Enemy
         protected virtual void EnemyStart()
         {
             hp = maxHp;
-        }
 
+            //Sound
+            deathClip = AudioManager.Instance.sounds_notUniqueObject["Enemy_death1"];
+            AudioManager.Instance.MakeAudioSource(deathClip, gameObject);
+            deathSound = GetComponent<AudioSource>();
+        }
+         
         /// <summary>
         /// Avoids the hp to exceed the hp cap and lauched the Death() method if hp < 0
         /// </summary>
@@ -70,6 +79,8 @@ namespace Enemy
         /// </summary>
         public virtual void Death()
         {
+            deathSound.Play();
+
             Destroy(gameObject);
         }
 
