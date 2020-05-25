@@ -22,11 +22,6 @@ namespace Lantern
 
         #endregion
 
-        void Awake()
-        {
-
-        }
-
         void Start()
         {
             //get all the required components of the light object and the mask object

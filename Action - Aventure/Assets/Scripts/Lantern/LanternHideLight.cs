@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using GameSound;
 using Player;
 using LightEnvironment;
+using GameManagement;
 
 namespace Lantern
 {
@@ -31,6 +31,8 @@ namespace Lantern
 
         void Update()
         {
+            if (!GameManager.Instance.gameState.lanternGet)
+                return;
             if (Input.GetButtonDown("X_Button") && currentLightState == lightState.Displayed && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy
                 && GlobalLightManager.Instance.mainLight.intensity >= GlobalLightManager.Instance.maximumLightning)
             {

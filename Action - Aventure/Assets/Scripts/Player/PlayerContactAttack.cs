@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using GameSound;
+using GameManagement;
 
 namespace Player
 {
@@ -37,11 +38,6 @@ namespace Player
 
         #endregion
 
-        void Awake()
-        {
-
-        }
-
         void Start()
         {
             aimBehaviour = PlayerManager.Instance.aimBehaviour;
@@ -49,6 +45,8 @@ namespace Player
 
         void Update()
         {
+            if (!GameManager.Instance.gameState.lanternGet)
+                return;
             AttackInput();
         }
 

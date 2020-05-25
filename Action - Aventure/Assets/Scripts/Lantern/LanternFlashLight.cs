@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using GameSound;
+using GameManagement;
 
 namespace Lantern
 {
@@ -44,7 +44,9 @@ namespace Lantern
         
         void Update()
         {
-            switch(currentFlashState)
+            if (!GameManager.Instance.gameState.versatileGet)
+                return;
+            switch (currentFlashState)
             {
                 case flashState.Idle:
                     OnIdleUpdate();

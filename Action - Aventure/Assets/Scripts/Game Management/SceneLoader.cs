@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using Management;
 using Player;
@@ -20,16 +18,7 @@ namespace GameManagement
         {
             MakeSingleton(true);
         }
-        
-        void Start()
-        {
-            
-        }
-        
-        void Update()
-        {
 
-        }
 
         /// <summary>
         /// Teleports the player to the next scene

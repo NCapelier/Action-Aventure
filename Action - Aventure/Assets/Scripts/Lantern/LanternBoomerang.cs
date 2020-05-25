@@ -3,6 +3,7 @@ using UnityEngine;
 using Player;
 using UnityEngine.UI;
 using GameSound;
+using GameManagement;
 
 namespace Lantern
 {
@@ -68,10 +69,6 @@ namespace Lantern
         AudioSource flightSound;
         #endregion
 
-        void Awake()
-        {
-
-        }
 
         void Start()
         {
@@ -88,6 +85,8 @@ namespace Lantern
 
         void Update()
         {
+            if (!GameManager.Instance.gameState.versatileGet)
+                return;
             switch (currentBoomerangState)
             {
                 case boomerangState.Tidy:

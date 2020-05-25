@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Management;
+﻿using Management;
 
 namespace GameManagement
 {
@@ -14,14 +11,5 @@ namespace GameManagement
             MakeSingleton(true);
         }
         
-        void Start()
-        {
-            
-        }
-        
-        void Update()
-        {
-
-        }
     }
 }

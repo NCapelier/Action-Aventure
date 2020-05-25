@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
@@ -18,7 +16,7 @@ public class GameState : MonoBehaviour
     public bool firstDialogFC = false;
 
 
-    //When this is True : The player can use the apptitude Versatile.
+    //When this is True : The player can use the versatile ability.
     public bool versatileGet = false;
 
 

@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using Management;
-using UnityEngine.UI;
-using TMPro;
 
 namespace GameManagement
 {
@@ -13,6 +11,7 @@ namespace GameManagement
 
         #region Variables
 
+        [HideInInspector] public GameState gameState = null;
 
         #endregion
 
@@ -23,15 +22,7 @@ namespace GameManagement
 
         void Start()
         {
-
+            gameState = GetComponent<GameState>();
         }
-
-        void Update()
-        {
-
-        }
-
-
-
     }
 }

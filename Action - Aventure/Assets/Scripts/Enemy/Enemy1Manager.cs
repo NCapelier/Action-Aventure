@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Enemy
 {
@@ -8,21 +6,13 @@ namespace Enemy
     {
         
         
-        
-        void Awake()
-        {
-            
-        }
+       
         
         void Start()
         {
             EnemyStart();
         }
-        
-        void Update()
-        {
-
-        }
+       
 
 
 

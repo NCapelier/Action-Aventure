@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Player;
-using GameManagement;
+﻿using UnityEngine;
 
 namespace GameManagement
 {
@@ -12,20 +8,6 @@ namespace GameManagement
         [SerializeField] string nextScene = "";
         [SerializeField] Vector2 nextSceneEntryPoint = Vector2.zero;
 
-        void Awake()
-        {
-            
-        }
-        
-        void Start()
-        {
-            
-        }
-        
-        void Update()
-        {
-
-        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {

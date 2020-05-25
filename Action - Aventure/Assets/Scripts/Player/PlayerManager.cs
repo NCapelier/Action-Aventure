@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Management;
 using GameSound;
+using GameManagement;
 
 
 namespace Player
@@ -70,6 +71,8 @@ namespace Player
         {
             set
             {
+                if (!GameManager.Instance.gameState.potionGet)
+                    return;
                 currentHp += value;
 
                 if (currentHp > currentMaxHp)

@@ -25,11 +25,6 @@ namespace Player
 
 
         #endregion
-
-        void Awake()
-        {
-            
-        }
         
         void Start()
         {

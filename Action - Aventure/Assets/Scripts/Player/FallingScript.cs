@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Player;
-using Lantern;
 
 public class FallingScript : MonoBehaviour
 {

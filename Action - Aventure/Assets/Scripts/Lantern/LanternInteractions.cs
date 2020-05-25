@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Enemy;
+using GameManagement;
 
 namespace Lantern
 {
@@ -10,23 +9,6 @@ namespace Lantern
     /// </summary>
     public class LanternInteractions : MonoBehaviour
     {
-        
-        
-        
-        void Awake()
-        {
-            
-        }
-        
-        void Start()
-        {
-            
-        }
-        
-        void Update()
-        {
-            
-        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -34,7 +16,8 @@ namespace Lantern
             {
                 LanternManager.Instance.boomerang.mustStop = true;
             }
-            if (collision.CompareTag("Enemy") && LanternManager.Instance.boomerang.currentBoomerangState != boomerangState.Tidy)
+            if (collision.CompareTag("Enemy") && LanternManager.Instance.boomerang.currentBoomerangState != boomerangState.Tidy
+                && GameManager.Instance.gameState.versatileGet)
             {
 
                 if(collision.gameObject.GetComponent<EnemyParent>())
