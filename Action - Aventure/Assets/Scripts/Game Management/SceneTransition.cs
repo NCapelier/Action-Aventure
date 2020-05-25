@@ -5,6 +5,9 @@ namespace GameManagement
     public class SceneTransition : MonoBehaviour
     {
 
+        public int zoneIndexGiver;
+        
+
         [SerializeField] string nextScene = "";
         [SerializeField] Vector2 nextSceneEntryPoint = Vector2.zero;
 
@@ -15,6 +18,7 @@ namespace GameManagement
             {
                 SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
                 ZoneScripter.isTrigger = true;
+                ZoneIntroduction.zoneIndex = zoneIndexGiver;
             }
         }
 

@@ -24,7 +24,8 @@ public class BlockerCaravane : MonoBehaviour
         }
         else
         {
-            GetComponent<SceneTransition>().enabled = true;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         }
     }
 

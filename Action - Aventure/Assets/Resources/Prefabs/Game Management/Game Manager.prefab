@@ -60,7 +60,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ApperingText: {fileID: 7190919810254657743}
-  timebeforVanishing: 4
+  timeBeforeVanishing: 3
+  monstreUi: {fileID: 7500896170925372318}
+  BuissonUi: {fileID: 4955070772610153856}
 --- !u!114 &2246279518234898716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +80,19 @@ MonoBehaviour:
   firstDialogCM: 0
   firstDialogFC: 0
   versatileGet: 0
+  isDungeon: 0
+--- !u!114 &5296244670627075525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3083455307139013385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5012f478b334302498d5d8ef6c68bcac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7190919808855509468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88,6 +103,170 @@ PrefabInstance:
     - target: {fileID: 33369706, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943956, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -393
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.size
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[0]
+      value: Interieur Caravane
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[1]
+      value: La Riviere
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[2]
+      value: Foret Ouest
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[3]
+      value: Village
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[4]
+      value: "Maison Brul\xE9e"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[5]
+      value: Cave
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[6]
+      value: Foret Nord
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[7]
+      value: Chapelle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[8]
+      value: Salle donjon 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[9]
+      value: Salle donjon 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[10]
+      value: Salle donjon 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[11]
+      value: Salle donjon 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[12]
+      value: Salle donjon 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[13]
+      value: Salle donjon 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[14]
+      value: Salle donjon 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[15]
+      value: Salle donjon 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[16]
+      value: Salle donjon 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[17]
+      value: Salle donjon 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[18]
+      value: Salle donjon 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[19]
+      value: "Antre du D\xE9mon"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[20]
+      value: "Ar\xE8ne Finale"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943958, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: zone.Array.data[21]
+      value: "Ar\xE8ne Finale"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_margin.x
+      value: 307.5454
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_margin.z
+      value: 359.55286
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839943959, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
+      propertyPath: m_margin.y
+      value: 56.35547
+      objectReference: {fileID: 0}
+    - target: {fileID: 403555656401580456, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -332
+      objectReference: {fileID: 0}
+    - target: {fileID: 487125513739209257, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -21
+      objectReference: {fileID: 0}
+    - target: {fileID: 487125513739209257, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -324
+      objectReference: {fileID: 0}
+    - target: {fileID: 852251412715747906, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 976885111053362281, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
@@ -199,11 +378,35 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2812697987568776284, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6995896652907172348, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
 --- !u!224 &7945986514479164841 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 976885111053362293, guid: e29be3052a4f73a48bd24a97f01e95ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 7190919808855509468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3083455307139013385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5260737852755890901, guid: e29be3052a4f73a48bd24a97f01e95ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 7190919808855509468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7500896170925372318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 852251412715747906, guid: e29be3052a4f73a48bd24a97f01e95ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 7190919808855509468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4955070772610153856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2812697987568776284, guid: e29be3052a4f73a48bd24a97f01e95ca,
     type: 3}
   m_PrefabInstance: {fileID: 7190919808855509468}
   m_PrefabAsset: {fileID: 0}

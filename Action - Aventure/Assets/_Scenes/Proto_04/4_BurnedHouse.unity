@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -142,6 +142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nextSceneEntryPoint.y
       value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221605138405491192, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
+        type: 3}
+      propertyPath: zoneIndexGiver
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4025342049162078055, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
@@ -592,6 +597,11 @@ PrefabInstance:
       propertyPath: nextSceneEntryPoint.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2221605138405491192, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
+        type: 3}
+      propertyPath: zoneIndexGiver
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4025342049162078055, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
       propertyPath: m_Name
@@ -605,7 +615,7 @@ PrefabInstance:
     - target: {fileID: 5380785727100501385, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.0416667
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 5380785727100501385, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
@@ -655,22 +665,22 @@ PrefabInstance:
     - target: {fileID: 9175896726998480233, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.14906335
+      value: 0.15476656
       objectReference: {fileID: 0}
     - target: {fileID: 9175896726998480233, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.2981267
+      value: 1.3095331
       objectReference: {fileID: 0}
     - target: {fileID: 9175896726998480233, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.3850801
+      value: 0.56377995
       objectReference: {fileID: 0}
     - target: {fileID: 9175896726998480233, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.2298398
+      value: 0.10056758
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68f80dabf570aeb4982ff7dc8df6f7e8, type: 3}
@@ -693,6 +703,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPassThrought: {fileID: 11400000, guid: 025de4a4f2aed2a44b7d3b43f6717075, type: 2}
+--- !u!60 &410236869
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410236867}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.4909495, y: 0.68883467}
+      - {x: -0.4877661, y: 0.6063528}
+      - {x: 0.101198435, y: 0.5990739}
+      - {x: 0.81042767, y: 0.59280443}
+      - {x: 0.805846, y: 0.6824155}
 --- !u!1 &429736335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,6 +2387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nextSceneEntryPoint.y
       value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2221605138405491192, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
+        type: 3}
+      propertyPath: zoneIndexGiver
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4025342049162078055, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}

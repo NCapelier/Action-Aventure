@@ -15,10 +15,11 @@ public class GameState : MonoBehaviour
     //First dialog Frère Chasseur done.
     public bool firstDialogFC = false;
 
-
     //When this is True : The player can use the versatile ability.
     public bool versatileGet = false;
 
+    //When this is True : The playre enter ine the dungeon
+    public bool isDungeon = false;
 
     
 }

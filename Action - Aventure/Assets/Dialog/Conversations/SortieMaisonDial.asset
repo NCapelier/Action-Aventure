@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f3ae8e497a59541a2c836045c630af, type: 3}
+  m_Name: SortieMaisonDial
+  m_EditorClassIdentifier: 
+  leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
+  rightSpeaker: {fileID: 11400000, guid: b47c7df72415c7846984f70d1fe4061b, type: 2}
+  lines:
+  - speaker: 1
+    leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: 'Il va faloir corriger tes erreurs ma fille... '
+  - speaker: 1
+    leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: "Commen\xE7ons par faire un peu le m\xE9nage avec ces ombres envahissantes."
+  - speaker: 0
+    leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: "Nous devrions tout d'abord retrouver ce d\xE9mon."
+  - speaker: 0
+    leftPortraitIndex: 1
+    rightPortraitIndex: 0
+    text: "Le Croque-Mort a peut \xEAtre des informations \xE0 nous donner \xE0 ce
+      sujet."

@@ -20,6 +20,9 @@ namespace Enemy
         //Sound
         Sound deathClip;
         AudioSource deathSound;
+
+        
+      
         #endregion
 
         #region Properties
@@ -71,6 +74,7 @@ namespace Enemy
             if (hp <= 0)
             {
                 Death();
+                Instantiate(Resources.Load("Prefabs/Enemy/Coin"), transform.position, Quaternion.identity);
             }
         }
 
