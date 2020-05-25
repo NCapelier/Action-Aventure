@@ -18,7 +18,7 @@ namespace Lantern
         // current light display state
         [HideInInspector] public lightState currentLightState = lightState.Displayed;
 
-        bool playerCrazy = false;
+        public bool playerCrazy = false;
         bool runningCrazyness = false;
 
         AudioSource chatteringTeeth;
@@ -70,7 +70,7 @@ namespace Lantern
                 StartCoroutine(PlayerCrazyness());
             }
 
-            if (Input.GetButtonUp("X_Button") && currentLightState == lightState.Hidden)
+            if (Input.GetButtonUp("X_Button"))
             {
                 playerCrazy = false;
                 EndHide();

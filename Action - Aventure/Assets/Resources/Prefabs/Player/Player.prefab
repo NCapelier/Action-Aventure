@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4048743575033921996}
   - component: {fileID: 7873204291560738281}
+  - component: {fileID: 4463720946682180465}
   - component: {fileID: 4999328793701592573}
   - component: {fileID: 2172427387245716010}
   m_Layer: 0
@@ -164,10 +165,24 @@ MonoBehaviour:
   controller: {fileID: 7950608678516083517}
   contactAttack: {fileID: 3863193759342182276}
   aimBehaviour: {fileID: 2241752791613376761}
+  potionBottles: {fileID: 4463720946682180465}
   currentHp: 1
   currentMaxHp: 1
   maxHp: 16
   hpEchelonNumber: 4
+--- !u!114 &4463720946682180465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190895263304290292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109234b4ea698b041b7bb53c4a999ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nearFountain: 0
 --- !u!50 &4999328793701592573
 Rigidbody2D:
   serializedVersion: 4
@@ -337,6 +352,8 @@ MonoBehaviour:
   computedMovementVector: {x: 0, y: 0}
   anim: {fileID: 0}
   fxAnim: {fileID: 0}
+  isDialoging: 0
+  isFalling: 0
 --- !u!95 &953316247134957471
 Animator:
   serializedVersion: 3
