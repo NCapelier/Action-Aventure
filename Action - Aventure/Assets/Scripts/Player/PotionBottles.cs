@@ -83,6 +83,7 @@ namespace Player
 
             yield return new WaitForSeconds(1.5f);
 
+            StopCoroutine(DrinkUnhideMalus());
             inDrinkUnhideMalus = false;
 
             if (LanternManager.Instance.hideLight.playerCrazy)
@@ -95,10 +96,9 @@ namespace Player
         {
             while (inDrinkUnhideMalus)
             {
+                yield return new WaitUntil(() => LanternManager.Instance.hideLight.currentLightState == lightState.Hidden);
                 LanternManager.Instance.hideLight.currentLightState = lightState.Displayed;
             }
-
-            yield return null;
         }
     }
 }
