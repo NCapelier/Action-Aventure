@@ -26,6 +26,7 @@ public class PlaquePression : MonoBehaviour
         {
             tileB.enabled = false;
             tileR.enabled = true;
+            //jouer Animation appuyé
         }
     }
 
@@ -35,6 +36,7 @@ public class PlaquePression : MonoBehaviour
         {
             tileB.enabled = true;
             tileR.enabled = false;
+            //jouer Animation resort
         }
     }
 

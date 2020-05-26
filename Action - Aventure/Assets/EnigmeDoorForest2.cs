@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class EnigmeDoorForest2 : MonoBehaviour
 {
@@ -8,6 +9,13 @@ public class EnigmeDoorForest2 : MonoBehaviour
     [SerializeField] private GameObject flambeau2;
     [SerializeField] private GameObject flambeau3;
     [SerializeField] private GameObject flambeau4;
+
+    [SerializeField] private Light2D flame1;
+    [SerializeField] private Light2D flame2;
+    [SerializeField] private Light2D flame3;
+    [SerializeField] private Light2D flame4;
+
+    private Color color;
 
     private bool firstTrue;
     private bool secondTrue;
@@ -21,7 +29,7 @@ public class EnigmeDoorForest2 : MonoBehaviour
 
     private bool stillGood;
 
-    private bool isFinish;
+    public static bool isFinish;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +46,8 @@ public class EnigmeDoorForest2 : MonoBehaviour
 
         stillGood = true;
         isFinish = false;
+
+        color = flame1.GetComponent<Light2D>().color;
     }
 
     // Update is called once per frame
@@ -170,15 +180,23 @@ public class EnigmeDoorForest2 : MonoBehaviour
 
     IEnumerator Remover()
     {
-        Debug.Log("Wrong");
+        
         yield return new WaitForSeconds(1f);
-        //Mettre Feedback erreurs.
+        flame1.GetComponent<Light2D>().color = Color.red;
+        flame2.GetComponent<Light2D>().color = Color.red;
+        flame3.GetComponent<Light2D>().color = Color.red;
+        flame4.GetComponent<Light2D>().color = Color.red;
 
-
+        yield return new WaitForSeconds(1f);
         flambeau1.GetComponent<TorchTTK>().isLit = false;
         flambeau2.GetComponent<TorchTTK>().isLit = false;
         flambeau3.GetComponent<TorchTTK>().isLit = false;
         flambeau4.GetComponent<TorchTTK>().isLit = false;
+        yield return new WaitForSeconds(0.1f);
+        flame1.GetComponent<Light2D>().color = color;
+        flame2.GetComponent<Light2D>().color = color;
+        flame3.GetComponent<Light2D>().color = color;
+        flame4.GetComponent<Light2D>().color = color;
 
         stillGood = true;
         needToCheckFirst = true;
