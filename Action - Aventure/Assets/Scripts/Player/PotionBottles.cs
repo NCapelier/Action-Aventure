@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameManagement;
 using Lantern;
+using GameSound;
 
 namespace Player
 {
@@ -60,6 +61,9 @@ namespace Player
                 //}
 
                 //Play FX
+
+                //Sound
+                AudioManager.Instance.Play("Will_o_flight");
 
                 PotionsTextScript.potionAmount--;
             }
