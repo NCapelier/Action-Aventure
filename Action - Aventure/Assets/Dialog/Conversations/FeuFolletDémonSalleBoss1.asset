@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f3ae8e497a59541a2c836045c630af, type: 3}
+  m_Name: "FeuFolletD\xE9monSalleBoss1"
+  m_EditorClassIdentifier: 
+  leftSpeaker: {fileID: 11400000, guid: b47c7df72415c7846984f70d1fe4061b, type: 2}
+  rightSpeaker: {fileID: 11400000, guid: a51bab7b098ade145804f1a8637acc61, type: 2}
+  lines:
+  - speaker: 0
+    leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: "Arrete \xE7a !"
+  - speaker: 1
+    leftPortraitIndex: 0
+    rightPortraitIndex: 2
+    text: TU OSES T'INTERPOSER ?
+  - speaker: 1
+    leftPortraitIndex: 0
+    rightPortraitIndex: 2
+    text: "QUELLE IRONIE, TU VAS ASSISTER 0 LA MORT DE TA FILLE QUI \nA TOUT SACRIFIEE
+      POUR TE FAIRE REVENIR !!!"
+  - speaker: 0
+    leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: Je ne te laisserais pas lui refaire du mal !
+  - speaker: 1
+    leftPortraitIndex: 0
+    rightPortraitIndex: 2
+    text: C'EST IMPOSSIBLE, NOOOOOOOOOON !!!

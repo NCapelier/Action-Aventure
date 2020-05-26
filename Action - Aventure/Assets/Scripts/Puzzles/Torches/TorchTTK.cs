@@ -63,7 +63,7 @@ public class TorchTTK : MonoBehaviour
 
     IEnumerator TTK()
     {
-        if (playerHere == false)
+        if (playerHere == false && isLit == true)
         {
             yield return new WaitForSeconds(Duration);
             isLit = false;

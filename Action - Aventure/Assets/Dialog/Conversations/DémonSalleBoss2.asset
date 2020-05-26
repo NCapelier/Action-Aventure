@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1f3ae8e497a59541a2c836045c630af, type: 3}
-  m_Name: DemonSalleFontaine1
+  m_Name: "D\xE9monSalleBoss2"
   m_EditorClassIdentifier: 
-  leftSpeaker: {fileID: 0}
-  rightSpeaker: {fileID: 0}
-  lines: []
+  leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
+  rightSpeaker: {fileID: 11400000, guid: a51bab7b098ade145804f1a8637acc61, type: 2}
+  lines:
+  - speaker: 1
+    leftPortraitIndex: 0
+    rightPortraitIndex: 1
+    text: IL TE FAUDRA PLUS QUE DES ETINCELLES POUR ME TUER !
