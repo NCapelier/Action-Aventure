@@ -6,7 +6,10 @@ using Lantern;
 
 namespace Player
 {
-	public class PotionBottles : MonoBehaviour
+    /// <summary>
+    /// CHB -- Manages potion drink and refill
+    /// </summary>
+    public class PotionBottles : MonoBehaviour
 	{
         #region Variables
         [HideInInspector] public bool nearFountain;
@@ -19,8 +22,8 @@ namespace Player
             nearFountain = false;
 
             //Comment this out when testing done
-            PotionsTextScript.maxPotionAmount = 3;
-            PotionsTextScript.potionAmount = 1;
+            PotionsTextScript.maxPotionAmount = 4;
+            PotionsTextScript.potionAmount = 2;
 
         }
 
@@ -39,6 +42,8 @@ namespace Player
                     PotionRefill();
                 }
             }
+
+            Debug.Log(LanternManager.Instance.hideLight.currentLightState);
 		}
 
         void PotionDrink()
