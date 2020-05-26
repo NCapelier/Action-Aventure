@@ -10,12 +10,15 @@ namespace Player
 	{
         #region Variables
         [HideInInspector] public bool nearFountain;
+        bool inDrinkUnhideMalus = false;
 		#endregion
 
 		// Start is called before the first frame update
 		void Start()
 		{
             nearFountain = false;
+
+            //Comment this out when testing done
             PotionsTextScript.maxPotionAmount = 3;
             PotionsTextScript.potionAmount = 1;
 
@@ -26,6 +29,7 @@ namespace Player
 		{
             Debug.Log("Player near a fountain: " + nearFountain);
             Debug.Log("Nb of potions: " + PotionsTextScript.potionAmount + " out of " + PotionsTextScript.maxPotionAmount);
+
             if (GameManager.Instance.gameState.potionGet)
             {
                 PotionDrink();
@@ -44,10 +48,11 @@ namespace Player
                 PlayerManager.Instance.currentMaxHp = PlayerManager.Instance.maxHp;
                 PlayerManager.Instance.Heal = PlayerManager.Instance.maxHp - PlayerManager.Instance.currentHp;
 
-                if (LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)
-                {
-                    StartCoroutine(DrinkUnhide());
-                }
+                StartCoroutine(DrinkUnhide());
+                //if (LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)
+                //{
+                //    StartCoroutine(DrinkUnhide());
+                //}
 
                 //Play FX
 
@@ -68,12 +73,27 @@ namespace Player
         {
             LanternManager.Instance.hideLight.currentLightState = lightState.Displayed;
 
+            inDrinkUnhideMalus = true;
+            StartCoroutine(DrinkUnhideMalus());
+
             yield return new WaitForSeconds(1.5f);
+
+            inDrinkUnhideMalus = false;
 
             if (LanternManager.Instance.hideLight.playerCrazy)
             {
                 LanternManager.Instance.hideLight.currentLightState = lightState.Hidden;
             }
+        }
+
+        IEnumerator DrinkUnhideMalus()
+        {
+            while (inDrinkUnhideMalus)
+            {
+                LanternManager.Instance.hideLight.currentLightState = lightState.Displayed;
+            }
+
+            yield return null;
         }
     }
 }

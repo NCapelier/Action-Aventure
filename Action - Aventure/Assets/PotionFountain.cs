@@ -7,12 +7,12 @@ namespace Player
 	public class PotionFountain : MonoBehaviour
 	{
         #region Variables
-
+        
         #endregion
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.gameObject.tag == "Player")
+            if(collision.gameObject == PlayerManager.Instance.gameObject) /*if(collision.gameObject.tag == "Player")*/
             {
                 PlayerManager.Instance.potionBottles.nearFountain = true;
             }
@@ -20,7 +20,7 @@ namespace Player
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "Player")
+            if (collision.gameObject == PlayerManager.Instance.gameObject) /*if(collision.gameObject.tag == "Player")*/
             {
                 PlayerManager.Instance.potionBottles.nearFountain = false;
 
