@@ -67,7 +67,7 @@ public class Book : MonoBehaviour
         }
         if(LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp && playerHeree ==true){
                 trigger = true;
-                    }
+        }
 
         if (trigger == true)
         {

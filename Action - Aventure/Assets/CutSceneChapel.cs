@@ -13,22 +13,50 @@ public class CutSceneChapel : MonoBehaviour
     private BoxCollider2D boxCol;
 
     private bool startTimeline;
-    private float timeTimeline;
+    [SerializeField] private float timeTimeline;
 
     private bool finished;
 
-    // Start is called before the first frame update
-    void Start()
+    private Camera stokageCamera;
+
+    [SerializeField] GameObject cutSceneCamera;
+
+    private void Start()
     {
-        
+        StartCoroutine("StartT");
+    }
+
+    private void Update()
+    {
+        if (startTimeline == true)
+        {
+            timeTimeline += 1;
+        }
+
+        if(timeTimeline == 800)
+        {
+            timeline.Stop();
+            cutSceneCamera.SetActive(false);
+            stokageCamera.enabled = true;
+            PlayerManager.Instance.controller.isDialoging = false;
+        }
+    }
+
+
+    IEnumerator StartT()
+    {
         finished = false;
         boxCol = GetComponent<BoxCollider2D>();
         timeline = GetComponent<PlayableDirector>();
-    }
 
-    IEnumerator CutScene()
-    {
-        timeline.Play();
+        startTimeline = true;
+
+        stokageCamera = Camera.main;
+        stokageCamera.enabled = false;
+        cutSceneCamera.SetActive(true);
+        PlayerManager.Instance.controller.isDialoging = true;
+
         yield return null;
     }
+   
 }

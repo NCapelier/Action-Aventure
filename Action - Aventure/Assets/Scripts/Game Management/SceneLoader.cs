@@ -28,6 +28,7 @@ namespace GameManagement
         public static Scene GoToScene(string scene, Vector2 entryPoint)
         {
             SceneManager.LoadScene(scene);
+            //mettre du delay?
             PlayerManager.Instance.transform.position = entryPoint;
             LanternManager.Instance.transform.position = entryPoint;
             return SceneManager.GetActiveScene();
