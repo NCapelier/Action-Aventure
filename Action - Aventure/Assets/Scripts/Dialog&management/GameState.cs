@@ -21,5 +21,10 @@ public class GameState : MonoBehaviour
     //When this is True : The playre enter ine the dungeon
     public bool isDungeon = false;
 
-    
+    public bool needToShow = true;
+
+    private void Update()
+    {
+       
+    }
 }

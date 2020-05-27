@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -13032,7 +13032,6 @@ GameObject:
   - component: {fileID: 998159303}
   - component: {fileID: 998159302}
   - component: {fileID: 998159304}
-  - component: {fileID: 998159306}
   m_Layer: 0
   m_Name: Caravane
   m_TagString: Untagged
@@ -13148,32 +13147,6 @@ PolygonCollider2D:
       - {x: 1.456852, y: 0.0472579}
       - {x: 1.6480598, y: 0.16369724}
       - {x: 1.9336929, y: 0.51187754}
---- !u!61 &998159306
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998159301}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.9885833, y: -0.21529841}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49390242, y: 0.32317072}
-    oldSize: {x: 6.8333335, y: 6.8333335}
-    newSize: {x: 6.8333335, y: 6.8333335}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0816998, y: 0.51404524}
-  m_EdgeRadius: 0
 --- !u!1 &1004065336
 GameObject:
   m_ObjectHideFlags: 0
@@ -19482,6 +19455,26 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1020240171}
+    - target: {fileID: 6293891723059870873, guid: 0d2ebfef0daaf66459edc46ad543044c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 101.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293891723059870873, guid: 0d2ebfef0daaf66459edc46ad543044c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4583334
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293891723174386775, guid: 0d2ebfef0daaf66459edc46ad543044c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 101.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293891723174386775, guid: 0d2ebfef0daaf66459edc46ad543044c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4583334
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2ebfef0daaf66459edc46ad543044c, type: 3}
 --- !u!1 &1434058050
@@ -27218,12 +27211,12 @@ PrefabInstance:
     - target: {fileID: 4048743575033921996, guid: 2330304d2c746ce429ed6f7b997204a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 101.75
       objectReference: {fileID: 0}
     - target: {fileID: 4048743575033921996, guid: 2330304d2c746ce429ed6f7b997204a2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.4583334
       objectReference: {fileID: 0}
     - target: {fileID: 4048743575033921996, guid: 2330304d2c746ce429ed6f7b997204a2,
         type: 3}
@@ -31936,6 +31929,11 @@ PrefabInstance:
       propertyPath: nextSceneEntryPoint.y
       value: -12
       objectReference: {fileID: 0}
+    - target: {fileID: 2221605138405491192, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
+        type: 3}
+      propertyPath: zoneIndexGiver
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4025342049162078055, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
       propertyPath: m_Name
@@ -32202,10 +32200,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 275538342857743955, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2077402419351812654, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
       propertyPath: m_Name
       value: Game Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+        type: 3}
+      propertyPath: lanternGet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+        type: 3}
+      propertyPath: potionGet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+        type: 3}
+      propertyPath: firstDialogCM
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+        type: 3}
+      propertyPath: firstDialogFC
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+        type: 3}
+      propertyPath: versatileGet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+        type: 3}
+      propertyPath: isDungeon
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2524145558766115355, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}

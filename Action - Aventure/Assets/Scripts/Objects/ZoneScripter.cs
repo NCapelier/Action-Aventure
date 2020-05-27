@@ -13,7 +13,7 @@ public class ZoneScripter : MonoBehaviour
     public GameObject ApperingText;
     public static bool isTrigger;
 
-    public int timeBeforeVanishing;
+    public float timeBeforeVanishing;
 
     public GameObject monstreUi;
     public GameObject BuissonUi;
@@ -43,7 +43,11 @@ public class ZoneScripter : MonoBehaviour
      
         if(isTrigger == true)
         {
-            StartCoroutine("TextVanishing");
+            if(GameManager.Instance.gameState.needToShow == true)
+            {
+                StartCoroutine("TextVanishing");
+            }
+            
         }
     }
 

@@ -80,6 +80,8 @@ public class TriggerCutSceneAPGet : MonoBehaviour
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
 
+        GameManager.Instance.GetComponent<GameState>().needToShow = true;
+
         finished = true;
     }
 

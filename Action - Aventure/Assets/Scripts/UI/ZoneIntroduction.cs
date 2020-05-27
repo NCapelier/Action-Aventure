@@ -31,14 +31,7 @@ public class ZoneIntroduction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.Instance.gameState.isDungeon == true)
-        {
-            //Cette asset la (monstre)
-        }else if(GameManager.Instance.gameState.isDungeon == false)
-        {
-            //Celle ci (feuille)
-        }
-
+        
 
         //Updating the UI Text
         Scene_actu = zone[zoneIndex];

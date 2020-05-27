@@ -19,7 +19,7 @@ public class CutSceneChapel : MonoBehaviour
 
     private Camera stokageCamera;
 
-    [SerializeField] GameObject cutSceneCamera;
+    [SerializeField] private GameObject cutSceneCamera;
 
     private void Start()
     {
