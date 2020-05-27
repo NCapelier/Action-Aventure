@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using GameManagement;
 using Lantern;
@@ -15,14 +16,14 @@ public class Book : MonoBehaviour
     public bool trigger;
 
     [SerializeField] private SpriteRenderer buttonRenderer;
-    [SerializeField] private bool playerH;
+    [SerializeField] private bool playerHeree;
 
 
     // Start is called before the first frame update
     void Start()
     {
         trigger = false;
-        playerH = false;
+        playerHeree = false;
         buttonRenderer = aButton.GetComponent<SpriteRenderer>();
 
         Color c = buttonRenderer.material.color;
@@ -34,11 +35,13 @@ public class Book : MonoBehaviour
     }
     public void startFadingIN()
     {
+        playerHeree = true;
         StartCoroutine("FadeIn");
     }
 
     public void startFadingOUT()
     {
+        playerHeree = false;
         StartCoroutine("FadeOut");
     }
 
@@ -47,7 +50,7 @@ public class Book : MonoBehaviour
         if (collision.gameObject.tag == "PlayerController")
         {
             startFadingIN();
-            playerH = true;
+            
         }
       
     }
@@ -55,15 +58,16 @@ public class Book : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerH == true && Input.GetButtonDown("A_Button"))
+        if(playerHeree == true && Input.GetButtonDown("A_Button"))
         {
-            GameCanvasManager.Instance.dialog.StartDialog = bookText; 
+            
+            GameCanvasManager.Instance.dialog.StartDialog = bookText;
+            playerHeree = false;
+            
         }
-
-        if (playerH = true && LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
-        {
-            trigger = true;
-        }
+        if(LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp && playerHeree ==true){
+                trigger = true;
+                    }
 
         if (trigger == true)
         {
@@ -80,7 +84,7 @@ public class Book : MonoBehaviour
         if (collision.gameObject.tag == "PlayerController")
         {
             startFadingOUT();
-            playerH = false;
+            
         }
 
       
@@ -97,7 +101,7 @@ public class Book : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
 
-
+       
     }
 
     IEnumerator FadeOut()
@@ -110,6 +114,6 @@ public class Book : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
-
+        
     }
 }
