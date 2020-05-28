@@ -5,6 +5,7 @@ public class GameState : MonoBehaviour
      public bool lanternGet = false;
     //When this is True : Give the possibility to attack and use the light.
 
+    public bool cutSceneBucheronFinish = false;
     
      public bool potionGet = false;
     //When this is True : Give the possibility to regain life.
