@@ -30,5 +30,6 @@ public class oppeningDoorF2 : MonoBehaviour
             boxCol.enabled = false;
             capsCol.enabled = true;
         }
+       
     }
 }

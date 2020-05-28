@@ -15,17 +15,19 @@ public class GameState : MonoBehaviour
      public bool firstDialogCM = false;
     //First dialog Frère Chasseur done.
     public bool firstDialogFC = false;
-
     //dialog of Maison brullée done
     public bool triggerMB = false;
-
     //cutscene Cave done
     public bool cutSCaveDone = false;
 
-    //When this is True : The player can use the versatile ability.
     public bool versatileGet = false;
 
     public bool CutsceneFlash = false;
+
+    //Forest 2
+    public bool cutSForet2 = false;
+    //True when enigme 4 flambeaux good
+    public bool enigmeForest = false;
 
     public bool chapelleTrigger = false;
     public bool ChapelleCutSceneFinish = false;

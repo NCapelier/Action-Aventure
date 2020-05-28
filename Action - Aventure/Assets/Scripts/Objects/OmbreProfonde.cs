@@ -14,7 +14,6 @@ public class OmbreProfonde : MonoBehaviour
 
     void Update()
     {
-       
 
         if (GameManager.Instance.GetComponent<GameState>().versatileGet  == true)
         {

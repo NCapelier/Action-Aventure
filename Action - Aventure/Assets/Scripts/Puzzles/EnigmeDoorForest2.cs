@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using GameManagement;
 
 public class EnigmeDoorForest2 : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class EnigmeDoorForest2 : MonoBehaviour
     private bool stillGood;
 
     public static bool isFinish;
+    public static bool needReset;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +55,12 @@ public class EnigmeDoorForest2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (needReset == true)
+        {
+            needReset = false;
+            ResetT();
+        }
         //TimeOut();
 
         if (isFinish==true)
@@ -62,11 +70,19 @@ public class EnigmeDoorForest2 : MonoBehaviour
             flambeau2.GetComponent<TorchTTK>().isLit = true;
             flambeau3.GetComponent<TorchTTK>().isLit = true;
             flambeau4.GetComponent<TorchTTK>().isLit = true;
-           
+            GameManager.Instance.gameState.enigmeForest = true;
+
+
+
+        }
+
+        if(GameManager.Instance.gameState.enigmeForest == true)
+        {
+            isFinish = true;
         }
 
         //A déclencher quand le joueur fait une erreru
-        if(stillGood == false)
+            if (stillGood == false)
         {
             StartCoroutine("Remover");
 
@@ -208,5 +224,21 @@ public class EnigmeDoorForest2 : MonoBehaviour
         secondTrue = false;
         thirdTrue = false;
         fourthTrue = false;
+    }
+
+    private void ResetT()
+    {
+        firstTrue = false;
+        secondTrue = false;
+        thirdTrue = false;
+        fourthTrue = false;
+
+        needToCheckFirst = true;
+        needToCheckSecond = false;
+        needToCheckThird = false;
+        needToCheckFourth = false;
+
+        stillGood = true;
+        isFinish = false;
     }
 }

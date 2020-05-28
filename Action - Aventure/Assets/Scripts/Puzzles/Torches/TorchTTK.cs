@@ -11,9 +11,12 @@ public class TorchTTK : MonoBehaviour
     public float Duration;
     private bool playerHere;
 
+    public bool isCutScene;
+
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
+        isCutScene = false;
         flameObject = gameObject.GetChildNamed("Flame");
         flame = flameObject.GetComponent<ParticleSystem>();
         flame.gameObject.SetActive(false);
@@ -44,14 +47,24 @@ public class TorchTTK : MonoBehaviour
     {
         if (!isLit)
         {
-            flame.gameObject.SetActive(false);
+             flame.gameObject.SetActive(false);
         }else if (isLit)
         {
 
             flame.gameObject.SetActive(true);
         }
 
-        
+
+        if (!isCutScene)
+        {
+            flame.gameObject.SetActive(false);
+        }
+        else if (isCutScene)
+        {
+
+            flame.gameObject.SetActive(true);
+        }
+
     }
 
     private void Light()
