@@ -88,7 +88,7 @@ public class TriggerCutSceneAPGet : MonoBehaviour
 
         finished = true;
 
-        GameManager.Instance.GetComponent<GameState>().CutsceneFlash = false;
+        GameManager.Instance.GetComponent<GameState>().CutsceneFlash = true;
     }
 
 }

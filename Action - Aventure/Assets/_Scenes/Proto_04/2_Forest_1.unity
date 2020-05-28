@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1168,7 +1168,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7929336468784643492, guid: 71547140cc4e4cd4486f0171ba279cf4,
+        type: 3}
+      propertyPath: ombreDial
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e6293eb8f03ffe429478767d24d075a,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 1461463893761853782, guid: 71547140cc4e4cd4486f0171ba279cf4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 71547140cc4e4cd4486f0171ba279cf4, type: 3}
 --- !u!1 &52403134
 GameObject:

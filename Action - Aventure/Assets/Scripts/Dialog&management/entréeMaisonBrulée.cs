@@ -18,11 +18,11 @@ public class entréeMaisonBrulée : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(GameManager.Instance.GetComponent<GameState>().potionGet == false)
+        if(GameManager.Instance.GetComponent<GameState>().triggerMB == false)
         {
             GameCanvasManager.Instance.dialog.StartDialog = dialHelp1;
             boxcol.enabled = false;
-            GameManager.Instance.GetComponent<GameState>().potionGet = true;
+            GameManager.Instance.GetComponent<GameState>().triggerMB = true;
 
 
         }

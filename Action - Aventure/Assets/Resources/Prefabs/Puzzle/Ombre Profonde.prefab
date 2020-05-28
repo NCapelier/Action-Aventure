@@ -69,7 +69,6 @@ GameObject:
   - component: {fileID: 6726460120703329347}
   - component: {fileID: 8551706990609475621}
   - component: {fileID: 7929336468784643492}
-  - component: {fileID: 1461463893761853782}
   m_Layer: 0
   m_Name: Ombre Profonde
   m_TagString: Untagged
@@ -181,19 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a25f13fefdfb14f9d8d6c180f84297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1461463893761853782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6726460120703329346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18d73c6d1fe16945a85baf8aca78a37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "entr\xE9eMaison": {fileID: 11400000, guid: 0e6293eb8f03ffe429478767d24d075a, type: 2}
+  ombreDial: {fileID: 0}
 --- !u!1 &6726460120877534656
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,10 +22,20 @@ public class EntréeMaison : MonoBehaviour
 
     [SerializeField] private GameObject cutSceneCamera;
 
+    private void Awake()
+    {
+        if (GameManager.Instance.gameState.cutSCaveDone == true)
+        {
+            timeline.enabled = false;
+        }
+    }
+
     private void Start()
     {
         timeline = GetComponent<PlayableDirector>();
         boxCol = GetComponent<BoxCollider2D>();
+
+        
     }
 
 private void OnTriggerEnter2D(Collider2D collision)
