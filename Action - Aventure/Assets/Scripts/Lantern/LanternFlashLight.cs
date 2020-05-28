@@ -112,9 +112,6 @@ namespace Lantern
             else
             {
                 currentFlashState = flashState.FlashingDown;
-
-                //Sound
-                AudioManager.Instance.Play("Will_o_exting");
             }
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Lantern;
+using GameSound;
 
 public class TorchTTK : MonoBehaviour
 {
@@ -11,6 +12,15 @@ public class TorchTTK : MonoBehaviour
     public float Duration;
     private bool playerHere;
 
+    //Sound
+    Sound igniteClip;
+    Sound burnClip;
+    Sound extingClip;
+    AudioSource igniteSound;
+    AudioSource burnSound;
+    AudioSource extingSound;
+    AudioSource[] sounds;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,6 +29,21 @@ public class TorchTTK : MonoBehaviour
         flame.gameObject.SetActive(false);
         isLit = false;
         playerHere = false;
+    }
+
+    private void Start()
+    {
+        //Sound
+        igniteClip = AudioManager.Instance.sounds_notUniqueObject["Fire_ignite"];
+        burnClip = AudioManager.Instance.sounds_notUniqueObject["Fire_burn"];
+        extingClip = AudioManager.Instance.sounds_notUniqueObject["Will_o_exting"];
+        AudioManager.Instance.MakeAudioSource(igniteClip, gameObject);
+        AudioManager.Instance.MakeAudioSource(burnClip, gameObject);
+        AudioManager.Instance.MakeAudioSource(extingClip, gameObject);
+        sounds = gameObject.GetComponents<AudioSource>();
+        igniteSound = sounds[0];
+        burnSound = sounds[1];
+        extingSound = sounds[2];
     }
     private void OnTriggerStay2D(Collider2D col)
     {
@@ -58,7 +83,11 @@ public class TorchTTK : MonoBehaviour
     {
         
         isLit = true;
-      
+
+        //Sound
+        igniteSound.Play();
+        burnSound.Play();
+
     }
 
     IEnumerator TTK()
@@ -68,6 +97,9 @@ public class TorchTTK : MonoBehaviour
             yield return new WaitForSeconds(Duration);
             isLit = false;
 
+            //Sound
+            burnSound.Stop();
+            extingSound.Play();
         }
     }
 }
