@@ -20,12 +20,25 @@ public class PlaquePression : MonoBehaviour
        
     }
 
+    private void Update()
+    {
+        if(isActivated == true)
+        {
+            tileB.enabled = false;
+            tileR.enabled = true;
+        }
+        else {
+            tileB.enabled = true;
+            tileR.enabled = false;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Wall")
         {
-            tileB.enabled = false;
-            tileR.enabled = true;
+            isActivated = true;
+            
             //jouer Animation appuyé
         }
     }
@@ -34,8 +47,8 @@ public class PlaquePression : MonoBehaviour
     {
         if (other.gameObject.tag == "Wall")
         {
-            tileB.enabled = true;
-            tileR.enabled = false;
+            isActivated = false;
+           
             //jouer Animation resort
         }
     }
