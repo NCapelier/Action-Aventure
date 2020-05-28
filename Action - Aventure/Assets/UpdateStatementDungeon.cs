@@ -8,6 +8,7 @@ public class UpdateStatementDungeon : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerController"))
         {
             GameManager.Instance.gameState.isDungeon = true;
+            GameManager.Instance.gameState.needToShow = true;
         }
     }
 }

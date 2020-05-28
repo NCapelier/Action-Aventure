@@ -23,7 +23,11 @@ public class CutSceneChapel : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine("StartT");
+        if(GameManager.Instance.gameState.chapelleTrigger == true)
+        {
+            StartCoroutine("StartT");
+        }
+      
     }
 
     private void Update()
@@ -35,6 +39,8 @@ public class CutSceneChapel : MonoBehaviour
 
         if(timeTimeline == 800)
         {
+            GameManager.Instance.gameState.chapelleTrigger = false;
+            startTimeline = false;
             timeline.Stop();
             cutSceneCamera.SetActive(false);
             stokageCamera.enabled = true;
