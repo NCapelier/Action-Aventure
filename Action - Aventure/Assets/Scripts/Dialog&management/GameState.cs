@@ -18,10 +18,14 @@ public class GameState : MonoBehaviour
     //dialog of Maison brullée done
     public bool triggerMB = false;
 
+    //cutscene Cave done
+    public bool cutSCaveDone = false;
+
     //When this is True : The player can use the versatile ability.
     public bool versatileGet = false;
 
     public bool chapelleTrigger = false;
+    public bool ChapelleCutSceneFinish = false;
 
     //When this is True : The playre enter ine the dungeon
     public bool isDungeon = false;

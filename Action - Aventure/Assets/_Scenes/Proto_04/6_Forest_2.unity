@@ -25059,7 +25059,6 @@ GameObject:
   - component: {fileID: 845272211}
   - component: {fileID: 845272210}
   - component: {fileID: 845272212}
-  - component: {fileID: 845272213}
   m_Layer: 0
   m_Name: Chapelle
   m_TagString: Untagged
@@ -25157,18 +25156,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.5833335, y: 1.5694485}
   m_EdgeRadius: 0
---- !u!114 &845272213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845272209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23c5e246bae2e0a48a07c261a2a408dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &846195191
 GameObject:
   m_ObjectHideFlags: 0
@@ -37706,6 +37693,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3354f6bcc06c46849841d55fb6ecd29f, type: 3}
+--- !u!1 &1319279660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4025342049162078055, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1293142857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1319279664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319279660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c5e246bae2e0a48a07c261a2a408dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1320482067
 GameObject:
   m_ObjectHideFlags: 0

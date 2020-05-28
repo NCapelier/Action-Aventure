@@ -33,7 +33,11 @@ private void OnTriggerEnter2D(Collider2D collision)
         if (collision.gameObject.tag == "PlayerController")
         {
 
-            StartCoroutine("CutScene");
+            if(GameManager.Instance.gameState.cutSCaveDone == false)
+            {
+                StartCoroutine("CutScene");
+            }
+            
             
 
         }   
@@ -93,6 +97,6 @@ private void OnTriggerEnter2D(Collider2D collision)
 
         boxCol.enabled = false;
 
-
+        GameManager.Instance.gameState.cutSCaveDone = true;
     }
 }
