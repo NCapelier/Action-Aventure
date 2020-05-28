@@ -3532,7 +3532,7 @@ Transform:
   - {fileID: 225435018}
   - {fileID: 1337439500}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1029321363
 PrefabInstance:
@@ -3644,6 +3644,11 @@ PrefabInstance:
         type: 3}
       propertyPath: nextSceneEntryPoint.y
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 369861708597143139, guid: ac4939ec495706f49a5d33da4f3a0cde,
+        type: 3}
+      propertyPath: zoneIndexGiver
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6701625742541087996, guid: ac4939ec495706f49a5d33da4f3a0cde,
         type: 3}

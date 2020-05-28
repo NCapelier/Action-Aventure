@@ -19,12 +19,11 @@ public class BlockerTuto : MonoBehaviour
         {
  
             GameCanvasManager.Instance.dialog.StartDialog = needPotion;
-
+            
         }
         else
         {
-            // Dans le cas ou le jouer à les potions, il peut passer à la suite.
-            GetComponent<SceneTransition>().enabled = true;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
