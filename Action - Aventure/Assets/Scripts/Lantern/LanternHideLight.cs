@@ -72,7 +72,7 @@ namespace Lantern
 
             if (Input.GetButtonUp("X_Button") && currentLightState == lightState.Hidden)
             {
-                playerCrazy = false;
+                
                 EndHide();
             }
 
@@ -97,6 +97,7 @@ namespace Lantern
         /// </summary>
         void EndHide()
         {
+            playerCrazy = false;
             LanternManager.Instance.interaction.gameObject.SetActive(true);
             currentLightState = lightState.Displayed;
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Lantern;
 
 namespace GameManagement
 {
@@ -15,6 +16,9 @@ namespace GameManagement
                 SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
                 ZoneScripter.isTrigger = true;
                 ZoneIntroduction.zoneIndex = zoneIndexGiver;
+
+                
+
             }
         }
 

@@ -8,10 +8,7 @@ public class BlockerTuto : MonoBehaviour
     [SerializeField] private Dialog.Conversation needPotion;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        GetComponent<SceneTransition>().enabled = false;
-    }
+   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
