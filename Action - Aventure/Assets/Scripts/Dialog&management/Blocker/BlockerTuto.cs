@@ -8,7 +8,15 @@ public class BlockerTuto : MonoBehaviour
     [SerializeField] private Dialog.Conversation needPotion;
 
     // Start is called before the first frame update
-   
+
+    private void Update()
+    {
+        if (GameManager.Instance.GetComponent<GameState>().potionGet == true)
+        {
+            gameObject.SetActive(false);
+
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,11 +28,7 @@ public class BlockerTuto : MonoBehaviour
 
 
         }
-        if(GameManager.Instance.GetComponent<GameState>().potionGet == true)
-        {
-            gameObject.SetActive(false);
-            
-        }
+        
     }
 
 }
