@@ -51,9 +51,12 @@ public class AddPotions : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if(GameManager.Instance.GetComponent<GameState>().potionGet == true){
 
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
 
-        if (playerHe == true && Input.GetButtonDown("A_Button"))
+        if (playerHe == true && Input.GetButtonDown("A_Button") && GameManager.Instance.GetComponent<GameState>().potionGet == false)
         {
             
             

@@ -25,10 +25,12 @@ public class GameState : MonoBehaviour
     //When this is True : The player can use the versatile ability.
     public bool versatileGet = false;
 
+    public bool CutsceneFlash = false;
+
     public bool chapelleTrigger = false;
     public bool ChapelleCutSceneFinish = false;
 
-    //When this is True : The playre enter ine the dungeon
+    //When this is True : The playre enter in the dungeon
     public bool isDungeon = false;
 
     public bool needToShow = true;

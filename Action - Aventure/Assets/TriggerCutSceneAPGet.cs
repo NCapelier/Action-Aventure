@@ -53,8 +53,12 @@ public class TriggerCutSceneAPGet : MonoBehaviour
     {
         if (collision.gameObject.tag =="PlayerController")
         {
-            Debug.Log("trigger");
-            StartCoroutine("CutScene");
+            if (GameManager.Instance.GetComponent<GameState>().CutsceneFlash == false && finished == false)
+            {
+                Debug.Log("trigger");
+                StartCoroutine("CutScene");
+            }
+           
 
         }
     }
@@ -83,6 +87,8 @@ public class TriggerCutSceneAPGet : MonoBehaviour
         GameManager.Instance.GetComponent<GameState>().needToShow = true;
 
         finished = true;
+
+        GameManager.Instance.GetComponent<GameState>().CutsceneFlash = false;
     }
 
 }
