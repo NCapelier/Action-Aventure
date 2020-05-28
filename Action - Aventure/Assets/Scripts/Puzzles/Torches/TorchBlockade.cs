@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameSound;
 
 namespace Puzzle
 {
@@ -56,6 +57,7 @@ namespace Puzzle
         void OpenDoor()
         {
             door.SetActive(true);
+            AudioManager.Instance.Play("DunDoor_open");
         }
 	}
 }

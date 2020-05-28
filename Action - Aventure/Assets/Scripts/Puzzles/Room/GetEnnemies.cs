@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameSound;
 
 public class GetEnnemies : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class GetEnnemies : MonoBehaviour
             if (enemyInThisRoom.Count == 0)
             {
                 door.SetActive(true);
+                AudioManager.Instance.Play("DunDoor_open");
             }
         }
     }
