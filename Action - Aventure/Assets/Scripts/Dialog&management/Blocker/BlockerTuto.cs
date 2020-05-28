@@ -20,10 +20,13 @@ public class BlockerTuto : MonoBehaviour
  
             GameCanvasManager.Instance.dialog.StartDialog = needPotion;
             
+
+
         }
-        else
+        if(GameManager.Instance.GetComponent<GameState>().potionGet == true)
         {
-            GetComponent<BoxCollider2D>().enabled = false;
+            gameObject.SetActive(false);
+            
         }
     }
 
