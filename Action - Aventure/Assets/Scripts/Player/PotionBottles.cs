@@ -23,8 +23,8 @@ namespace Player
             nearFountain = false;
 
             //Comment this out when testing done
-            PotionsTextScript.maxPotionAmount = 4;
-            PotionsTextScript.potionAmount = 2;
+            PotionsTextScript.maxPotionAmount = 1;
+            PotionsTextScript.potionAmount = 1;
 
         }
 
