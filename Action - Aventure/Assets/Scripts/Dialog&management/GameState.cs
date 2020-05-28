@@ -15,6 +15,9 @@ public class GameState : MonoBehaviour
     //First dialog Frère Chasseur done.
     public bool firstDialogFC = false;
 
+    //dialog of Maison brullée done
+    public bool triggerMB = false;
+
     //When this is True : The player can use the versatile ability.
     public bool versatileGet = false;
 
