@@ -261,6 +261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLit: 0
   Duration: 15
+  StartDuration: 0
+  isCutScene: 0
 --- !u!212 &73139764
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -869,6 +871,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLit: 0
   Duration: 15
+  StartDuration: 0
+  isCutScene: 0
 --- !u!212 &519277963
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17641,6 +17645,11 @@ PrefabInstance:
     - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
       propertyPath: Duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: StartDuration
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -18210,6 +18219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLit: 0
   Duration: 15
+  StartDuration: 0
+  isCutScene: 0
 --- !u!212 &2114829546
 SpriteRenderer:
   m_ObjectHideFlags: 0

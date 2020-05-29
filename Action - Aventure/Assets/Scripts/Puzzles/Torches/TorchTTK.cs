@@ -12,6 +12,8 @@ public class TorchTTK : MonoBehaviour
     public float Duration;
     private bool playerHere;
 
+    public float StartDuration;
+
     public bool isCutScene;
 
     //Sound
@@ -44,13 +46,22 @@ public class TorchTTK : MonoBehaviour
         igniteSound = sounds[0];
         burnSound = sounds[1];
         extingSound = sounds[2];
+
+        Duration = StartDuration;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("PlayerController") || other.gameObject.CompareTag("Hinky"))
+
+        playerHere = true;
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Hinky" || (col.gameObject.CompareTag("Player") && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
+        if (col.gameObject.tag == "Hinky" || (col.gameObject.CompareTag("PlayerController") && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
         {
-            Light();
+           
             playerHere = true;
             
         }
@@ -66,8 +77,29 @@ public class TorchTTK : MonoBehaviour
         }
     }
 
+   
+
     private void Update()
     {
+        if(playerHere == true)
+        {
+           Duration = StartDuration;
+            Light();
+        }
+        
+        if(playerHere == false && isLit == true)
+        {
+            TTK();
+
+            if (Duration <= 0)
+            {
+                isLit = false;
+                Duration = StartDuration;
+            }
+        }
+
+
+
         if (!isLit)
         {
              flame.gameObject.SetActive(false);
@@ -92,14 +124,8 @@ public class TorchTTK : MonoBehaviour
 
     IEnumerator TTK()
     {
-        if (playerHere == false && isLit == true)
-        {
-            yield return new WaitForSeconds(Duration);
-            isLit = false;
-
-            //Sound
-            burnSound.Stop();
-            extingSound.Play();
-        }
+        Duration--;
+        yield return new WaitForSeconds(1f);
+        StartCoroutine("TTK");
     }
 }

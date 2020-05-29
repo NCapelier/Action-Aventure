@@ -714,12 +714,12 @@ PrefabInstance:
     - target: {fileID: 369861708597143139, guid: ac4939ec495706f49a5d33da4f3a0cde,
         type: 3}
       propertyPath: nextSceneEntryPoint.x
-      value: -11.5
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: 369861708597143139, guid: ac4939ec495706f49a5d33da4f3a0cde,
         type: 3}
       propertyPath: nextSceneEntryPoint.y
-      value: -8.5
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 369861708597143139, guid: ac4939ec495706f49a5d33da4f3a0cde,
         type: 3}
@@ -1119,7 +1119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLit: 0
-  Duration: 15
+  Duration: 0
+  StartDuration: 15
+  isCutScene: 0
 --- !u!4 &1259368638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3051177853862437915, guid: 30f043a02e2c59f49aa5e06677073c83,
@@ -1661,7 +1663,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLit: 1
-  Duration: 15
+  Duration: 0
+  StartDuration: 15
+  isCutScene: 0
 --- !u!4 &1403677809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3051177853862437915, guid: 30f043a02e2c59f49aa5e06677073c83,
