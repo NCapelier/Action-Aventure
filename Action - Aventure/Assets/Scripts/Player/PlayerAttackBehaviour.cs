@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Enemy;
+using Boss;
 
 namespace Player
 {

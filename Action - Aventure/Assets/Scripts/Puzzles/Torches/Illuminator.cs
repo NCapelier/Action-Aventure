@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Lantern;
+using GameSound;
 
 public class Illuminator : MonoBehaviour
 {
@@ -20,6 +21,15 @@ public class Illuminator : MonoBehaviour
     //animator
     private Animator anim;
 
+    //Sound
+    Sound igniteClip;
+    Sound burnClip;
+    Sound extingClip;
+    AudioSource igniteSound;
+    AudioSource burnSound;
+    AudioSource extingSound;
+    AudioSource[] sounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +46,17 @@ public class Illuminator : MonoBehaviour
         anim = GetComponent<Animator>();
         pointLight.SetActive(false);
 
-
+        //Sound
+        igniteClip = AudioManager.Instance.sounds_notUniqueObject["Fire_ignite"];
+        burnClip = AudioManager.Instance.sounds_notUniqueObject["Fire_burn"];
+        extingClip = AudioManager.Instance.sounds_notUniqueObject["Will_o_exting"];
+        AudioManager.Instance.MakeAudioSource(igniteClip, gameObject);
+        AudioManager.Instance.MakeAudioSource(burnClip, gameObject);
+        AudioManager.Instance.MakeAudioSource(extingClip, gameObject);
+        sounds = gameObject.GetComponents<AudioSource>();
+        igniteSound = sounds[0];
+        burnSound = sounds[1];
+        extingSound = sounds[2];
     }
     // Update is called once per frame
     void Update()
@@ -56,6 +76,10 @@ public class Illuminator : MonoBehaviour
                 duration = StartDuration;
                 anim.SetBool("isLit", false);
                 pointLight.SetActive(false);
+
+                //Sound
+                burnSound.Stop();
+                extingSound.Play();
             }
                 else {
                 isLit = true;
@@ -67,6 +91,10 @@ public class Illuminator : MonoBehaviour
         {
             isLit = true;
             StartCoroutine("Restart");
+
+            //Sound
+            igniteSound.Play();
+            burnSound.Play();
         }
            
         

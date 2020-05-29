@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Enemy;
 using GameManagement;
+using Boss;
 
 namespace Lantern
 {
@@ -39,6 +40,10 @@ namespace Lantern
                 && LanternManager.Instance.flashLight.mustRegerenate == false)
             {
                 LanternManager.Instance.flashLight.mustRegerenate = true;
+            }
+            else if (collision.CompareTag("BossTrigger") && LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
+            {
+                BossManager.Instance.TakeDamages = 3;
             }
         }
 

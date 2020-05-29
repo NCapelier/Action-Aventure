@@ -7,6 +7,13 @@ using System.Collections;
 public static class Vector2Extensions
 {
 
+    public static Vector2 Norm (this Vector2 vector)
+    {
+        float ratio = Mathf.Pow(vector.x, 2) + Mathf.Pow(vector.y, 2);
+        ratio = Mathf.Sqrt(ratio);
+        return new Vector2(vector.x / ratio, vector.y / ratio);
+    }
+
 	public static Vector2 withX (this Vector2 vector, float x)
 	{
 		return new Vector2 (x, vector.y);

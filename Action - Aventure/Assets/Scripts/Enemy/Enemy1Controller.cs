@@ -2,6 +2,7 @@
 using Player;
 using Lantern;
 using GameSound;
+using GameManagement;
 
 namespace Enemy
 {
@@ -55,6 +56,11 @@ namespace Enemy
         
         void Update()
         {
+            if (GameCanvasManager.Instance.dialog.runningConversation)
+            {
+                EnemyRb.velocity = Vector2.zero;
+                return;
+            }
             MoveToPlayer();
             MoveToLight();
         }

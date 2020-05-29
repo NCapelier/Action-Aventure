@@ -26,6 +26,8 @@ public class BlockerVillage : MonoBehaviour
         if(GameManager.Instance.GetComponent<GameState>().firstDialogCM == true && GameManager.Instance.GetComponent<GameState>().firstDialogFC == true)
         {
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
+
+            GameManager.Instance.GetComponent<GameState>().needToShow = false;
         }
     }
 

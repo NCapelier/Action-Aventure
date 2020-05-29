@@ -2,6 +2,7 @@
 using UnityEngine;
 using Player;
 using GameSound;
+using GameManagement;
 
 namespace Enemy
 {
@@ -108,7 +109,11 @@ namespace Enemy
         // Update is called once per frame
         void Update()
         {
-
+            if (GameCanvasManager.Instance.dialog.runningConversation)
+            {
+                rb.velocity = Vector2.zero;
+                return;
+            }
             //Permet de créer le vecteur pour la target
             Vector2 dir = target.position - transform.position;
 

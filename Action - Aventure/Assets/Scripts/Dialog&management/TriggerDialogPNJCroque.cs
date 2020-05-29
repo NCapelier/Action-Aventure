@@ -67,6 +67,7 @@ public class TriggerDialogPNJCroque : MonoBehaviour
         {
 
             GameCanvasManager.Instance.dialog.StartDialog = dial3;
+            playerH = false;
 
         } 
 

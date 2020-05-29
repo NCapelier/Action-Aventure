@@ -20,6 +20,7 @@ namespace Enemy
         //Sound
         Sound deathClip;
         AudioSource deathSound;
+
         #endregion
 
         #region Properties
@@ -54,9 +55,9 @@ namespace Enemy
             hp = maxHp;
 
             //Sound
-            deathClip = AudioManager.Instance.sounds_notUniqueObject["Enemy_death1"];
-            AudioManager.Instance.MakeAudioSource(deathClip, gameObject);
-            deathSound = GetComponent<AudioSource>();
+            //deathClip = AudioManager.Instance.sounds_notUniqueObject["Enemy_death1"];
+            //AudioManager.Instance.MakeAudioSource(deathClip, gameObject);
+            //deathSound = GetComponent<AudioSource>();
         }
          
         /// <summary>
@@ -71,6 +72,7 @@ namespace Enemy
             if (hp <= 0)
             {
                 Death();
+                Instantiate(Resources.Load("Prefabs/Enemy/Coin"), transform.position, Quaternion.identity);
             }
         }
 
@@ -79,7 +81,8 @@ namespace Enemy
         /// </summary>
         public virtual void Death()
         {
-            deathSound.Play();
+            AudioManager.Instance.Play("Enemy_death1");
+            //deathSound.Play();
 
             Destroy(gameObject);
         }

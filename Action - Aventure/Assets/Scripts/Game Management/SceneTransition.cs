@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
+using Lantern;
 
 namespace GameManagement
 {
     public class SceneTransition : MonoBehaviour
     {
-
+        public int zoneIndexGiver;
         [SerializeField] string nextScene = "";
         [SerializeField] Vector2 nextSceneEntryPoint = Vector2.zero;
-
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -15,6 +15,10 @@ namespace GameManagement
             {
                 SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
                 ZoneScripter.isTrigger = true;
+                ZoneIntroduction.zoneIndex = zoneIndexGiver;
+
+                
+
             }
         }
 

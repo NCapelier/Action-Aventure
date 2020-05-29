@@ -22,7 +22,7 @@ namespace Player
         PlayerAimBehaviour aimBehaviour;
 
         //attack damages
-        [HideInInspector] public float loading = 0f;
+        [HideInInspector] public float loading = 1f;
 
         //editor variables :
 
@@ -43,11 +43,21 @@ namespace Player
             aimBehaviour = PlayerManager.Instance.aimBehaviour;
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
             AttackInput();
+        }
+
+        private void Update()
+        {
+            if (!GameManager.Instance.gameState.lanternGet)
+                return;
+            if (Input.GetButtonUp("Right_Bumper"))
+            {
+                Attack();
+            }
         }
 
         void AttackInput()
@@ -58,8 +68,7 @@ namespace Player
                 {
                     loading += loadingSpeed;
                 }
-
-                if (Input.GetButtonUp("Right_Bumper"))
+                if(loading >= maxLoad)
                 {
                     Attack();
                 }
@@ -102,7 +111,7 @@ namespace Player
 
             PlayAttackSound();
 
-            GameObject attack = (GameObject)Instantiate(Resources.Load("Prefabs/Player/Attack"), PlayerManager.Instance.transform.position, attackDirection);
+            GameObject attack = (GameObject)Instantiate(Resources.Load("Prefabs/Player/Attack"), PlayerManager.Instance.transform.position + new Vector3(0f, 0.5f), attackDirection);
             //PlayerManager.Instance.controller.fxAnim = attack.GetComponent<PlayerAttackBehaviour>().spriteObject.GetComponent<Animator>();
             return attack;
         }

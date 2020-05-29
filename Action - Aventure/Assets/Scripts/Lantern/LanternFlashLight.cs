@@ -2,6 +2,7 @@
 using UnityEngine.Experimental.Rendering.Universal;
 using GameSound;
 using GameManagement;
+using Player;
 
 namespace Lantern
 {
@@ -88,9 +89,11 @@ namespace Lantern
         /// </summary>
         void OnIdleUpdate()
         {
-            if (Input.GetAxis("Left_Trigger") >= 0.8f && canFlash && currentLightStrength == lightStrength.Strengthful)
+            if (Input.GetAxis("Left_Trigger") >= 0.8f && canFlash && currentLightStrength == lightStrength.Strengthful && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed
+                && GameManager.Instance.gameState.versatileGet)
             {
                 canFlash = false;
+                PlayerManager.Instance.controller.doDash = true;
                 currentFlashState = flashState.FlashingUp;
                 currentLightStrength = lightStrength.Weakening;
 
@@ -112,9 +115,6 @@ namespace Lantern
             else
             {
                 currentFlashState = flashState.FlashingDown;
-
-                //Sound
-                AudioManager.Instance.Play("Will_o_exting");
             }
         }
 

@@ -62,6 +62,8 @@ namespace Player
         public bool isDialoging = false;
 
         [HideInInspector] public bool isFalling = false;
+
+        [HideInInspector] public bool doDash = false;
         #endregion
 
         void Start()
@@ -73,14 +75,12 @@ namespace Player
             DashSound = AudioManager.Instance.GetSound("Running");
         }
 
-
-        void Update()
+        void FixedUpdate()
         {
             isAttacking = PlayerManager.Instance.contactAttack.isAttacking;
             MoveInput();
             DashInput();
             Move();
-            //UpdateMoveState();
         }
 
         /// <summary>
@@ -128,9 +128,10 @@ namespace Player
         /// </summary>
         void DashInput()
         {
-            if (Input.GetAxis("Left_Trigger") >= 0.79f && !isDashing && !isAttacking && LanternManager.Instance.flashLight.canFlash && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy)
+            if (doDash && !isDashing && !isAttacking && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy)
             {
                 isDashing = true;
+                doDash = false;
                 dashVector = movementVector;
                 StartCoroutine(DashDuration());
 
@@ -199,11 +200,11 @@ namespace Player
                 computedMovementVector = movementVector;
             }
 
-            computedVelocity = ((computedMovementVector * movementSpeed) + (dashVector.normalized * dashSpeed)) * Time.deltaTime;
+            computedVelocity = ((computedMovementVector * movementSpeed) + (dashVector.normalized * dashSpeed));
+
             if(!isDialoging && !isFalling)
             {
                 playerRb.velocity = computedVelocity;
-
             }
             else
             {

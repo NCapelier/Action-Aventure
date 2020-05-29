@@ -51,6 +51,11 @@ public class TriggerDialogFrere : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.Instance.GetComponent<GameState>().versatileGet == true)
+        {
+            gameObject.SetActive(false);
+        }
+
       
        if (Input.GetButtonDown("A_Button") && playerH == true)
        {

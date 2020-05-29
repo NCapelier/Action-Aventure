@@ -5,9 +5,8 @@ using UnityEngine;
 /// <summary>
 /// Utilisé pour afficher des formes dans la fenêtre "Scene" en debug
 /// </summary>
-public class DebugHelper : MonoBehaviour
+public static class DebugHelper
 {
-
 	public static void DrawCube (Vector3 pos, Color col, Vector3 scale)
 	{
 		Vector3 halfScale = scale * 0.5f; 

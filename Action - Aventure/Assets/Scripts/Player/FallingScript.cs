@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Player;
+using GameSound;
 
 public class FallingScript : MonoBehaviour
 {
@@ -75,7 +76,10 @@ public class FallingScript : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         PlayerManager.Instance.TakeDamages = 4;
+
         //Jouer le son de la chute
+        AudioManager.Instance.Play("Player_fall");
+
         PlayerManager.Instance.gameObject.transform.position = respawnPoint.transform.position;
         
         //Tp le feu follet et mettre dans le bon état.

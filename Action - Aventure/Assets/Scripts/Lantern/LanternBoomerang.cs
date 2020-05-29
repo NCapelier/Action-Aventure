@@ -66,7 +66,7 @@ namespace Lantern
         Vector2 castOrigin = Vector2.zero;
 
         //Sound
-        AudioSource flightSound;
+        //AudioSource flightSound;
         #endregion
 
 
@@ -80,7 +80,7 @@ namespace Lantern
 
             uiCanvas.worldCamera = Camera.main;
 
-            flightSound = AudioManager.Instance.GetSound("Will_o_flight");
+            //flightSound = AudioManager.Instance.GetSound("Will_o_flight");
         }
 
         void Update()
@@ -113,7 +113,7 @@ namespace Lantern
 
         void UpdateAimDistance()
         {
-            PlayerManager.Instance.aimBehaviour.aimObject.transform.localPosition = new Vector3(loading.Remap(0f, maxLoad, 0.5f, 1f), 0, 0);
+            PlayerManager.Instance.aimBehaviour.aimObject.transform.localPosition = new Vector3(loading.Remap(0f, maxLoad, 0.5f, 2f), 0, 0);
         }
 
         /// <summary>
@@ -179,7 +179,7 @@ namespace Lantern
             currentBoomerangState = boomerangState.Cast;
 
             //Sound
-            flightSound.Play();
+            //flightSound.Play();
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace Lantern
                 loading = 0f;
 
                 //Sound
-                flightSound.Stop();
+                //flightSound.Stop();
             }
             if(Vector2.Distance(castOrigin, LanternManager.Instance.gameObject.transform.position) >= loading)
             {
@@ -214,7 +214,7 @@ namespace Lantern
                 currentBoomerangState = boomerangState.FallBack;
 
                 //Sound
-                flightSound.Play();
+                //flightSound.Play();
             }
         }
 
@@ -231,7 +231,7 @@ namespace Lantern
                 currentBoomerangState = boomerangState.Tidy;
 
                 //Sound
-                flightSound.Stop();
+                //flightSound.Stop();
             }
         }
 

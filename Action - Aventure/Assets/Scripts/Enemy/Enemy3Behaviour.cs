@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Player;
 using Lantern;
+using GameManagement;
 
 namespace Enemy
 {
@@ -44,6 +45,11 @@ namespace Enemy
         // Update is called once per frame
         void Update()
         {
+            if (GameCanvasManager.Instance.dialog.runningConversation)
+            {
+                rbEnemy3.velocity = Vector2.zero;
+                return;
+            }
             Vector2 dir = PlayerManager.Instance.transform.position - transform.position;
 
             if (LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)

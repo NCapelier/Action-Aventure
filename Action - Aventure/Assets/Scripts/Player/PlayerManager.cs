@@ -18,6 +18,7 @@ namespace Player
         public PlayerController controller = null;
         public PlayerContactAttack contactAttack = null;
         public PlayerAimBehaviour aimBehaviour = null;
+        public PotionBottles potionBottles = null;
 
         // curent health points of the player
         [HideInInspector] public int currentHp = 1;

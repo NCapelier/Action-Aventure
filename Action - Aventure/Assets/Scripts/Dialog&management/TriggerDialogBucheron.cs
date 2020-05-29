@@ -51,13 +51,17 @@ public class TriggerDialogBucheron : MonoBehaviour
         //Quand le player rentre dans la zone de collision, la cut scene se lance. Le joueur doit passer le dialogue pour continuer.
         if (collision.gameObject.tag == "PlayerController")
         {
-            playerHere = true;
+            if (GameManager.Instance.gameState.cutSceneBucheronFinish == false)
+            {
+                playerHere = true;
 
-            bxCollider.enabled = false;
+                bxCollider.enabled = false;
 
-            PlayerManager.Instance.controller.isDialoging = true;
+                PlayerManager.Instance.controller.isDialoging = true;
 
-            GameCanvasManager.Instance.dialog.StartDialog = dialHelp1;
+                GameCanvasManager.Instance.dialog.StartDialog = dialHelp1;
+            }
+           
 
         }
 
@@ -66,6 +70,11 @@ public class TriggerDialogBucheron : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.gameState.cutSceneBucheronFinish == true)
+        {
+            pnjTokill.SetActive(false);
+        }
+
         //A la fin de la conversation, l'anim de la timeline se lance pour ensuite lancer le deuxième dialogue.
         if (GameCanvasManager.Instance.dialog.runningConversation == false && playerHere == true)
         {
@@ -98,6 +107,8 @@ public class TriggerDialogBucheron : MonoBehaviour
             Destroy(enemyToKill);
 
             Destroy(gameObject);
+
+            GameManager.Instance.gameState.cutSceneBucheronFinish = true;
         }
 
         //au début de l'animation, lancer un chrono pour l'arreter au bon moment.

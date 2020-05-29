@@ -18,10 +18,24 @@ public class EntréeMaison : MonoBehaviour
     private bool timelineF = false;
     private bool playerDial = false;
 
+    private Camera stokageCamera;
+
+    [SerializeField] private GameObject cutSceneCamera;
+
+    private void Awake()
+    {
+        if (GameManager.Instance.gameState.cutSCaveDone == true)
+        {
+            timeline.enabled = false;
+        }
+    }
+
     private void Start()
     {
         timeline = GetComponent<PlayableDirector>();
         boxCol = GetComponent<BoxCollider2D>();
+
+        
     }
 
 private void OnTriggerEnter2D(Collider2D collision)
@@ -29,7 +43,11 @@ private void OnTriggerEnter2D(Collider2D collision)
         if (collision.gameObject.tag == "PlayerController")
         {
 
-            StartCoroutine("CutScene");
+            if(GameManager.Instance.gameState.cutSCaveDone == false)
+            {
+                StartCoroutine("CutScene");
+            }
+            
             
 
         }   
@@ -46,11 +64,19 @@ private void OnTriggerEnter2D(Collider2D collision)
         {
             enemyEyes.SetActive(true);
             enemySkin.SetActive(true);
+
+            cutSceneCamera.SetActive(false);
+            stokageCamera.enabled = true;
         }
     }
 
     IEnumerator CutScene()
     {
+        stokageCamera = Camera.main;
+        stokageCamera.enabled = false;
+        cutSceneCamera.SetActive(true);
+
+
         GameCanvasManager.Instance.dialog.isCutScene = true;
         yield return new WaitForSeconds(0.1f);
         GameCanvasManager.Instance.dialog.StartDialog = entréeMaison;
@@ -77,9 +103,10 @@ private void OnTriggerEnter2D(Collider2D collision)
         //timeline.Stop();
         GameManager.Instance.GetComponent<GameState>().versatileGet = true;
         timelineF = true;
+       
 
         boxCol.enabled = false;
 
-
+        GameManager.Instance.gameState.cutSCaveDone = true;
     }
 }
