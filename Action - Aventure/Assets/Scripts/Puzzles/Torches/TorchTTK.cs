@@ -32,10 +32,7 @@ public class TorchTTK : MonoBehaviour
         flame.gameObject.SetActive(false);
         isLit = false;
         playerHere = false;
-    }
 
-    private void Start()
-    {
         //Sound
         igniteClip = AudioManager.Instance.sounds_notUniqueObject["Fire_ignite"];
         burnClip = AudioManager.Instance.sounds_notUniqueObject["Fire_burn"];
@@ -48,6 +45,7 @@ public class TorchTTK : MonoBehaviour
         burnSound = sounds[1];
         extingSound = sounds[2];
     }
+
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == "Hinky" || (col.gameObject.CompareTag("Player") && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
