@@ -26,7 +26,7 @@ namespace Player
 
 
         #endregion
-        
+
         void Start()
         {
             StartCoroutine(LifeCycle());
@@ -36,7 +36,7 @@ namespace Player
             fxAnim = spriteObject.GetComponent<Animator>();
             fxAnim.SetBool("isAttacking", true);
         }
-        
+
         void Update()
         {
             fxAnim.SetFloat("XDirection", PlayerManager.Instance.aimBehaviour.horizontal);
@@ -45,10 +45,11 @@ namespace Player
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Enemy"))
             {
-                // damages --> ref enemy parent
                 collision.GetComponent<EnemyParent>().TakeDamages = damages * (int)PlayerManager.Instance.contactAttack.loading;
+
+                D.Log("DD = " + damages * (int)PlayerManager.Instance.contactAttack.loading);
             }
         }
 
@@ -59,8 +60,9 @@ namespace Player
         IEnumerator LifeCycle()
         {
             yield return new WaitForSeconds(lifeTime);
-            PlayerManager.Instance.contactAttack.loading = 0;
+            PlayerManager.Instance.contactAttack.loading = 1;
             PlayerManager.Instance.contactAttack.isAttacking = false;
+            PlayerManager.Instance.contactAttack.routine = true;
             Destroy(gameObject);
         }
 

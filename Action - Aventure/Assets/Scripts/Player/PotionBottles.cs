@@ -31,8 +31,6 @@ namespace Player
 		// Update is called once per frame
 		void Update()
 		{
-            Debug.Log("Player near a fountain: " + nearFountain);
-            Debug.Log("Nb of potions: " + PotionsTextScript.potionAmount + " out of " + PotionsTextScript.maxPotionAmount);
 
             if (GameManager.Instance.gameState.potionGet)
             {

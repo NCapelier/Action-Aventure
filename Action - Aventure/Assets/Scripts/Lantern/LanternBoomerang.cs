@@ -83,7 +83,7 @@ namespace Lantern
             //flightSound = AudioManager.Instance.GetSound("Will_o_flight");
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (!GameManager.Instance.gameState.versatileGet)
                 return;

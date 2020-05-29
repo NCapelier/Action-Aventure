@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using GameSound;
 using GameManagement;
+using System.Collections;
 
 namespace Player
 {
@@ -36,6 +37,10 @@ namespace Player
         public GameObject fxSprite;
         public Animator fxAnim;
 
+        [HideInInspector] public bool canAttack = true;
+
+        [HideInInspector] public bool routine = false;
+
         #endregion
 
         void Start()
@@ -52,17 +57,26 @@ namespace Player
 
         private void Update()
         {
+            D.Log(canAttack);
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
-            if (Input.GetButtonUp("Right_Bumper"))
+            if (Input.GetButtonUp("Right_Bumper") && !isAttacking && canAttack)
             {
                 Attack();
+            }
+            if(routine)
+            {
+                routine = false;
+                StartCoroutine(Cooldown());
             }
         }
 
         void AttackInput()
         {
-            if (!isAttacking)
+            if (!GameManager.Instance.gameState.lanternGet)
+                return;
+
+            if (!isAttacking && canAttack)
             {
                 if (Input.GetButton("Right_Bumper") && loading < maxLoad)
                 {
@@ -81,6 +95,7 @@ namespace Player
         GameObject Attack()
         {
             isAttacking = true;
+            canAttack = false;
 
             //Animation
             PlayerManager.Instance.controller.anim.SetFloat("AttackX", PlayerManager.Instance.aimBehaviour.horizontal);
@@ -114,6 +129,12 @@ namespace Player
             GameObject attack = (GameObject)Instantiate(Resources.Load("Prefabs/Player/Attack"), PlayerManager.Instance.transform.position + new Vector3(0f, 0.5f), attackDirection);
             //PlayerManager.Instance.controller.fxAnim = attack.GetComponent<PlayerAttackBehaviour>().spriteObject.GetComponent<Animator>();
             return attack;
+        }
+
+        public IEnumerator Cooldown()
+        {
+            yield return new WaitForSeconds(0.5f);
+            canAttack = true;
         }
 
         void PlayAttackSound()
