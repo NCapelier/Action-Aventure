@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5373658969625797350}
   - component: {fileID: 5373658969625797349}
   - component: {fileID: 5373658969625797348}
+  - component: {fileID: 1579085795091555801}
   m_Layer: 0
   m_Name: statue
   m_TagString: Untagged
@@ -98,8 +99,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLit: 0
   Duration: 15
+  isCutScene: 0
 --- !u!61 &5373658969625797348
 BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5373658969625797347}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0034837723, y: 0.13436878}
+  m_SpriteTilingProperty:
+    border: {x: 0.75, y: 0.45833334, z: 0.75, w: 0.45833334}
+    pivot: {x: 0.5, y: 0.2340425}
+    oldSize: {x: 1.9583334, y: 1.9583334}
+    newSize: {x: 1.9583334, y: 1.9583334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.40458488, y: 0.21850944}
+  m_EdgeRadius: 0
+--- !u!58 &1579085795091555801
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,19 +139,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0034837723, y: 0.6666609}
-  m_SpriteTilingProperty:
-    border: {x: 0.75, y: 0.45833334, z: 0.75, w: 0.45833334}
-    pivot: {x: 0.5, y: 0.2340425}
-    oldSize: {x: 1.9583334, y: 1.9583334}
-    newSize: {x: 1.9583334, y: 1.9583334}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.8087362}
   serializedVersion: 2
-  m_Size: {x: 0.40458488, y: 0.7191007}
-  m_EdgeRadius: 0
+  m_Radius: 0.4569701
 --- !u!1 &5373658970360539044
 GameObject:
   m_ObjectHideFlags: 0
