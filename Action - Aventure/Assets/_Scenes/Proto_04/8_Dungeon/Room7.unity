@@ -6304,6 +6304,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flambeau (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: StartDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: Duration
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f043a02e2c59f49aa5e06677073c83, type: 3}
 --- !u!4 &601348234 stripped
@@ -7443,6 +7453,11 @@ PrefabInstance:
     - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
       propertyPath: Duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: StartDuration
       value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -12323,6 +12338,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flambeau (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: StartDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: Duration
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f043a02e2c59f49aa5e06677073c83, type: 3}
@@ -24986,7 +25011,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLit: 0
-  Duration: 5
+  Duration: 0
+  StartDuration: 5
+  isCutScene: 0
 --- !u!1001 &1098057146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32218,6 +32245,11 @@ PrefabInstance:
     - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
         type: 3}
       propertyPath: Duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179298890443764318, guid: 30f043a02e2c59f49aa5e06677073c83,
+        type: 3}
+      propertyPath: StartDuration
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []

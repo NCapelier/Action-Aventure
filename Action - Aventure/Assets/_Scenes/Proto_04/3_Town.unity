@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -14978,6 +14978,16 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7326075446427904019, guid: 0dd384b949985c143a98655d041abb04,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5416666
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326075446427904019, guid: 0dd384b949985c143a98655d041abb04,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.020000458
+      objectReference: {fileID: 0}
     - target: {fileID: 7326075446799875008, guid: 0dd384b949985c143a98655d041abb04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14986,7 +14996,7 @@ PrefabInstance:
     - target: {fileID: 7326075446799875008, guid: 0dd384b949985c143a98655d041abb04,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -2.75
       objectReference: {fileID: 0}
     - target: {fileID: 7326075446799875008, guid: 0dd384b949985c143a98655d041abb04,
         type: 3}
@@ -15053,8 +15063,50 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7326075446799875038, guid: 0dd384b949985c143a98655d041abb04,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00022125244
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326075446799875038, guid: 0dd384b949985c143a98655d041abb04,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.28810883
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326075446799875038, guid: 0dd384b949985c143a98655d041abb04,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.10988426
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326075446799875038, guid: 0dd384b949985c143a98655d041abb04,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.21863556
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dd384b949985c143a98655d041abb04, type: 3}
+--- !u!1 &1317924347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7326075446799875010, guid: 0dd384b949985c143a98655d041abb04,
+    type: 3}
+  m_PrefabInstance: {fileID: 1317924346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1317924348
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317924347}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.21459126}
+  serializedVersion: 2
+  m_Radius: 0.57247066
 --- !u!1001 &1330097830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21080,12 +21132,12 @@ PrefabInstance:
     - target: {fileID: 8112533880883840464, guid: 297c8168666d59147b2b39d78af842a7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.563061
+      value: 12.291667
       objectReference: {fileID: 0}
     - target: {fileID: 8112533880883840464, guid: 297c8168666d59147b2b39d78af842a7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.879519
+      value: -10.166667
       objectReference: {fileID: 0}
     - target: {fileID: 8112533880883840464, guid: 297c8168666d59147b2b39d78af842a7,
         type: 3}
@@ -21132,10 +21184,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8112533880883840468, guid: 297c8168666d59147b2b39d78af842a7,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.09806061
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112533880883840468, guid: 297c8168666d59147b2b39d78af842a7,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.0657158
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112533880883840468, guid: 297c8168666d59147b2b39d78af842a7,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0014247894
+      objectReference: {fileID: 0}
     - target: {fileID: 8112533880883840469, guid: 297c8168666d59147b2b39d78af842a7,
         type: 3}
       propertyPath: m_Name
       value: CroqueMort
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112533880883840471, guid: 297c8168666d59147b2b39d78af842a7,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0661459
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112533880883840471, guid: 297c8168666d59147b2b39d78af842a7,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.19206238
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112533880883840471, guid: 297c8168666d59147b2b39d78af842a7,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00036859512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112533880883840471, guid: 297c8168666d59147b2b39d78af842a7,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.39309216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112533880890606959, guid: 297c8168666d59147b2b39d78af842a7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.583333
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 297c8168666d59147b2b39d78af842a7, type: 3}
