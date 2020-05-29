@@ -42,7 +42,6 @@ namespace Player
                 }
             }
 
-            Debug.Log(LanternManager.Instance.hideLight.currentLightState);
 		}
 
         void PotionDrink()

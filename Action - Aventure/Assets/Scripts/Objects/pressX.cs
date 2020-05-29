@@ -27,7 +27,6 @@ public class pressX : MonoBehaviour
             pressBouton.SetActive(true);
             if (Input.GetButton("X_Button"))
             {
-                Debug.Log("calledX");
                 pressBouton.SetActive(false);
             }
             if (Input.GetButtonUp("X_Button"))

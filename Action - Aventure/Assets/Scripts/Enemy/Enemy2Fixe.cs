@@ -85,8 +85,6 @@ namespace Enemy
             sounds = gameObject.GetComponents<AudioSource>();
             detectionSound = sounds[0];
             attackSound = sounds[1];
-            Debug.Log("detection sound = " + detectionSound.clip.name);
-            Debug.Log("attack sound = " + attackSound.clip.name);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);

@@ -57,7 +57,6 @@ namespace Player
 
         private void Update()
         {
-            D.Log(canAttack);
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
             if (Input.GetButtonUp("Right_Bumper") && !isAttacking && canAttack)

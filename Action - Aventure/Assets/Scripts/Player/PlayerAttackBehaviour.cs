@@ -49,7 +49,6 @@ namespace Player
             {
                 collision.GetComponent<EnemyParent>().TakeDamages = damages * (int)PlayerManager.Instance.contactAttack.loading;
 
-                D.Log("DD = " + damages * (int)PlayerManager.Instance.contactAttack.loading);
             }
         }
 

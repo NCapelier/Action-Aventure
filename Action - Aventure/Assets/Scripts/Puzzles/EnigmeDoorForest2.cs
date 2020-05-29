@@ -65,7 +65,6 @@ public class EnigmeDoorForest2 : MonoBehaviour
 
         if (isFinish==true)
         {
-            Debug.Log("Win");
             flambeau1.GetComponent<TorchTTK>().isLit = true;
             flambeau2.GetComponent<TorchTTK>().isLit = true;
             flambeau3.GetComponent<TorchTTK>().isLit = true;
@@ -94,22 +93,18 @@ public class EnigmeDoorForest2 : MonoBehaviour
         {
             
             Checker1();
-            Debug.Log("Checker1");
         }
         if ((flambeau2.GetComponent<TorchTTK>().isLit == true || flambeau3.GetComponent<TorchTTK>().isLit == true || flambeau4.GetComponent<TorchTTK>().isLit == true) && needToCheckSecond == true && stillGood == true && flambeau1.GetComponent<TorchTTK>().isLit == true)
         {
             Checker2();
-            Debug.Log("Checker2");
         }
         if ((flambeau3.GetComponent<TorchTTK>().isLit == true || flambeau4.GetComponent<TorchTTK>().isLit == true) && needToCheckThird == true && stillGood == true)
         {
             Checker3();
-            Debug.Log("Checker3");
         }
         if (flambeau4.GetComponent<TorchTTK>().isLit == true && needToCheckFourth == true && stillGood == true)
         {
             Checker4();
-            Debug.Log("Checker4");
         }
     }
 
