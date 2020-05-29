@@ -55,15 +55,7 @@ public class TorchTTK : MonoBehaviour
         }
 
 
-        if (!isCutScene)
-        {
-            flame.gameObject.SetActive(false);
-        }
-        else if (isCutScene)
-        {
-
-            flame.gameObject.SetActive(true);
-        }
+        
 
     }
 

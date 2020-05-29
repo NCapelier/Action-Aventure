@@ -33,7 +33,7 @@ public class CutSceneForet2 : MonoBehaviour
         finished = false;
         cutSceneCamera.SetActive(false);
 
-       
+        GameManager.Instance.gameState.needToShow = false;
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -84,7 +84,9 @@ public class CutSceneForet2 : MonoBehaviour
 
             GameManager.Instance.gameState.cutSForet2 = true;
             PlayerManager.Instance.controller.isDialoging = false;
-        }
+            GameManager.Instance.gameState.needToShow = true;
+
+            }
         
        
        

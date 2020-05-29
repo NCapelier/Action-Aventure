@@ -11,6 +11,8 @@ public class TreasureBehaviour : MonoBehaviour
     [SerializeField] private SpriteRenderer buttonRenderer;
     private bool playerH;
 
+    private bool tresorGet;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,11 @@ public class TreasureBehaviour : MonoBehaviour
             GameCanvasManager.Instance.dialog.StartDialog = rewardsText;
             GoldTextScript.coinAmount += 10;
             gameObject.SetActive(false);
+            tresorGet = true;
         }
+        
+      
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
