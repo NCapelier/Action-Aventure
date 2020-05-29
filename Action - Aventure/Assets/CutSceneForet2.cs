@@ -42,7 +42,6 @@ public class CutSceneForet2 : MonoBehaviour
         {
             StartCoroutine("StartT");
            
-            Debug.Log("Called");
             door1.SetActive(false);
         }
     }
@@ -68,7 +67,6 @@ public class CutSceneForet2 : MonoBehaviour
                 
 
                 
-                Debug.Log("Called");
                 door1.SetActive(true);
                 door.SetActive(false);
                 timeline.Stop();

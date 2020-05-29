@@ -48,7 +48,6 @@ namespace Puzzle
             
             flame.gameObject.SetActive(true);
             isLit = true;
-            Debug.Log("allo");
 
         }
         private void Update()
@@ -65,7 +64,6 @@ namespace Puzzle
         {
             if (isLit == true)
             {
-                Debug.Log("called");
                 yield return new WaitForSeconds(Duration);
                 isLit = false;
                 flame.gameObject.SetActive(false);

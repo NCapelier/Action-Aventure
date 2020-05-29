@@ -65,7 +65,6 @@ public class Coins : MonoBehaviour
 
     IEnumerator Timelife()
     {
-        Debug.Log("called");
         yield return new WaitForSeconds(lifeTime);
         coinAnim.enabled = true;
         yield return new WaitForSeconds(warningTime);

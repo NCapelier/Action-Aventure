@@ -54,7 +54,7 @@ namespace Enemy
             detectionSound = gameObject.GetComponent<AudioSource>();
         }
         
-        void Update()
+        void FixedUpdate()
         {
             if (GameCanvasManager.Instance.dialog.runningConversation)
             {

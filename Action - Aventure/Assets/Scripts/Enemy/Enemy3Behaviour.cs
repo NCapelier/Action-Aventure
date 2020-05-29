@@ -43,7 +43,7 @@ namespace Enemy
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             if (GameCanvasManager.Instance.dialog.runningConversation)
             {
@@ -61,7 +61,6 @@ namespace Enemy
             if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= detectionRange && Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) >= nearRange)
             {
                 rbEnemy3.velocity = new Vector3(0f, 0f, 0f);
-                Debug.Log("Found");
 
                 if (attackAvailable == true && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
                 {
@@ -83,7 +82,6 @@ namespace Enemy
 
             if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= nearRange)
             {
-                Debug.Log("Recall");
                 attackAvailable = false;
                 rbEnemy3.velocity = dir.normalized * -speed * Time.deltaTime;
             }

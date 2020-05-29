@@ -58,7 +58,6 @@ public class BulletBehaviour : MonoBehaviour
                 if (Vector2.Distance(transform.position, locationInfo) <= distanceToSwitchStatement)
                 {
                     arrived = true;
-                    Debug.Log("arrivé");
                     
                 }
             }
@@ -85,7 +84,6 @@ public class BulletBehaviour : MonoBehaviour
             if(asDeltDamages == false)
             {
                 PlayerManager.Instance.TakeDamages = 5;
-                Debug.Log("DMG");
             }
             asDeltDamages = true;
         }
@@ -96,7 +94,6 @@ public class BulletBehaviour : MonoBehaviour
     {
        
         arrived = true;
-        Debug.Log("startEnum");
         yield return new WaitForSeconds(freezingTime);
         timeToGo = true;
     }

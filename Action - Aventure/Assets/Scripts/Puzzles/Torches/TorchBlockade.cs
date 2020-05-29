@@ -47,7 +47,6 @@ namespace Puzzle
                     OpenDoor();
                 }
 
-                Debug.Log(l + " allumées !");
             }
 		}
 

@@ -107,7 +107,7 @@ namespace Enemy
 
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (GameCanvasManager.Instance.dialog.runningConversation)
             {

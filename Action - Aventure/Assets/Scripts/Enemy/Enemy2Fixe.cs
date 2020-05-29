@@ -85,8 +85,6 @@ namespace Enemy
             sounds = gameObject.GetComponents<AudioSource>();
             detectionSound = sounds[0];
             attackSound = sounds[1];
-            Debug.Log("detection sound = " + detectionSound.clip.name);
-            Debug.Log("attack sound = " + attackSound.clip.name);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
@@ -102,12 +100,12 @@ namespace Enemy
         {
             if(collision.gameObject.tag == "Finish")
             {
-                rb.velocity = new Vector3(0f, 0f, 0f);
+                rb.velocity = Vector2.zero;
             }
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             if (GameCanvasManager.Instance.dialog.runningConversation)
             {

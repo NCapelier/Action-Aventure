@@ -55,7 +55,6 @@ public class TriggerCutSceneAPGet : MonoBehaviour
         {
             if (GameManager.Instance.GetComponent<GameState>().CutsceneFlash == false && finished == false)
             {
-                Debug.Log("trigger");
                 StartCoroutine("CutScene");
             }
            
