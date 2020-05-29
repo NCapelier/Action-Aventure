@@ -64,7 +64,7 @@ private void OnTriggerEnter2D(Collider2D collision)
         {
             enemyEyes.SetActive(true);
             enemySkin.SetActive(true);
-
+            timeline.Stop();
             cutSceneCamera.SetActive(false);
             stokageCamera.enabled = true;
         }
@@ -72,6 +72,7 @@ private void OnTriggerEnter2D(Collider2D collision)
 
     IEnumerator CutScene()
     {
+        timeline.Play();
         stokageCamera = Camera.main;
         stokageCamera.enabled = false;
         cutSceneCamera.SetActive(true);

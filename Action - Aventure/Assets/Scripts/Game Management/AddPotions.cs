@@ -54,29 +54,17 @@ public class AddPotions : MonoBehaviour
         if(GameManager.Instance.GetComponent<GameState>().potionGet == true){
 
             GetComponent<SpriteRenderer>().enabled = false;
+            PotionsTextScript.potionAmount = 1;
+            PotionsTextScript.maxPotionAmount = 1;
         }
 
         if (playerHe == true && Input.GetButtonDown("A_Button") && GameManager.Instance.GetComponent<GameState>().potionGet == false)
         {
-            
-            
-            PotionsTextScript.potionAmount = 1;
-            PotionsTextScript.maxPotionAmount = 1;
-
-            Finish = true;
-
-            
-
-
-        }
-
-      if (Finish == true)
-        {
             StartCoroutine("Dialog");
 
-            
         }
 
+      
     }
 
    
@@ -126,7 +114,7 @@ public class AddPotions : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         GameManager.Instance.GetComponent<GameState>().potionGet = true;
-        Finish = false;
+        
         Destroy(gameObject);
     }
 }

@@ -29,12 +29,15 @@ public class GameState : MonoBehaviour
     //True when enigme 4 flambeaux good
     public bool enigmeForest = false;
 
+
+    //Chapelle State
     public bool chapelleTrigger = false;
     public bool ChapelleCutSceneFinish = false;
 
     //When this is True : The playre enter in the dungeon
     public bool isDungeon = false;
 
+    //When false don't show the sign of localisation
     public bool needToShow = true;
 
     private void Update()

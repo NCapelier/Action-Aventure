@@ -1,18 +1,26 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using GameManagement;
 
 public class updateChapelle : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameManager.Instance.gameState.chapelleTrigger == false)
+        if (collision.gameObject.CompareTag("PlayerController"))
         {
-            GameManager.Instance.gameState.chapelleTrigger = true;
+            if (GameManager.Instance.gameState.chapelleTrigger == false)
+            {
+                GameManager.Instance.gameState.chapelleTrigger = true;
 
-            GameManager.Instance.gameState.needToShow = false;
+
+                GameManager.Instance.gameState.needToShow = false;
+            }
+
+            if (GameManager.Instance.gameState.chapelleTrigger == true)
+            {
+                GameManager.Instance.gameState.needToShow = true;
+            }
         }
-       
+
     }
 }
 

@@ -52,7 +52,7 @@ public class TorchTTK : MonoBehaviour
         {
             Light();
             playerHere = true;
-            StartCoroutine("TTK");
+            
         }
  
     }
@@ -76,9 +76,6 @@ public class TorchTTK : MonoBehaviour
 
             flame.gameObject.SetActive(true);
         }
-
-
-        
 
     }
 

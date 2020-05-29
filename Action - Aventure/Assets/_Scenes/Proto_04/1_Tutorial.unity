@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -17935,8 +17935,8 @@ BoxCollider2D:
   m_Offset: {x: -3.6665878, y: -3.2203312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.41666666, y: 1}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.6, y: 1.25}
     newSize: {x: 0.41666666, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -32187,7 +32187,7 @@ PrefabInstance:
     - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
       propertyPath: lanternGet
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
@@ -32207,7 +32207,7 @@ PrefabInstance:
     - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
       propertyPath: versatileGet
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
