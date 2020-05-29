@@ -10,7 +10,7 @@ public class PlaquePression : MonoBehaviour
     private TilemapRenderer tileR;
     private BoxCollider2D tileB;
     private bool isActivated;
-
+    private Animator anim;
     //Sound
     Sound pressureClip;
     AudioSource pressureSound;
@@ -21,7 +21,8 @@ public class PlaquePression : MonoBehaviour
         tileB = apperingFloor.GetComponent<BoxCollider2D>();
         tileR = apperingFloor.GetComponent<TilemapRenderer>();
         tileR.enabled = false;
-
+        anim = GetComponent<Animator>();
+        anim.enabled = false;
         //Sound
         pressureClip = AudioManager.Instance.sounds_notUniqueObject["Activate_deactivate"];
         AudioManager.Instance.MakeAudioSource(pressureClip, gameObject);
@@ -48,8 +49,10 @@ public class PlaquePression : MonoBehaviour
         if(collision.gameObject.tag == "Wall")
         {
             isActivated = true;
-            
+
             //jouer Animation appuyé
+            anim.enabled = true;
+            anim.SetBool("Off", false);
         }
     }
 
@@ -63,6 +66,7 @@ public class PlaquePression : MonoBehaviour
             tileB.enabled = true;
             tileR.enabled = false;
 
+            anim.SetBool("Off", true);
             pressureSound.Play();
         }
     }
