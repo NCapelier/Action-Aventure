@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2851,7 +2851,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 199230355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546c507f81b7ad24193d6c797498c528, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ffec2fac6b3f1b48baae7e7dccef3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &205122442
@@ -3384,6 +3384,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0539982, y: 0.33605623}
   m_EdgeRadius: 0
+--- !u!1 &326608384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3747087323808170499, guid: 450b351e59052474fab2a71f2d90924f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1879925602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &326608385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326608384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e712468420265049b0db6c68571af35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &340855073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,7 +3752,6 @@ GameObject:
   m_Component:
   - component: {fileID: 385208535}
   - component: {fileID: 385208534}
-  - component: {fileID: 385208537}
   - component: {fileID: 385208536}
   m_Layer: 0
   m_Name: Crux
@@ -3833,27 +3850,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40878057, y: 0.3298211}
   m_EdgeRadius: 0
---- !u!50 &385208537
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385208533}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &385430762
 GameObject:
   m_ObjectHideFlags: 0
@@ -15828,6 +15824,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.9753187, y: 0.33393312}
   m_EdgeRadius: 0
+--- !u!1 &909506594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3747087323808170499, guid: 450b351e59052474fab2a71f2d90924f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1111228022}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &909506595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909506594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4f14bd17c404f4d934e4eac5648576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &942138534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2884193520629124050, guid: ca397e205b061f14fb58466edaf8ee83,
