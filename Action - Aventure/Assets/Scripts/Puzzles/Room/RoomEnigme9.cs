@@ -8,7 +8,7 @@ public class RoomEnigme9 : MonoBehaviour
     public GameObject illuminator1;
     public GameObject illuminator2;
     public GameObject flambeau;
-    private GameObject door;
+    public GameObject door;
 
     private bool enigmeCleared;
 
@@ -16,7 +16,7 @@ public class RoomEnigme9 : MonoBehaviour
     void Start()
     {
         enigmeCleared = false;
-        door = gameObject.GetChildNamed("Exit");
+       
         door.SetActive(false);
     }
 

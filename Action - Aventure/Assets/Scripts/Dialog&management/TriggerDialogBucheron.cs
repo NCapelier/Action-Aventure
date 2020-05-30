@@ -87,7 +87,7 @@ public class TriggerDialogBucheron : MonoBehaviour
         }
 
 
-        if (timerClip >= 1300 && starTimer == true)
+        if (timerClip >= 1150 && starTimer == true)
         {
             starTimer = false;
 
