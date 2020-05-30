@@ -19,7 +19,7 @@ namespace Boss
         [Header("Variables")]
         [Range(1, 50)]
         public int hp = 20;
-
+        public int maxHp = 20;
         #endregion
 
         #region Properties
