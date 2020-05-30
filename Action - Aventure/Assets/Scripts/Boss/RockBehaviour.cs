@@ -11,9 +11,19 @@ namespace Boss
     {
         [HideInInspector] public rockState currentRockState = rockState.Idle;
 
+        public GameObject shadowObject = null;
         public GameObject rockObject = null;
 
         bool spawnedRock = false;
+
+        Animator shadowAnimator = null;
+        Animator rockAnimator = null;
+
+        private void Start()
+        {
+            shadowAnimator = shadowObject.GetComponent<Animator>();
+            rockAnimator = rockObject.GetComponent<Animator>();
+        }
 
         private void Update()
         {
@@ -25,20 +35,45 @@ namespace Boss
                 case rockState.Rock:
                     RockUpdate();
                     break;
+                case rockState.Idle:
+                    IdleUpdate();
+                    break;
                 default:
                     break;
             }
         }
 
+        void IdleUpdate()
+        {
+            if(shadowAnimator.isActiveAndEnabled)
+            {
+                shadowAnimator.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                shadowAnimator.enabled = false;
+            }
+            if(rockAnimator.isActiveAndEnabled)
+            {
+                rockAnimator.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                rockAnimator.enabled = false;
+            }
+        }
+
         void ShadowUpdate()
         {
-            // --> animation apparition ombre
+            if(!shadowAnimator.isActiveAndEnabled)
+            {
+                shadowAnimator.enabled = true;
+            }
         }
 
         void RockUpdate()
         {
             // --> animation apparition rocher
-            if(!spawnedRock)
+            if(!rockAnimator.isActiveAndEnabled)
+            {
+                rockAnimator.enabled = true;
+            }
+
+            if (!spawnedRock)
             {
                 spawnedRock = true;
                 rockObject.SetActive(true);
