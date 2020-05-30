@@ -91,13 +91,13 @@ public class TorchTTK : MonoBehaviour
         {
             TTK();
 
-            if (Duration <= 0)
-            {
-                isLit = false;
-                Duration = StartDuration;
-            }
+            
         }
-
+        if (Duration <= 0)
+        {
+            isLit = false;
+            Duration = StartDuration;
+        }
 
 
         if (!isLit)
@@ -124,8 +124,13 @@ public class TorchTTK : MonoBehaviour
 
     IEnumerator TTK()
     {
-        Duration--;
-        yield return new WaitForSeconds(1f);
-        StartCoroutine("TTK");
+        if(playerHere == false && isLit == true)
+        {
+            Duration--;
+            yield return new WaitForSeconds(1f);
+            StartCoroutine("TTK");
+
+        }
+       
     }
 }

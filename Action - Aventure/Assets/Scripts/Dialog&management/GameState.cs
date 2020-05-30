@@ -2,6 +2,8 @@
 
 public class GameState : MonoBehaviour
 {
+    public bool playerDead = false;
+
 
     //PARTIE TUTO
 
@@ -52,8 +54,5 @@ public class GameState : MonoBehaviour
     //When false don't show the sign of localisation
     public bool needToShow = true;
 
-    private void Update()
-    {
-       
-    }
+   
 }
