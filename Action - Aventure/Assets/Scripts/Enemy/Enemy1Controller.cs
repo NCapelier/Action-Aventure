@@ -72,7 +72,7 @@ namespace Enemy
         {
             if((Vector2.Distance(PlayerManager.Instance.transform.position, transform.parent.transform.position).isBetween(contactDistance, false, playerDetectRange, true) && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
             {
-                EnemyRb.velocity = (PlayerManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
+                EnemyRb.velocity = (PlayerManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed;
                
                 //Animation
                 anim.SetFloat("Xmovement", EnemyRb.velocity.x);
@@ -115,7 +115,7 @@ namespace Enemy
             {
                 if ((Vector2.Distance(LanternManager.Instance.transform.position, transform.parent.transform.position).isBetween(0.1f, false, playerDetectRange + lightDetectExtra, true)) && (LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Static))
                 {
-                    EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed * Time.deltaTime;
+                    EnemyRb.velocity = (LanternManager.Instance.transform.position - transform.parent.transform.position).normalized * moveSpeed;
                    
                     //Animation
                     anim.SetBool("Aggro", true);

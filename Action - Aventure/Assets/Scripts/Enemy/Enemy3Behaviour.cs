@@ -83,7 +83,7 @@ namespace Enemy
             if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= nearRange)
             {
                 attackAvailable = false;
-                rbEnemy3.velocity = dir.normalized * -speed * Time.deltaTime;
+                rbEnemy3.velocity = dir.normalized * -speed;
             }
         }
 

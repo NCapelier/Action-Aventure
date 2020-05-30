@@ -301,7 +301,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2033116714999444381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,8 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: {fileID: 0}
-  player: {fileID: 0}
-  speed: 250
+  speed: 1.8
   enterPlayerArea: 3
   distanceToSwitchTargetWaypoints: 0.2
   ennemiRangeAttack: 1.3
@@ -329,7 +328,6 @@ MonoBehaviour:
   RightAttack: {fileID: 3352525125896846458}
   UpAttack: {fileID: 714719613845838766}
   DownAttack: {fileID: 1384757762277553005}
-  numberofWaypointsMax: 0
   Animator: {fileID: 7377951180902703636}
   EyesAnimator: {fileID: 7678536671640182195}
 --- !u!114 &6551332487692523647
