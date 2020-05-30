@@ -85,8 +85,6 @@ namespace Lantern
 
         void FixedUpdate()
         {
-            if (!GameManager.Instance.gameState.versatileGet)
-                return;
             switch (currentBoomerangState)
             {
                 case boomerangState.Tidy:
@@ -121,7 +119,13 @@ namespace Lantern
         /// </summary>
         void OnTidyUpdate()
         {
+            if (!GameManager.Instance.gameState.lanternGet)
+                return;
+
             LanternManager.Instance.gameObject.transform.position = PlayerManager.Instance.gameObject.transform.position;
+
+            if (!GameManager.Instance.gameState.versatileGet)
+                return;
 
             if (Input.GetButton("Left_Bumper") && canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful)
             {
@@ -139,7 +143,7 @@ namespace Lantern
             }
             if (canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && loading < maxLoad)
             {
-                loading += loadingSpeed * Time.deltaTime;
+                loading += loadingSpeed;
             }
             else if(loading >= maxLoad)
             {
@@ -174,7 +178,7 @@ namespace Lantern
             // todo : new movement depending on loading
             castOrigin = LanternManager.Instance.gameObject.transform.position;
 
-            lanternRb.velocity = aimDirection.normalized * castSpeed * Time.deltaTime;
+            lanternRb.velocity = aimDirection.normalized * castSpeed;
             mustStop = false;
             currentBoomerangState = boomerangState.Cast;
 
@@ -223,7 +227,7 @@ namespace Lantern
         /// </summary>
         void OnFallBackUpdate()
         {
-            lanternRb.velocity = (PlayerManager.Instance.transform.position - LanternManager.Instance.gameObject.transform.position).normalized * fallBackSpeed * Time.deltaTime;
+            lanternRb.velocity = (PlayerManager.Instance.transform.position - LanternManager.Instance.gameObject.transform.position).normalized * fallBackSpeed;
             if(Vector2.Distance(LanternManager.Instance.transform.position, PlayerManager.Instance.transform.position) < catchRange)
             {
                 LanternManager.Instance.gameObject.transform.SetParent(PlayerManager.Instance.gameObject.transform);
