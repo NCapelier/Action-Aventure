@@ -55,6 +55,8 @@ namespace Boss
         bool invokedRock = false;
 
         [HideInInspector] public Animator animator = null;
+        public GameObject weakParticle;
+        
 
         #endregion
 
@@ -63,9 +65,8 @@ namespace Boss
         private void Start()
         {
             rb = BossManager.Instance.GetComponent<Rigidbody2D>();
-
             animator = GetComponent<Animator>();
-
+            weakParticle.SetActive(false);
             //playerLayer = LayerMask.NameToLayer("Player");
             //wallLayer = LayerMask.NameToLayer("Wall");
         }
@@ -195,17 +196,24 @@ namespace Boss
 
         public IEnumerator Dash1Weakness()
         {
+            weakParticle.SetActive(true);
             yield return new WaitForSeconds(phase1WeakTime);
             isWeak = false;
+            weakParticle.SetActive(false);
             animator.SetBool("isWeak", false);
+          
         }
 
         public IEnumerator Dash2Weakness()
         {
+
+            weakParticle.SetActive(true);
             yield return new WaitForSeconds(phase2WeakTime);
             isWeak = false;
             animator.SetBool("isWeak", false);
+            weakParticle.SetActive(false);
             touchedRock = false;
+          
         }
 
         IEnumerator InvokeRock()
