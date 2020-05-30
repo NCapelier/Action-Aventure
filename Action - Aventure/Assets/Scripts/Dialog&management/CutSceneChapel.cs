@@ -36,7 +36,7 @@ public class CutSceneChapel : MonoBehaviour
             timeTimeline += 1;
         }
 
-        if(timeTimeline == 800)
+        if(timeTimeline == 750)
         {
 
             GameManager.Instance.gameState.ChapelleCutSceneFinish = true;
