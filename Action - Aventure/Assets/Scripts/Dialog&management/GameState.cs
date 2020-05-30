@@ -31,6 +31,7 @@ public class GameState : MonoBehaviour
     public bool triggerMB = false;
     //cutscene Cave done
     public bool cutSCaveDone = false;
+    public bool enemyDone = false;
 
     public bool versatileGet = false;
 
@@ -49,6 +50,9 @@ public class GameState : MonoBehaviour
     //CHAPPELLE
     public bool chapelleTrigger = false;
     public bool ChapelleCutSceneFinish = false;
+    public bool monstre1chapelle = false;
+    public bool monstre2chapelle = false;
+    public bool monstre3chapelle = false;
 
     //ENTREE DONJON
     //When this is True : The playre enter in the dungeon

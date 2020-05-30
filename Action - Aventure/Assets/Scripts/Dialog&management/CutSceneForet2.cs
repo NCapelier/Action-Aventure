@@ -48,7 +48,7 @@ public class CutSceneForet2 : MonoBehaviour
    
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (startTimeline == true)
         {
@@ -60,7 +60,7 @@ public class CutSceneForet2 : MonoBehaviour
             door.GetComponent<Animator>().enabled = true;
         }
 
-            if (timeTimeline >= 1300)
+            if (timeTimeline >= 1100)
             {
                 startTimeline = false;
                 
