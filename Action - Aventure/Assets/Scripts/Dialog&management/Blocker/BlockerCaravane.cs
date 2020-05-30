@@ -11,7 +11,16 @@ public class BlockerCaravane : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<SceneTransition>().enabled = false;
+        //GetComponent<SceneTransition>().isActive = false;
+    }
+    private void Update()
+    {
+        if (GameManager.Instance.GetComponent<GameState>().lanternGet == false)
+        {
+            //GetComponent<SceneTransition>().isActive = true;
+            //gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            //gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,11 +31,7 @@ public class BlockerCaravane : MonoBehaviour
             GameCanvasManager.Instance.dialog.StartDialog = canPassThrought;
 
         }
-        else
-        {
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-        }
+
     }
 
 
