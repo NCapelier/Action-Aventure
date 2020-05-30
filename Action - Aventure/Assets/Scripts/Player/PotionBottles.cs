@@ -60,7 +60,7 @@ namespace Player
                 //Play FX
 
                 //Sound
-                AudioManager.Instance.Play("Will_o_flight");
+                //AudioManager.Instance.Play("Will_o_flight");
 
                 PotionsTextScript.potionAmount--;
             }
