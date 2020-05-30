@@ -4,6 +4,7 @@ using GameSound;
 using GameManagement;
 using System.Collections;
 using Lantern;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -176,6 +177,8 @@ namespace Player
             AudioManager.Instance.Play("Player_death");
 
             GameManager.Instance.gameState.playerDead = true;
+            SuperGameManager.Instance.DestroyAllGameObjects();
+            SceneManager.LoadScene("0_MainMenu");
         }
 
     }

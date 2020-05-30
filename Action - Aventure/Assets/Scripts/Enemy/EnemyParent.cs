@@ -74,6 +74,11 @@ namespace Enemy
                 Instantiate(Resources.Load("Prefabs/Enemy/Coin"), transform.position, Quaternion.identity);
                 Death();
             }
+            if(gameObject.GetComponent<Enemy3Behaviour>())
+            {
+                GetComponent<Enemy3Behaviour>().bodyAnimator.SetBool("isHit", true);
+                GetComponent<Enemy3Behaviour>().eyeAnimator.SetBool("isHit", true);
+            }
         }
 
         /// <summary>

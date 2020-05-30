@@ -31,8 +31,7 @@ namespace Enemy
         [Header("Etat")]
         private bool attackAvailable;
 
-
-
+        public Animator bodyAnimator = null, eyeAnimator = null;
 
         void Start()
         {
@@ -45,6 +44,13 @@ namespace Enemy
         // Update is called once per frame
         void FixedUpdate()
         {
+
+            bodyAnimator.SetFloat("XMovement", rbEnemy3.velocity.x);
+            bodyAnimator.SetFloat("YMovement", rbEnemy3.velocity.y);
+
+            eyeAnimator.SetFloat("XMovement", rbEnemy3.velocity.x);
+            eyeAnimator.SetFloat("YMovement", rbEnemy3.velocity.y);
+
             if (GameCanvasManager.Instance.dialog.runningConversation)
             {
                 rbEnemy3.velocity = Vector2.zero;
@@ -61,6 +67,8 @@ namespace Enemy
             if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= detectionRange && Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) >= nearRange)
             {
                 rbEnemy3.velocity = new Vector3(0f, 0f, 0f);
+                bodyAnimator.SetBool("isAggro", true);
+                eyeAnimator.SetBool("isAggro", true);
 
                 if (attackAvailable == true && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
                 {
@@ -79,6 +87,11 @@ namespace Enemy
                     }
                 }
             }
+            else
+            {
+                bodyAnimator.SetBool("isAggro", false);
+                eyeAnimator.SetBool("isAggro", false);
+            }
 
             if (Vector2.Distance(PlayerManager.Instance.transform.position, transform.position) <= nearRange)
             {
@@ -89,9 +102,21 @@ namespace Enemy
 
         private void Enemy3Attack()
         {
+            bodyAnimator.SetBool("isAttacking", true);
+            eyeAnimator.SetBool("isAttacking", true);
             attackAvailable = false;
             GameObject bullet = Instantiate(shot, transform.position, Quaternion.identity);
             bullet.GetComponent<BulletBehaviour>().enemyParent = this.gameObject;
+        }
+
+        public void GetAnimationEvent(string EventMessage)
+        {
+            if (EventMessage.Equals("isHit"))
+            {
+                bodyAnimator.SetBool("isHit", false);
+                eyeAnimator.SetBool("isHit", false);
+            }
+
         }
     }
 

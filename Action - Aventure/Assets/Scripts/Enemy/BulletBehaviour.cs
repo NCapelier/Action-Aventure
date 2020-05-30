@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Player;
+using Enemy;
 
 public class BulletBehaviour : MonoBehaviour
 {
@@ -69,6 +70,8 @@ public class BulletBehaviour : MonoBehaviour
                 arrived = false;
                 timeToGo = false;
                 goEnemy = false;
+                enemyParent.GetComponent<Enemy3Behaviour>().bodyAnimator.SetBool("isAttacking", false);
+                enemyParent.GetComponent<Enemy3Behaviour>().eyeAnimator.SetBool("isAttacking", false);
                 gameObject.SetActive(false);
             }
         }
