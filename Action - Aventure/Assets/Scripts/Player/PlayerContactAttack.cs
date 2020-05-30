@@ -59,7 +59,7 @@ namespace Player
         {
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
-            if (Input.GetButtonUp("Right_Bumper") && !isAttacking && canAttack)
+            if (Input.GetButtonUp("Right_Bumper") && !isAttacking && canAttack && PlayerManager.Instance.controller.isDialoging == false)
             {
                 Attack();
             }
