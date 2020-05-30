@@ -9,17 +9,13 @@ public class BlockerCaravane : MonoBehaviour
  
     public Dialog.Conversation canPassThrought;
 
-    private void Start()
-    {
-        //GetComponent<SceneTransition>().isActive = false;
-    }
+    
     private void Update()
     {
-        if (GameManager.Instance.GetComponent<GameState>().lanternGet == false)
+        if (GameManager.Instance.GetComponent<GameState>().lanternGet == true)
         {
-            //GetComponent<SceneTransition>().isActive = true;
-            //gameObject.GetComponent<BoxCollider2D>().enabled = true;
-            //gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+
+            gameObject.SetActive(false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
