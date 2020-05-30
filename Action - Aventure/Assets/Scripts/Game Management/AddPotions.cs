@@ -61,7 +61,7 @@ public class AddPotions : MonoBehaviour
         if (playerHe == true && Input.GetButtonDown("A_Button") && GameManager.Instance.GetComponent<GameState>().potionGet == false)
         {
             StartCoroutine("Dialog");
-
+            GameManager.Instance.GetComponent<GameState>().potionGet = true;
         }
 
       
