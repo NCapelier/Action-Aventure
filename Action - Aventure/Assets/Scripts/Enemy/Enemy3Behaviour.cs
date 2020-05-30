@@ -89,9 +89,9 @@ namespace Enemy
 
         private void Enemy3Attack()
         {
+            attackAvailable = false;
             GameObject bullet = Instantiate(shot, transform.position, Quaternion.identity);
             bullet.GetComponent<BulletBehaviour>().enemyParent = this.gameObject;
-            attackAvailable = false;
         }
     }
 

@@ -17,11 +17,11 @@ public class BulletBehaviour : MonoBehaviour
 
     [Header("References")]
     private Rigidbody2D bulletRb;
-    
+
     public GameObject enemyParent;
     private Vector3 locationInfo;
 
-    [Header ("Etats")]
+    [Header("Etats")]
     private bool arrived;
     private bool goEnemy;
     private bool timeToGo;
@@ -50,38 +50,37 @@ public class BulletBehaviour : MonoBehaviour
 
         }
 
-       
-            if (arrived == false && goEnemy == false)
-            {
+
+        if (arrived == false && goEnemy == false)
+        {
             transform.position = Vector2.MoveTowards(transform.position, locationInfo, bulletSpeed * Time.deltaTime);
 
-                if (Vector2.Distance(transform.position, locationInfo) <= distanceToSwitchStatement)
-                {
-                    arrived = true;
-                    
-                }
+            if (Vector2.Distance(transform.position, locationInfo) <= distanceToSwitchStatement)
+            {
+                arrived = true;
             }
-             else if (goEnemy == true && arrived == true && timeToGo==true)
-             {
+        }
+        else if (goEnemy == true && arrived == true && timeToGo == true)
+        {
             transform.position = Vector2.MoveTowards(transform.position, enemyParent.transform.position, bulletSpeed * Time.deltaTime);
 
-                if (Vector2.Distance(transform.position, enemyParent.transform.position) <= distanceToSwitchStatement)
-                {
+            if (Vector2.Distance(transform.position, enemyParent.transform.position) <= distanceToSwitchStatement)
+            {
                 arrived = false;
                 timeToGo = false;
                 goEnemy = false;
                 gameObject.SetActive(false);
-                }
-             }
+            }
+        }
 
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("PlayerController"))
+        if (collision.CompareTag("PlayerController"))
         {
             //Lancer coroutine de dégats - Draine votre barre de lumière.
-            if(asDeltDamages == false)
+            if (asDeltDamages == false)
             {
                 PlayerManager.Instance.TakeDamages = 5;
             }
@@ -92,11 +91,11 @@ public class BulletBehaviour : MonoBehaviour
 
     IEnumerator Activation()
     {
-       
+
         arrived = true;
         yield return new WaitForSeconds(freezingTime);
         timeToGo = true;
     }
 
-   
+
 }

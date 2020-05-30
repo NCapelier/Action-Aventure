@@ -210,9 +210,10 @@ namespace Boss
 
         IEnumerator InvokeRock()
         {
-            yield return new WaitForSeconds(rockInvokeTime);
 
             RockManager.Instance.SpawnRocks();
+            yield return new WaitForSeconds(rockInvokeTime);
+
 
             // --> boss animation
 
@@ -223,15 +224,18 @@ namespace Boss
         {
             animator.SetBool("tailAttack", true);
 
-            yield return new WaitForSeconds(shadowInvokeTime);
 
             RockManager.Instance.SpawnShadow();
+
+            yield return new WaitForSeconds(shadowInvokeTime);
 
             animator.SetBool("tailAttack", false);
 
 
             dashedOnce = false;
             dashedTwice = false;
+            invokedRock = false;
+            invokedShadow = false;
             isInvoking = false;
         }
 

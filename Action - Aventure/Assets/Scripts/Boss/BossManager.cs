@@ -44,6 +44,8 @@ namespace Boss
                 {
                     controller.animator.SetBool("isHit", true);
 
+                    RockManager.Instance.DestroyRocks();
+
                     hp -= value;
 
                     if (hp <= 0)

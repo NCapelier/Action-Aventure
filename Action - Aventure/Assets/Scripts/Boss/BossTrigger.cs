@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Player;
 
 namespace Boss
 {
@@ -25,6 +26,11 @@ namespace Boss
             if(collision.CompareTag("Rock") && BossManager.Instance.controller.currentBossState == bossState.Phase2)
             {
                 BossManager.Instance.controller.touchedRock = true;
+            }
+
+            if(BossManager.Instance.controller.isDashing && collision.CompareTag("PlayerController"))
+            {
+                PlayerManager.Instance.TakeDamages = 3;
             }
         }
     }

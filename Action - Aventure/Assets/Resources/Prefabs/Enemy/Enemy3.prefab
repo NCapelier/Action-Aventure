@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7191366254823572709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7118886, y: -0.35885417, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   speed: 1.6
   detectionRange: 5
   nearRange: 2.5
-  Cooldown: 0
+  Cooldown: 3
   shot: {fileID: 5206767191751785487, guid: fca2b006d0b47e741ac8a80c99ac9fc5, type: 3}
 --- !u!50 &7191366254823572708
 Rigidbody2D:
