@@ -4,6 +4,7 @@ public class GameState : MonoBehaviour
 {
     public bool playerDead = false;
 
+    public bool videoIntroDone = false;
 
     //PARTIE TUTO
 
