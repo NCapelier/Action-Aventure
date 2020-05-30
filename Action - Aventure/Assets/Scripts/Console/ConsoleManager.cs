@@ -22,7 +22,7 @@ namespace GameManagement
 
         public void ToggleInvincibility()
         {
-            if(!PlayerManager.Instance.invincible)
+            if (!PlayerManager.Instance.invincible)
             {
                 PlayerManager.Instance.invincible = true;
             }
@@ -38,19 +38,19 @@ namespace GameManagement
 
         public void GotoTown()
         {
-            SceneLoader.GoToScene("2_Forest_1", new Vector2(-8.8f, -12f));
+            SceneLoader.GoToScene("3_Town", new Vector2(-5.5f, -4.5f));
         }
         public void GotoBurnedHouse()
         {
-            //SceneLoader.GoToScene();
+            SceneLoader.GoToScene("4_BurnedHouse", new Vector2(1.4f, 4.5f));
         }
         public void GotoDungeon()
         {
-            //SceneLoader.GoToScene();
+            SceneLoader.GoToScene("Room1", new Vector2(-0.5f, -7.5f));
         }
         public void GotoBoss()
         {
-            //SceneLoader.GoToScene();
+            SceneLoader.GoToScene("Boss3", new Vector2(0f, -12f));
         }
     }
 }
