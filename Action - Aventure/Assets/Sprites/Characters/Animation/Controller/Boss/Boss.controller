@@ -283,9 +283,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: isDashing
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isBlind
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7438930340433727134}
   m_Solo: 0
@@ -438,7 +435,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isDashing
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: isBlind
+    m_ConditionEvent: isWeak
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3435289627574797448}
@@ -577,7 +574,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 2558154490627338474}
-    m_Position: {x: 300, y: 110, z: 0}
+    m_Position: {x: 300, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4359580265328462207}
     m_Position: {x: 500, y: 10, z: 0}
@@ -601,7 +598,7 @@ AnimatorStateMachine:
     m_Position: {x: 1100, y: 410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9072869864331124411}
-    m_Position: {x: 410, y: 330, z: 0}
+    m_Position: {x: 320, y: 330, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4390884530311683896}
     m_Position: {x: 40, y: -90, z: 0}
@@ -729,12 +726,6 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: isMoving
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: isBlind
     m_Type: 4
     m_DefaultFloat: 0
@@ -749,24 +740,6 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: YMovement
     m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: isDead
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: isAttacking
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: isGiant
-    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
