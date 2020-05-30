@@ -5475,12 +5475,12 @@ PrefabInstance:
     - target: {fileID: 474407584088937895, guid: 2c3d9bfbf92ec884eb68198a2d7abf40,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.69
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 474407584088937895, guid: 2c3d9bfbf92ec884eb68198a2d7abf40,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.33
+      value: 5.67
       objectReference: {fileID: 0}
     - target: {fileID: 474407584088937895, guid: 2c3d9bfbf92ec884eb68198a2d7abf40,
         type: 3}
@@ -5537,7 +5537,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7857507842906175043, guid: 2c3d9bfbf92ec884eb68198a2d7abf40, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c3d9bfbf92ec884eb68198a2d7abf40, type: 3}
 --- !u!1 &291776842
 GameObject:
