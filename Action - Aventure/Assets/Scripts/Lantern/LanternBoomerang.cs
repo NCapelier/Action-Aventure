@@ -33,6 +33,9 @@ namespace Lantern
         //current loading of the cast
         [HideInInspector] public float loading = 0f;
 
+        [SerializeField] SpriteRenderer lanternSprite = null;
+        [SerializeField] GameObject lanternParticle = null;
+
         // editor variables
 
         [Range(0f, 5f)]
@@ -111,8 +114,20 @@ namespace Lantern
 
         private void Update()
         {
+            if (currentBoomerangState == boomerangState.Tidy && lanternSprite.enabled)
+            {
+                lanternSprite.enabled = false;
+                lanternParticle.SetActive(false);
+            }
+            else if (currentBoomerangState != boomerangState.Tidy && !lanternSprite.enabled)
+            {
+                lanternSprite.enabled = true;
+                lanternParticle.SetActive(true);
+            }
 
-            if(currentBoomerangState == boomerangState.Tidy)
+
+
+            if (currentBoomerangState == boomerangState.Tidy)
             {
                 if (!GameManager.Instance.gameState.versatileGet)
                     return;
@@ -156,7 +171,6 @@ namespace Lantern
                 }
             }
             
-
 
         }
 
