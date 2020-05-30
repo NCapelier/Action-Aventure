@@ -24,7 +24,7 @@ public class GetEnnemies : MonoBehaviour
             if (enemyInThisRoom.Count == 0)
             {
                 door.SetActive(true);
-                AudioManager.Instance.Play("DunDoor_open");
+                //AudioManager.Instance.Play("DunDoor_open");
             }
         }
     }
