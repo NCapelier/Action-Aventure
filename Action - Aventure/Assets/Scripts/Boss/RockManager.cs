@@ -40,5 +40,13 @@ namespace Boss
                 }
             }
         }
+
+        public void DestroyRocks()
+        {
+            for (int i = 0; i < rockStands.Length; i++)
+            {
+                rockStands[i].currentRockState = rockState.Idle;
+            }
+        }
     }
 }

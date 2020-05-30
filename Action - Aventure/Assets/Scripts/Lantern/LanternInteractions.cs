@@ -13,10 +13,7 @@ namespace Lantern
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.CompareTag("Wall"))
-            {
-                LanternManager.Instance.boomerang.mustStop = true;
-            }
+
             if (collision.CompareTag("Enemy") && LanternManager.Instance.boomerang.currentBoomerangState != boomerangState.Tidy
                 && GameManager.Instance.gameState.versatileGet)
             {
@@ -36,6 +33,10 @@ namespace Lantern
 
         private void OnTriggerStay2D(Collider2D collision)
         {
+            if (collision.CompareTag("Wall") && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Cast)
+            {
+                LanternManager.Instance.boomerang.mustStop = true;
+            }
             if (collision.gameObject.CompareTag("TorchTag") && LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Recovering
                 && LanternManager.Instance.flashLight.mustRegerenate == false)
             {

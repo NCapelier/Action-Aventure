@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: fd7fb8518f1f9da4cbbbfd056dcbba81
+guid: 50eb471649035364e80dc77c28d76ad0
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 770565165571374842
-    second: PressurePLate_0
-  - first:
-      213: -8983999076444298052
-    second: PressurePLate_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,11 +40,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.48076922, y: 0.48076922}
   spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -90,49 +84,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: PressurePLate_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 24
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afefb2a7fe891ba00800000000000000
-      internalID: 770565165571374842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PressurePLate_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 24
-        height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb4a912707c625380800000000000000
-      internalID: -8983999076444298052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

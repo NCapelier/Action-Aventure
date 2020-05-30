@@ -31,6 +31,8 @@ namespace Player
 		// Update is called once per frame
 		void Update()
 		{
+            //Debug.Log("Player near a fountain: " + nearFountain);
+            //Debug.Log("Nb of potions: " + PotionsTextScript.potionAmount + " out of " + PotionsTextScript.maxPotionAmount);
 
             if (GameManager.Instance.gameState.potionGet)
             {
@@ -42,7 +44,8 @@ namespace Player
                 }
             }
 
-		}
+            //Debug.Log(LanternManager.Instance.hideLight.currentLightState);
+        }
 
         void PotionDrink()
         {
@@ -60,7 +63,7 @@ namespace Player
                 //Play FX
 
                 //Sound
-                AudioManager.Instance.Play("Will_o_flight");
+                //AudioManager.Instance.Play("Will_o_flight");
 
                 PotionsTextScript.potionAmount--;
             }

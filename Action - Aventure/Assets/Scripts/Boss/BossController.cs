@@ -54,6 +54,8 @@ namespace Boss
         bool invokedShadow = false;
         bool invokedRock = false;
 
+        [HideInInspector] public Animator animator = null;
+
         #endregion
 
         #region Unity Methods
@@ -61,6 +63,9 @@ namespace Boss
         private void Start()
         {
             rb = BossManager.Instance.GetComponent<Rigidbody2D>();
+
+            animator = GetComponent<Animator>();
+
             //playerLayer = LayerMask.NameToLayer("Player");
             //wallLayer = LayerMask.NameToLayer("Wall");
         }
@@ -91,6 +96,10 @@ namespace Boss
 
         void Phase1Update()
         {
+            if(!animator.GetBool("isBlind"))
+            {
+                animator.SetBool("isBlind", true);
+            }
             if(headBandCount <= 0)
             {
                 currentBossState = bossState.CutScene2;
@@ -109,7 +118,11 @@ namespace Boss
 
         void Phase2Update()
         {
-            if(dashedOnce && !invokedRock)
+            if (animator.GetBool("isBlind"))
+            {
+                animator.SetBool("isBlind", false);
+            }
+            if (dashedOnce && !invokedRock)
             {
                 isInvoking = true;
                 invokedRock = true;
@@ -126,7 +139,7 @@ namespace Boss
             {
                 Dash();
             }
-            else if(stopDash)
+            if(stopDash)
             {
                 StopDash();
             }
@@ -139,22 +152,31 @@ namespace Boss
 
             dashDir = PlayerManager.Instance.transform.position - transform.position;
             rb.velocity = dashDir.normalized * dashSpeed;
+
+            animator.SetBool("isDashing", true);
+            animator.SetFloat("XMovement", rb.velocity.x);
+            animator.SetFloat("YMovement", rb.velocity.y);
+
+
         }
 
         void StopDash()
         {
             stopDash = false;
             isDashing = false;
+            animator.SetBool("isDashing", false);
             rb.velocity = Vector2.zero;
             physicCollider.enabled = true;
             if (currentBossState == bossState.Phase1)
             {
                 isWeak = true;
+                animator.SetBool("isWeak", true);
                 routine = StartCoroutine(Dash1Weakness());
             }
             else if (currentBossState == bossState.Phase2 && touchedRock)
             {
                 isWeak = true;
+                animator.SetBool("isWeak", true);
                 routine = StartCoroutine(Dash2Weakness());
             }
 
@@ -175,20 +197,23 @@ namespace Boss
         {
             yield return new WaitForSeconds(phase1WeakTime);
             isWeak = false;
+            animator.SetBool("isWeak", false);
         }
 
         public IEnumerator Dash2Weakness()
         {
             yield return new WaitForSeconds(phase2WeakTime);
             isWeak = false;
+            animator.SetBool("isWeak", false);
             touchedRock = false;
         }
 
         IEnumerator InvokeRock()
         {
-            yield return new WaitForSeconds(rockInvokeTime);
 
             RockManager.Instance.SpawnRocks();
+            yield return new WaitForSeconds(rockInvokeTime);
+
 
             // --> boss animation
 
@@ -197,15 +222,30 @@ namespace Boss
 
         IEnumerator InvokeShadow()
         {
-            yield return new WaitForSeconds(shadowInvokeTime);
+            animator.SetBool("tailAttack", true);
+
 
             RockManager.Instance.SpawnShadow();
 
-            // --> boss animation
+            yield return new WaitForSeconds(shadowInvokeTime);
+
+            animator.SetBool("tailAttack", false);
+
 
             dashedOnce = false;
             dashedTwice = false;
+            invokedRock = false;
+            invokedShadow = false;
             isInvoking = false;
         }
+
+        public void GetAnimationEvent(string EventMessage)
+        {
+            if (EventMessage.Equals("isHit"))
+            {
+                animator.SetBool("isHit", false);
+            }
+        }
+
     }
 }

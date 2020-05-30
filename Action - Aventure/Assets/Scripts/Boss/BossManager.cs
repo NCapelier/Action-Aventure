@@ -34,13 +34,20 @@ namespace Boss
             {
                 if(controller.currentBossState == bossState.Phase1)
                 {
+                    controller.animator.SetBool("isHit", true);
                     controller.headBandCount--;
                     controller.StopCoroutine(controller.routine);
                     controller.isWeak = false;
+                    controller.animator.SetBool("isWeak", false);
                 }
                 else if(controller.currentBossState == bossState.Phase2)
                 {
+                    controller.animator.SetBool("isHit", true);
+
+                    RockManager.Instance.DestroyRocks();
+
                     hp -= value;
+
                     if (hp <= 0)
                     {
                         Death();
@@ -58,7 +65,7 @@ namespace Boss
 
         void Death()
         {
-
+            controller.currentBossState = bossState.CutScene3;
         }
 
     }
