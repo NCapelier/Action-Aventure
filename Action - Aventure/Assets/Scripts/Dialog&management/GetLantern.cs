@@ -57,8 +57,6 @@ public class GetLantern : MonoBehaviour
 
             GameManager.Instance.GetComponent<GameState>().lanternGet = true;
 
-            startFadingOUT();
-
             gameObject.SetActive(false);
             
         }

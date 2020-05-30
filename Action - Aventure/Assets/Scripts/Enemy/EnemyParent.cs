@@ -81,7 +81,7 @@ namespace Enemy
         /// </summary>
         public virtual void Death()
         {
-            //AudioManager.Instance.Play("Enemy_death1");
+            AudioManager.Instance.Play("Enemy_death1");
             //deathSound.Play();
 
             Destroy(gameObject);
