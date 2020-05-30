@@ -34,6 +34,8 @@ namespace Player
         [Range(1, 10)]
         [SerializeField] int hpEchelonNumber = 4;
 
+        [HideInInspector] public bool invincible = false;
+
         #endregion
 
         #region Properties
@@ -45,6 +47,9 @@ namespace Player
         {
             set
             {
+                if (invincible)
+                    return;
+
                 currentHp -= value;
 
                 //Animation
@@ -139,6 +144,8 @@ namespace Player
 
             //Sound
             AudioManager.Instance.Play("Player_death");
+
+            GameManager.Instance.gameState.playerDead = true;
         }
 
     }

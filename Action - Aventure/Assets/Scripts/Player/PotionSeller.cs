@@ -33,9 +33,6 @@ namespace Player
         // Update is called once per frame
         void Update()
 		{
-            Debug.Log("Next bottle cost: " + potionStepCost[currentStep]);
-            Debug.Log("You have: " + GoldTextScript.coinAmount);
-            Debug.Log("Near seller: " + playerNear);
 
             if (GameManager.Instance.gameState.potionGet && playerNear)
             {
@@ -64,11 +61,9 @@ namespace Player
             }
             else if (currentStep >= 3)
             {
-                Debug.Log("No More Upgrade!");
             }
             else if (GoldTextScript.coinAmount < potionStepCost[currentStep])
             {
-                Debug.Log("Not Enough Souls!");
             }
         }
 

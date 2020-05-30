@@ -11,8 +11,8 @@ public class FallingScript : MonoBehaviour
     /// </summary>
 
    public GameObject respawnPoint;
-    public GameObject blackScreen;
-    private SpriteRenderer screenRenderer;
+   public GameObject blackScreen;
+   private SpriteRenderer screenRenderer;
 
     private void Start()
     {

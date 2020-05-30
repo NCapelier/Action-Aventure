@@ -13,6 +13,10 @@ public class TreasureBehaviour : MonoBehaviour
 
     private bool tresorGet;
 
+    [SerializeField] private bool treasure1;
+    [SerializeField] private bool treasure2;
+    [SerializeField] private bool treasure3;
+    [SerializeField] private bool treasure4;
 
     // Start is called before the first frame update
     void Start()
@@ -52,9 +56,48 @@ public class TreasureBehaviour : MonoBehaviour
             GoldTextScript.coinAmount += 10;
             gameObject.SetActive(false);
             tresorGet = true;
+
+            if(treasure1 == true)
+            {
+                GameManager.Instance.gameState.firstTreasureDone = true;
+            }
+
+            if (treasure2 == true)
+            {
+                GameManager.Instance.gameState.secondTreasureDone = true;
+            }
+
+            if (treasure3 == true)
+            {
+                GameManager.Instance.gameState.thirdTreasureDone = true;
+            }
+
+            if (treasure4 == true)
+            {
+                GameManager.Instance.gameState.fourthTreasureDone = true;
+            }
+
         }
-        
-      
+
+        if (treasure1 == true && GameManager.Instance.gameState.firstTreasureDone == true)
+        {
+            gameObject.SetActive(false); 
+        }
+
+        if (treasure2 == true && GameManager.Instance.gameState.secondTreasureDone == true)
+        {
+            gameObject.SetActive(false);
+        }
+
+        if (treasure3 == true && GameManager.Instance.gameState.thirdTreasureDone == true)
+        {
+            gameObject.SetActive(false);
+        }
+
+        if (treasure4 == true && GameManager.Instance.gameState.fourthTreasureDone == true)
+        {
+            gameObject.SetActive(false);
+        }
 
     }
 

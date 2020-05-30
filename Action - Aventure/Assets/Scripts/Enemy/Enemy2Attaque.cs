@@ -82,19 +82,15 @@ namespace Enemy
                 switch (attackDirection)
                 {
                     case 0:
-                        Debug.Log("Attaque Haute");
                         //Activer la zone de dégats En haut
                         break;
                     case 1:
-                        Debug.Log("Attaque Droite");
                         //Activer la zone de dégats Right
                         break;
                     case 2:
-                        Debug.Log("Attaque En bas");
                         //Activer la zone de dégats Down
                         break;
                     case 3:
-                        Debug.Log("Attaque Gauche");
                         //Activer la zone de dégats Left
                         break;
                     default:

@@ -3,6 +3,7 @@ using UnityEngine;
 using Player;
 using GameSound;
 using GameManagement;
+using System;
 
 namespace Enemy
 {
@@ -68,7 +69,14 @@ namespace Enemy
         {
             //At the beggining of the script Je set la target sur le waypoint à l'index 0 de mon tableau.
 
-            target = waypoints.GetComponent<GetWaypoints>().points[0];
+            try
+            {
+                target = waypoints.GetComponent<GetWaypoints>().points[0];
+            }
+            catch(Exception e)
+            {
+                Debug.Log("Waypoints not assigned for " + gameObject.name + " with error : " + e);
+            }
 
             clockTwoEnded = true;
 
@@ -76,8 +84,8 @@ namespace Enemy
 
             canAttack = true;
 
-            rb.velocity = new Vector3(0, 0, 0);
-
+            rb.velocity = Vector2.zero;
+            /*
             //Animation
             anim.SetFloat("Xmovement", rb.velocity.x);
             anim.SetFloat("Ymovement", rb.velocity.y);
@@ -86,7 +94,7 @@ namespace Enemy
             eyeAnim.SetFloat("Xmovement", rb.velocity.x);
             eyeAnim.SetFloat("Ymovement", rb.velocity.y);
             eyeAnim.SetBool("isMoving", true);
-
+            */
             //Sound
             detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
             AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
@@ -107,7 +115,7 @@ namespace Enemy
 
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (GameCanvasManager.Instance.dialog.runningConversation)
             {
@@ -135,7 +143,7 @@ namespace Enemy
                 target = PlayerManager.Instance.gameObject.transform;
 
                 //je change la velocité
-                rb.velocity = dir.normalized * speed * Time.deltaTime;
+                rb.velocity = dir.normalized * speed;
 
                 //Quand le player est en zone d'attaque
                 if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) >= ennemiRangeAttack)
@@ -157,7 +165,7 @@ namespace Enemy
                 //Début de la clock (Déplacement => Arret => Déplacement => Arret.
                 if (clockTwoEnded == true)
                 {
-                    rb.velocity = dir.normalized * speed * Time.deltaTime;
+                    rb.velocity = dir.normalized * speed;
                     clockOne();
 
                 }

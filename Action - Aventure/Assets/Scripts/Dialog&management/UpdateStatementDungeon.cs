@@ -9,6 +9,7 @@ public class UpdateStatementDungeon : MonoBehaviour
         {
             GameManager.Instance.gameState.isDungeon = true;
             GameManager.Instance.gameState.needToShow = true;
+            GameManager.Instance.gameState.ChapelleCutSceneFinish = true;
         }
     }
 }

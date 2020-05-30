@@ -71,8 +71,8 @@ namespace Enemy
             }
             if (hp <= 0)
             {
-                Death();
                 Instantiate(Resources.Load("Prefabs/Enemy/Coin"), transform.position, Quaternion.identity);
+                Death();
             }
         }
 
@@ -81,7 +81,7 @@ namespace Enemy
         /// </summary>
         public virtual void Death()
         {
-            AudioManager.Instance.Play("Enemy_death1");
+            //AudioManager.Instance.Play("Enemy_death1");
             //deathSound.Play();
 
             Destroy(gameObject);

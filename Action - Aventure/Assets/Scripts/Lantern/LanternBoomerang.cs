@@ -83,10 +83,9 @@ namespace Lantern
             //flightSound = AudioManager.Instance.GetSound("Will_o_flight");
         }
 
-        void Update()
+        void FixedUpdate()
         {
-            if (!GameManager.Instance.gameState.versatileGet)
-                return;
+            UpdateAimDistance();
             switch (currentBoomerangState)
             {
                 case boomerangState.Tidy:
@@ -108,7 +107,57 @@ namespace Lantern
                     Debug.Log("Error, value is not assigned !");
                     break;
             }
-            UpdateAimDistance();
+        }
+
+        private void Update()
+        {
+
+            if(currentBoomerangState == boomerangState.Tidy)
+            {
+                if (!GameManager.Instance.gameState.versatileGet)
+                    return;
+
+                if (Input.GetButton("Left_Bumper") && canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful)
+                {
+                    currentBoomerangState = boomerangState.PreCast;
+                }
+            }
+            else if(currentBoomerangState == boomerangState.PreCast)
+            {
+                LanternManager.Instance.gameObject.transform.position = PlayerManager.Instance.gameObject.transform.position;
+                if ((Input.GetButtonUp("Left_Bumper")/* || !Input.GetButton("Left_Buper")*/) && canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
+                {
+                    Cast();
+                    return;
+                }
+                if (canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && loading < maxLoad)
+                {
+                    loading += loadingSpeed * Time.deltaTime;
+                }
+                else if (loading >= maxLoad)
+                {
+                    Cast();
+                }
+                else
+                {
+                    loading = 0f;
+                    currentBoomerangState = boomerangState.Tidy;
+                    return;
+                }
+            }
+            else if(currentBoomerangState == boomerangState.Static)
+            {
+                if (Input.GetButtonDown("Left_Bumper"))
+                {
+                    currentBoomerangState = boomerangState.FallBack;
+
+                    //Sound
+                    //flightSound.Play();
+                }
+            }
+            
+
+
         }
 
         void UpdateAimDistance()
@@ -121,36 +170,16 @@ namespace Lantern
         /// </summary>
         void OnTidyUpdate()
         {
+            if (!GameManager.Instance.gameState.lanternGet)
+                return;
+
             LanternManager.Instance.gameObject.transform.position = PlayerManager.Instance.gameObject.transform.position;
 
-            if (Input.GetButton("Left_Bumper") && canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Strengthful)
-            {
-                currentBoomerangState = boomerangState.PreCast;
-            }
         }
 
         void OnPreCastUpdate()
         {
-            LanternManager.Instance.gameObject.transform.position = PlayerManager.Instance.gameObject.transform.position;
-            if ((Input.GetButtonUp("Left_Bumper")/* || !Input.GetButton("Left_Buper")*/) && canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
-            {
-                Cast();
-                return;
-            }
-            if (canCast && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && loading < maxLoad)
-            {
-                loading += loadingSpeed * Time.deltaTime;
-            }
-            else if(loading >= maxLoad)
-            {
-                Cast();
-            }
-            else
-            {
-                loading = 0f;
-                currentBoomerangState = boomerangState.Tidy;
-                return;
-            }
+
 
             //loadingBar.fillAmount = loading.Remap(0f, maxLoad, 0f, 1f);
 ;
@@ -174,7 +203,7 @@ namespace Lantern
             // todo : new movement depending on loading
             castOrigin = LanternManager.Instance.gameObject.transform.position;
 
-            lanternRb.velocity = aimDirection.normalized * castSpeed * Time.deltaTime;
+            lanternRb.velocity = aimDirection.normalized * castSpeed;
             mustStop = false;
             currentBoomerangState = boomerangState.Cast;
 
@@ -209,13 +238,7 @@ namespace Lantern
         /// </summary>
         void OnStaticUpdate()
         {
-            if (Input.GetButtonDown("Left_Bumper"))
-            {
-                currentBoomerangState = boomerangState.FallBack;
 
-                //Sound
-                //flightSound.Play();
-            }
         }
 
         /// <summary>
@@ -223,7 +246,7 @@ namespace Lantern
         /// </summary>
         void OnFallBackUpdate()
         {
-            lanternRb.velocity = (PlayerManager.Instance.transform.position - LanternManager.Instance.gameObject.transform.position).normalized * fallBackSpeed * Time.deltaTime;
+            lanternRb.velocity = (PlayerManager.Instance.transform.position - LanternManager.Instance.gameObject.transform.position).normalized * fallBackSpeed;
             if(Vector2.Distance(LanternManager.Instance.transform.position, PlayerManager.Instance.transform.position) < catchRange)
             {
                 LanternManager.Instance.gameObject.transform.SetParent(PlayerManager.Instance.gameObject.transform);

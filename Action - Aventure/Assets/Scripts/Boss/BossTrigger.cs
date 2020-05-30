@@ -19,7 +19,7 @@ namespace Boss
                 }
                 else if(BossManager.Instance.controller.currentBossState == bossState.Phase2)
                 {
-
+                    BossManager.Instance.controller.stopDash = true;
                 }
             }
             if(collision.CompareTag("Rock") && BossManager.Instance.controller.currentBossState == bossState.Phase2)

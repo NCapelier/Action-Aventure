@@ -9,8 +9,12 @@ namespace GameManagement
         [SerializeField] string nextScene = "";
         [SerializeField] Vector2 nextSceneEntryPoint = Vector2.zero;
 
+        //[HideInInspector] public bool isActive = true;
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            /*if (!isActive)
+                return;*/
             if(collision.tag == "PlayerController")
             {
                 SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);

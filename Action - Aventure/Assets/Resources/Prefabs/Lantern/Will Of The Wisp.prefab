@@ -488,6 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLightState: 0
+  playerCrazy: 0
 --- !u!1 &7436161685734534156
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,8 +536,8 @@ MonoBehaviour:
   currentBoomerangState: 0
   loading: 0
   castCooldown: 1
-  castSpeed: 700
-  fallBackSpeed: 850
+  castSpeed: 5
+  fallBackSpeed: 6
   catchRange: 0.05
   maxLoad: 6
   loadingSpeed: 6.5

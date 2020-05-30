@@ -85,8 +85,6 @@ namespace Enemy
             sounds = gameObject.GetComponents<AudioSource>();
             detectionSound = sounds[0];
             attackSound = sounds[1];
-            Debug.Log("detection sound = " + detectionSound.clip.name);
-            Debug.Log("attack sound = " + attackSound.clip.name);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
@@ -102,12 +100,12 @@ namespace Enemy
         {
             if(collision.gameObject.tag == "Finish")
             {
-                rb.velocity = new Vector3(0f, 0f, 0f);
+                rb.velocity = Vector2.zero;
             }
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
             if (GameCanvasManager.Instance.dialog.runningConversation)
             {
@@ -134,7 +132,7 @@ namespace Enemy
                 //Switch de target de waypoints à player.
                 target = PlayerManager.Instance.gameObject.transform;
                 //je change la velocité pour déplacer l'ennemi
-                rb.velocity = dir.normalized * speed * Time.deltaTime;
+                rb.velocity = dir.normalized * speed;
                 if (Vector2.Distance(transform.position, PlayerManager.Instance.gameObject.transform.position) >= ennemiRangeAttack)
                 {
                     //StartCoroutine(cameraShake.Shake(.05f, .05f));
@@ -152,7 +150,7 @@ namespace Enemy
 
                 if (clockTwoEnded == true)
                 {
-                    rb.velocity = dir.normalized * speed * Time.deltaTime;
+                    rb.velocity = dir.normalized * speed;
                     clockOne();
                 }
 
