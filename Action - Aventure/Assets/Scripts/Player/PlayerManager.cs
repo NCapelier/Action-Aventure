@@ -144,6 +144,8 @@ namespace Player
 
             //Sound
             AudioManager.Instance.Play("Player_death");
+
+            GameManager.Instance.gameState.playerDead = true;
         }
 
     }
