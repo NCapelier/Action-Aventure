@@ -2,7 +2,8 @@
 using Management;
 using GameSound;
 using GameManagement;
-
+using System.Collections;
+using Lantern;
 
 namespace Player
 {
@@ -35,6 +36,9 @@ namespace Player
         [SerializeField] int hpEchelonNumber = 4;
 
         [HideInInspector] public bool invincible = false;
+
+        bool mustHeal = false;
+        bool healing = false;
 
         #endregion
 
@@ -77,8 +81,8 @@ namespace Player
         {
             set
             {
-                if (!GameManager.Instance.gameState.potionGet)
-                    return;
+                /*if (!GameManager.Instance.gameState.potionGet)
+                    return;*/
                 currentHp += value;
 
                 if (currentHp > currentMaxHp)
@@ -104,10 +108,32 @@ namespace Player
 
         void Update()
         {
-
+            if(LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && mustHeal && !healing)
+            {
+                healing = true;
+                mustHeal = false;
+                StartCoroutine(ChainHeal());
+            }
         }
 
         #endregion
+
+        IEnumerator ChainHeal()
+        {
+            yield return new WaitForSeconds(0.8f);
+            if(currentHp != currentMaxHp)
+            {
+                Heal = 1;
+            }
+            if (currentHp != currentMaxHp && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
+            {
+                StartCoroutine(ChainHeal());
+            }
+            else
+            {
+                healing = false;
+            }
+        }
 
         /// <summary>
         /// initialize HPs variables on start
@@ -129,6 +155,10 @@ namespace Player
                 {
                     currentMaxHp -= maxHp / hpEchelonNumber;
                 }
+            }
+            if(!healing)
+            {
+                mustHeal = true;
             }
         }
 

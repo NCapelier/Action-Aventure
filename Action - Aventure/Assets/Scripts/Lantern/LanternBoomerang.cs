@@ -125,7 +125,8 @@ namespace Lantern
                 lanternParticle.SetActive(true);
             }
 
-
+            if (PlayerManager.Instance.controller.isDialoging)
+                return;
 
             if (currentBoomerangState == boomerangState.Tidy)
             {
