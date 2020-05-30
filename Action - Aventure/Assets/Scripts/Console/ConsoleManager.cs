@@ -38,7 +38,7 @@ namespace GameManagement
 
         public void GotoTown()
         {
-            //SceneLoader.GoToScene();
+            SceneLoader.GoToScene("2_Forest_1", new Vector2(-8.8f, -12f));
         }
         public void GotoBurnedHouse()
         {
