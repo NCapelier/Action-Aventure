@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameManagement;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 
 public class GameOverScreen : MonoBehaviour
@@ -11,7 +12,9 @@ public class GameOverScreen : MonoBehaviour
 
     [SerializeField] private GameObject Canvas;
 
-    [SerializeField] private GameObject bouton;
+    [SerializeField] private GameObject boutons;
+
+    [SerializeField] private GameObject returnBouton;
 
     //FadeBlackScreen
     public GameObject blackScreen;
@@ -22,7 +25,7 @@ public class GameOverScreen : MonoBehaviour
     private void Start()
     {
         Canvas.SetActive(false);
-        bouton.SetActive(false);
+        boutons.SetActive(false);
 
         screenRenderer = blackScreen.GetComponent<SpriteRenderer>();
 
@@ -41,7 +44,9 @@ public class GameOverScreen : MonoBehaviour
             StartCoroutine("FadeIn");
 
             Canvas.SetActive(true);
-            bouton.SetActive(true);
+            boutons.SetActive(true);
+
+            EventSystem.current.SetSelectedGameObject(returnBouton);
         }
     }
 

@@ -33,6 +33,6 @@ public class OptionsMenu : MonoBehaviour
     public void Quitter()
     {
         Debug.Log("Quitter");
-        Application.Quit();
+        AppHelper.Quit();
     }
 }
