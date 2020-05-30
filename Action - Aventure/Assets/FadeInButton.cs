@@ -8,18 +8,40 @@ public class FadeInButton : MonoBehaviour
     public GameObject AButton;
     private SpriteRenderer boutonRenderer;
 
+    public bool playerHe = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        playerHe = false;
+
+        boutonRenderer = AButton.GetComponent<SpriteRenderer>();
+
+        Color c = boutonRenderer.material.color;
+        c.a = 0f;
+        boutonRenderer.material.color = c;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("PlayerController"))
+        {
+            startFadingIN();
+            playerHe = true;
+        }
+
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerController"))
+        {
+            startFadingOUT();
+            playerHe = false;
+        }
+    }
+
+
+   
 
     public void startFadingIN()
     {

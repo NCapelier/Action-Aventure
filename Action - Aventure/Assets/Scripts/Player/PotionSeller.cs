@@ -33,7 +33,6 @@ namespace Player
         // Update is called once per frame
         void Update()
 		{
-
             if (GameManager.Instance.gameState.potionGet && playerNear)
             {
                 if (Input.GetButtonDown("A_Button"))
