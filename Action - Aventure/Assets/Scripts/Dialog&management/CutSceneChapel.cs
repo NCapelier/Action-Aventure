@@ -22,7 +22,7 @@ public class CutSceneChapel : MonoBehaviour
 
     private void Start()
     {
-        if(GameManager.Instance.gameState.chapelleTrigger == false)
+        if(GameManager.Instance.gameState.chapelleTrigger == true && GameManager.Instance.gameState.ChapelleCutSceneFinish == false)
         {
             StartCoroutine("StartT");
         }
@@ -38,8 +38,8 @@ public class CutSceneChapel : MonoBehaviour
 
         if(timeTimeline == 800)
         {
-            
-            GameManager.Instance.gameState.chapelleTrigger = true;
+
+            GameManager.Instance.gameState.ChapelleCutSceneFinish = true;
             startTimeline = false;
             timeline.Stop();
             cutSceneCamera.SetActive(false);

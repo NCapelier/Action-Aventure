@@ -19,7 +19,7 @@ public class RoomEnigme3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( illuminator1.GetComponent<Illuminator>().isLit == true && illuminator1.GetComponent<Illuminator>().isLit == true)
+        if( illuminator1.GetComponent<Illuminator>().isLit == true && illuminator2.GetComponent<Illuminator>().isLit == true)
         {
             door.SetActive(true);
         }

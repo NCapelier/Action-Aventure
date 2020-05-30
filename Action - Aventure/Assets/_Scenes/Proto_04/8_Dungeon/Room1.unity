@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6411,5 +6411,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLit: 1
   Duration: 0
-  StartDuration: 0
+  StartDuration: 50
   isCutScene: 0
