@@ -24,7 +24,7 @@ namespace Lantern
                     collision.GetComponent<EnemyParent>().TakeDamages = 1;
                 }
 
-                if(LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
+                if(LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown)
                 {
                     //stuns the enemy
                 }
@@ -42,7 +42,7 @@ namespace Lantern
             {
                 LanternManager.Instance.flashLight.mustRegerenate = true;
             }
-            else if (collision.CompareTag("BossTrigger") && LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp)
+            else if (collision.CompareTag("BossTrigger") && (LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown))
             {
                 BossManager.Instance.TakeDamages = 3;
             }

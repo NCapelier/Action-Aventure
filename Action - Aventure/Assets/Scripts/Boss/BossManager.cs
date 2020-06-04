@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Management;
+using Player;
 
 namespace Boss
 {
@@ -66,6 +67,7 @@ namespace Boss
         void Death()
         {
             controller.currentBossState = bossState.CutScene3;
+            PlayerManager.Instance.Death();
         }
 
     }

@@ -10,6 +10,9 @@ namespace Management
 {
     public class SuperGameManager : Singleton<SuperGameManager>
     {
+
+        [HideInInspector] public bool video = false;
+
         private void Awake()
         {
             MakeSingleton(true);

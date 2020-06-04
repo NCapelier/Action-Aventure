@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Player;
 using UnityEngine.Video;
+using Management;
 
 public class VideoIntro : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class VideoIntro : MonoBehaviour
 
     private void Awake()
     {
+        if (SuperGameManager.Instance.video)
+            return;
+
         gameCanvas.SetActive(false);
 
         startTimer = true;
@@ -24,7 +28,9 @@ public class VideoIntro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.Instance.gameState.videoIntroDone == false)
+        if (SuperGameManager.Instance.video)
+            return;
+        if (GameManager.Instance.gameState.videoIntroDone == false)
         {
             PlayerManager.Instance.controller.isDialoging = true;
 
@@ -35,6 +41,7 @@ public class VideoIntro : MonoBehaviour
         {
             GameManager.Instance.gameState.videoIntroDone = true;
             videoPlayer.Stop();
+            SuperGameManager.Instance.video = true;
             PlayerManager.Instance.controller.isDialoging = false;
 
             gameCanvas.SetActive(true);

@@ -166,7 +166,7 @@ namespace Player
         /// <summary>
         /// override this method to kill the entity
         /// </summary>
-        void Death()
+        public void Death()
         {
             //code here
 

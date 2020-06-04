@@ -103,7 +103,7 @@ namespace Boss
             }
             if(headBandCount <= 0)
             {
-                currentBossState = bossState.CutScene2;
+                currentBossState = bossState.Phase2;
                 return;
             }
             if(!isDashing && !isWeak)
