@@ -13,6 +13,7 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField] private GameObject shortCutImage;
 
     [SerializeField] private GameObject pauseButtonReturn;
+    [SerializeField] private GameObject allinteractions;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class OptionsMenu : MonoBehaviour
     public void ShortCut()
     {
         shortCutImage.SetActive(true);
+        allinteractions.SetActive(false);
     }
 
     public void Quitter()

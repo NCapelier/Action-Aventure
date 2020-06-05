@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     [Header("OptionsReference")]
     [SerializeField] private GameObject returnButton;
+    [SerializeField] private GameObject allInteractions;
 
     [Header("Credits")]
     [SerializeField] private GameObject creditsPack;
@@ -26,6 +27,7 @@ public class MainMenu : MonoBehaviour
 
     public void Options()
     {
+        allInteractions.SetActive(true);
         EventSystem.current.SetSelectedGameObject(returnButton);
     }
 
