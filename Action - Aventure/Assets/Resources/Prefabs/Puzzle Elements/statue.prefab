@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLit: 0
   Duration: 15
+  StartDuration: 0
   isCutScene: 0
 --- !u!61 &5373658969625797348
 BoxCollider2D:
@@ -5035,8 +5036,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1677392709
+  m_SortingLayer: 3
   m_SortingOrder: 3
   m_RenderMode: 0
   m_SortMode: 0
