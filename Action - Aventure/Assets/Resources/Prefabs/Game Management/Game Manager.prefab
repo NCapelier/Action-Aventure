@@ -1281,6 +1281,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4686697161276044652}
     m_Modifications:
+    - target: {fileID: 487746701753282640, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 976885111053362281, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
       propertyPath: m_Name
@@ -1391,7 +1396,28 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4235299829101183352, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4265216326848792770, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 42fcfc07119480d4c8e71c740b2eb439,
+        type: 3}
+    - target: {fileID: 4265216326848792770, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265216326848792770, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351295671564041997, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -1399,16 +1425,30 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6351295671564041997, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 42fcfc07119480d4c8e71c740b2eb439,
+      propertyPath: m_FontData.m_FontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351295671564041997, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913421338570533287, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9067506531395532020, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 42fcfc07119480d4c8e71c740b2eb439,
         type: 3}
+    - target: {fileID: 9067506531395532020, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29be3052a4f73a48bd24a97f01e95ca, type: 3}
 --- !u!224 &8356840159293973039 stripped

@@ -89,29 +89,31 @@ public class TriggerCutSceneBoss1 : MonoBehaviour
         starTimer = false;
         GameCanvasManager.Instance.dialog.isCutScene = true;
         GameCanvasManager.Instance.dialog.StartDialog = dial1;
-        //timeline.Play();
+        timeline.Play();
+        yield return new WaitForSeconds(3f);
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
+        yield return new WaitForSeconds(3f);
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
+        yield return new WaitForSeconds(3f);
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
+        yield return new WaitForSeconds(3f);
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
+        yield return new WaitForSeconds(3f);
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(1f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(2f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(2f);
-        GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(2f);
-        GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(2f);
-        GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(2f);
-        GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(2f);
-        GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
 
-
+        yield return new WaitForSeconds(2f);
+        willOCS.SetActive(false);
         BossManager.Instance.controller.currentBossState = bossState.Phase1;
         gameObject.SetActive(false);
+        
     }
 
 }
