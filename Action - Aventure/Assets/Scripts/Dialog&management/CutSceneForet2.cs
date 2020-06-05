@@ -60,7 +60,7 @@ public class CutSceneForet2 : MonoBehaviour
             door.GetComponent<Animator>().enabled = true;
         }
 
-            if (timeTimeline >= 1100)
+            if (timeTimeline >= 700)
             {
                 startTimeline = false;
                 
