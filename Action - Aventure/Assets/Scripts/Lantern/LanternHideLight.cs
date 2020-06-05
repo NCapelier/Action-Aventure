@@ -34,7 +34,7 @@ namespace Lantern
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
             if (Input.GetButtonDown("X_Button") && currentLightState == lightState.Displayed && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy
-                && GlobalLightManager.Instance.mainLight.intensity >= GlobalLightManager.Instance.maximumLightning)
+                && GlobalLightManager.Instance.mainLight.intensity >= GlobalLightManager.Instance.maximumLightning && PlayerManager.Instance.controller.isDialoging == false)
             {
                 StartHide();
             }
