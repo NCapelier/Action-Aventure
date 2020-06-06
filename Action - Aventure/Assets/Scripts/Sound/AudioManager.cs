@@ -7,6 +7,7 @@ using System;
 
 namespace GameSound
 {
+    public enum MusicID { MainMenu, Caravan, Forest, Village, Dungeon, BossBattle, Null};
     /// <summary>
     /// CHB -- Based on Brackeys' AudioManager architecture
     /// </summary>
@@ -17,6 +18,9 @@ namespace GameSound
         [SerializeField] private Sound[] sounds;
 
         public Dictionary<string, Sound> sounds_notUniqueObject = new Dictionary<string, Sound>();
+
+        public Dictionary<MusicID, AudioSource> musics = new Dictionary<MusicID, AudioSource>();
+        [HideInInspector] public MusicID musicCurrentlyPlaying = MusicID.Null;
         #endregion
         private void Awake()
         {
@@ -24,13 +28,19 @@ namespace GameSound
             
             foreach(Sound s in sounds)
             {
-                if (!s.notUniqueObject)
+                if (!s.notUniqueObject && !s.isMusic)
                 {
                     MakeAudioSource(s, gameObject);
 
                     d_sounds.Add(s.clip.name, s.source);
+                    s.zoneID = MusicID.Null;
                 }
-                else
+                else if (s.isMusic)
+                {
+                    MakeAudioSource(s, gameObject);
+                    musics.Add(s.zoneID, s.source);
+                }
+                else if (s.notUniqueObject)
                 {
                     sounds_notUniqueObject.Add(s.clip.name, s);
                 }
