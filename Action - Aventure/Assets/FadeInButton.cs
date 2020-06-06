@@ -25,8 +25,9 @@ public class FadeInButton : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerController"))
         {
-            startFadingIN();
             playerHe = true;
+            startFadingIN();
+            
         }
 
     }
@@ -35,8 +36,9 @@ public class FadeInButton : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerController"))
         {
-            startFadingOUT();
             playerHe = false;
+            startFadingOUT();
+           
         }
     }
 
