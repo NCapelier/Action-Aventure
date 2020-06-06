@@ -52,4 +52,30 @@ public class FadeInButton : MonoBehaviour
     {
         StartCoroutine("FadeOut");
     }
+
+    IEnumerator FadeIn()
+    {
+        for (float f = 0.25f; f <= 1.1; f += 0.25f)
+        {
+            Color c = boutonRenderer.material.color;
+            c.a = f;
+            boutonRenderer.material.color = c;
+            yield return new WaitForSeconds(0.02f);
+        }
+
+
+    }
+
+    IEnumerator FadeOut()
+    {
+        for (float f = 1f; f >= -0.05f; f -= 0.1f)
+        {
+            Color c = boutonRenderer.material.color;
+            c.a = f;
+            boutonRenderer.material.color = c;
+            yield return new WaitForSeconds(0.01f);
+        }
+
+
+    }
 }

@@ -60,10 +60,18 @@ namespace Player
             }
             else if (currentStep >= 3)
             {
+                //Afficher un message si toutes les potions disponibles sont déja achetées.
             }
             else if (GoldTextScript.coinAmount < potionStepCost[currentStep])
             {
+                //Afficher un message si le montant d'Ames n'est pas suffisant.
+                
+
             }
+
+            
+
+           
         }
 
         void CheatSouls()
