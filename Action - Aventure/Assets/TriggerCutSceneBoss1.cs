@@ -38,8 +38,7 @@ public class TriggerCutSceneBoss1 : MonoBehaviour
     {
         if(starTimer == true)
         {
-            
-            
+
             StartCoroutine("UpdateTimer");
             
         }

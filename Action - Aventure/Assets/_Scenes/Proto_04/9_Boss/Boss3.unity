@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5530,7 +5530,7 @@ PrefabInstance:
     - target: {fileID: 7054245750765674088, guid: 2c3d9bfbf92ec884eb68198a2d7abf40,
         type: 3}
       propertyPath: currentBossState
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7054245750765674088, guid: 2c3d9bfbf92ec884eb68198a2d7abf40,
         type: 3}
@@ -5648,6 +5648,10 @@ PlayableDirector:
     value: {fileID: 537688841}
   - key: {fileID: -1252191796621459578, guid: 7765a23487eb7ec439bc3f92b65b78f4, type: 2}
     value: {fileID: 1303914072}
+  - key: {fileID: -2641707315193843515, guid: 7765a23487eb7ec439bc3f92b65b78f4, type: 2}
+    value: {fileID: 1671459670}
+  - key: {fileID: 6791770443987733907, guid: 7765a23487eb7ec439bc3f92b65b78f4, type: 2}
+    value: {fileID: 1671459670}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &302522102
@@ -5664,7 +5668,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypointsBoss: {fileID: 319478216}
   waypointsJoueur: {fileID: 535112910}
+  dial1: {fileID: 11400000, guid: 2a61d3771efddc94c9b0d80dfe2428cf, type: 2}
   timerClip: 0
+  starTimer: 0
+  isTrigger: 0
 --- !u!1 &317748048
 GameObject:
   m_ObjectHideFlags: 0
@@ -5910,6 +5917,12 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &462940637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 250465961925410441, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 477586382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &477586382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5917,6 +5930,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 786140938133677358, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+        type: 3}
+      propertyPath: allCanvas
+      value: 
+      objectReference: {fileID: 462940637}
     - target: {fileID: 2052025957895442833, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -13540,7 +13558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1341892033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33892,6 +33910,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1671459670 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 953316247134957471, guid: 2330304d2c746ce429ed6f7b997204a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1721882508}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1675843050
 GameObject:
   m_ObjectHideFlags: 0
@@ -34078,7 +34102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1743276633
 Transform:
   m_ObjectHideFlags: 0
