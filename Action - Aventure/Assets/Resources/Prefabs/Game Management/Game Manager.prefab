@@ -306,6 +306,7 @@ GameObject:
   - component: {fileID: 275538342857743955}
   - component: {fileID: 2246279518234898716}
   - component: {fileID: 7552763183317077143}
+  - component: {fileID: 786140938133677358}
   m_Layer: 5
   m_Name: Game Manager
   m_TagString: GameController
@@ -411,6 +412,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 6012465291491125488}
+--- !u!114 &786140938133677358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077402419351812654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff4291305bbc344db75832aecbdb2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2218219642181130680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,12 +1423,42 @@ PrefabInstance:
     - target: {fileID: 4265216326848792770, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 45
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4265216326848792770, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669342709805568967, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669342709805568967, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669342709805568967, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095678601682022572, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095678601682022572, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095678601682022572, guid: e29be3052a4f73a48bd24a97f01e95ca,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6351295671564041997, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
@@ -1426,7 +1469,7 @@ PrefabInstance:
     - target: {fileID: 6351295671564041997, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 45
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6351295671564041997, guid: e29be3052a4f73a48bd24a97f01e95ca,
         type: 3}

@@ -33,8 +33,15 @@ public class UIBOSS : MonoBehaviour
             bossBandeau2.SetActive(false);
             bossBandeau3.SetActive(false);
         }
+        if (BossManager.Instance.controller.currentBossState == bossState.CutScene2)
+        {
+            bossHealthBar.enabled = false;
+            bossBandeau1.SetActive(false);
+            bossBandeau2.SetActive(false);
+            bossBandeau3.SetActive(false);
+        }
 
-       else if (BossManager.Instance.controller.currentBossState == bossState.Phase1)
+        else if (BossManager.Instance.controller.currentBossState == bossState.Phase1)
         {
             if (BossManager.Instance.controller.headBandCount == 3)
             {
@@ -64,10 +71,7 @@ public class UIBOSS : MonoBehaviour
            
         }
 
-        else if (BossManager.Instance.controller.currentBossState == bossState.Phase2)
-        {
-            bossHealthBar.enabled = true;
-        }
+        
 
 
         else if (BossManager.Instance.controller.currentBossState == bossState.CutScene3)

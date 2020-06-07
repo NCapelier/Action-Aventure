@@ -19,7 +19,7 @@ public class TriggerCutSceneBoss1 : MonoBehaviour
 
     //Timer CutScene
     private PlayableDirector timeline;
-   [SerializeField] private float timerClip = 0f;
+    [SerializeField] private float timerClip = 0f;
     private bool starTimer = false;
     private bool needToUpdate = false;
 
@@ -28,7 +28,7 @@ public class TriggerCutSceneBoss1 : MonoBehaviour
 
     private void Start()
     {
-        boxCol = GetComponent<BoxCollider2D>();
+
         timeline = GetComponent<PlayableDirector>();
        
     }
@@ -61,6 +61,7 @@ public class TriggerCutSceneBoss1 : MonoBehaviour
         //Quand le player rentre dans la zone de collision, la cut scene se lance. Dial passe automatiquement.
         if (collision.gameObject.tag == "PlayerController")
         {
+     
             PlayerManager.Instance.controller.isDialoging = true;
             
             starTimer = true;
@@ -108,12 +109,12 @@ public class TriggerCutSceneBoss1 : MonoBehaviour
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-
+        timeline.Stop();
         yield return new WaitForSeconds(2f);
         willOCS.SetActive(false);
         BossManager.Instance.controller.currentBossState = bossState.Phase1;
         gameObject.SetActive(false);
-        
+       
     }
 
 }
