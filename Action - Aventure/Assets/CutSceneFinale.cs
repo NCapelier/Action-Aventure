@@ -63,7 +63,6 @@ public class CutSceneFinale : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
 
-
     }
     IEnumerator FadeIn2()
     {
