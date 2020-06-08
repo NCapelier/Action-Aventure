@@ -24,9 +24,11 @@ public class apperingEnnemy : MonoBehaviour
         buttonRenderer = GetComponent<SpriteRenderer>();
 
         pressButton = gameObject.GetChildNamed("360_RB");
-        pressButton.SetActive(false);
+        if(pressButton != null)
+        {
+            pressButton.SetActive(false);
+        }
 
-        
     }
 
     // Update is called once per frame

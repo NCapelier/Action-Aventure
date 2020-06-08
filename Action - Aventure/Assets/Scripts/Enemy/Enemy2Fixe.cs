@@ -47,10 +47,10 @@ namespace Enemy
         private bool clockTwoEnded;
 
         //Animation
-        private Animator anim = null;
-        private Animator eyeAnim = null;
-        public GameObject Animator;
-        public GameObject EyesAnimator;
+        [HideInInspector] public Animator anim = null;
+        [HideInInspector] public Animator eyeAnim = null;
+        public GameObject bodyAnimator;
+        public GameObject eyesAnimator;
 
         //Sound
         Sound detectionClip;
@@ -62,11 +62,14 @@ namespace Enemy
         // Start is called before the first frame update
         void Start()
         {
-            target = waypointFixe.transform;
+            target = this.gameObject.transform;
 
             rb = GetComponent<Rigidbody2D>();
 
             canAttack = true;
+
+            anim = bodyAnimator.GetComponent<Animator>();
+            eyeAnim = eyesAnimator.GetComponent<Animator>();
 
             //Animation
             anim.SetFloat("Xmovement", rb.velocity.x);
@@ -146,7 +149,7 @@ namespace Enemy
                 //Debug.Log("Player Outside");
 
                 //Alors mon ennemi se déplace vers le waypoint
-                target = waypointFixe.transform;
+                target = this.gameObject.transform;
 
                 if (clockTwoEnded == true)
                 {
@@ -181,10 +184,10 @@ namespace Enemy
                 }
             }
 
-            if (Vector2.Distance(transform.position, waypointFixe.transform.position) <= 0.1 && playerFound == false)
+            /*if (Vector2.Distance(transform.position, waypointFixe.transform.position) <= 0.1 && playerFound == false)
             {
                 rb.velocity = new Vector3(0, 0, 0);
-            }
+            }*/
 
             //Debug.Log(direction);
         }

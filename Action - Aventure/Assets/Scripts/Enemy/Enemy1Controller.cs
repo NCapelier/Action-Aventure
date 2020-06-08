@@ -33,7 +33,7 @@ namespace Enemy
         bool focusingPlayer = false;
 
         // Animator
-        private Animator anim = null;
+        [HideInInspector] public Animator anim = null;
         public Enemy1Attack enemy1attack;
         public GameObject eyes;
         private Animator eyesAnim = null;

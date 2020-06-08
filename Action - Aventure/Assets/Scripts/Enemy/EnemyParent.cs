@@ -21,6 +21,8 @@ namespace Enemy
         Sound deathClip;
         AudioSource deathSound;
 
+        public GameObject controller = null;
+
         #endregion
 
         #region Properties
@@ -78,6 +80,20 @@ namespace Enemy
             {
                 GetComponent<Enemy3Behaviour>().bodyAnimator.SetBool("isHit", true);
                 GetComponent<Enemy3Behaviour>().eyeAnimator.SetBool("isHit", true);
+            }
+            else if(gameObject.GetComponent<Enemy2Movement>())
+            {
+                GetComponent<Enemy2Movement>().anim.SetBool("isHit", true);
+                GetComponent<Enemy2Movement>().eyeAnim.SetBool("isHit", true);
+            }
+            else if(gameObject.GetComponent<Enemy2Fixe>())
+            {
+                GetComponent<Enemy2Fixe>().anim.SetBool("isHit", true);
+                GetComponent<Enemy2Fixe>().eyeAnim.SetBool("isHit", true);
+            }
+            else if(gameObject.GetComponent<Enemy1Manager>())
+            {
+                controller.GetComponent<Enemy1Controller>().anim.SetBool("isHit", true);
             }
         }
 

@@ -23,8 +23,22 @@ MonoBehaviour:
   RightAttack: {fileID: 4942368367846007288}
   UpAttack: {fileID: 7204474886825739820}
   DownAttack: {fileID: 8730223306599640815}
-  Animator: {fileID: 897308746027417494}
-  EyesAnimator: {fileID: 45029834016800817}
+  anim: {fileID: 0}
+  eyeAnim: {fileID: 0}
+  bodyAnimator: {fileID: 897308746027417494}
+  eyesAnimator: {fileID: 45029834016800817}
+--- !u!114 &8112258273170841889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897308746027417494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b6900ea9d1d504e82116a9be73da75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7642711984809549186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,6 +164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2033116714999444381, guid: 88315a67eb7d9604894e5c0c76cc69e8, type: 3}
+    - {fileID: 757042619204887997, guid: 88315a67eb7d9604894e5c0c76cc69e8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88315a67eb7d9604894e5c0c76cc69e8, type: 3}
 --- !u!1 &8513856014402121235 stripped
 GameObject:

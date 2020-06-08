@@ -53,10 +53,10 @@ namespace Enemy
         public GameObject DownAttack;
 
         //Animation
-        private Animator anim = null;
-        private Animator eyeAnim = null;
-        public GameObject Animator;
-        public GameObject EyesAnimator;
+        [HideInInspector] public Animator anim = null;
+        [HideInInspector] public Animator eyeAnim = null;
+        public GameObject bodyAnimator;
+        public GameObject eyesAnimator;
 
         //Sound
         Sound detectionClip;
@@ -85,7 +85,10 @@ namespace Enemy
             canAttack = true;
 
             rb.velocity = Vector2.zero;
-            /*
+
+            anim = bodyAnimator.GetComponent<Animator>();
+            eyeAnim = eyesAnimator.GetComponent<Animator>();
+            
             //Animation
             anim.SetFloat("Xmovement", rb.velocity.x);
             anim.SetFloat("Ymovement", rb.velocity.y);
@@ -94,7 +97,7 @@ namespace Enemy
             eyeAnim.SetFloat("Xmovement", rb.velocity.x);
             eyeAnim.SetFloat("Ymovement", rb.velocity.y);
             eyeAnim.SetBool("isMoving", true);
-            */
+            
             //Sound
             detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
             AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
@@ -103,8 +106,8 @@ namespace Enemy
             sounds = gameObject.GetComponents<AudioSource>();
             detectionSound = sounds[0];
             attackSound = sounds[1];
-            Debug.Log("detection sound = " + detectionSound.clip.name);
-            Debug.Log("attack sound = " + attackSound.clip.name);
+            //Debug.Log("detection sound = " + detectionSound.clip.name);
+            //Debug.Log("attack sound = " + attackSound.clip.name);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
@@ -336,5 +339,6 @@ namespace Enemy
 
             }
         }
+
     }
 }

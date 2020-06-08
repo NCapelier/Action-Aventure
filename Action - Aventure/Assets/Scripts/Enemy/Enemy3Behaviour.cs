@@ -116,7 +116,11 @@ namespace Enemy
                 bodyAnimator.SetBool("isHit", false);
                 eyeAnimator.SetBool("isHit", false);
             }
-
+            else if(EventMessage.Equals("attackEnded"))
+            {
+                bodyAnimator.SetBool("isAttacking", false);
+                eyeAnimator.SetBool("isAttacking", false);
+            }
         }
     }
 

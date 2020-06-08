@@ -44,6 +44,8 @@ namespace Player
 
         [HideInInspector] public bool routine = false;
 
+        public Animator anim = null;
+
         #endregion
 
         void Start()
@@ -63,7 +65,7 @@ namespace Player
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
 
-            displayLoading = loading.RemapPercent(0f, maxLoad);
+            //displayLoading = loading.RemapPercent(0f, maxLoad);
             
             if (Input.GetButtonUp("Right_Bumper") && !isAttacking && canAttack && PlayerManager.Instance.controller.isDialoging == false)
             {
@@ -85,6 +87,10 @@ namespace Player
             {
                 if (Input.GetButton("Right_Bumper") && loading < maxLoad)
                 {
+                    //anim.enabled = true;
+                    anim.gameObject.SetActive(true);
+
+
                     loading += loadingSpeed;
                 }
                 if(loading >= maxLoad)
@@ -101,6 +107,10 @@ namespace Player
         {
             isAttacking = true;
             canAttack = false;
+
+            //anim.enabled = false;
+            anim.gameObject.SetActive(false);
+
 
             //Animation
             PlayerManager.Instance.controller.anim.SetFloat("AttackX", PlayerManager.Instance.aimBehaviour.horizontal);

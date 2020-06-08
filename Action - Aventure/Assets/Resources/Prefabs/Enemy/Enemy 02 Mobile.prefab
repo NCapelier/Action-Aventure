@@ -329,8 +329,10 @@ MonoBehaviour:
   RightAttack: {fileID: 3352525125896846458}
   UpAttack: {fileID: 714719613845838766}
   DownAttack: {fileID: 1384757762277553005}
-  Animator: {fileID: 7377951180902703636}
-  EyesAnimator: {fileID: 7678536671640182195}
+  anim: {fileID: 0}
+  eyeAnim: {fileID: 0}
+  bodyAnimator: {fileID: 7377951180902703636}
+  eyesAnimator: {fileID: 7678536671640182195}
 --- !u!114 &6551332487692523647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   maxHp: 10
+  controller: {fileID: 0}
 --- !u!61 &2892148210343677730
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -624,6 +627,7 @@ GameObject:
   - component: {fileID: 330664373864836653}
   - component: {fileID: 1215444601193666811}
   - component: {fileID: 10804903777460739}
+  - component: {fileID: 757042619204887997}
   m_Layer: 0
   m_Name: Skin Sprite
   m_TagString: Untagged
@@ -715,6 +719,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &757042619204887997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7377951180902703636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152766edcd524e241b31ffdd96f66d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taRace: {fileID: 2033116714999444381}
 --- !u!1 &7678536671640182195
 GameObject:
   m_ObjectHideFlags: 0
