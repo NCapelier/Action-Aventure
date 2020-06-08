@@ -138,7 +138,7 @@ namespace Player
 
         void PlayAttackSound()
         {
-            if(loading < maxLoad * 0.15f)
+            if(loading < maxLoad * 0.30f)
             {
                 AudioManager.Instance.Play("Lantern_light_strike");
             }
