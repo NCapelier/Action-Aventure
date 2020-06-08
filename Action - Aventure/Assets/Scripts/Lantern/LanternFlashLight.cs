@@ -169,20 +169,20 @@ namespace Lantern
         {
             if (lightComponent.pointLightOuterRadius < LanternManager.Instance.behaviour.lightStartRadius)
             {
-                lightComponent.pointLightOuterRadius += recoveringSpeed * Time.deltaTime;
+                if(mustRegerenate)
+                {
+                    lightComponent.pointLightOuterRadius += recoveringSpeed * Time.deltaTime * 2f;
+                }
+                else
+                {
+                    lightComponent.pointLightOuterRadius += recoveringSpeed * Time.deltaTime;
+                }
             }
             else
             {
                 canFlash = true;
                 currentLightStrength = lightStrength.Strengthful;
                 return;
-            }
-            if (mustRegerenate)
-            {
-                mustRegerenate = false;
-                lightComponent.pointLightOuterRadius = LanternManager.Instance.behaviour.lightStartRadius;
-                canFlash = true;
-                currentLightStrength = lightStrength.Strengthful;
             }
         }
 

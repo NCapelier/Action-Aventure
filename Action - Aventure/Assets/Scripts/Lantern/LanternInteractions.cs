@@ -29,6 +29,11 @@ namespace Lantern
                     //stuns the enemy
                 }
             }
+
+            if (collision.gameObject.CompareTag("TorchTag") && LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Recovering)
+            {
+                LanternManager.Instance.flashLight.mustRegerenate = true;
+            }
         }
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -37,14 +42,18 @@ namespace Lantern
             {
                 LanternManager.Instance.boomerang.mustStop = true;
             }
-            if (collision.gameObject.CompareTag("TorchTag") && LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Recovering
-                && LanternManager.Instance.flashLight.mustRegerenate == false)
-            {
-                LanternManager.Instance.flashLight.mustRegerenate = true;
-            }
             else if (collision.CompareTag("BossTrigger") && (LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown))
             {
                 BossManager.Instance.TakeDamages = 3;
+            }
+
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if(collision.CompareTag("TorchTag"))
+            {
+                LanternManager.Instance.flashLight.mustRegerenate = false;
             }
         }
 

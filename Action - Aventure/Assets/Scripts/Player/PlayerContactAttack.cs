@@ -33,6 +33,9 @@ namespace Player
         [Range(0f, 10f)]
         [SerializeField] float loadingSpeed = 1f;
 
+        // --> USE THIS FOR ATTACK LOADING BAR
+        [HideInInspector] public float displayLoading = 0;
+
         //Animator 
         public GameObject fxSprite;
         public Animator fxAnim;
@@ -59,6 +62,9 @@ namespace Player
         {
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
+
+            displayLoading = loading.RemapPercent(0f, maxLoad);
+            
             if (Input.GetButtonUp("Right_Bumper") && !isAttacking && canAttack && PlayerManager.Instance.controller.isDialoging == false)
             {
                 Attack();
