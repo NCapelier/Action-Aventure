@@ -88,13 +88,16 @@ namespace GameSound
 
         public void PlayMusic(MusicID music)
         {
-            if(musicCurrentlyPlaying != MusicID.Null)
+            if (music != musicCurrentlyPlaying)
             {
-                musics[musicCurrentlyPlaying].Stop();
-            }
+                if (musicCurrentlyPlaying != MusicID.Null)
+                {
+                    musics[musicCurrentlyPlaying].Stop();
+                }
 
-            musics[music].Play();
-            musicCurrentlyPlaying = music;
+                musics[music].Play();
+                musicCurrentlyPlaying = music;
+            }
         }
     }
 }
