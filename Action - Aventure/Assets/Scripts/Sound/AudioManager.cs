@@ -85,6 +85,17 @@ namespace GameSound
 
             return s2g;
         }
+
+        public void PlayMusic(MusicID music)
+        {
+            if(musicCurrentlyPlaying != MusicID.Null)
+            {
+                musics[musicCurrentlyPlaying].Stop();
+            }
+
+            musics[music].Play();
+            musicCurrentlyPlaying = music;
+        }
     }
 }
 

@@ -18,10 +18,7 @@ namespace GameSound
 		{
 			if (zoneID != AudioManager.Instance.musicCurrentlyPlaying)
             {
-                AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].Stop();
-
-                AudioManager.Instance.musics[zoneID].Play();
-                AudioManager.Instance.musicCurrentlyPlaying = zoneID;
+                AudioManager.Instance.PlayMusic(zoneID);
             }
 		}
 
