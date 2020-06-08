@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameSound;
 
 namespace Boss
 {
@@ -158,7 +159,7 @@ namespace Boss
             animator.SetFloat("XMovement", rb.velocity.x);
             animator.SetFloat("YMovement", rb.velocity.y);
 
-
+            AudioManager.Instance.Play("Boss_dash");
         }
 
         void StopDash()
@@ -239,6 +240,7 @@ namespace Boss
 
             animator.SetBool("tailAttack", false);
 
+            AudioManager.Instance.Play("Boss_pound");
 
             dashedOnce = false;
             dashedTwice = false;

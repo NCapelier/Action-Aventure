@@ -2,6 +2,7 @@
 using UnityEngine;
 using Player;
 using Enemy;
+using GameSound;
 
 public class BulletBehaviour : MonoBehaviour
 {
@@ -29,7 +30,8 @@ public class BulletBehaviour : MonoBehaviour
 
     bool asDeltDamages = false;
 
-
+    Sound attackClip;
+    AudioSource attackSound;
 
     void Start()
     {
@@ -39,6 +41,10 @@ public class BulletBehaviour : MonoBehaviour
         timeToGo = false;
 
         locationInfo = PlayerManager.Instance.transform.position;
+
+        attackClip = AudioManager.Instance.sounds_notUniqueObject["Enemy3_attack"];
+        AudioManager.Instance.MakeAudioSource(attackClip, gameObject);
+        attackSound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -94,7 +100,7 @@ public class BulletBehaviour : MonoBehaviour
 
     IEnumerator Activation()
     {
-
+        attackSound.Play();
         arrived = true;
         yield return new WaitForSeconds(freezingTime);
         timeToGo = true;

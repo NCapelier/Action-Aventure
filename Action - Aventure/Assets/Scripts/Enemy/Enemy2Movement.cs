@@ -59,11 +59,8 @@ namespace Enemy
         public GameObject EyesAnimator;
 
         //Sound
-        Sound detectionClip;
-        AudioSource detectionSound;
-        Sound attackClip;
-        AudioSource attackSound;
-        AudioSource[] sounds;
+        [SerializeField] AudioSource detectionSound;
+        [SerializeField] AudioSource attackSound;
 
         private void Start()
         {
@@ -95,16 +92,16 @@ namespace Enemy
             eyeAnim.SetFloat("Ymovement", rb.velocity.y);
             eyeAnim.SetBool("isMoving", true);
             */
-            //Sound
-            detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
-            AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
-            attackClip = AudioManager.Instance.sounds_notUniqueObject["Enemy2_attack"];
-            AudioManager.Instance.MakeAudioSource(attackClip, gameObject);
-            sounds = gameObject.GetComponents<AudioSource>();
-            detectionSound = sounds[0];
-            attackSound = sounds[1];
-            Debug.Log("detection sound = " + detectionSound.clip.name);
-            Debug.Log("attack sound = " + attackSound.clip.name);
+            
+            //detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
+            //AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
+            //attackClip = AudioManager.Instance.sounds_notUniqueObject["Enemy2_attack"];
+            //AudioManager.Instance.MakeAudioSource(attackClip, gameObject);
+            //sounds = gameObject.GetComponents<AudioSource>();
+            //detectionSound = sounds[0];
+            //attackSound = sounds[1];
+            //Debug.Log("detection sound = " + detectionSound.clip.name);
+            //Debug.Log("attack sound = " + attackSound.clip.name);
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);

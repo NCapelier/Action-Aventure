@@ -53,11 +53,8 @@ namespace Enemy
         public GameObject EyesAnimator;
 
         //Sound
-        Sound detectionClip;
-        AudioSource detectionSound;
-        Sound attackClip;
-        AudioSource attackSound;
-        AudioSource[] sounds;
+        [SerializeField] AudioSource detectionSound;
+        [SerializeField]AudioSource attackSound;
 
         // Start is called before the first frame update
         void Start()
@@ -77,14 +74,14 @@ namespace Enemy
             eyeAnim.SetFloat("Ymovement", rb.velocity.y);
             eyeAnim.SetBool("isMoving", true);
 
-            //Sound
-            detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
-            AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
-            attackClip = AudioManager.Instance.sounds_notUniqueObject["Enemy2_attack"];
-            AudioManager.Instance.MakeAudioSource(attackClip, gameObject);
-            sounds = gameObject.GetComponents<AudioSource>();
-            detectionSound = sounds[0];
-            attackSound = sounds[1];
+            
+            //detectionClip = AudioManager.Instance.sounds_notUniqueObject["Detect_player"];
+            //AudioManager.Instance.MakeAudioSource(detectionClip, gameObject);
+            //attackClip = AudioManager.Instance.sounds_notUniqueObject["Enemy2_attack"];
+            //AudioManager.Instance.MakeAudioSource(attackClip, gameObject);
+            //sounds = gameObject.GetComponents<AudioSource>();
+            //detectionSound = sounds[0];
+            //attackSound = sounds[1];
 
             LeftAttack.SetActive(false);
             RightAttack.SetActive(false);
