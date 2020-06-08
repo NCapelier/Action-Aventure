@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7141250558685295146}
   - component: {fileID: 6967016247612054703}
   - component: {fileID: 2435039013276688970}
+  - component: {fileID: 1707805992201615056}
   m_Layer: 0
   m_Name: Attaque Haut
   m_TagString: Untagged
@@ -121,6 +122,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!95 &1707805992201615056
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714719613845838766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65451de5cdb5abc489cf5eec41394422, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1384757762277553005
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +153,7 @@ GameObject:
   - component: {fileID: 3823272811354139722}
   - component: {fileID: 7772314778914650608}
   - component: {fileID: 7466168475904872447}
+  - component: {fileID: 4727230806428038403}
   m_Layer: 0
   m_Name: Attaque Bas
   m_TagString: Untagged
@@ -242,6 +263,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!95 &4727230806428038403
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384757762277553005}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af7fefc724a9cb049b3fe7c9d2a43923, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2033116714999444369
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +423,7 @@ GameObject:
   - component: {fileID: 8829199520280891927}
   - component: {fileID: 6042026044977442747}
   - component: {fileID: 8893106802065503418}
+  - component: {fileID: 7062090738337248189}
   m_Layer: 0
   m_Name: Attaque Gauche
   m_TagString: Untagged
@@ -492,6 +533,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!95 &7062090738337248189
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803047405137138659}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79bd50df33d2b944096ffdec3c29bde0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3352525125896846458
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +564,7 @@ GameObject:
   - component: {fileID: 8144360935005762472}
   - component: {fileID: 1402569157737393916}
   - component: {fileID: 5885216648769540015}
+  - component: {fileID: 2783274101314982087}
   m_Layer: 0
   m_Name: Attaque Droite
   m_TagString: Untagged
@@ -613,6 +674,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!95 &2783274101314982087
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352525125896846458}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b567d84660d401d4c9d3534d73352994, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7377951180902703636
 GameObject:
   m_ObjectHideFlags: 0
