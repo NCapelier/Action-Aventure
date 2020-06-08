@@ -18,6 +18,9 @@ public class CutSceneFinale : MonoBehaviour
     [SerializeField] private GameObject blackScreen;
     private SpriteRenderer blackSRend;
 
+    [SerializeField] private GameObject title;
+    private SpriteRenderer titleRend;
+
 
     //things need to disabled
     private BoxCollider2D boxCol;
@@ -26,14 +29,18 @@ public class CutSceneFinale : MonoBehaviour
     void Start()
     {
 
-
         timeline = GetComponent<PlayableDirector>();
         blackSRend = blackScreen.GetComponent<SpriteRenderer>();
+        titleRend = title.GetComponent<SpriteRenderer>();
         boxCol = GetComponent<BoxCollider2D>();
 
         Color c = blackSRend.material.color;
         c.a = 0f;
         blackSRend.material.color = c;
+
+        Color d = titleRend.material.color;
+        d.a = 0f;
+        titleRend.material.color = c;
     }
 
     
@@ -58,6 +65,18 @@ public class CutSceneFinale : MonoBehaviour
 
 
     }
+    IEnumerator FadeIn2()
+    {
+        for (float f = 0.1f; f <= 1.0; f += 0.10f)
+        {
+            Color c = titleRend.material.color;
+            c.a = f;
+            titleRend.material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+
+    }
 
     IEnumerator Dialog()
     {
@@ -78,8 +97,9 @@ public class CutSceneFinale : MonoBehaviour
         GameCanvasManager.Instance.dialog.isCutScene = true;
         StartCoroutine("FadeIn");
         GameManager.Instance.gameState.gameFinished = true;
-        yield return new WaitForSeconds(2f);
-        GameManager.Instance.gameState.playerDead = true;
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine("FadeIn2");
+        yield return new WaitForSeconds(5f);
         SuperGameManager.Instance.DestroyAllGameObjects();
         SceneManager.LoadScene("0_MainMenu");
 
