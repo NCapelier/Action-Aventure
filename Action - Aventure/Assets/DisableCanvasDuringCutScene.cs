@@ -5,12 +5,12 @@ using GameManagement;
 
 public class DisableCanvasDuringCutScene : MonoBehaviour
 {
-    [SerializeField] private GameObject allCanvas;
+    public GameObject allCanvas;
 
     // Update is called once per frame
     void Update()
     {
-        if(GameCanvasManager.Instance.dialog.isCutScene == true)
+        if(GameCanvasManager.Instance.dialog.isCutScene == true || GameManager.Instance.gameState.gameFinished== true)
         {
             allCanvas.SetActive(false);
         }

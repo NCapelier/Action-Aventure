@@ -12,6 +12,7 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
     [SerializeField] private GameObject waypointsJoueur;
 
     [SerializeField] private Dialog.Conversation dial1;
+    [SerializeField] private Dialog.Conversation dial2;
 
     //Timer CutScene
     private PlayableDirector timeline;
@@ -20,11 +21,13 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
     private bool needToUpdate = false;
 
     [SerializeField] private bool isTrigger = false;
+    [SerializeField] private bool dial1Finish = false;
 
     // Start is called before the first frame update
     void Start()
     {
         timeline = GetComponent<PlayableDirector>();
+        dial1Finish = false;
     }
 
     // Update is called once per frame
@@ -54,6 +57,10 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
                 needToUpdate = false;
             }*/
         }
+        if(dial1Finish == true)
+        {
+            StartCoroutine("Dialog2");
+        }
 
     }
 
@@ -82,9 +89,34 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         GameCanvasManager.Instance.dialog.StartDialog = dial1;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        
+        yield return new WaitForSeconds(3f);
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
+        yield return new WaitForSeconds(3f);
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
+        yield return new WaitForSeconds(3f);
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
+        yield return new WaitForSeconds(1f);
+        Debug.Log("FinDial1");
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
+        dial1Finish = true;
 
+    }
 
-
+    IEnumerator Dialog2()
+    {   
+            dial1Finish = false;
+            Debug.Log("StartDial2");
+            GameCanvasManager.Instance.dialog.isCutScene = true;
+            GameCanvasManager.Instance.dialog.StartDialog = dial2;
+            yield return new WaitForSeconds(3f);
+            GameCanvasManager.Instance.dialog.forceUpdate = true;
+            yield return new WaitForSeconds(3f);
+            GameCanvasManager.Instance.dialog.forceUpdate = true;
+            yield return new WaitForSeconds(3f);
+            GameCanvasManager.Instance.dialog.forceUpdate = true;
+            yield return new WaitForSeconds(3f);
+            GameCanvasManager.Instance.dialog.forceUpdate = true;
+          
+       
     }
 }
