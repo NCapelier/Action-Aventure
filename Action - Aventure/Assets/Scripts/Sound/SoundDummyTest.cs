@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GameSound
 {
@@ -11,11 +12,13 @@ namespace GameSound
 
         AudioSource music;
         bool musicOn = false;
+
+        [SerializeField] MusicID choosenZik;
         #endregion
 
         private void Start()
         {
-            music = AudioManager.Instance.GetSound("[Village-House] Nostalgia- Sungha Jung_g");
+            music = AudioManager.Instance.musics[choosenZik];
         }
 
         // Update is called once per frame
@@ -31,11 +34,16 @@ namespace GameSound
             {
                 ToggleMusic();
             }
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                SceneManager.LoadScene("CHB_ZikDestination");
+            }
 		}
 
         IEnumerator SoundTest()
         {
-            AudioManager.Instance.Play("Activate-deactivate");
+            AudioManager.Instance.Play("Player_fall");
             yield return new WaitForSeconds(3f);
             AudioManager.Instance.Play("Boss_growl");
             yield return new WaitForSeconds(3f);
@@ -51,11 +59,13 @@ namespace GameSound
             {
                 case false:
                     music.Play();
+                    AudioManager.Instance.musicCurrentlyPlaying = choosenZik;
                     musicOn = true;
                     break;
 
                 case true:
                     music.Stop();
+                    AudioManager.Instance.musicCurrentlyPlaying = MusicID.Null;
                     musicOn = false;
                     break;
             }

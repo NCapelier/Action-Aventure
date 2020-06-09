@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameSound;
 
 namespace Boss
 {
@@ -104,6 +105,7 @@ namespace Boss
             if(headBandCount <= 0)
             {
                 currentBossState = bossState.Phase2;
+                AudioManager.Instance.Play("Boss_growl");
                 return;
             }
             if(!isDashing && !isWeak)
@@ -158,7 +160,7 @@ namespace Boss
             animator.SetFloat("XMovement", rb.velocity.x);
             animator.SetFloat("YMovement", rb.velocity.y);
 
-
+            AudioManager.Instance.Play("Boss_dash");
         }
 
         void StopDash()
@@ -239,6 +241,8 @@ namespace Boss
 
             animator.SetBool("tailAttack", false);
 
+            AudioManager.Instance.Play("Boss_pound");
+            AudioManager.Instance.Play("Wall_rubble");
 
             dashedOnce = false;
             dashedTwice = false;
