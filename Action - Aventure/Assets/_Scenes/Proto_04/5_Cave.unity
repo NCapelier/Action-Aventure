@@ -797,6 +797,16 @@ PrefabInstance:
       propertyPath: m_PointLightInnerRadius
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5373658970459445183, guid: 0d4d3d912c6e60c45900d13f2a92b6bb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1677392709
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373658970459445183, guid: 0d4d3d912c6e60c45900d13f2a92b6bb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d4d3d912c6e60c45900d13f2a92b6bb, type: 3}
 --- !u!1 &178175658 stripped
@@ -862,7 +872,7 @@ Transform:
   - {fileID: 984461075}
   - {fileID: 191455227}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &191455226
 GameObject:
@@ -1425,7 +1435,7 @@ PrefabInstance:
     - target: {fileID: 5380785727100501385, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5380785727100501385, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
@@ -4187,7 +4197,7 @@ GameObject:
   - component: {fileID: 471950981}
   m_Layer: 0
   m_Name: Mur
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5187,7 +5197,7 @@ PrefabInstance:
     - target: {fileID: 9044925990273150381, guid: fc4ef90b75aa7ea40a71acb423be3fd7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9044925990273150381, guid: fc4ef90b75aa7ea40a71acb423be3fd7,
         type: 3}
@@ -7238,6 +7248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5804042
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529516031008703997, guid: abb6c52e414faad4bac171f303beb31c,
+        type: 3}
+      propertyPath: maxHp
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4178808942140855324, guid: abb6c52e414faad4bac171f303beb31c,
         type: 3}
@@ -10263,7 +10278,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1702764319
 GameObject:

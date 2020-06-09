@@ -17,11 +17,13 @@ public class Book : MonoBehaviour
 
     [SerializeField] private SpriteRenderer buttonRenderer;
     [SerializeField] private bool playerHeree;
+    [SerializeField] private bool playerHereAlt;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerHereAlt = false;
         trigger = false;
         playerHeree = false;
         buttonRenderer = aButton.GetComponent<SpriteRenderer>();
@@ -36,11 +38,13 @@ public class Book : MonoBehaviour
     public void startFadingIN()
     {
         playerHeree = true;
+        playerHereAlt = true;
         StartCoroutine("FadeIn");
     }
 
     public void startFadingOUT()
     {
+        playerHereAlt = false;
         playerHeree = false;
         StartCoroutine("FadeOut");
     }
@@ -65,7 +69,7 @@ public class Book : MonoBehaviour
             playerHeree = false;
             
         }
-        if(LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp && playerHeree ==true){
+        if(LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp && playerHereAlt == true){
                 trigger = true;
         }
 

@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameState : MonoBehaviour
 {
+
     public bool playerDead = false;
 
     public bool videoIntroDone = false;
@@ -61,5 +63,5 @@ public class GameState : MonoBehaviour
     //When false don't show the sign of localisation
     public bool needToShow = true;
 
-   
+    public bool gameFinished = false;
 }
