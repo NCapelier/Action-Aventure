@@ -1957,10 +1957,10 @@ Transform:
   m_LocalPosition: {x: -1063.9863, y: -387.13174, z: -15.6813135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8910469879428420315}
-  - {fileID: 8910469878524987760}
-  - {fileID: 8910469878348516071}
   - {fileID: 8910469879028785423}
+  - {fileID: 8910469878348516071}
+  - {fileID: 8910469878524987760}
+  - {fileID: 8910469879428420315}
   - {fileID: 8910469879079940063}
   m_Father: {fileID: 8910469878994726527}
   m_RootOrder: 2
@@ -5081,7 +5081,7 @@ RectTransform:
   m_Children:
   - {fileID: 8910469879688033945}
   m_Father: {fileID: 909194218}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5109,7 +5109,7 @@ RectTransform:
   m_Children:
   - {fileID: 8910469879167107340}
   m_Father: {fileID: 909194218}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5654,7 +5654,7 @@ RectTransform:
   m_Children:
   - {fileID: 8910469878613139551}
   m_Father: {fileID: 909194218}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5995,7 +5995,7 @@ RectTransform:
   m_Children:
   - {fileID: 8910469879563145179}
   m_Father: {fileID: 909194218}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6024,7 +6024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 8910469879428420314}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 10
+  m_DragThreshold: 1
 --- !u!4 &8910469879477886517
 Transform:
   m_ObjectHideFlags: 0

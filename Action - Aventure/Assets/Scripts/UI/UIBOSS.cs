@@ -10,13 +10,15 @@ public class UIBOSS : MonoBehaviour
     [SerializeField]
     private Image bossHealthBar;
 
-    public GameObject bossBandeau1;
+    [SerializeField] private GameObject backHealth;
 
-    public GameObject bossBandeau2;
+    [SerializeField] private GameObject bossBandeau1;
 
-    public GameObject bossBandeau3;
+    [SerializeField] private GameObject bossBandeau2;
 
-    [SerializeField] private GameObject allObjects;
+    [SerializeField] private GameObject bossBandeau3;
+
+  
 
     
 
@@ -25,6 +27,8 @@ public class UIBOSS : MonoBehaviour
     void Update()
     {
       bossHealthBar.fillAmount = (float)BossManager.Instance.hp /(float)BossManager.Instance.maxHp;
+
+
 
         if (BossManager.Instance.controller.currentBossState == bossState.CutScene1)
         {
