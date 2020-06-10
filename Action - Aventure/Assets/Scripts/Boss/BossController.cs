@@ -170,6 +170,9 @@ namespace Boss
             animator.SetBool("isDashing", false);
             rb.velocity = Vector2.zero;
             physicCollider.enabled = true;
+
+            AudioManager.Instance.Play("Boss_stun");
+
             if (currentBossState == bossState.Phase1)
             {
                 isWeak = true;
@@ -233,16 +236,15 @@ namespace Boss
         IEnumerator InvokeShadow()
         {
             animator.SetBool("tailAttack", true);
-
+            
+            AudioManager.Instance.Play("Boss_pound");
+            AudioManager.Instance.Play("Wall_rubble");
 
             RockManager.Instance.SpawnShadow();
 
             yield return new WaitForSeconds(shadowInvokeTime);
 
             animator.SetBool("tailAttack", false);
-
-            AudioManager.Instance.Play("Boss_pound");
-            AudioManager.Instance.Play("Wall_rubble");
 
             dashedOnce = false;
             dashedTwice = false;

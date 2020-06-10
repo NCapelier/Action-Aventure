@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameOverMenu : MonoBehaviour
 {
-    [SerializeField] private Image
+    //[SerializeField] private Image
 
     // Start is called before the first frame update
     void Start()

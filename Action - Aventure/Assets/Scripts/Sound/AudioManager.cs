@@ -7,7 +7,7 @@ using System;
 
 namespace GameSound
 {
-    public enum MusicID { MainMenu, Caravan, Forest, Village, Dungeon, BossBattle, Null};
+    public enum MusicID { Null, MainMenu, Caravan, Forest, Village, Dungeon, BossBattle, Ending};
     /// <summary>
     /// CHB -- Based on Brackeys' AudioManager architecture
     /// </summary>
