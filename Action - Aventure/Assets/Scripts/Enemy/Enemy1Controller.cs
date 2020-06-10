@@ -56,7 +56,7 @@ namespace Enemy
         
         void FixedUpdate()
         {
-            if (GameCanvasManager.Instance.dialog.runningConversation)
+            if (GameCanvasManager.Instance.dialog.runningConversation || GameCanvasManager.Instance.dialog.isCutScene == true)
             {
                 EnemyRb.velocity = Vector2.zero;
                 return;

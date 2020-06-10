@@ -61,6 +61,8 @@ namespace Dialog
             textDisplay.leftSpeakerName.text = conversation.leftSpeaker.fullName;
             textDisplay.rightSpeakerName.text = conversation.rightSpeaker.fullName;
 
+            
+
             textDisplay.textLine.text = conversation.lines[lineIndex].text;
 
             portrait.leftPortrait.sprite = conversation.leftSpeaker.portrait[conversation.lines[lineIndex].leftPortraitIndex];
@@ -75,6 +77,15 @@ namespace Dialog
             {
                 portrait.leftPortrait.color = listenerColor;
                 portrait.rightPortrait.color = speakerColor;
+            }
+
+            if (conversation.leftSpeaker.fullName == null)
+            {
+                overlay.GetComponent<DialogOverlay>().leftSpeakerOverlay.SetActive(false);
+            }
+            if (conversation.rightSpeaker.fullName == null)
+            {
+                overlay.GetComponent<DialogOverlay>().rightSpeakerOverlay.SetActive(false);
             }
 
             runningConversation = true;
