@@ -14,7 +14,7 @@ namespace Player
 	{
         #region Variables
         [HideInInspector] public bool nearFountain;
-        bool inDrinkUnhideMalus = false;
+        public bool inDrinkUnhideMalus = false;
 		#endregion
 
 		// Start is called before the first frame update
