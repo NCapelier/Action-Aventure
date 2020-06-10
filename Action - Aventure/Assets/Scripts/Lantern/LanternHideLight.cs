@@ -64,7 +64,7 @@ namespace Lantern
         /// </summary>
         void OnHiddenUpdate()
         {
-            if(!playerCrazy && !runningCrazyness)
+            if(!playerCrazy && !runningCrazyness && !PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
             {
                 playerCrazy = true;
                 runningCrazyness = true;
@@ -73,6 +73,7 @@ namespace Lantern
             else if (playerCrazy && PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
             {
                 StopCoroutine(PlayerCrazyness());
+                //EndHide();
             }
 
             if (Input.GetButtonUp("X_Button"))
