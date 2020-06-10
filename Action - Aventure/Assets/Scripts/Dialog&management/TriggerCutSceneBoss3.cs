@@ -7,6 +7,11 @@ using Boss;
 
 public class TriggerCutSceneBoss3 : MonoBehaviour
 {
+    //Scene Transiton
+    public int zoneIndexGiver;
+    [SerializeField] string nextScene = "SceneFinale";
+    [SerializeField] Vector2 nextSceneEntryPoint = Vector2.zero;
+
     //waypoints
     [SerializeField] private GameObject waypointsBoss;
     [SerializeField] private GameObject waypointsJoueur;
@@ -200,11 +205,12 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         Debug.Log("Finish");
         timeline.Stop();
-        //Teleporter le player
+        SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
+     
 
     }
 
