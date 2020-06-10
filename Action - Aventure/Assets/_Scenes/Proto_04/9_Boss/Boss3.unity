@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5620,7 +5620,7 @@ PrefabInstance:
     - target: {fileID: 6293891723059870873, guid: 0d2ebfef0daaf66459edc46ad543044c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08666667
+      value: -4.371667
       objectReference: {fileID: 0}
     - target: {fileID: 6293891723174386774, guid: 0d2ebfef0daaf66459edc46ad543044c,
         type: 3}
@@ -5630,7 +5630,7 @@ PrefabInstance:
     - target: {fileID: 6293891723174386775, guid: 0d2ebfef0daaf66459edc46ad543044c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08666667
+      value: -4.371667
       objectReference: {fileID: 0}
     - target: {fileID: 6293891723174386775, guid: 0d2ebfef0daaf66459edc46ad543044c,
         type: 3}
@@ -5714,12 +5714,12 @@ PrefabInstance:
     - target: {fileID: 7054245750765674088, guid: 2c3d9bfbf92ec884eb68198a2d7abf40,
         type: 3}
       propertyPath: currentBossState
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7054245750765674088, guid: 2c3d9bfbf92ec884eb68198a2d7abf40,
         type: 3}
       propertyPath: headBandCount
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8726132397677631838, guid: 2c3d9bfbf92ec884eb68198a2d7abf40,
         type: 3}
@@ -34625,7 +34625,7 @@ PrefabInstance:
     - target: {fileID: 4048743575033921996, guid: 2330304d2c746ce429ed6f7b997204a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4166667
+      value: -4.041667
       objectReference: {fileID: 0}
     - target: {fileID: 4048743575033921996, guid: 2330304d2c746ce429ed6f7b997204a2,
         type: 3}
@@ -39909,6 +39909,7 @@ MonoBehaviour:
   bossBandeau1: {fileID: 1809486289}
   bossBandeau2: {fileID: 1398198100}
   bossBandeau3: {fileID: 184995326}
+  stockColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1937108129
 GameObject:
   m_ObjectHideFlags: 0
