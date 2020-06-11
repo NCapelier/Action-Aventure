@@ -111,6 +111,10 @@ namespace GameSound
             }
         }
 
+        /// <summary>
+        /// Put all currently playing loops when pause activated
+        /// </summary>
+        /// <param name="inPauseMenu"></param>
         public void TooglePauseLoops(bool inPauseMenu)
         {
             if (inPauseMenu)
