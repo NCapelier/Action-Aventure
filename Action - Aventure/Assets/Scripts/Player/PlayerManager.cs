@@ -177,8 +177,7 @@ namespace Player
             AudioManager.Instance.Play("Player_death");
 
             GameManager.Instance.gameState.playerDead = true;
-            SuperGameManager.Instance.DestroyAllGameObjects();
-            SceneManager.LoadScene("0_MainMenu");
+           
         }
 
     }

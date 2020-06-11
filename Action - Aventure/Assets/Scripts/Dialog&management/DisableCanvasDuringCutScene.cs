@@ -10,7 +10,7 @@ public class DisableCanvasDuringCutScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameCanvasManager.Instance.dialog.isCutScene == true || GameManager.Instance.gameState.gameFinished== true)
+        if(GameCanvasManager.Instance.dialog.isCutScene == true || GameManager.Instance.gameState.gameFinished== true || GameManager.Instance.gameState.playerDead == true)
         {
             allCanvas.SetActive(false);
         }

@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
       propertyPath: lanternGet
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
@@ -150,7 +150,7 @@ PrefabInstance:
     - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
       propertyPath: versatileGet
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2246279518234898716, guid: 0080a4b80d96c9747a2efedd6161e8f7,
         type: 3}
@@ -500,12 +500,17 @@ PrefabInstance:
     - target: {fileID: 6293891723174386775, guid: 0d2ebfef0daaf66459edc46ad543044c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 109.625
+      value: -10.682991
       objectReference: {fileID: 0}
     - target: {fileID: 6293891723174386775, guid: 0d2ebfef0daaf66459edc46ad543044c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4583334
+      value: 14.579555
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293891723174386775, guid: 0d2ebfef0daaf66459edc46ad543044c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2ebfef0daaf66459edc46ad543044c, type: 3}

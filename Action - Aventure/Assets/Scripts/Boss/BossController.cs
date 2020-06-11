@@ -106,7 +106,7 @@ namespace Boss
             }
             if(headBandCount <= 0)
             {
-                currentBossState = bossState.Phase2;
+                currentBossState = bossState.CutScene2;
                 AudioManager.Instance.Play("Boss_growl");
                 return;
             }

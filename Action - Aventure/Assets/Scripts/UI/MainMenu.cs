@@ -8,7 +8,7 @@ using GameSound;
 public class MainMenu : MonoBehaviour
 {
     [Header("OptionsReference")]
-    [SerializeField] private GameObject returnButton;
+    [SerializeField] public static GameObject returnButton;
     [SerializeField] private GameObject allInteractions;
 
     [Header("Credits")]

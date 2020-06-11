@@ -18,7 +18,7 @@ namespace Boss
         public BossController controller = null;
 
         [Header("Variables")]
-        [Range(1, 50)]
+        [Range(0, 50)]
         public int hp = 20;
         public int maxHp = 20;
         #endregion
@@ -67,7 +67,7 @@ namespace Boss
         void Death()
         {
             controller.currentBossState = bossState.CutScene3;
-            PlayerManager.Instance.Death();
+           
         }
 
     }

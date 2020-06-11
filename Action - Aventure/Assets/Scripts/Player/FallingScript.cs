@@ -2,6 +2,7 @@
 using UnityEngine;
 using Player;
 using GameSound;
+using Lantern;
 
 public class FallingScript : MonoBehaviour
 {
@@ -27,9 +28,9 @@ public class FallingScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "PlayerController")
         {
-            PlayerManager.Instance.controller.isFalling = true;
+            
             StartCoroutine("Falling");
-            PlayerManager.Instance.controller.isFalling = false;
+            
         }
     }
 
@@ -71,7 +72,8 @@ public class FallingScript : MonoBehaviour
 
     IEnumerator Falling()
     {
-        
+        PlayerManager.Instance.controller.isDialoging = true;
+
         startFadingIN();
 
         yield return new WaitForSeconds(0.5f);
@@ -79,9 +81,11 @@ public class FallingScript : MonoBehaviour
 
         //Jouer le son de la chute
         AudioManager.Instance.Play("Player_fall");
-
-        PlayerManager.Instance.gameObject.transform.position = respawnPoint.transform.position;
         
+        PlayerManager.Instance.gameObject.transform.position = respawnPoint.transform.position;
+        LanternManager.Instance.boomerang.currentBoomerangState = boomerangState.FallBack;
+        LanternManager.Instance.gameObject.transform.position = PlayerManager.Instance.gameObject.transform.position;
+
         //Tp le feu follet et mettre dans le bon état.
 
         yield return new WaitForSeconds(1f);
@@ -89,6 +93,6 @@ public class FallingScript : MonoBehaviour
         
 
         startFadingOUT();
-       
+        PlayerManager.Instance.controller.isDialoging = false;
     }
 }
