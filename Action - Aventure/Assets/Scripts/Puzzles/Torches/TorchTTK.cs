@@ -97,6 +97,7 @@ public class TorchTTK : MonoBehaviour
         {
             isLit = false;
             Duration = StartDuration;
+            burnSound.Stop();
         }
 
 
@@ -113,13 +114,14 @@ public class TorchTTK : MonoBehaviour
 
     private void Light()
     {
-        
+        if (!isLit)
+        {
+            //Sound
+            igniteSound.Play();
+            burnSound.Play();
+        }
+
         isLit = true;
-
-        //Sound
-        igniteSound.Play();
-        burnSound.Play();
-
     }
 
     IEnumerator TTK()
