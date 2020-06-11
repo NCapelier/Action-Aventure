@@ -21,6 +21,10 @@ namespace GameSound
 
         public Dictionary<MusicID, AudioSource> musics = new Dictionary<MusicID, AudioSource>();
         [HideInInspector] public MusicID musicCurrentlyPlaying = MusicID.Null;
+
+        AudioSource[] loopables;
+        bool[] onHold;
+        int loopsAdded = 0;
         #endregion
         private void Awake()
         {
@@ -43,6 +47,13 @@ namespace GameSound
                 else if (s.notUniqueObject)
                 {
                     sounds_notUniqueObject.Add(s.clip.name, s);
+                }
+
+                if(s.loop && !s.isMusic)
+                {
+                    loopables[loopsAdded] = s.source;
+                    onHold[loopsAdded] = false;
+                    loopsAdded++;
                 }
             }
         }
@@ -97,6 +108,36 @@ namespace GameSound
 
                 musics[music].Play();
                 musicCurrentlyPlaying = music;
+            }
+        }
+
+        public void TooglePauseLoops(bool inPauseMenu)
+        {
+            if (inPauseMenu)
+            {
+                for(int i = 0; i < loopables.Length; i++)
+                {
+                    if (loopables[i].isPlaying)
+                    {
+                        loopables[i].Pause();
+                        onHold[i] = true;
+                    }
+                }
+
+                musics[musicCurrentlyPlaying].Pause();
+            }
+            else
+            {
+                for (int i = 0; i < onHold.Length; i++)
+                {
+                    if (onHold[i])
+                    {
+                        loopables[i].UnPause();
+                        onHold[i] = false;
+                    }
+                }
+
+                musics[musicCurrentlyPlaying].UnPause();
             }
         }
     }
