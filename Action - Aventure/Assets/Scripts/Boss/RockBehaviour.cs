@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameSound;
 
 namespace Boss
 {
@@ -71,12 +72,15 @@ namespace Boss
             if(!rockAnimator.isActiveAndEnabled)
             {
                 rockAnimator.enabled = true;
+                AudioManager.Instance.Play("Rock_fall");
             }
 
             if (!spawnedRock)
             {
                 spawnedRock = true;
                 rockObject.SetActive(true);
+                //
+                AudioManager.Instance.Play("Rock_impact");
             }
         }
     }

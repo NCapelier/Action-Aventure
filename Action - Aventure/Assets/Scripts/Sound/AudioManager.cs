@@ -7,7 +7,7 @@ using System;
 
 namespace GameSound
 {
-    public enum MusicID { MainMenu, Caravan, Forest, Village, Dungeon, BossBattle, Null};
+    public enum MusicID { Null, MainMenu, Caravan, Forest, Village, Dungeon, BossBattle, Ending};
     /// <summary>
     /// CHB -- Based on Brackeys' AudioManager architecture
     /// </summary>
@@ -21,6 +21,10 @@ namespace GameSound
 
         public Dictionary<MusicID, AudioSource> musics = new Dictionary<MusicID, AudioSource>();
         [HideInInspector] public MusicID musicCurrentlyPlaying = MusicID.Null;
+
+        Dictionary<int, AudioSource> loopables = new Dictionary<int, AudioSource>();
+        Dictionary<int, bool> loopsOnHold = new Dictionary<int, bool>();
+        int loopsAdded = 0;
         #endregion
         private void Awake()
         {
@@ -43,6 +47,13 @@ namespace GameSound
                 else if (s.notUniqueObject)
                 {
                     sounds_notUniqueObject.Add(s.clip.name, s);
+                }
+
+                if(s.loop && !s.isMusic)
+                {
+                    loopables.Add(loopsAdded, s.source);
+                    loopsOnHold.Add(loopsAdded, false);
+                    loopsAdded++;
                 }
             }
         }
@@ -97,6 +108,40 @@ namespace GameSound
 
                 musics[music].Play();
                 musicCurrentlyPlaying = music;
+            }
+        }
+
+        /// <summary>
+        /// Put all currently playing loops when pause activated
+        /// </summary>
+        /// <param name="inPauseMenu"></param>
+        public void TooglePauseLoops(bool inPauseMenu)
+        {
+            if (inPauseMenu)
+            {
+                for(int i = 0; i < loopables.Count; i++)
+                {
+                    if (loopables[i].isPlaying)
+                    {
+                        loopables[i].Pause();
+                        loopsOnHold[i] = true;
+                    }
+                }
+
+                musics[musicCurrentlyPlaying].Pause();
+            }
+            else
+            {
+                for (int i = 0; i < loopsOnHold.Count; i++)
+                {
+                    if (loopsOnHold[i])
+                    {
+                        loopables[i].UnPause();
+                        loopsOnHold[i] = false;
+                    }
+                }
+
+                musics[musicCurrentlyPlaying].UnPause();
             }
         }
     }

@@ -34,11 +34,12 @@ namespace Lantern
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
             if (Input.GetButtonDown("X_Button") && currentLightState == lightState.Displayed && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy
-                && GlobalLightManager.Instance.mainLight.intensity >= GlobalLightManager.Instance.maximumLightning && PlayerManager.Instance.controller.isDialoging == false)
+                && GlobalLightManager.Instance.mainLight.intensity >= GlobalLightManager.Instance.maximumLightning && PlayerManager.Instance.controller.isDialoging == false
+                && !PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
             {
                 StartHide();
             }
-            else if(currentLightState == lightState.Hidden)
+            else if(currentLightState == lightState.Hidden ||(playerCrazy && PlayerManager.Instance.potionBottles.inDrinkUnhideMalus))
             {
                 OnHiddenUpdate();
             }
@@ -63,11 +64,16 @@ namespace Lantern
         /// </summary>
         void OnHiddenUpdate()
         {
-            if(!playerCrazy && !runningCrazyness)
+            if(!playerCrazy && !runningCrazyness && !PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
             {
                 playerCrazy = true;
                 runningCrazyness = true;
                 StartCoroutine(PlayerCrazyness());
+            }
+            else if (playerCrazy && PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
+            {
+                StopCoroutine(PlayerCrazyness());
+                EndHide();
             }
 
             if (Input.GetButtonUp("X_Button"))
@@ -86,10 +92,6 @@ namespace Lantern
                 PlayerManager.Instance.TakeDamages = 1;
                 StartCoroutine(PlayerCrazyness());
             }
-            else
-            {
-                runningCrazyness = false;
-            }
         }
 
         /// <summary>
@@ -98,6 +100,7 @@ namespace Lantern
         void EndHide()
         {
             playerCrazy = false;
+            runningCrazyness = false;
             LanternManager.Instance.interaction.gameObject.SetActive(true);
             currentLightState = lightState.Displayed;
 

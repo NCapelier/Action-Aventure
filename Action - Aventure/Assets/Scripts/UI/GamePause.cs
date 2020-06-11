@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameManagement;
+using GameSound;
 
 public class GamePause : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GamePause : MonoBehaviour
 
             EnterInPauseMenu();
             GameManager.Instance.gameState.inPause = false;
-
+            AudioManager.Instance.Play("Pause_sound");
         }
         else if (Input.GetButtonDown("Start_Button") && GameManager.Instance.gameState.inPause == false)
         {
@@ -32,11 +33,13 @@ public class GamePause : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
+        AudioManager.Instance.TooglePauseLoops(true);
     }
 
     void LeavingPauseMenu()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        AudioManager.Instance.TooglePauseLoops(false);
     }
 }

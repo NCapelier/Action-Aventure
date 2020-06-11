@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using GameSound;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -24,23 +25,27 @@ public class OptionsMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("B_Button"))
         {
+            AudioManager.Instance.Play("Validation_click");
             //pauseButtonReturn.GetComponent<Button>().onClick. blablabla;
         }
     }
 
     public void Retour()
     {
-            EventSystem.current.SetSelectedGameObject(playButton); 
+        AudioManager.Instance.Play("Validation_click");
+        EventSystem.current.SetSelectedGameObject(playButton); 
     }
 
     public void ShortCut()
     {
+        AudioManager.Instance.Play("Validation_click");
         shortCutImage.SetActive(true);
         allinteractions.SetActive(false);
     }
 
     public void Quitter()
     {
+        AudioManager.Instance.Play("Validation_click");
         Debug.Log("Quitter");
         AppHelper.Quit();
     }
@@ -61,6 +66,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetQuality (int qualityIndex)
     {
+        AudioManager.Instance.Play("Validation_click");
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 

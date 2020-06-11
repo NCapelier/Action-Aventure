@@ -14,7 +14,7 @@ namespace Player
 	{
         #region Variables
         [HideInInspector] public bool nearFountain;
-        bool inDrinkUnhideMalus = false;
+        [HideInInspector] public bool inDrinkUnhideMalus = false;
 		#endregion
 
 		// Start is called before the first frame update
@@ -63,7 +63,7 @@ namespace Player
                 //Play FX
 
                 //Sound
-                //AudioManager.Instance.Play("Will_o_flight");
+                AudioManager.Instance.Play("Potion_drink");
 
                 PotionsTextScript.potionAmount--;
             }
@@ -74,6 +74,7 @@ namespace Player
             if(PotionsTextScript.potionAmount < PotionsTextScript.maxPotionAmount && Input.GetButtonDown("A_Button"))
             {
                 PotionsTextScript.potionAmount += PotionsTextScript.maxPotionAmount - PotionsTextScript.potionAmount;
+                AudioManager.Instance.Play("Potion_refill");
             }
         }
         
