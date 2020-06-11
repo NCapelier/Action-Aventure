@@ -57,7 +57,8 @@ namespace Boss
 
         [HideInInspector] public Animator animator = null;
         public GameObject weakParticle;
-        
+
+        AudioSource dashSound;
 
         #endregion
 
@@ -70,6 +71,7 @@ namespace Boss
             weakParticle.SetActive(false);
             //playerLayer = LayerMask.NameToLayer("Player");
             //wallLayer = LayerMask.NameToLayer("Wall");
+            dashSound = AudioManager.Instance.GetSound("Boss_dash");
         }
 
         private void FixedUpdate()
@@ -160,7 +162,7 @@ namespace Boss
             animator.SetFloat("XMovement", rb.velocity.x);
             animator.SetFloat("YMovement", rb.velocity.y);
 
-            AudioManager.Instance.Play("Boss_dash");
+            dashSound.Play();
         }
 
         void StopDash()
@@ -172,6 +174,7 @@ namespace Boss
             physicCollider.enabled = true;
 
             AudioManager.Instance.Play("Boss_stun");
+            dashSound.Stop();
 
             if (currentBossState == bossState.Phase1)
             {
