@@ -22,8 +22,8 @@ namespace GameSound
         public Dictionary<MusicID, AudioSource> musics = new Dictionary<MusicID, AudioSource>();
         [HideInInspector] public MusicID musicCurrentlyPlaying = MusicID.Null;
 
-        AudioSource[] loopables;
-        bool[] onHold;
+        Dictionary<int, AudioSource> loopables = new Dictionary<int, AudioSource>();
+        Dictionary<int, bool> loopsOnHold = new Dictionary<int, bool>();
         int loopsAdded = 0;
         #endregion
         private void Awake()
@@ -51,8 +51,8 @@ namespace GameSound
 
                 if(s.loop && !s.isMusic)
                 {
-                    loopables[loopsAdded] = s.source;
-                    onHold[loopsAdded] = false;
+                    loopables.Add(loopsAdded, s.source);
+                    loopsOnHold.Add(loopsAdded, false);
                     loopsAdded++;
                 }
             }
@@ -119,12 +119,12 @@ namespace GameSound
         {
             if (inPauseMenu)
             {
-                for(int i = 0; i < loopables.Length; i++)
+                for(int i = 0; i < loopables.Count; i++)
                 {
                     if (loopables[i].isPlaying)
                     {
                         loopables[i].Pause();
-                        onHold[i] = true;
+                        loopsOnHold[i] = true;
                     }
                 }
 
@@ -132,12 +132,12 @@ namespace GameSound
             }
             else
             {
-                for (int i = 0; i < onHold.Length; i++)
+                for (int i = 0; i < loopsOnHold.Count; i++)
                 {
-                    if (onHold[i])
+                    if (loopsOnHold[i])
                     {
                         loopables[i].UnPause();
-                        onHold[i] = false;
+                        loopsOnHold[i] = false;
                     }
                 }
 
