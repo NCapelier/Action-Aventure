@@ -22,6 +22,17 @@ public class CutSceneFinale : MonoBehaviour
     private SpriteRenderer titleRend;
 
 
+    [SerializeField] private GameObject illuVictoire;
+
+    [SerializeField] private GameObject illu1Credits;
+    [SerializeField] private GameObject illu2Credits;
+
+    [SerializeField] private GameObject blackS2;
+    [SerializeField] private GameObject blackS3;
+    [SerializeField] private GameObject blackS4;
+
+    [SerializeField] private GameObject musiques;
+
     //things need to disabled
     private BoxCollider2D boxCol;
 
@@ -41,6 +52,37 @@ public class CutSceneFinale : MonoBehaviour
         Color d = titleRend.material.color;
         d.a = 0f;
         titleRend.material.color = c;
+
+        Color e = illuVictoire.GetComponent<SpriteRenderer>().material.color;
+        e.a = 0f;
+        illuVictoire.GetComponent<SpriteRenderer>().material.color = e;
+
+        Color f = illu1Credits.GetComponent<SpriteRenderer>().material.color;
+        f.a = 0f;
+        illu1Credits.GetComponent<SpriteRenderer>().material.color = f;
+
+        Color g = illu2Credits.GetComponent<SpriteRenderer>().material.color;
+        g.a = 0f;
+        illu2Credits.GetComponent<SpriteRenderer>().material.color = g;
+
+        Color h = blackS2.GetComponent<SpriteRenderer>().material.color;
+        h.a = 0f;
+        blackS2.GetComponent<SpriteRenderer>().material.color = h;
+
+        Color i = blackS3.GetComponent<SpriteRenderer>().material.color;
+        i.a = 0f;
+        blackS3.GetComponent<SpriteRenderer>().material.color = i;
+
+        Color j = blackS4.GetComponent<SpriteRenderer>().material.color;
+        j.a = 0f;
+        blackS4.GetComponent<SpriteRenderer>().material.color = j;
+
+        Color k = musiques.GetComponent<SpriteRenderer>().material.color;
+        k.a = 0f;
+        musiques.GetComponent<SpriteRenderer>().material.color = k;
+
+
+
     }
 
     
@@ -53,24 +95,108 @@ public class CutSceneFinale : MonoBehaviour
         }
     }
 
-    IEnumerator FadeIn()
+    IEnumerator BlackScreenFade()
     {
-        for (float f = 0.25f; f <= 1.1; f += 0.25f)
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
         {
             Color c = blackSRend.material.color;
             c.a = f;
             blackSRend.material.color = c;
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.05f);
         }
 
     }
-    IEnumerator FadeIn2()
+    IEnumerator BlackScreenFade2()
     {
-        for (float f = 0.1f; f <= 1.0; f += 0.10f)
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        {
+            Color c = blackS2.GetComponent<SpriteRenderer>().material.color;
+            c.a = f;
+            blackS2.GetComponent<SpriteRenderer>().material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+    }
+    IEnumerator BlackScreenFade3()
+    {
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        {
+            Color c = blackS3.GetComponent<SpriteRenderer>().material.color;
+            c.a = f;
+            blackS3.GetComponent<SpriteRenderer>().material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+    }
+
+    IEnumerator BlackScreenFade4()
+    {
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        {
+            Color c = blackS4.GetComponent<SpriteRenderer>().material.color;
+            c.a = f;
+            blackS4.GetComponent<SpriteRenderer>().material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+    }
+    IEnumerator TitleFade()
+    {
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
         {
             Color c = titleRend.material.color;
             c.a = f;
             titleRend.material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+
+    }
+
+    IEnumerator FadeInVictoire()
+    {
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        {
+            Color e = illuVictoire.GetComponent<SpriteRenderer>().material.color;
+            e.a = f;
+            illuVictoire.GetComponent<SpriteRenderer>().material.color = e;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+
+    }
+    IEnumerator FadeInMusique()
+    {
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        {
+            Color e = musiques.GetComponent<SpriteRenderer>().material.color;
+            e.a = f;
+            musiques.GetComponent<SpriteRenderer>().material.color = e;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+
+    }
+
+    IEnumerator Credits1()
+    {
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        {
+            Color e = illu1Credits.GetComponent<SpriteRenderer>().material.color;
+            e.a = f;
+            illu1Credits.GetComponent<SpriteRenderer>().material.color = e;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+
+    }
+    IEnumerator Credits2()
+    {
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        {
+            Color e = illu2Credits.GetComponent<SpriteRenderer>().material.color;
+            e.a = f;
+            illu2Credits.GetComponent<SpriteRenderer>().material.color = e;
             yield return new WaitForSeconds(0.05f);
         }
 
@@ -91,13 +217,27 @@ public class CutSceneFinale : MonoBehaviour
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         GameCanvasManager.Instance.dialog.isCutScene = true;
-        StartCoroutine("FadeIn");
+        StartCoroutine("FadeInVictoire");
         GameManager.Instance.gameState.gameFinished = true;
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine("FadeIn2");
+        yield return new WaitForSeconds(5f);
+        StartCoroutine("BlackScreenFade");
+        yield return new WaitForSeconds(1f);
+        StartCoroutine("BlackScreenFade2");
+        yield return new WaitForSeconds(1f);
+        StartCoroutine("TitleFade");
+        yield return new WaitForSeconds(1f);
+        StartCoroutine("Credits1");
+        yield return new WaitForSeconds(10f);
+        StartCoroutine("BlackScreenFade3");
+        yield return new WaitForSeconds(2f);
+        StartCoroutine("Credits2");
+        yield return new WaitForSeconds(5f);
+        StartCoroutine("BlackScreenFade4");
+        yield return new WaitForSeconds(2f);
+        StartCoroutine("FadeInMusique");
         yield return new WaitForSeconds(5f);
         SuperGameManager.Instance.DestroyAllGameObjects();
         SceneManager.LoadScene("0_MainMenu");
