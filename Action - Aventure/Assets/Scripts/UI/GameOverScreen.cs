@@ -4,6 +4,7 @@ using UnityEngine;
 using GameManagement;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using GameSound;
 
 
 public class GameOverScreen : MonoBehaviour
@@ -42,6 +43,7 @@ public class GameOverScreen : MonoBehaviour
             canvasJeu.SetActive(false);
 
             StartCoroutine("FadeIn");
+            AudioManager.Instance.Play("GameOver");
 
             Canvas.SetActive(true);
             boutons.SetActive(true);
@@ -57,6 +59,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void Return()
     {
+        AudioManager.Instance.Play("Validation_click");
         SceneManager.LoadScene(0);
         blackScreen.SetActive(false);
     }
