@@ -73,7 +73,7 @@ namespace Lantern
             else if (playerCrazy && PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
             {
                 StopCoroutine(PlayerCrazyness());
-                //EndHide();
+                EndHide();
             }
 
             if (Input.GetButtonUp("X_Button"))
