@@ -27,6 +27,8 @@ MonoBehaviour:
   eyeAnim: {fileID: 0}
   bodyAnimator: {fileID: 897308746027417494}
   eyesAnimator: {fileID: 45029834016800817}
+  detectionSound: {fileID: 8640457313071155160}
+  attackSound: {fileID: 3387004972354768816}
 --- !u!114 &8112258273170841889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +171,18 @@ PrefabInstance:
 --- !u!1 &8513856014402121235 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2033116714999444369, guid: 88315a67eb7d9604894e5c0c76cc69e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7642711984809549186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8640457313071155160 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2159841243964234330, guid: 88315a67eb7d9604894e5c0c76cc69e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7642711984809549186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3387004972354768816 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4976848250003886642, guid: 88315a67eb7d9604894e5c0c76cc69e8,
     type: 3}
   m_PrefabInstance: {fileID: 7642711984809549186}
   m_PrefabAsset: {fileID: 0}
