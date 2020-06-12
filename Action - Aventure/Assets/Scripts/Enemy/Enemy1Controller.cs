@@ -14,8 +14,7 @@ namespace Enemy
 
         #region Variables
 
-        [Range(0, 200)]
-        [SerializeField] int damage = 0;
+       
 
         //rigidbody2D of this enemy
         Rigidbody2D EnemyRb = null;
@@ -170,11 +169,7 @@ namespace Enemy
                 anim.SetBool("isHit", false);
             }
 
-            if (eventMessage.Equals("Attacking"))
-            {
-                PlayerManager.Instance.TakeDamages = damage;
-                Debug.Log("Dégats");
-            }
+           
 
         }
 

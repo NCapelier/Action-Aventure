@@ -83,7 +83,7 @@ namespace Player
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
 
-            if (!isAttacking && canAttack)
+            if (!isAttacking && canAttack && PlayerManager.Instance.controller.isDialoging == false)
             {
                 if (Input.GetButton("Right_Bumper") && loading < maxLoad)
                 {
