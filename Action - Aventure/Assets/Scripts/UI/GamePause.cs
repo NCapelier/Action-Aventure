@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameManagement;
 using GameSound;
+using Player;
 
 public class GamePause : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class GamePause : MonoBehaviour
     void EnterInPauseMenu()
     {
         pauseMenu.SetActive(true);
+        PlayerManager.Instance.controller.isDialoging = true;
         Time.timeScale = 0;
         AudioManager.Instance.TooglePauseLoops(true);
     }
@@ -41,5 +43,6 @@ public class GamePause : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         AudioManager.Instance.TooglePauseLoops(false);
+        PlayerManager.Instance.controller.isDialoging = false;
     }
 }

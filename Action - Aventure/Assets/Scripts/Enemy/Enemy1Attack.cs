@@ -15,8 +15,7 @@ namespace Enemy
 
         //editor variables
 
-        [Range(0, 200)]
-        [SerializeField] int damage = 0;
+       
 
         [Range(0, 20)]
         [SerializeField] float attackRange = 0;
@@ -50,6 +49,7 @@ namespace Enemy
         void Update()
         {
             AttackPlayer();
+            
         }
 
         /// <summary>
@@ -67,10 +67,14 @@ namespace Enemy
                 //Sound
                 attackSound.Play();
 
-                PlayerManager.Instance.TakeDamages = damage;
+                //Event Frame ou il tappe réellement et pas au début.
+
+                //PlayerManager.Instance.TakeDamages = damage;
+
                 //Record the time of the last attack
                 lastAttackTime = Time.time;
             }
         }
+
     }
 }

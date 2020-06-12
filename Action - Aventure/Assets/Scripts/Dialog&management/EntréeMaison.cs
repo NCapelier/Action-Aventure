@@ -12,6 +12,11 @@ public class EntréeMaison : MonoBehaviour
     [SerializeField] private GameObject enemyEyes;
     [SerializeField] private GameObject enemySkin;
 
+
+    public GameObject enemy;
+    [SerializeField] private Animator enemyEye;
+    [SerializeField] private Animator enemyskin;
+
     [SerializeField] private BoxCollider2D boxCol;
 
     private PlayableDirector timeline;
@@ -28,6 +33,8 @@ public class EntréeMaison : MonoBehaviour
         {
             timeline.enabled = false;
         }
+
+        
     }
 
     private void Start()
@@ -62,8 +69,9 @@ private void OnTriggerEnter2D(Collider2D collision)
 
         if (timelineF == true)
         {
-            //enemyEyes.SetActive(true);
-            //enemySkin.SetActive(true);
+            //Eye skin
+          
+            //Anim skin
             timeline.Stop();
             cutSceneCamera.SetActive(false);
             stokageCamera.enabled = true;
@@ -107,7 +115,8 @@ private void OnTriggerEnter2D(Collider2D collision)
        
 
         boxCol.enabled = false;
-
+        
+        
         GameManager.Instance.gameState.cutSCaveDone = true;
     }
 }

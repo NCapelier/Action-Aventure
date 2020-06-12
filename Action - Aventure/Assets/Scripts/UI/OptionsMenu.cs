@@ -67,7 +67,7 @@ public class OptionsMenu : MonoBehaviour
     {
         AudioManager.Instance.Play("Validation_click");
         EventSystem.current.SetSelectedGameObject(playButton); 
-       EventSystem.current.SetSelectedGameObject(playButton); 
+  
     }
 
     public void ShortCut()

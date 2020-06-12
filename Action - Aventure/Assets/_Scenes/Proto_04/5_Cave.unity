@@ -9970,6 +9970,9 @@ MonoBehaviour:
   "arriv\xE9eMaman": {fileID: 11400000, guid: cd1d877ce0f38df4ba679f617a66ec5c, type: 2}
   enemyEyes: {fileID: 2106919269}
   enemySkin: {fileID: 1149874646}
+  enemy: {fileID: 1665823838}
+  enemyEye: {fileID: 0}
+  enemyskin: {fileID: 0}
   boxCol: {fileID: 0}
   cutSceneCamera: {fileID: 6392682749144202163}
 --- !u!4 &1598007960
@@ -11499,7 +11502,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
