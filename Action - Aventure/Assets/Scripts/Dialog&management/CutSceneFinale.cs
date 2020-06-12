@@ -120,7 +120,7 @@ public class CutSceneFinale : MonoBehaviour
     }
     IEnumerator BlackScreenFade3()
     {
-        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        for (float f = 0.1f; f <= 1.1; f += 0.070f)
         {
             Color c = blackS3.GetComponent<SpriteRenderer>().material.color;
             c.a = f;
@@ -132,7 +132,7 @@ public class CutSceneFinale : MonoBehaviour
 
     IEnumerator BlackScreenFade4()
     {
-        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        for (float f = 0.1f; f <= 1.1; f += 0.070f)
         {
             Color c = blackS4.GetComponent<SpriteRenderer>().material.color;
             c.a = f;
@@ -181,7 +181,7 @@ public class CutSceneFinale : MonoBehaviour
 
     IEnumerator Credits1()
     {
-        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        for (float f = 0.1f; f <= 1.1; f += 0.070f)
         {
             Color e = illu1Credits.GetComponent<SpriteRenderer>().material.color;
             e.a = f;
@@ -209,18 +209,17 @@ public class CutSceneFinale : MonoBehaviour
         timeline.Play();
         GameCanvasManager.Instance.dialog.isCutScene = true;
         GameCanvasManager.Instance.dialog.StartDialog = dial1;
-        yield return new WaitForSeconds(1f);
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(2.3f);
+        yield return new WaitForSeconds(2.7f);
         AudioManager.Instance.PlayMusic(MusicID.Ending);
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.8f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         GameCanvasManager.Instance.dialog.isCutScene = true;
         StartCoroutine("FadeInVictoire");
@@ -229,21 +228,40 @@ public class CutSceneFinale : MonoBehaviour
         StartCoroutine("BlackScreenFade");
         yield return new WaitForSeconds(1f);
         StartCoroutine("BlackScreenFade2");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         StartCoroutine("TitleFade");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         StartCoroutine("Credits1");
-        yield return new WaitForSeconds(11f);
+        yield return new WaitForSeconds(9.3f);
         StartCoroutine("BlackScreenFade3");
         yield return new WaitForSeconds(2f);
         StartCoroutine("Credits2");
         yield return new WaitForSeconds(8f);
         StartCoroutine("BlackScreenFade4");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine("FadeInMusique");
-        yield return new WaitForSeconds(11f);
+        yield return new WaitForSeconds(8f);
+        StartCoroutine(BlackScreenFade5());
+        yield return new WaitForSeconds(8.8f);
         SuperGameManager.Instance.DestroyAllGameObjects();
         SceneManager.LoadScene("0_MainMenu");
+
+    }
+
+    IEnumerator BlackScreenFade5()
+    {
+        blackS3.SetActive(false);
+        blackS4.SetActive(false);
+        illu1Credits.SetActive(false);
+        illu2Credits.SetActive(false);
+        illuVictoire.SetActive(false);
+        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        {
+            Color c = blackS4.GetComponent<SpriteRenderer>().material.color; /*blackS5*/
+            c.a = f;
+            blackS4.GetComponent<SpriteRenderer>().material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
 
     }
 }
