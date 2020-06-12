@@ -15,6 +15,7 @@ namespace Player
         #region Variables
         [HideInInspector] public bool nearFountain;
         [HideInInspector] public bool inDrinkUnhideMalus = false;
+        [SerializeField] private Dialog.Conversation refillPotion;
 		#endregion
 
 		// Start is called before the first frame update
@@ -40,6 +41,7 @@ namespace Player
 
                 if (nearFountain)
                 {
+                    
                     PotionRefill();
                 }
             }
@@ -73,8 +75,10 @@ namespace Player
         {
             if(PotionsTextScript.potionAmount < PotionsTextScript.maxPotionAmount && Input.GetButtonDown("A_Button"))
             {
+                GameCanvasManager.Instance.dialog.StartDialog = refillPotion;
                 PotionsTextScript.potionAmount += PotionsTextScript.maxPotionAmount - PotionsTextScript.potionAmount;
                 AudioManager.Instance.Play("Potion_refill");
+                
             }
         }
         
