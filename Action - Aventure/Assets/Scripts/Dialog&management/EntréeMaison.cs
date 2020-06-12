@@ -29,6 +29,8 @@ public class EntréeMaison : MonoBehaviour
 
     private void Awake()
     {
+        timeline = GetComponent<PlayableDirector>();
+
         if (GameManager.Instance.gameState.cutSCaveDone == true)
         {
             timeline.enabled = false;
@@ -39,7 +41,7 @@ public class EntréeMaison : MonoBehaviour
 
     private void Start()
     {
-        timeline = GetComponent<PlayableDirector>();
+        
         boxCol = GetComponent<BoxCollider2D>();
 
         
