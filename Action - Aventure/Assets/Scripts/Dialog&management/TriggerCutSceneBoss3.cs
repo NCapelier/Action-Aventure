@@ -133,7 +133,7 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         GameCanvasManager.Instance.dialog.isCutScene = true;
         GameCanvasManager.Instance.dialog.StartDialog = dial1;
 
-        AudioManager.Instance.musics[MusicID.Dungeon].time = 13f;
+        AudioManager.Instance.musics[MusicID.Dungeon].time = 13.3f;
         yield return new WaitForSeconds(1.2f);
         AudioManager.Instance.PlayMusic(MusicID.Dungeon);
 
@@ -159,9 +159,9 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         Debug.Log("StartDial2");
         GameCanvasManager.Instance.dialog.isCutScene = true;
         GameCanvasManager.Instance.dialog.StartDialog = dial2;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.2f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.1f);
         needToFlash = true;
         StartCoroutine("FadeIn");
        
