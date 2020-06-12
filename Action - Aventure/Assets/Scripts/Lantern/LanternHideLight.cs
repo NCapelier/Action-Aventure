@@ -19,7 +19,7 @@ namespace Lantern
         [HideInInspector] public lightState currentLightState = lightState.Displayed;
 
         public bool playerCrazy = false;
-        bool runningCrazyness = false;
+        public bool runningCrazyness = false;
 
         AudioSource chatteringTeeth;
         #endregion

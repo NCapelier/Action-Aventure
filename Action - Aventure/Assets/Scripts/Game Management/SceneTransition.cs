@@ -18,6 +18,11 @@ namespace GameManagement
                 return;*/
             if(collision.tag == "PlayerController")
             {
+                LanternManager.Instance.hideLight.currentLightState = lightState.Displayed;
+                LanternManager.Instance.hideLight.playerCrazy = false;
+                LanternManager.Instance.hideLight.runningCrazyness = false;
+                LanternManager.Instance.interaction.gameObject.SetActive(true);
+
                 Debug.Log("trigger");
                 SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
                 ZoneScripter.isTrigger = true;
