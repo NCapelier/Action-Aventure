@@ -108,6 +108,8 @@ private void OnTriggerEnter2D(Collider2D collision)
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(2f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
+        yield return new WaitForSeconds(2f);
+        GameCanvasManager.Instance.dialog.forceUpdate = true;
         PlayerManager.Instance.controller.isDialoging = false;
         playerDial = false;
 

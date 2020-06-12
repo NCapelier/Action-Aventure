@@ -16,10 +16,12 @@ namespace Player
         [HideInInspector] public bool nearFountain;
         [HideInInspector] public bool inDrinkUnhideMalus = false;
         [SerializeField] private Dialog.Conversation refillPotion;
-		#endregion
+        [SerializeField] private Dialog.Conversation stockFull;
 
-		// Start is called before the first frame update
-		void Start()
+        #endregion
+
+        // Start is called before the first frame update
+        void Start()
 		{
             nearFountain = false;
 
@@ -73,7 +75,12 @@ namespace Player
 
         void PotionRefill()
         {
-            if(PotionsTextScript.potionAmount < PotionsTextScript.maxPotionAmount && Input.GetButtonDown("A_Button"))
+            if(PotionsTextScript.potionAmount == PotionsTextScript.maxPotionAmount && Input.GetButtonDown("A_Button"))
+            {
+                GameCanvasManager.Instance.dialog.StartDialog = stockFull;
+            }
+
+            else if(PotionsTextScript.potionAmount < PotionsTextScript.maxPotionAmount && Input.GetButtonDown("A_Button"))
             {
                 GameCanvasManager.Instance.dialog.StartDialog = refillPotion;
                 PotionsTextScript.potionAmount += PotionsTextScript.maxPotionAmount - PotionsTextScript.potionAmount;
