@@ -13,6 +13,8 @@ public class Fence : MonoBehaviour
     private SpriteRenderer buttonRenderer;
     public bool open;
 
+    [SerializeField] private bool playerHere;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,17 +39,17 @@ public class Fence : MonoBehaviour
             pressBouton.SetActive(true);
             buttonAnimator.enabled = true;
             buttonRenderer.enabled = true;
+            playerHere = true;
 
         }
     }
-
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.gameObject.tag == "PlayerController" && Input.GetButtonDown("A_Button"))
+        if (playerHere == true && Input.GetButtonDown("A_Button"))
         {
 
-                Animator.enabled = true;
-                bxC.enabled = false;
+            Animator.enabled = true;
+            bxC.enabled = false;
 
             open = true;
             buttonAnimator.enabled = false;
@@ -55,10 +57,13 @@ public class Fence : MonoBehaviour
             buttonRenderer.enabled = false;
         }
     }
+
+   
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "PlayerController" )
         {
+            playerHere = false;
             buttonAnimator.enabled = false;
             buttonRenderer.enabled = false;
         }

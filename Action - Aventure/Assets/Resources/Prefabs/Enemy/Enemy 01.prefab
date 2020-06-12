@@ -170,7 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee9ceabf47a61545a68a30adad0ead9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   moveSpeed: 2
   contactDistance: 0.5
   playerDetectRange: 3.5
@@ -228,7 +227,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &578945827724050341
 Animator:
   serializedVersion: 3
@@ -291,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a495794cd9eb1c47b7f3e91e6227b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   attackRange: 1
   cooldown: 3
   anim: {fileID: 578945827724050341}
