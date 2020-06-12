@@ -732,18 +732,24 @@ PrefabInstance:
     - target: {fileID: 6293891723174386775, guid: 0d2ebfef0daaf66459edc46ad543044c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 6293891723174386775, guid: 0d2ebfef0daaf66459edc46ad543044c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2ebfef0daaf66459edc46ad543044c, type: 3}
 --- !u!20 &563453031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6293891723174386774, guid: 0d2ebfef0daaf66459edc46ad543044c,
+    type: 3}
+  m_PrefabInstance: {fileID: 563453030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &563453032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6293891721535984630, guid: 0d2ebfef0daaf66459edc46ad543044c,
     type: 3}
   m_PrefabInstance: {fileID: 563453030}
   m_PrefabAsset: {fileID: 0}
@@ -2395,6 +2401,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2166417210116586935, guid: 0080a4b80d96c9747a2efedd6161e8f7,
+        type: 3}
+      propertyPath: cameraPlayer
+      value: 
+      objectReference: {fileID: 563453032}
     - target: {fileID: 554712761, guid: 0080a4b80d96c9747a2efedd6161e8f7, type: 3}
       propertyPath: Canvas
       value: 

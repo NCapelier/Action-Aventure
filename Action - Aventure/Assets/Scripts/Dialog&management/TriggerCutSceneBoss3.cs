@@ -4,13 +4,13 @@ using GameManagement;
 using UnityEngine.Playables;
 using Player;
 using Boss;
+using Management;
+using UnityEngine.SceneManagement;
 
 public class TriggerCutSceneBoss3 : MonoBehaviour
 {
     //Scene Transiton
-    public int zoneIndexGiver;
-    [SerializeField] string nextScene = "SceneFinale";
-    [SerializeField] Vector2 nextSceneEntryPoint = Vector2.zero;
+   
 
     //waypoints
     [SerializeField] private GameObject waypointsBoss;
@@ -209,8 +209,10 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         Debug.Log("Finish");
         timeline.Stop();
-        SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
-     
+
+        SuperGameManager.Instance.DestroyAllGameObjects();
+        SceneManager.LoadScene("SceneFinale");
+
 
     }
 
