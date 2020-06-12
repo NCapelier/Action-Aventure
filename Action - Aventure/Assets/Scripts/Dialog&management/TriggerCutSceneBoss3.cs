@@ -4,6 +4,7 @@ using GameManagement;
 using UnityEngine.Playables;
 using Player;
 using Boss;
+using GameSound;
 
 public class TriggerCutSceneBoss3 : MonoBehaviour
 {
@@ -123,14 +124,20 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
     IEnumerator Dialog()
     {
         starTimer = true;
-  
+        AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].Stop();
+
         timeline.Play();
         PlayerManager.Instance.transform.position = waypointsJoueur.transform.position;
         BossManager.Instance.transform.position = waypointsBoss.transform.position;
         yield return new WaitForSeconds(1f);
         GameCanvasManager.Instance.dialog.isCutScene = true;
         GameCanvasManager.Instance.dialog.StartDialog = dial1;
-        yield return new WaitForSeconds(3f);
+
+        AudioManager.Instance.musics[MusicID.Dungeon].time = 13f;
+        yield return new WaitForSeconds(1.2f);
+        AudioManager.Instance.PlayMusic(MusicID.Dungeon);
+
+        yield return new WaitForSeconds(1.8f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
@@ -161,7 +168,10 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.9f);
+        AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].Pause();
+        yield return new WaitForSeconds(1.1f);
+        
         //circleRenderer = wCircle2.GetComponent<SpriteRenderer>();
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(4f);
@@ -183,6 +193,7 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
+        AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].UnPause();
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
@@ -195,10 +206,14 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
+        AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].Stop();
+        yield return new WaitForSeconds(2f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
+        yield return new WaitForSeconds(1f);
+        AudioManager.Instance.PlayMusic(MusicID.Caravan);
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
@@ -208,6 +223,7 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         yield return new WaitForSeconds(6f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         Debug.Log("Finish");
+        AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].Stop();
         timeline.Stop();
         SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
      

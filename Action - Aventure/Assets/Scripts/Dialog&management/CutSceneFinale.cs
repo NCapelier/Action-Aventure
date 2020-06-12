@@ -4,6 +4,7 @@ using UnityEngine.Playables;
 using GameManagement;
 using Management;
 using UnityEngine.SceneManagement;
+using GameSound;
 
 public class CutSceneFinale : MonoBehaviour
 {
@@ -215,9 +216,11 @@ public class CutSceneFinale : MonoBehaviour
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.3f);
+        AudioManager.Instance.PlayMusic(MusicID.Ending);
+        yield return new WaitForSeconds(0.7f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         GameCanvasManager.Instance.dialog.isCutScene = true;
         StartCoroutine("FadeInVictoire");
@@ -226,19 +229,19 @@ public class CutSceneFinale : MonoBehaviour
         StartCoroutine("BlackScreenFade");
         yield return new WaitForSeconds(1f);
         StartCoroutine("BlackScreenFade2");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine("TitleFade");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine("Credits1");
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(11f);
         StartCoroutine("BlackScreenFade3");
         yield return new WaitForSeconds(2f);
         StartCoroutine("Credits2");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(8f);
         StartCoroutine("BlackScreenFade4");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         StartCoroutine("FadeInMusique");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(11f);
         SuperGameManager.Instance.DestroyAllGameObjects();
         SceneManager.LoadScene("0_MainMenu");
 
