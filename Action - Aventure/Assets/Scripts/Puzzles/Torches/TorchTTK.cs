@@ -52,7 +52,7 @@ public class TorchTTK : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("PlayerController") || other.gameObject.CompareTag("Hinky"))
+        if((other.gameObject.CompareTag("PlayerController") && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed) || other.gameObject.CompareTag("Hinky"))
 
         playerHere = true;
     }

@@ -12,6 +12,7 @@ public class updateCameraBoss : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerController"))
         {
             CameraManager.Instance.vCam.enabled = true;
+            GameManager.Instance.gameOverMenu.SetActive(true);
         }
     }
   

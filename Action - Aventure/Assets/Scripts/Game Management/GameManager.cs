@@ -15,6 +15,8 @@ namespace GameManagement
 
         public GameObject cameraPlayer;
 
+        public GameObject gameOverMenu;
+
         #endregion
 
         void Awake()

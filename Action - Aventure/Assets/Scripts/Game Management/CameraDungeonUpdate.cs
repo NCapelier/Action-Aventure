@@ -13,6 +13,7 @@ public class CameraDungeonUpdate : MonoBehaviour
         if (GameManager.Instance.gameState.isDungeon == true)
         {
             CameraManager.Instance.vCam.enabled = false;
+            GameManager.Instance.gameOverMenu.SetActive(false);
             //Camera.main.enabled = false;
             roomCam.SetActive(true);
         }
