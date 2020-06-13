@@ -39,7 +39,6 @@ namespace Lantern
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
 
-            D.Log(displayTime);
 
             displayTime = time.Remap(0f, 6f, 0f, 1f);
 

@@ -2,6 +2,7 @@
 using Enemy;
 using GameManagement;
 using Boss;
+using System.Collections;
 
 namespace Lantern
 {
@@ -10,6 +11,8 @@ namespace Lantern
     /// </summary>
     public class LanternInteractions : MonoBehaviour
     {
+
+        bool dealtDamages = false;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -42,11 +45,20 @@ namespace Lantern
             {
                 LanternManager.Instance.boomerang.mustStop = true;
             }
-            if (collision.CompareTag("BossTrigger") && (LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown))
+
+            if (!dealtDamages && collision.CompareTag("BossTrigger") && (LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown))
             {
+                dealtDamages = true;
                 BossManager.Instance.TakeDamages = 3;
+                StartCoroutine(BossDamages());
             }
 
+        }
+
+        IEnumerator BossDamages()
+        {
+            yield return new WaitForSeconds(2f);
+            dealtDamages = false;
         }
 
         private void OnTriggerExit2D(Collider2D collision)

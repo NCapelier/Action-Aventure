@@ -50,6 +50,11 @@ namespace Player
                 collision.GetComponent<EnemyParent>().TakeDamages = damages * (int)PlayerManager.Instance.contactAttack.loading;
 
             }
+
+            if(collision.CompareTag("BossTrigger") && BossManager.Instance.controller.currentBossState == bossState.Phase2)
+            {
+                BossManager.Instance.TakeDamages = damages * (int)PlayerManager.Instance.contactAttack.loading;
+            }
         }
 
         /// <summary>
