@@ -234,7 +234,7 @@ public class CutSceneFinale : MonoBehaviour
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(2.7f);
-        //AudioManager.Instance.PlayMusic(MusicID.Ending);
+        AudioManager.Instance.PlayMusic(MusicID.Ending);
         yield return new WaitForSeconds(0.8f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
