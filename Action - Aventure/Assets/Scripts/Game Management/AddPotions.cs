@@ -54,8 +54,9 @@ public class AddPotions : MonoBehaviour
         if(GameManager.Instance.GetComponent<GameState>().potionGet == true){
 
             GetComponent<SpriteRenderer>().enabled = false;
-            PotionsTextScript.potionAmount = 1;
-            PotionsTextScript.maxPotionAmount = 1;
+            PotionsTextScript.potionAmount ++;
+            PotionsTextScript.maxPotionAmount ++;
+            gameObject.SetActive(false);
         }
 
         if (playerHe == true && Input.GetButtonDown("A_Button") && GameManager.Instance.GetComponent<GameState>().potionGet == false)

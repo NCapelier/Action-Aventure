@@ -13,6 +13,10 @@ namespace GameManagement
 
         [HideInInspector] public GameState gameState = null;
 
+        public GameObject cameraPlayer;
+
+        public GameObject gameOverMenu;
+
         #endregion
 
         void Awake()

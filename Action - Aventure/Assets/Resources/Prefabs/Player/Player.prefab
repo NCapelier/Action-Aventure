@@ -154,6 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nearFountain: 0
   inDrinkUnhideMalus: 0
+  refillPotion: {fileID: 11400000, guid: d7947294dac0233458f2b0e34016aaa9, type: 2}
+  stockFull: {fileID: 11400000, guid: ae5e37b0cbc490244b4f87d9f99db10a, type: 2}
 --- !u!50 &4999328793701592573
 Rigidbody2D:
   serializedVersion: 4
@@ -617,8 +619,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -974248187
-  m_SortingLayer: 4
+  m_SortingLayerID: 1677392709
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c2cca13d1e07942439bcdfefeb3964dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

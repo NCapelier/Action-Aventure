@@ -12,7 +12,7 @@ namespace GameManagement
     public class SceneLoader : Singleton<SceneLoader>
     {
         #region Variables
-
+       
         #endregion
 
         void Awake()
@@ -28,12 +28,25 @@ namespace GameManagement
         /// <param name="entryPoint"></param>
         public static Scene GoToScene(string scene, Vector2 entryPoint)
         {
-            CameraManager.Instance.vCam.enabled = false;
+              bool cameraActive = false;
+
+            if(GameManager.Instance.cameraPlayer.activeSelf == true)
+            {
+                CameraManager.Instance.vCam.enabled = false;
+                cameraActive = true;
+            }
+            
             SceneManager.LoadScene(scene);
             //mettre du delay?
             PlayerManager.Instance.transform.position = entryPoint;
             LanternManager.Instance.transform.position = entryPoint;
-            CameraManager.Instance.vCam.enabled = true;
+
+            if (cameraActive == true)
+            {
+                CameraManager.Instance.vCam.enabled = true;
+                cameraActive = false;
+            }
+            
             return SceneManager.GetActiveScene();
         }
     }

@@ -55,14 +55,14 @@ public class TorchTTK : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("PlayerController") || other.gameObject.CompareTag("Hinky"))
-
+        if ((other.gameObject.CompareTag("PlayerController") && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Static && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed) || other.gameObject.CompareTag("Hinky"))
+            Debug.Log("This is called");
         playerHere = true;
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Hinky" || (col.gameObject.CompareTag("PlayerController") && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed))
+        if (col.gameObject.tag == "Hinky" && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
         {
            
             playerHere = true;

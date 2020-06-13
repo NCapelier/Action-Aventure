@@ -50,6 +50,7 @@ namespace Enemy
         void Update()
         {
             AttackPlayer();
+            
         }
 
         /// <summary>
@@ -68,9 +69,11 @@ namespace Enemy
                 attackSound.Play();
 
                 PlayerManager.Instance.TakeDamages = damage;
+
                 //Record the time of the last attack
                 lastAttackTime = Time.time;
             }
         }
+
     }
 }

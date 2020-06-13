@@ -6,6 +6,7 @@ using GameManagement;
 using UnityEngine.EventSystems;
 using Management;
 using UnityEngine.SceneManagement;
+using Player;
 
 
 public class GameOverMenu : MonoBehaviour
@@ -19,6 +20,7 @@ public class GameOverMenu : MonoBehaviour
     [SerializeField] private Button menu;
     [SerializeField] private Canvas canvas;
     [SerializeField] private EventSystem eventS;
+    
    
 
     [SerializeField] private bool trigger;
@@ -26,7 +28,7 @@ public class GameOverMenu : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.Instance.gameState.playerDead == true)
+        if(GameManager.Instance.gameState.playerDead == true && triggerOnce == false)
         {
   
             StartCoroutine("appering");
@@ -35,6 +37,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void Death()
     {
+        PlayerManager.Instance.controller.isDialoging = false;
         GameManager.Instance.gameState.playerDead = true;
         SuperGameManager.Instance.DestroyAllGameObjects();
         SceneManager.LoadScene("0_MainMenu");
@@ -47,6 +50,8 @@ public class GameOverMenu : MonoBehaviour
 
     IEnumerator appering()
     {
+        PlayerManager.Instance.controller.isDialoging = true;
+        
         if(triggerOnce == true)
         {
             yield return null;

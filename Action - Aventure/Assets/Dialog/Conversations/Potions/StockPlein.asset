@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1f3ae8e497a59541a2c836045c630af, type: 3}
-  m_Name: NeedMoreSouls1
+  m_Name: StockPlein
   m_EditorClassIdentifier: 
-  leftSpeaker: {fileID: 11400000, guid: e670ddd0b412ddf4c80263ecd2211eaf, type: 2}
-  rightSpeaker: {fileID: 11400000, guid: 15df079ba76720849a9e98a3a359fde0, type: 2}
+  leftSpeaker: {fileID: 11400000, guid: 0c994ad1af2c8864eb8eb936e6ca07b4, type: 2}
+  rightSpeaker: {fileID: 11400000, guid: 0c994ad1af2c8864eb8eb936e6ca07b4, type: 2}
   lines:
-  - speaker: 1
+  - speaker: 0
     leftPortraitIndex: 0
     rightPortraitIndex: 0
-    text: "Il vous faut 25 \xE2mes pour ajouter une potion \xE0 votre stock."
+    text: "Mon stock de potion semble d\xE9ja plein..."
+  - speaker: 0
+    leftPortraitIndex: 0
+    rightPortraitIndex: 0
+    text: "Mon stock de potion semble d\xE9ja plein..."

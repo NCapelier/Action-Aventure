@@ -31,6 +31,9 @@ public class CutSceneFinale : MonoBehaviour
     [SerializeField] private GameObject blackS2;
     [SerializeField] private GameObject blackS3;
     [SerializeField] private GameObject blackS4;
+    [SerializeField] private GameObject blackS5;
+
+
 
     [SerializeField] private GameObject musiques;
 
@@ -81,6 +84,10 @@ public class CutSceneFinale : MonoBehaviour
         Color k = musiques.GetComponent<SpriteRenderer>().material.color;
         k.a = 0f;
         musiques.GetComponent<SpriteRenderer>().material.color = k;
+
+        Color l = blackS5.GetComponent<SpriteRenderer>().material.color;
+        l.a = 0f;
+        blackS5.GetComponent<SpriteRenderer>().material.color = l;
 
 
 
@@ -141,6 +148,17 @@ public class CutSceneFinale : MonoBehaviour
         }
 
     }
+    IEnumerator BlackScreenFade5()
+    {
+        for (float f = 0.1f; f <= 1.1; f += 0.070f)
+        {
+            Color c = blackS5.GetComponent<SpriteRenderer>().material.color;
+            c.a = f;
+            blackS5.GetComponent<SpriteRenderer>().material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
+
+    }
     IEnumerator TitleFade()
     {
         for (float f = 0.1f; f <= 1.1; f += 0.10f)
@@ -193,7 +211,7 @@ public class CutSceneFinale : MonoBehaviour
     }
     IEnumerator Credits2()
     {
-        for (float f = 0.1f; f <= 1.1; f += 0.10f)
+        for (float f = 0.1f; f <= 1.1; f += 0.070f)
         {
             Color e = illu2Credits.GetComponent<SpriteRenderer>().material.color;
             e.a = f;
@@ -216,7 +234,7 @@ public class CutSceneFinale : MonoBehaviour
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(2.7f);
-        AudioManager.Instance.PlayMusic(MusicID.Ending);
+        //AudioManager.Instance.PlayMusic(MusicID.Ending);
         yield return new WaitForSeconds(0.8f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(3f);
@@ -241,7 +259,7 @@ public class CutSceneFinale : MonoBehaviour
         yield return new WaitForSeconds(2f);
         StartCoroutine("FadeInMusique");
         yield return new WaitForSeconds(8f);
-        StartCoroutine(BlackScreenFade5());
+        StartCoroutine("BlackScreenFade5");
         yield return new WaitForSeconds(8.8f);
         SuperGameManager.Instance.DestroyAllGameObjects();
         SceneManager.LoadScene("0_MainMenu");

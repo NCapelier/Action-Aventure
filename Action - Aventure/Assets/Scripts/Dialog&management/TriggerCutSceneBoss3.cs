@@ -4,14 +4,14 @@ using GameManagement;
 using UnityEngine.Playables;
 using Player;
 using Boss;
+using Management;
+using UnityEngine.SceneManagement;
 using GameSound;
 
 public class TriggerCutSceneBoss3 : MonoBehaviour
 {
     //Scene Transiton
-    public int zoneIndexGiver;
-    [SerializeField] string nextScene = "SceneFinale";
-    [SerializeField] Vector2 nextSceneEntryPoint = Vector2.zero;
+   
 
     //waypoints
     [SerializeField] private GameObject waypointsBoss;
@@ -225,8 +225,10 @@ public class TriggerCutSceneBoss3 : MonoBehaviour
         Debug.Log("Finish");
         AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].Stop();
         timeline.Stop();
-        SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
-     
+
+        SuperGameManager.Instance.DestroyAllGameObjects();
+        SceneManager.LoadScene("SceneFinale");
+
 
     }
 

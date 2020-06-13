@@ -10936,7 +10936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527077617}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.801, y: 6.59, z: 6.041552}
+  m_LocalPosition: {x: -3.772, y: 6.59, z: 6.041552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1477832859}
@@ -10986,7 +10986,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 11.833223, y: 0.8561101}
+  m_Size: {x: 12.051449, y: 0.8561101}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -15619,7 +15619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801812717}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 83.949, y: 14.928, z: 6.041552}
+  m_LocalPosition: {x: 83.949, y: 14.776173, z: 6.041552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1477832859}
@@ -15904,7 +15904,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &818711906
 Transform:
   m_ObjectHideFlags: 0
@@ -22362,8 +22362,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -974248187
+  m_SortingLayer: 4
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 683b65cee969dbb40bec5ff1d62cb947, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -22403,7 +22403,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.38768435, y: -1.5791872}
+  m_Offset: {x: 0.38768435, y: -1.7685264}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -22414,7 +22414,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6795149, y: 0.8156123}
+  m_Size: {x: 0.6795149, y: 0.31506038}
   m_EdgeRadius: 0
 --- !u!4 &1160061949 stripped
 Transform:
@@ -23793,7 +23793,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1263524683
   m_SortingLayer: -1
-  m_SortingOrder: -2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c4a6fda15bb3ebc41ba241e82cdfce73, type: 3}
   m_Color: {r: 0.110630356, g: 0.04004984, b: 0.18867922, a: 0.5019608}
   m_FlipX: 0
@@ -29806,7 +29806,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 1
+  m_SpriteSortPoint: 0
 --- !u!4 &1499961586
 Transform:
   m_ObjectHideFlags: 0
@@ -29815,7 +29815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499961583}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.66169, y: -0.85513544, z: 0}
+  m_LocalPosition: {x: 8.66169, y: -0.93846893, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1159646695}
@@ -29861,9 +29861,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6013057, y: 0.17630422}
+  m_Offset: {x: -0.3923285, y: 0.26184022}
   serializedVersion: 2
-  m_Radius: 0.80208194
+  m_Radius: 0.5075686
 --- !u!114 &1499961589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29877,6 +29877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   open: 0
+  playerHere: 0
 --- !u!1 &1500623914
 GameObject:
   m_ObjectHideFlags: 0
@@ -42862,7 +42863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958291299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 119.06, y: 13.712, z: 6.041552}
+  m_LocalPosition: {x: 119.04553, y: 12.901173, z: 6.041552}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1477832859}
@@ -45618,7 +45619,7 @@ PrefabInstance:
     - target: {fileID: 2221605138405491192, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}
       propertyPath: nextSceneEntryPoint.y
-      value: -12
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 2221605138405491192, guid: 68f80dabf570aeb4982ff7dc8df6f7e8,
         type: 3}

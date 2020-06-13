@@ -14,6 +14,8 @@ namespace Enemy
 
         #region Variables
 
+       
+
         //rigidbody2D of this enemy
         Rigidbody2D EnemyRb = null;
 
@@ -166,6 +168,8 @@ namespace Enemy
             {
                 anim.SetBool("isHit", false);
             }
+
+           
 
         }
 

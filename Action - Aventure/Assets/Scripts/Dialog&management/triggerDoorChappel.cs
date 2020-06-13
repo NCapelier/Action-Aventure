@@ -8,6 +8,7 @@ public class triggerDoorChappel : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerController"))
         {
             GameManager.Instance.gameState.ChapelleCutSceneFinish = true;
+            GameManager.Instance.gameState.needToShow = true;
         }
     }
 
