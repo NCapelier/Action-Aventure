@@ -43,6 +43,7 @@ public class GameOverScreen : MonoBehaviour
             canvasJeu.SetActive(false);
 
             StartCoroutine("FadeIn");
+            AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].Stop();
             AudioManager.Instance.Play("GameOver");
 
             Canvas.SetActive(true);
