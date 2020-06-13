@@ -53,6 +53,8 @@ namespace Dialog
         /// </summary>
         void StartConversation()
         {
+            AudioSource otherJibberish;
+
             PlayerManager.Instance.controller.isDialoging = true;
 
             overlay.gameObject.SetActive(true);
@@ -73,7 +75,9 @@ namespace Dialog
             {
                 portrait.rightPortrait.color = listenerColor;
                 portrait.leftPortrait.color = speakerColor;
-                if(conversation.leftSpeaker.jibberish != null)
+                otherJibberish = AudioManager.Instance.GetSound(conversation.rightSpeaker.jibberish);
+                otherJibberish.Stop();
+                if (conversation.leftSpeaker.jibberish != null)
                 {
                     AudioManager.Instance.Play(conversation.leftSpeaker.jibberish);
                 }
@@ -83,6 +87,8 @@ namespace Dialog
             {
                 portrait.leftPortrait.color = listenerColor;
                 portrait.rightPortrait.color = speakerColor;
+                otherJibberish = AudioManager.Instance.GetSound(conversation.leftSpeaker.jibberish);
+                otherJibberish.Stop();
                 if (conversation.rightSpeaker.jibberish != null)
                 {
                     AudioManager.Instance.Play(conversation.rightSpeaker.jibberish);
@@ -107,6 +113,8 @@ namespace Dialog
         /// </summary>
         void UpdateConversation()
         {
+            AudioSource otherJibberish;
+
             if (lineIndex < conversation.lines.Length - 1)
             {
                 lineIndex++;
@@ -117,6 +125,8 @@ namespace Dialog
                 {
                     portrait.rightPortrait.color = listenerColor;
                     portrait.leftPortrait.color = speakerColor;
+                    otherJibberish = AudioManager.Instance.GetSound(conversation.rightSpeaker.jibberish);
+                    otherJibberish.Stop();
                     if (conversation.leftSpeaker.jibberish != null)
                     {
                         AudioManager.Instance.Play(conversation.leftSpeaker.jibberish);
@@ -126,6 +136,8 @@ namespace Dialog
                 {
                     portrait.leftPortrait.color = listenerColor;
                     portrait.rightPortrait.color = speakerColor;
+                    otherJibberish = AudioManager.Instance.GetSound(conversation.leftSpeaker.jibberish);
+                    otherJibberish.Stop();
                     if (conversation.rightSpeaker.jibberish != null)
                     {
                         AudioManager.Instance.Play(conversation.rightSpeaker.jibberish);
