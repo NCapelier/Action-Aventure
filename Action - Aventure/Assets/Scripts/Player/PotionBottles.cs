@@ -92,20 +92,20 @@ namespace Player
         //Can't work atm, need to make playerCrazy public and remove currentLightState == Hidden in EndHide() launch condition 
         IEnumerator DrinkUnhide()
         {
-            LanternManager.Instance.hideLight.currentLightState = lightState.Displayed;
+            //LanternManager.Instance.hideLight.currentLightState = lightState.Displayed;
 
             inDrinkUnhideMalus = true;
-            StartCoroutine(DrinkUnhideMalus());
+            //StartCoroutine(DrinkUnhideMalus());
 
             yield return new WaitForSeconds(1.5f);
 
-            StopCoroutine(DrinkUnhideMalus());
-            inDrinkUnhideMalus = false;
+            //StopCoroutine(DrinkUnhideMalus());
+            //inDrinkUnhideMalus = false;
 
-            if (LanternManager.Instance.hideLight.playerCrazy)
-            {
-                LanternManager.Instance.hideLight.currentLightState = lightState.Hidden;
-            }
+            //if (LanternManager.Instance.hideLight.playerCrazy)
+            //{
+            //    LanternManager.Instance.hideLight.currentLightState = lightState.Hidden;
+            //}
         }
 
         IEnumerator DrinkUnhideMalus()

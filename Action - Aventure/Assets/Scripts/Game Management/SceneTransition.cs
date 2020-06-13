@@ -23,7 +23,7 @@ namespace GameManagement
                 LanternManager.Instance.hideLight.runningCrazyness = false;
                 LanternManager.Instance.interaction.gameObject.SetActive(true);
 
-                Debug.Log("trigger");
+                //Debug.Log("trigger");
                 SceneLoader.GoToScene(nextScene, nextSceneEntryPoint);
                 ZoneScripter.isTrigger = true;
                 ZoneIntroduction.zoneIndex = zoneIndexGiver;

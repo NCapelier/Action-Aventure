@@ -59,13 +59,13 @@ namespace GameSound
                     {
                         Debug.LogWarning("Null member in dictionnary loopables");
                     }
-                    Debug.Log("Added " + s.clip.name + " in dictionnary loopables");
+                    //Debug.Log("Added " + s.clip.name + " in dictionnary loopables");
 
                     loopsAdded++;
                 }
             }
 
-            Debug.Log("loopables count = " + loopables.Count);
+            //Debug.Log("loopables count = " + loopables.Count);
         }
 
         /// <summary>

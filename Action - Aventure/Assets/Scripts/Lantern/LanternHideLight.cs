@@ -42,32 +42,45 @@ namespace Lantern
 
             displayTime = time.Remap(0f, 6f, 0f, 1f);
 
+            if(PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
+            {
+                PlayerManager.Instance.potionBottles.inDrinkUnhideMalus = false;
+                if(currentLightState == lightState.Hidden)
+                {
+                    EndHide();
+                }
+            }
+
             if (currentLightState == lightState.Hidden && PlayerManager.Instance.currentHp <= 1)
             {
                 EndHide();
             }
 
-            if(currentLightState == lightState.Displayed && time < PlayerManager.Instance.currentHp)
+            if (currentLightState == lightState.Displayed && time < PlayerManager.Instance.currentHp)
             {
                 time += 1.0f * Time.deltaTime;
             }
-            else if(time > PlayerManager.Instance.currentHp)
+            else if (time > PlayerManager.Instance.currentHp)
             {
                 time = PlayerManager.Instance.currentHp;
             }
 
             if (Input.GetButtonDown("X_Button") && currentLightState == lightState.Displayed && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy
-                && GlobalLightManager.Instance.mainLight.intensity >= GlobalLightManager.Instance.maximumLightning && PlayerManager.Instance.controller.isDialoging == false
-                && !PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
+                && GlobalLightManager.Instance.mainLight.intensity >= GlobalLightManager.Instance.maximumLightning && PlayerManager.Instance.controller.isDialoging == false)
             {
                 StartHide();
             }
-            else if(currentLightState == lightState.Hidden ||(playerCrazy && PlayerManager.Instance.potionBottles.inDrinkUnhideMalus))
+            else if (currentLightState == lightState.Hidden/* || (playerCrazy && PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)*/)
             {
                 OnHiddenUpdate();
             }
+            //else if (playerCrazy && PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
+            //{
+            //    EndHide();
+            //}
+
         }
-        
+
         /// <summary>
         /// Hides the light
         /// </summary>
@@ -85,7 +98,7 @@ namespace Lantern
         /// </summary>
         void OnHiddenUpdate()
         {
-            if(!playerCrazy && !runningCrazyness && !PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
+            if (!playerCrazy && !runningCrazyness && !PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
             {
                 playerCrazy = true;
                 runningCrazyness = true;
@@ -100,12 +113,12 @@ namespace Lantern
 
             if (Input.GetButtonUp("X_Button"))
             {
-                
+
                 EndHide();
                 return;
             }
 
-            if(time <= 0)
+            if (time <= 0)
             {
                 PlayerManager.Instance.TakeDamages = 1;
                 EndHide();
@@ -120,7 +133,7 @@ namespace Lantern
         IEnumerator PlayerCrazyness()
         {
             yield return new WaitForSeconds(3f);
-            if(playerCrazy == true)
+            if (playerCrazy == true)
             {
                 PlayerManager.Instance.TakeDamages = 1;
                 EndHide();

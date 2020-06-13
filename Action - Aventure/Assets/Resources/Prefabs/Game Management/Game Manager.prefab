@@ -4381,6 +4381,7 @@ GameObject:
   - component: {fileID: 3565026972856527104}
   - component: {fileID: 9113000912923138808}
   - component: {fileID: 9113000912923138809}
+  - component: {fileID: 6652466310973556716}
   m_Layer: 5
   m_Name: Game Canvas
   m_TagString: Untagged
@@ -4514,6 +4515,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lanternIsLit: {fileID: 9113000912273113137}
   lanternNotlit: {fileID: 9113000913488813547}
+--- !u!114 &6652466310973556716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8356840159293973043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8c82cd842b18d40ba7bd0774c5aa7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanternBar: {fileID: 9187030912643375349}
 --- !u!1 &8356840160477683829
 GameObject:
   m_ObjectHideFlags: 0
