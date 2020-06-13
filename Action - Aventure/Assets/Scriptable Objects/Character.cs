@@ -8,6 +8,7 @@ namespace Dialog
 
         public string fullName;
         public Sprite[] portrait;
+        public string jibberish;
         
     }
 }

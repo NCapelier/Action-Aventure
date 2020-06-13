@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Player;
+using GameSound;
 
 namespace Dialog
 {
@@ -72,11 +73,20 @@ namespace Dialog
             {
                 portrait.rightPortrait.color = listenerColor;
                 portrait.leftPortrait.color = speakerColor;
+                if(conversation.leftSpeaker.jibberish != null)
+                {
+                    AudioManager.Instance.Play(conversation.leftSpeaker.jibberish);
+                }
+                
             }
             else
             {
                 portrait.leftPortrait.color = listenerColor;
                 portrait.rightPortrait.color = speakerColor;
+                if (conversation.rightSpeaker.jibberish != null)
+                {
+                    AudioManager.Instance.Play(conversation.rightSpeaker.jibberish);
+                }
             }
 
             if (conversation.leftSpeaker.fullName == null)
@@ -107,11 +117,19 @@ namespace Dialog
                 {
                     portrait.rightPortrait.color = listenerColor;
                     portrait.leftPortrait.color = speakerColor;
+                    if (conversation.leftSpeaker.jibberish != null)
+                    {
+                        AudioManager.Instance.Play(conversation.leftSpeaker.jibberish);
+                    }
                 }
                 else
                 {
                     portrait.leftPortrait.color = listenerColor;
                     portrait.rightPortrait.color = speakerColor;
+                    if (conversation.rightSpeaker.jibberish != null)
+                    {
+                        AudioManager.Instance.Play(conversation.rightSpeaker.jibberish);
+                    }
                 }
 
                 portrait.leftPortrait.sprite = conversation.leftSpeaker.portrait[conversation.lines[lineIndex].leftPortraitIndex];
