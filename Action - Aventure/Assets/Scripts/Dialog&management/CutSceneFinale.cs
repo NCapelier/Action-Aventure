@@ -266,20 +266,4 @@ public class CutSceneFinale : MonoBehaviour
 
     }
 
-    IEnumerator BlackScreenFade5()
-    {
-        blackS3.SetActive(false);
-        blackS4.SetActive(false);
-        illu1Credits.SetActive(false);
-        illu2Credits.SetActive(false);
-        illuVictoire.SetActive(false);
-        for (float f = 0.1f; f <= 1.1; f += 0.10f)
-        {
-            Color c = blackS4.GetComponent<SpriteRenderer>().material.color; /*blackS5*/
-            c.a = f;
-            blackS4.GetComponent<SpriteRenderer>().material.color = c;
-            yield return new WaitForSeconds(0.05f);
-        }
-
-    }
 }
