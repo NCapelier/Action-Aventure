@@ -17,6 +17,8 @@ public class TorchTTK : MonoBehaviour
 
     public bool isCutScene;
 
+    bool isRoutine = false;
+
     //Sound
     Sound igniteClip;
     Sound burnClip;
@@ -90,9 +92,10 @@ public class TorchTTK : MonoBehaviour
             Light();
         }
         
-        if(playerHere == false && isLit == true)
+        if(playerHere == false && isLit == true && !isRoutine)
         {
-            TTK();
+            isRoutine = true;
+            StartCoroutine(TTK());
 
             
         }
@@ -137,6 +140,10 @@ public class TorchTTK : MonoBehaviour
             StartCoroutine("TTK");
 
         }
+        else
+        {
+            isRoutine = false;
+        }
        
     }
 
@@ -152,6 +159,11 @@ public class TorchTTK : MonoBehaviour
                 burnSound.UnPause();
             }
         }
-        StartCoroutine(PauseLoops());
+        else
+        {
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(PauseLoops());
+
+        }
     }
 }

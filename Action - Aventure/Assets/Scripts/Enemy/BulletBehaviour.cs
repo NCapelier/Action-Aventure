@@ -3,6 +3,7 @@ using UnityEngine;
 using Player;
 using Enemy;
 using GameSound;
+using GameManagement;
 
 public class BulletBehaviour : MonoBehaviour
 {
@@ -86,6 +87,9 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (GameManager.Instance.gameState.playerDead)
+            return;
+
         if (collision.CompareTag("PlayerController"))
         {
             //Lancer coroutine de dégats - Draine votre barre de lumière.

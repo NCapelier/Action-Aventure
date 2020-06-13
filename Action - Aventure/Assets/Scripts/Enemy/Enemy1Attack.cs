@@ -2,6 +2,7 @@
 using Player;
 using Lantern;
 using GameSound;
+using GameManagement;
 
 namespace Enemy
 {
@@ -60,6 +61,10 @@ namespace Enemy
         {
             distance = Vector2.Distance(PlayerManager.Instance.transform.position, gameObject.transform.position);
             //Attack if the player is in range and cf == 0
+
+            if (GameManager.Instance.gameState.playerDead)
+                return;
+
             if (distance < attackRange && Time.time > lastAttackTime + cooldown && LanternManager.Instance.hideLight.currentLightState == lightState.Displayed)
             {
                 anim.SetBool("isAttacking", true);

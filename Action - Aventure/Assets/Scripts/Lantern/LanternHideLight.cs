@@ -25,6 +25,8 @@ namespace Lantern
 
         float time = 6f;
 
+        [HideInInspector] public float displayTime = 1;
+
         #endregion
 
         private void Start()
@@ -37,9 +39,22 @@ namespace Lantern
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
 
-            if(currentLightState == lightState.Hidden && PlayerManager.Instance.currentHp <= 1)
+            D.Log(displayTime);
+
+            displayTime = time.Remap(0f, 6f, 0f, 1f);
+
+            if (currentLightState == lightState.Hidden && PlayerManager.Instance.currentHp <= 1)
             {
                 EndHide();
+            }
+
+            if(currentLightState == lightState.Displayed && time < PlayerManager.Instance.currentHp)
+            {
+                time += 1.0f * Time.deltaTime;
+            }
+            else if(time > PlayerManager.Instance.currentHp)
+            {
+                time = PlayerManager.Instance.currentHp;
             }
 
             if (Input.GetButtonDown("X_Button") && currentLightState == lightState.Displayed && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy
@@ -78,7 +93,7 @@ namespace Lantern
             {
                 playerCrazy = true;
                 runningCrazyness = true;
-                StartCoroutine(PlayerCrazyness());
+                //StartCoroutine(PlayerCrazyness());
             }
             else if (playerCrazy && PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
             {
@@ -101,7 +116,7 @@ namespace Lantern
             }
             else
             {
-                time -= 0.1f * Time.deltaTime;
+                time -= 1f * Time.deltaTime;
             }
 
         }
@@ -125,7 +140,7 @@ namespace Lantern
             runningCrazyness = false;
             LanternManager.Instance.interaction.gameObject.SetActive(true);
             currentLightState = lightState.Displayed;
-            time = PlayerManager.Instance.currentHp;
+            //time = PlayerManager.Instance.currentHp;
 
 
             //Sound

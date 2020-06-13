@@ -52,7 +52,7 @@ namespace Player
         {
             set
             {
-                if (invincible)
+                if (invincible || GameManager.Instance.gameState.playerDead)
                     return;
 
                 currentHp -= value;

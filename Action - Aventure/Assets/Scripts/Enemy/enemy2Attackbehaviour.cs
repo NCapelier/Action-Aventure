@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Player;
+using GameManagement;
 
 namespace Enemy
 {
@@ -8,7 +9,9 @@ namespace Enemy
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.CompareTag("PlayerController"))
+            if (GameManager.Instance.gameState.playerDead)
+                return;
+            if (collision.CompareTag("PlayerController"))
             {
                 PlayerManager.Instance.TakeDamages = 2;
             }
