@@ -5,6 +5,7 @@ using GameManagement;
 using UnityEngine.Playables;
 using Player;
 using Boss;
+using GameSound;
 
 public class TriggerCutSceneBoss1 : MonoBehaviour
 {/// <summary>
@@ -102,6 +103,7 @@ public class TriggerCutSceneBoss1 : MonoBehaviour
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(1f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
+        AudioManager.Instance.PlayMusic(MusicID.BossBattle);
         yield return new WaitForSeconds(3f);
         GameCanvasManager.Instance.dialog.forceUpdate = true;
         yield return new WaitForSeconds(2f);

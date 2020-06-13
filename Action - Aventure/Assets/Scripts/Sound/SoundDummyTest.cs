@@ -16,11 +16,6 @@ namespace GameSound
         [SerializeField] MusicID choosenZik;
         #endregion
 
-        private void Start()
-        {
-            music = AudioManager.Instance.musics[choosenZik];
-        }
-
         // Update is called once per frame
         void Update()
 		{
@@ -58,13 +53,17 @@ namespace GameSound
             switch (musicOn)
             {
                 case false:
-                    music.Play();
-                    AudioManager.Instance.musicCurrentlyPlaying = choosenZik;
+                    if(choosenZik == MusicID.Dungeon)
+                    {
+                        AudioManager.Instance.musics[choosenZik].time = 13.3f;
+                    }
+
+                    AudioManager.Instance.PlayMusic(choosenZik);
                     musicOn = true;
                     break;
 
                 case true:
-                    music.Stop();
+                    AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].Stop();
                     AudioManager.Instance.musicCurrentlyPlaying = MusicID.Null;
                     musicOn = false;
                     break;

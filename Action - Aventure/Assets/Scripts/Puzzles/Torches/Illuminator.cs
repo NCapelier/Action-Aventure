@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Lantern;
 using GameSound;
+using GameManagement;
 
 public class Illuminator : MonoBehaviour
 {
@@ -57,6 +58,8 @@ public class Illuminator : MonoBehaviour
         igniteSound = sounds[0];
         burnSound = sounds[1];
         extingSound = sounds[2];
+
+        StartCoroutine(PauseLoops());
     }
     // Update is called once per frame
     void Update()
@@ -132,5 +135,19 @@ public class Illuminator : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         restart = false;
     }
-    
+
+    IEnumerator PauseLoops()
+    {
+        if (GameManager.Instance.gameState.inPause)
+        {
+            if (burnSound.isPlaying)
+            {
+                burnSound.Pause();
+
+                yield return new WaitUntil(() => !GameManager.Instance.gameState.inPause);
+                burnSound.UnPause();
+            }
+        }
+        StartCoroutine(PauseLoops());
+    }
 }

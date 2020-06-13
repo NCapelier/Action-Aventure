@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Lantern;
 using GameSound;
+using GameManagement;
 
 public class TorchTTK : MonoBehaviour
 {
@@ -48,6 +49,8 @@ public class TorchTTK : MonoBehaviour
         extingSound = sounds[2];
 
         Duration = StartDuration;
+
+        StartCoroutine(PauseLoops());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -98,6 +101,7 @@ public class TorchTTK : MonoBehaviour
             isLit = false;
             Duration = StartDuration;
             burnSound.Stop();
+            extingSound.Play();
         }
 
 
@@ -134,5 +138,20 @@ public class TorchTTK : MonoBehaviour
 
         }
        
+    }
+
+    IEnumerator PauseLoops()
+    {
+        if (GameManager.Instance.gameState.inPause)
+        {
+            if (burnSound.isPlaying)
+            {
+                burnSound.Pause();
+
+                yield return new WaitUntil(() => !GameManager.Instance.gameState.inPause);
+                burnSound.UnPause();
+            }
+        }
+        StartCoroutine(PauseLoops());
     }
 }

@@ -16,7 +16,14 @@ namespace GameSound
 		// Start is called before the first frame update
 		void Start()
 		{
-            AudioManager.Instance.PlayMusic(zoneID);
+            if(zoneID != MusicID.Null)
+            {
+				AudioManager.Instance.PlayMusic(zoneID);
+			}
+            else
+            {
+                AudioManager.Instance.musics[AudioManager.Instance.musicCurrentlyPlaying].Pause();
+            }
 		}
 	}
 }

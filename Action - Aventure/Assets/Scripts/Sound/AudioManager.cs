@@ -49,13 +49,23 @@ namespace GameSound
                     sounds_notUniqueObject.Add(s.clip.name, s);
                 }
 
-                if(s.loop && !s.isMusic)
+                if(s.loop && !s.isMusic && !s.notUniqueObject)
                 {
                     loopables.Add(loopsAdded, s.source);
                     loopsOnHold.Add(loopsAdded, false);
+
+                    //Debug
+                    if(loopables[loopsAdded] == null)
+                    {
+                        Debug.LogWarning("Null member in dictionnary loopables");
+                    }
+                    Debug.Log("Added " + s.clip.name + " in dictionnary loopables");
+
                     loopsAdded++;
                 }
             }
+
+            Debug.Log("loopables count = " + loopables.Count);
         }
 
         /// <summary>

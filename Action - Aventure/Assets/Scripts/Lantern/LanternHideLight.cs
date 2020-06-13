@@ -66,7 +66,7 @@ namespace Lantern
 
             //Sound
             AudioManager.Instance.Play("Coat_close");
-            chatteringTeeth.Play();
+            chatteringTeeth.PlayDelayed(0.9f);
         }
 
         /// <summary>
