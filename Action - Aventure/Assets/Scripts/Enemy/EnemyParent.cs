@@ -73,7 +73,16 @@ namespace Enemy
             }
             if (hp <= 0)
             {
-                Instantiate(Resources.Load("Prefabs/Enemy/Coin"), transform.position, Quaternion.identity);
+                float hasard = Random.Range(0f, 1f);
+                    if( hasard <= 0.69)
+                    {
+                    Instantiate(Resources.Load("Prefabs/Enemy/Coin"), transform.position, Quaternion.identity);
+                    }else if(hasard >= 0.7)
+                    {
+                    Instantiate(Resources.Load("Prefabs/Enemy/LifePack"), transform.position, Quaternion.identity);
+                    }
+                 
+                
                 Death();
             }
             if(gameObject.GetComponent<Enemy3Behaviour>())
