@@ -36,7 +36,10 @@ public class GetLantern : MonoBehaviour
 
     public void startFadingOUT()
     {
-        StartCoroutine("FadeOut");
+        if(gameObject.activeSelf)
+        {
+            StartCoroutine("FadeOut");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -90,6 +93,8 @@ public class GetLantern : MonoBehaviour
     {
         for (float f = 1f; f >= -0.05f; f -= 0.1f)
         {
+            if (gameObject.activeSelf)
+                yield return null;
             Color c = boutonRenderer.material.color;
             c.a = f;
             boutonRenderer.material.color = c;

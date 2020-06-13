@@ -39,6 +39,7 @@ namespace Boss
                     rockStands[i].currentRockState = rockState.Rock;
                 }
             }
+
         }
 
         public void DestroyRocks()

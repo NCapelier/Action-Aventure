@@ -46,6 +46,10 @@ namespace Boss
 
         void IdleUpdate()
         {
+            if(rockObject.activeSelf)
+            {
+                rockObject.SetActive(false);
+            }
             if(shadowAnimator.isActiveAndEnabled)
             {
                 shadowAnimator.gameObject.GetComponent<SpriteRenderer>().enabled = false;

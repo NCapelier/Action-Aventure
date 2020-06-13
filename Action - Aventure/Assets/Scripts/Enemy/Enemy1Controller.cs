@@ -3,6 +3,7 @@ using Player;
 using Lantern;
 using GameSound;
 using GameManagement;
+using System.Collections;
 
 namespace Enemy
 {
@@ -34,6 +35,9 @@ namespace Enemy
 
         bool focusingPlayer = false;
 
+        [HideInInspector] public bool flashed = false;
+        bool stunned = false;
+
         // Animator
         [HideInInspector] public Animator anim = null;
         public Enemy1Attack enemy1attack;
@@ -63,10 +67,23 @@ namespace Enemy
                 EnemyRb.velocity = Vector2.zero;
                 return;
             }
+            if(flashed && !stunned)
+            {
+                stunned = true;
+                StartCoroutine(Stun());
+                return;
+            }
             MoveToPlayer();
             MoveToLight();
         }
         
+        IEnumerator Stun()
+        {
+            yield return new WaitForSeconds(1.5f);
+            stunned = false;
+            flashed = false;
+        }
+
         /// <summary>
         /// Moves this enemy towards the player until it's close enouth depending on contactDistance
         /// </summary>
@@ -93,7 +110,7 @@ namespace Enemy
 
                 focusingPlayer = true;
             }
-            else if((LanternManager.Instance.hideLight.currentLightState == lightState.Hidden))
+            else if(LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)
             {
                 EnemyRb.velocity = Vector2.zero;
                 focusingPlayer = false;

@@ -95,7 +95,7 @@ namespace Lantern
                     OnTidyUpdate();
                     break;
                 case boomerangState.PreCast:
-                    OnPreCastUpdate();
+                    //OnPreCastUpdate();
                     break;
                 case boomerangState.Cast:
                     OnCastUpdate();
@@ -114,6 +114,8 @@ namespace Lantern
 
         private void Update()
         {
+            //D.Log(this.name + " --> " + loading);
+
             if (currentBoomerangState == boomerangState.Tidy && lanternSprite.enabled)
             {
                 lanternSprite.enabled = false;
@@ -212,6 +214,9 @@ namespace Lantern
             }
             else
             {
+                currentBoomerangState = boomerangState.Tidy;
+                loading = 0f;
+                canCast = true;
                 return;
             }
             LanternManager.Instance.gameObject.transform.SetParent(null);

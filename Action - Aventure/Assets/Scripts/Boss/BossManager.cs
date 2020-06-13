@@ -19,7 +19,7 @@ namespace Boss
 
         [Header("Variables")]
         [Range(0, 50)]
-        public int hp = 20;
+        public float hp = 20f;
         public int maxHp = 20;
         #endregion
 
@@ -29,7 +29,7 @@ namespace Boss
         {
             get
             {
-                return hp;
+                return (int)hp;
             }
             set
             {
@@ -41,7 +41,7 @@ namespace Boss
                     controller.isWeak = false;
                     controller.animator.SetBool("isWeak", false);
                 }
-                else if(controller.currentBossState == bossState.Phase2)
+                else if(controller.currentBossState == bossState.Phase2 && controller.touchedRock)
                 {
                     controller.animator.SetBool("isHit", true);
 

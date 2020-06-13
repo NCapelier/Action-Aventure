@@ -27,10 +27,6 @@ namespace Lantern
                     collision.GetComponent<EnemyParent>().TakeDamages = 1;
                 }
 
-                if(LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown)
-                {
-                    //stuns the enemy
-                }
             }
 
             if (collision.gameObject.CompareTag("TorchTag") && LanternManager.Instance.flashLight.currentLightStrength == lightStrength.Recovering)
@@ -46,11 +42,19 @@ namespace Lantern
                 LanternManager.Instance.boomerang.mustStop = true;
             }
 
-            if (!dealtDamages && collision.CompareTag("BossTrigger") && (LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown))
+            if (!dealtDamages && collision.CompareTag("BossTrigger") && BossManager.Instance.controller.isWeak && (LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown))
             {
                 dealtDamages = true;
                 BossManager.Instance.TakeDamages = 3;
                 StartCoroutine(BossDamages());
+            }
+
+            if (collision.CompareTag("Enemy") && (LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown))
+            {
+                if (collision.gameObject.GetComponent<Enemy1Controller>())
+                {
+                    collision.gameObject.GetComponent<Enemy1Controller>().flashed = true;
+                }
             }
 
         }

@@ -31,7 +31,7 @@ public class UIBOSS : MonoBehaviour
     {
       bossHealthBar.fillAmount = (float)BossManager.Instance.hp /(float)BossManager.Instance.maxHp;
 
-       if(BossManager.Instance.controller.currentBossState == bossState.Phase2 && BossManager.Instance.controller.isWeak == true)
+       if(BossManager.Instance.controller.currentBossState == bossState.Phase2 && BossManager.Instance.controller.isWeak == true && BossManager.Instance.controller.touchedRock)
        {
             bossHealthBar.color = Color.red;
        }
@@ -95,7 +95,7 @@ public class UIBOSS : MonoBehaviour
         {
             backHealth.SetActive(true);
             bossHealthBar.enabled = true;
-
+            bossHealthBar.fillAmount = (BossManager.Instance.hp.Remap(0, BossManager.Instance.maxHp, 0f, 1f));
         }
 
 
