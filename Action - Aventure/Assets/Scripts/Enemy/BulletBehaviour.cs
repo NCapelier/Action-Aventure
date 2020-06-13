@@ -70,17 +70,27 @@ public class BulletBehaviour : MonoBehaviour
         }
         else if (goEnemy == true && arrived == true && timeToGo == true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, enemyParent.transform.position, bulletSpeed * Time.deltaTime);
+            if(enemyParent != null) {
 
-            if (Vector2.Distance(transform.position, enemyParent.transform.position) <= distanceToSwitchStatement)
-            {
-                arrived = false;
-                timeToGo = false;
-                goEnemy = false;
-                enemyParent.GetComponent<Enemy3Behaviour>().bodyAnimator.SetBool("isAttacking", false);
-                enemyParent.GetComponent<Enemy3Behaviour>().eyeAnimator.SetBool("isAttacking", false);
-                gameObject.SetActive(false);
+                transform.position = Vector2.MoveTowards(transform.position, enemyParent.transform.position, bulletSpeed * Time.deltaTime);
+
+                if (Vector2.Distance(transform.position, enemyParent.transform.position) <= distanceToSwitchStatement)
+                {
+                    arrived = false;
+                    timeToGo = false;
+                    goEnemy = false;
+                    enemyParent.GetComponent<Enemy3Behaviour>().bodyAnimator.SetBool("isAttacking", false);
+                    enemyParent.GetComponent<Enemy3Behaviour>().eyeAnimator.SetBool("isAttacking", false);
+                    gameObject.SetActive(false);
+                }
             }
+
+          
+        }
+
+        if (enemyParent == null)
+        {
+            Destroy(gameObject);
         }
 
     }
