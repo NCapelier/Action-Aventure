@@ -53,7 +53,7 @@ public class AddPotions : MonoBehaviour
     {
         if(GameManager.Instance.GetComponent<GameState>().potionGet == true){
 
-            GetComponent<SpriteRenderer>().enabled = false;
+            
             PotionsTextScript.potionAmount ++;
             PotionsTextScript.maxPotionAmount ++;
             gameObject.SetActive(false);

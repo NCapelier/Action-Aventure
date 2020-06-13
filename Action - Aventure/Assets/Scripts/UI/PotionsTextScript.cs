@@ -15,7 +15,7 @@ public class PotionsTextScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (potionAmount > 0)
+        if (potionAmount >= 0)
         { potionsText.text = potionAmount.ToString() + "/" + maxPotionAmount.ToString(); }
 
 
