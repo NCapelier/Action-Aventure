@@ -75,9 +75,6 @@ namespace Lantern
         {
             LanternManager.Instance.interaction.gameObject.SetActive(false);
             currentLightState = lightState.Hidden;
-
-            time = PlayerManager.Instance.currentHp;
-
             //Sound
             AudioManager.Instance.Play("Coat_close");
             chatteringTeeth.PlayDelayed(0.9f);
