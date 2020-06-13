@@ -91,7 +91,7 @@ public class BulletBehaviour : MonoBehaviour
             //Lancer coroutine de dégats - Draine votre barre de lumière.
             if (asDeltDamages == false)
             {
-                PlayerManager.Instance.TakeDamages = 5;
+                PlayerManager.Instance.TakeDamages = 2;
             }
             asDeltDamages = true;
         }

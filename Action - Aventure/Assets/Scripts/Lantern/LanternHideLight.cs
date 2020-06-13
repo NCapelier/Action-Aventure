@@ -22,6 +22,9 @@ namespace Lantern
         bool runningCrazyness = false;
 
         AudioSource chatteringTeeth;
+
+        float time = 6f;
+
         #endregion
 
         private void Start()
@@ -33,6 +36,12 @@ namespace Lantern
         {
             if (!GameManager.Instance.gameState.lanternGet)
                 return;
+
+            if(currentLightState == lightState.Hidden && PlayerManager.Instance.currentHp <= 1)
+            {
+                EndHide();
+            }
+
             if (Input.GetButtonDown("X_Button") && currentLightState == lightState.Displayed && LanternManager.Instance.boomerang.currentBoomerangState == boomerangState.Tidy
                 && GlobalLightManager.Instance.mainLight.intensity >= GlobalLightManager.Instance.maximumLightning && PlayerManager.Instance.controller.isDialoging == false
                 && !PlayerManager.Instance.potionBottles.inDrinkUnhideMalus)
@@ -53,6 +62,7 @@ namespace Lantern
             LanternManager.Instance.interaction.gameObject.SetActive(false);
             currentLightState = lightState.Hidden;
 
+            time = PlayerManager.Instance.currentHp;
 
             //Sound
             AudioManager.Instance.Play("Coat_close");
@@ -74,12 +84,24 @@ namespace Lantern
             {
                 StopCoroutine(PlayerCrazyness());
                 EndHide();
+                return;
             }
 
             if (Input.GetButtonUp("X_Button"))
             {
                 
                 EndHide();
+                return;
+            }
+
+            if(time <= 0)
+            {
+                PlayerManager.Instance.TakeDamages = 1;
+                EndHide();
+            }
+            else
+            {
+                time -= 0.1f * Time.deltaTime;
             }
 
         }
@@ -90,7 +112,7 @@ namespace Lantern
             if(playerCrazy == true)
             {
                 PlayerManager.Instance.TakeDamages = 1;
-                StartCoroutine(PlayerCrazyness());
+                EndHide();
             }
         }
 
@@ -103,6 +125,8 @@ namespace Lantern
             runningCrazyness = false;
             LanternManager.Instance.interaction.gameObject.SetActive(true);
             currentLightState = lightState.Displayed;
+            time = PlayerManager.Instance.currentHp;
+
 
             //Sound
             AudioManager.Instance.Play("Coat_open");

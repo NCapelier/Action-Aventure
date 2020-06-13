@@ -137,8 +137,8 @@ MonoBehaviour:
   potionBottles: {fileID: 4463720946682180465}
   currentHp: 1
   currentMaxHp: 1
-  maxHp: 16
-  hpEchelonNumber: 4
+  maxHp: 6
+  hpEchelonNumber: 6
   invincible: 0
 --- !u!114 &4463720946682180465
 MonoBehaviour:
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nearFountain: 0
+  inDrinkUnhideMalus: 0
 --- !u!50 &4999328793701592573
 Rigidbody2D:
   serializedVersion: 4

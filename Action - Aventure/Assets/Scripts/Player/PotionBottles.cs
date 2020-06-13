@@ -51,8 +51,8 @@ namespace Player
         {
             if (PotionsTextScript.potionAmount > 0 && Input.GetButtonDown("Y_Button"))
             {
-                PlayerManager.Instance.currentMaxHp = PlayerManager.Instance.maxHp;
-                PlayerManager.Instance.Heal = PlayerManager.Instance.maxHp - PlayerManager.Instance.currentHp;
+                //PlayerManager.Instance.currentMaxHp = PlayerManager.Instance.maxHp;
+                PlayerManager.Instance.Heal = 6;
 
                 StartCoroutine(DrinkUnhide());
                 //if (LanternManager.Instance.hideLight.currentLightState == lightState.Hidden)

@@ -30,7 +30,7 @@ namespace Boss
 
             if(BossManager.Instance.controller.isDashing && collision.CompareTag("PlayerController"))
             {
-                PlayerManager.Instance.TakeDamages = 3;
+                PlayerManager.Instance.TakeDamages = 2;
             }
         }
     }

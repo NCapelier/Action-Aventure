@@ -10,7 +10,7 @@ namespace Enemy
         {
             if(collision.CompareTag("PlayerController"))
             {
-                PlayerManager.Instance.TakeDamages = 5;
+                PlayerManager.Instance.TakeDamages = 2;
             }
         }
 

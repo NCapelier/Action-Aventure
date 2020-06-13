@@ -26,20 +26,20 @@ namespace Player
         [HideInInspector] public int currentHp = 1;
 
         // current max hp depending on current echelon
-        [HideInInspector] public int currentMaxHp = 1;
+        //[HideInInspector] public int currentMaxHp = 1;
 
         // editor variables
 
         [Range(1,200)]
         public int maxHp = 100;
 
-        [Range(1, 10)]
-        [SerializeField] int hpEchelonNumber = 4;
+        /*[Range(1, 10)]
+        [SerializeField] int hpEchelonNumber = 4;*/
 
         [HideInInspector] public bool invincible = false;
 
-        bool mustHeal = false;
-        bool healing = false;
+        /*bool mustHeal = false;
+        bool healing = false;*/
 
         #endregion
 
@@ -57,17 +57,16 @@ namespace Player
 
                 currentHp -= value;
 
-                //Animation
-                controller.HitAnimation();
-
-
                 if (currentHp <= 0)
                 {
                     Death();
                 }
                 else
                 {
-                    UpdateMaxHp();
+                    //UpdateMaxHp();
+
+                    //Animation
+                    controller.HitAnimation();
 
                     //Sound
                     AudioManager.Instance.Play("Player_hurt");
@@ -86,9 +85,9 @@ namespace Player
                     return;*/
                 currentHp += value;
 
-                if (currentHp > currentMaxHp)
+                if (currentHp > maxHp)
                 {
-                    currentHp = currentMaxHp;
+                    currentHp = maxHp;
                 }
             }
         }
@@ -109,17 +108,17 @@ namespace Player
 
         void Update()
         {
-            if(LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && mustHeal && !healing)
+            /*if(LanternManager.Instance.hideLight.currentLightState == lightState.Displayed && mustHeal && !healing)
             {
                 healing = true;
                 mustHeal = false;
                 StartCoroutine(ChainHeal());
-            }
+            }*/
         }
 
         #endregion
 
-        IEnumerator ChainHeal()
+        /*IEnumerator ChainHeal()
         {
             yield return new WaitForSeconds(0.8f);
             if(currentHp != currentMaxHp)
@@ -134,21 +133,26 @@ namespace Player
             {
                 healing = false;
             }
-        }
+        }*/
 
         /// <summary>
         /// initialize HPs variables on start
         /// </summary>
-        void InitializeHp()
+        /*void InitializeHp()
         {
             currentMaxHp = maxHp;
+            currentHp = maxHp;
+        }*/
+
+        void InitializeHp()
+        {
             currentHp = maxHp;
         }
 
         /// <summary>
         /// Updates the maximum hp of the player depending on its current hp
         /// </summary>
-        void UpdateMaxHp()
+        /*void UpdateMaxHp()
         {
             for(int i = 0; i < hpEchelonNumber; i++)
             {
@@ -161,15 +165,13 @@ namespace Player
             {
                 mustHeal = true;
             }
-        }
+        }*/
 
         /// <summary>
         /// override this method to kill the entity
         /// </summary>
         public void Death()
         {
-            //code here
-
             //Cue the death animation with this function
             // controller.DeathAnimation();
 

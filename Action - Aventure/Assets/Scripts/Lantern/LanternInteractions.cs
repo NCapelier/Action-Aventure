@@ -42,7 +42,7 @@ namespace Lantern
             {
                 LanternManager.Instance.boomerang.mustStop = true;
             }
-            else if (collision.CompareTag("BossTrigger") && (LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown))
+            if (collision.CompareTag("BossTrigger") && (LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingUp || LanternManager.Instance.flashLight.currentFlashState == flashState.FlashingDown))
             {
                 BossManager.Instance.TakeDamages = 3;
             }
