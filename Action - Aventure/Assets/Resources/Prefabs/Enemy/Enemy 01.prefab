@@ -172,8 +172,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   contactDistance: 0.5
-  playerDetectRange: 2.5
-  lightDetectExtra: 5
+  playerDetectRange: 4
+  lightDetectExtra: 4
+  flashed: 0
   anim: {fileID: 0}
   enemy1attack: {fileID: 7658047884507406550}
   eyes: {fileID: 7803587941020222482}

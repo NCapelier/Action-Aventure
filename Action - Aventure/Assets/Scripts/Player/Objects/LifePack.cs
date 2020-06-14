@@ -43,7 +43,7 @@ public class LifePack : MonoBehaviour
             isDrop = false;
             if(PlayerManager.Instance.currentHp < 6)
             {
-                Debug.Log("This is Called");
+                //Debug.Log("This is Called");
                 PlayerManager.Instance.currentHp ++;
 
                 AudioManager.Instance.Play("Soul_pickup");

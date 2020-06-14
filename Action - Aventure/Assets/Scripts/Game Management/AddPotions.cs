@@ -34,7 +34,10 @@ public class AddPotions : MonoBehaviour
 
     public void startFadingOUT()
     {
-        StartCoroutine("FadeOut");
+        if(gameObject.activeSelf)
+        {
+            StartCoroutine("FadeOut");
+        }
     }
 
 

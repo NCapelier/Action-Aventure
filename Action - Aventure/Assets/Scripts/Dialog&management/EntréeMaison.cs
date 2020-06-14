@@ -31,7 +31,7 @@ public class EntréeMaison : MonoBehaviour
     {
         timeline = GetComponent<PlayableDirector>();
 
-        if (GameManager.Instance.gameState.cutSCaveDone == true)
+        if (GameManager.Instance.gameState.cutSCaveDone == true && timeline != null)
         {
             timeline.enabled = false;
         }

@@ -37,7 +37,10 @@ public class apperingEnnemy : MonoBehaviour
         if (collision.gameObject.tag == "PlayerController")
         {
             StartCoroutine("Animation");
-            pressButton.SetActive(true);
+            if(pressButton != null)
+            {
+                pressButton.SetActive(true);
+            }
         }
     }
 
