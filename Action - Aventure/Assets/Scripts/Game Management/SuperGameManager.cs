@@ -5,6 +5,7 @@ using Player;
 using Lantern;
 using GameSound;
 using GameManagement;
+using UnityEngine.SceneManagement;
 
 namespace Management
 {
@@ -24,6 +25,14 @@ namespace Management
             Destroy(LanternManager.Instance.gameObject);
             Destroy(GameManager.Instance.gameObject);
             Destroy(AudioManager.Instance.gameObject);
+        }
+
+        private void Update()
+        {
+            if(SceneManager.GetActiveScene().name == "0_MainMenu")
+            {
+                Destroy(GameManager.Instance.gameObject);
+            }
         }
     }
 }
