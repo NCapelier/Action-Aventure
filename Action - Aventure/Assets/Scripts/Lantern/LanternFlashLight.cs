@@ -114,6 +114,7 @@ namespace Lantern
             }
             else
             {
+                PlayerManager.Instance.controller.doDash = false;
                 currentFlashState = flashState.FlashingDown;
             }
         }
@@ -171,7 +172,7 @@ namespace Lantern
             {
                 if(mustRegerenate)
                 {
-                    lightComponent.pointLightOuterRadius += recoveringSpeed * Time.deltaTime * 2f;
+                    lightComponent.pointLightOuterRadius += recoveringSpeed * Time.deltaTime * 3f;
                 }
                 else
                 {

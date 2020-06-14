@@ -18,6 +18,7 @@ namespace Boss
         bool spawnedRock = false;
 
         Animator shadowAnimator = null;
+
         Animator rockAnimator = null;
 
         private void Start()
@@ -46,6 +47,10 @@ namespace Boss
 
         void IdleUpdate()
         {
+            if(spawnedRock)
+            {
+                spawnedRock = false;
+            }
             if(rockObject.activeSelf)
             {
                 rockObject.SetActive(false);
@@ -66,18 +71,14 @@ namespace Boss
         {
             if(!shadowAnimator.isActiveAndEnabled)
             {
+                shadowAnimator.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 shadowAnimator.enabled = true;
             }
         }
 
         void RockUpdate()
         {
-            // --> animation apparition rocher
-            if(!rockAnimator.isActiveAndEnabled)
-            {
-                rockAnimator.enabled = true;
-                AudioManager.Instance.Play("Rock_fall");
-            }
+
 
             if (!spawnedRock)
             {
@@ -85,6 +86,16 @@ namespace Boss
                 rockObject.SetActive(true);
                 //
                 AudioManager.Instance.Play("Rock_impact");
+            }
+
+            // --> animation apparition rocher
+            if (!rockAnimator.isActiveAndEnabled)
+            {
+                rockAnimator.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+
+                rockAnimator.enabled = true;
+
+                AudioManager.Instance.Play("Rock_fall");
             }
         }
     }

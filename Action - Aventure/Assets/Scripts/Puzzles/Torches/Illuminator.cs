@@ -148,6 +148,7 @@ public class Illuminator : MonoBehaviour
                 burnSound.UnPause();
             }
         }
+        yield return new WaitForEndOfFrame();
         StartCoroutine(PauseLoops());
     }
 }

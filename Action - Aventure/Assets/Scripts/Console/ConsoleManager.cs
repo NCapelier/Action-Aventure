@@ -50,7 +50,7 @@ namespace GameManagement
         }
         public void GotoBoss()
         {
-            SceneLoader.GoToScene("Boss3", new Vector2(0f, -12f));
+            SceneLoader.GoToScene("Boss3", new Vector2(0.33f, -6f));
         }
     }
 }
