@@ -12,7 +12,7 @@ public class GamePause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Start_Button") && GameManager.Instance.gameState.inPause == false)
+        if (Input.GetButtonDown("Start_Button") && GameManager.Instance.gameState.inPause == false && PlayerManager.Instance.controller.isDialoging == false)
         {
 
             EnterInPauseMenu();

@@ -74,10 +74,10 @@ namespace Enemy
             if (hp <= 0)
             {
                 float hasard = Random.Range(0f, 1f);
-                    if( hasard <= 0.69)
+                    if( hasard <= 0.89)
                     {
                     Instantiate(Resources.Load("Prefabs/Enemy/Coin"), transform.position, Quaternion.identity);
-                    }else if(hasard >= 0.7)
+                    }else if(hasard >= 0.90)
                     {
                     Instantiate(Resources.Load("Prefabs/Enemy/LifePack"), transform.position, Quaternion.identity);
                     }

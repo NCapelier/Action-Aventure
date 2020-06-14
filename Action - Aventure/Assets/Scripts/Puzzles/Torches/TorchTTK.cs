@@ -19,6 +19,8 @@ public class TorchTTK : MonoBehaviour
 
     bool isRoutine = false;
 
+
+
     //Sound
     Sound igniteClip;
     Sound burnClip;
@@ -77,7 +79,7 @@ public class TorchTTK : MonoBehaviour
         if (col.gameObject.tag == "Hinky")
         {
             playerHere = false;
-            StartCoroutine("TTK");
+            //StartCoroutine("TTK");
 
         }
     }

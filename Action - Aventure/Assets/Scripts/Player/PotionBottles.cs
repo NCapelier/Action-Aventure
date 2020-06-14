@@ -13,7 +13,7 @@ namespace Player
     public class PotionBottles : MonoBehaviour
 	{
         #region Variables
-        [HideInInspector] public bool nearFountain;
+        public bool nearFountain;
         [HideInInspector] public bool inDrinkUnhideMalus = false;
         [SerializeField] private Dialog.Conversation refillPotion;
         [SerializeField] private Dialog.Conversation stockFull;
@@ -75,18 +75,21 @@ namespace Player
 
         void PotionRefill()
         {
-            if(PotionsTextScript.potionAmount == PotionsTextScript.maxPotionAmount && Input.GetButtonDown("A_Button"))
+            if(PotionsTextScript.potionAmount == PotionsTextScript.maxPotionAmount && Input.GetButtonDown("A_Button") && nearFountain == true)
             {
                 GameCanvasManager.Instance.dialog.StartDialog = stockFull;
+                nearFountain = false;
             }
 
-            else if(PotionsTextScript.potionAmount < PotionsTextScript.maxPotionAmount && Input.GetButtonDown("A_Button"))
+            else if(PotionsTextScript.potionAmount < PotionsTextScript.maxPotionAmount && Input.GetButtonDown("A_Button") && nearFountain)
             {
                 GameCanvasManager.Instance.dialog.StartDialog = refillPotion;
                 PotionsTextScript.potionAmount += PotionsTextScript.maxPotionAmount - PotionsTextScript.potionAmount;
                 AudioManager.Instance.Play("Potion_refill");
-                
+                nearFountain = false;
+
             }
+            
         }
         
         //Can't work atm, need to make playerCrazy public and remove currentLightState == Hidden in EndHide() launch condition 
