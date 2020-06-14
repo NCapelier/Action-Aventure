@@ -60,7 +60,7 @@ namespace LightEnvironment
         {
             if(mainLight.intensity < maximumLightning)
             {
-                mainLight.intensity += increaseSpeed * Time.deltaTime;
+                mainLight.intensity += increaseSpeed * Time.deltaTime * 0.5f;
             }
         }
 
