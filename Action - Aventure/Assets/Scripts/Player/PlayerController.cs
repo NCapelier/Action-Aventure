@@ -2,7 +2,7 @@
 using UnityEngine;
 using Lantern;
 using GameSound;
-
+using GameManagement;
 namespace Player
 {
     /// <summary>
@@ -78,6 +78,12 @@ namespace Player
         void FixedUpdate()
         {
             isAttacking = PlayerManager.Instance.contactAttack.isAttacking;
+
+            if(!anim.GetBool("Lantern") && GameManager.Instance.gameState.lanternGet)
+            {
+                anim.SetBool("Lantern", true);
+            }
+
             MoveInput();
             DashInput();
             Move();
