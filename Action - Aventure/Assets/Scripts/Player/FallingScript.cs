@@ -77,7 +77,7 @@ public class FallingScript : MonoBehaviour
         startFadingIN();
 
         yield return new WaitForSeconds(0.5f);
-        PlayerManager.Instance.TakeDamages = 4;
+        PlayerManager.Instance.TakeDamages = 1;
 
         //Jouer le son de la chute
         AudioManager.Instance.Play("Player_fall");
